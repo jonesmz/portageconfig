@@ -1,4 +1,3 @@
-app-arch/file-roller
 app-office/libreoffice
 app-text/evince
 gnome-base/gdm
@@ -21,4 +20,11 @@ www-client/chromium
 www-plugins/adobe-flash
 x11-misc/lightdm
 xfce-base/xfce4-meta
-
+x11-misc/x11vnc
+net-misc/networkmanager-openvpn
+app-office/texmaker
+dev-texlive/texlive-latexextra
+gnome-extra/nautilus-dropbox
+kde-misc/yakuake
+net-misc/dropbox
+net-misc/dropbox-cli
