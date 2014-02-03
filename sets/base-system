@@ -13,7 +13,6 @@ dev-util/debugedit
 app-admin/sudo
 net-analyzer/nmap
 net-dns/bind-tools
-sys-kernel/gentoo-sources
 app-admin/superadduser
 sys-boot/grub
 sys-devel/distcc
