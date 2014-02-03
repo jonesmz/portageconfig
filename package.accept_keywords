@@ -2,9 +2,3 @@
 # google-chrome is probably never going to be considered stable by gentoo.
 ##
 www-client/google-chrome
-
-
-##
-# I think this is necessary for Jay's wireless chip. Still verifying.
-##
-net-wireless/bcm43xx-fwcutter
