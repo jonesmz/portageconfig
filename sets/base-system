@@ -19,3 +19,4 @@ sys-devel/distcc
 sys-fs/btrfs-progs
 sys-kernel/hardened-sources
 app-editors/nano
+sys-boot/os-prober
