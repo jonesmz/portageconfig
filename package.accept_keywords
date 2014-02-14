@@ -2,3 +2,10 @@
 # google-chrome is probably never going to be considered stable by gentoo.
 ##
 www-client/google-chrome
+
+
+##
+# LXDE is apparently broken at the moment
+##
+x11-misc/pcmanfm
+x11-libs/libfm
