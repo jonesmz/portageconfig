@@ -1,0 +1,30 @@
+##
+# Useflags needed by qt5.
+##
+x11-libs/libxcb xkb
+dev-libs/libpcre pcre16
+
+##
+# No sense in having firefox and thunderbird build their own copies of libraries...
+#
+# The Thunderbird Conversations plugin doesn't work right if you use system-icu....
+##
+dev-db/sqlite secure-delete
+www-client/firefox      -* pgo  webm  gstreamer  pulseaudio minimal libnotify startup-notification jit system-cairo  system-icu system-jpeg system-sqlite
+mail-client/thunderbird -* pgo -webm -gstreamer -pulseaudio minimal libnotify startup-notification jit system-cairo -system-icu system-jpeg system-sqlite
+
+##
+# wireshark can only be built with one GUI toolkit at this time.
+##
+net-analyzer/wireshark -qt4
+
+##
+# Systemd doesn't have the static-libs useflag. Need to put this here to avoid conflicts
+##
+virtual/udev -static-libs
+
+
+##
+# Spice-client can only have one sound-system and needs a gui toolkit
+##
+net-misc/spice-gtk -pulseaudio gtk3

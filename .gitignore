@@ -3,3 +3,5 @@ make.profile
 postsync.d
 savedconfig
 bin
+sets
+make.local

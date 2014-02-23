@@ -5,7 +5,45 @@ www-client/google-chrome
 
 
 ##
+# Clang is unstable, but the stabilized llvm is 3.1. Shall change this when something happens.
+##
+=sys-devel/clang-3.1-r5
+
+##
 # LXDE is apparently broken at the moment
 ##
-x11-misc/pcmanfm
 x11-libs/libfm
+x11-misc/pcmanfm
+
+##
+# Qt5 is still considered unstable...
+##
+dev-qt/qtxml
+dev-qt/qtsql
+dev-qt/qtgui
+dev-qt/qtsvg
+dev-qt/qtdbus
+dev-qt/qttest
+dev-qt/qtcore
+dev-qt/qtscript
+dev-qt/qtquick1
+dev-qt/qtopengl
+dev-qt/qtwebkit
+dev-qt/qtwidgets
+dev-qt/qtnetwork
+dev-qt/qtx11extras
+dev-qt/qtconcurrent
+dev-qt/qtmultimedia
+dev-qt/qtserialport
+dev-qt/qtdeclarative
+dev-qt/qtxmlpatterns
+dev-qt/qtprintsupport
+dev-qt/qtquickcontrols
+dev-qt/qtgraphicaleffects
+
+##
+# ...and uses some unstable deps.
+##
+x11-libs/xpyb
+x11-libs/libxcb
+x11-proto/xcb-proto
