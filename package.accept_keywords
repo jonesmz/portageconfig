@@ -49,6 +49,18 @@ x11-libs/libxcb
 x11-proto/xcb-proto
 
 ##
+# No Java6 crap for us.
+##
+virtual/jdk:1.7
+virtual/jre:1.7
+dev-java/icedtea:7
+dev-java/icedtea-bin:7
+dev-java/icedtea-web:7
+dev-java/java-config
+app-admin/eselect-java
+sys-apps/baselayout-java
+
+##
 # Pitivi is considered unstable still, and required gnonlin
 ##
 media-video/pitivi

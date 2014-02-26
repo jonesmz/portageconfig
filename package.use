@@ -14,6 +14,13 @@ www-client/firefox      -* pgo  webm  gstreamer  pulseaudio minimal libnotify st
 mail-client/thunderbird -* pgo -webm -gstreamer -pulseaudio minimal libnotify startup-notification jit system-cairo -system-icu system-jpeg system-sqlite
 
 ##
+# Sadly, Java wants a lot of bullshit. Here I remove unnecessary cruft.
+##
+dev-java/icedtea     -X -alsa -nsplugin -webstart -pulseaudio -cups
+dev-java/icedtea-bin -X -alsa -nsplugin -webstart -pulseaudio -cups
+dev-java/icedtea-web -nsplugin -webstart
+
+##
 # wireshark can only be built with one GUI toolkit at this time.
 ##
 net-analyzer/wireshark -qt4
