@@ -28,3 +28,9 @@ virtual/udev -static-libs
 # Spice-client can only have one sound-system and needs a gui toolkit
 ##
 net-misc/spice-gtk -pulseaudio gtk3
+
+##
+# Blender needs glog to use gflags for arg parsing instead of default.
+##
+dev-cpp/glog gflags
+media-gfx/blender python_single_target_python3_3

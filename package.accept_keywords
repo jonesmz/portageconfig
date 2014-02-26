@@ -47,3 +47,18 @@ dev-qt/qtgraphicaleffects
 x11-libs/xpyb
 x11-libs/libxcb
 x11-proto/xcb-proto
+
+##
+# Pitivi is considered unstable still, and required gnonlin
+##
+media-video/pitivi
+media-libs/gnonlin
+
+##
+# Blender is still unstable.
+##
+media-gfx/blender
+sci-libs/suitesparseconfig
+dev-cpp/eigen
+sci-libs/ldl
+
