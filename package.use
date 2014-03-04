@@ -41,3 +41,8 @@ net-misc/spice-gtk -pulseaudio gtk3
 ##
 dev-cpp/glog gflags
 media-gfx/blender python_single_target_python3_3
+
+##
+# Needed for scribus for pdfediting
+##
+app-text/ghostscript-gpl cups
