@@ -3,12 +3,6 @@
 ##
 www-client/google-chrome
 
-
-##
-# Clang is unstable, but the stabilized llvm is 3.1. Shall change this when something happens.
-##
-=sys-devel/clang-3.1-r5
-
 ##
 # LXDE is apparently broken at the moment
 ##
