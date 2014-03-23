@@ -51,6 +51,7 @@ app-text/ghostscript-gpl cups
 ##
 sys-apps/lshw -gtk
 net-misc/openvpn -plugins -pam
-app-emulation/qemu static-user static-softmmu -alsa -pulseaudio -gtk -spice -opengl
+#app-emulation/qemu static-user static-softmmu -alsa -pulseaudio -gtk -spice -opengl
+app-emulation/qemu -static
 app-crypt/pinentry -gtk -qt4
 sys-libs/ncurses -gpm
