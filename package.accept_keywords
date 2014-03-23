@@ -4,12 +4,6 @@
 www-client/google-chrome
 
 ##
-# LXDE is apparently broken at the moment
-##
-x11-libs/libfm
-x11-misc/pcmanfm
-
-##
 # Qt5 is still considered unstable...
 ##
 dev-qt/qtxml
@@ -53,6 +47,10 @@ dev-java/icedtea-web:7
 dev-java/java-config
 app-admin/eselect-java
 sys-apps/baselayout-java
+##
+# Java wont build without X >_<
+##
+x11-libs/cairo X
 
 ##
 # Pitivi is considered unstable still, and required gnonlin
