@@ -49,9 +49,16 @@ app-text/ghostscript-gpl cups
 ##
 # Can't statically link stuff that's naturally dynamically linked.
 ##
-sys-apps/lshw -gtk
-net-misc/openvpn -plugins -pam
+#sys-apps/lshw -gtk
+#net-misc/openvpn -plugins -pam
 #app-emulation/qemu static-user static-softmmu -alsa -pulseaudio -gtk -spice -opengl
-app-emulation/qemu -static
-app-crypt/pinentry -gtk -qt4
-sys-libs/ncurses -gpm
+#app-emulation/qemu -static
+#app-crypt/pinentry -gtk -qt4
+#sys-libs/ncurses -gpm
+
+
+##
+# Gnome 3.10 requires these for unexplained reasons >_<
+##
+net-dialup/ppp ipv6
+gnome-base/gnome-control-center gnome-online-accounts
