@@ -47,10 +47,6 @@ dev-java/icedtea-web:7
 dev-java/java-config
 app-admin/eselect-java
 sys-apps/baselayout-java
-##
-# Java wont build without X >_<
-##
-x11-libs/cairo X
 
 ##
 # Pitivi is considered unstable still, and required gnonlin
