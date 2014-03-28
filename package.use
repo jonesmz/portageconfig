@@ -62,3 +62,10 @@ app-text/ghostscript-gpl cups
 ##
 net-dialup/ppp ipv6
 gnome-base/gnome-control-center gnome-online-accounts
+
+
+##
+# Need gbm for radion graphics card support
+##
+media-libs/mesa gbm
+
