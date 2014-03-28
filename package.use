@@ -15,7 +15,9 @@ mail-client/thunderbird -* pgo -webm -gstreamer -pulseaudio minimal libnotify st
 
 ##
 # Sadly, Java wants a lot of bullshit. Here I remove unnecessary cruft.
+# But despite telling it to disable X, it still wants it >_<
 ##
+x11-libs/cairo X
 dev-java/icedtea     -X -alsa -nsplugin -webstart -pulseaudio -cups
 dev-java/icedtea-bin -X -alsa -nsplugin -webstart -pulseaudio -cups
 dev-java/icedtea-web -nsplugin -webstart
