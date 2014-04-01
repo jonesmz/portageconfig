@@ -68,6 +68,6 @@ gnome-base/gnome-control-center gnome-online-accounts
 
 ##
 # Need gbm for radion graphics card support
+# All the other stuff is to just provide the various APIs.
 ##
-media-libs/mesa gbm
-
+media-libs/mesa gbm gles1 gles2 llvm-shared-libs opencl openvg r600-llvm-compiler vdpau wayland xa xvmc
