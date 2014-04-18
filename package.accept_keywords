@@ -49,21 +49,30 @@ app-admin/eselect-java
 sys-apps/baselayout-java
 
 ##
-# Pitivi is considered unstable still, and required gnonlin
+# Pitivi is considered unstable still, needs a few unstable deps.
 ##
 media-video/pitivi
+
+virtual/ffmpeg
+#media-video/libav
+media-video/ffmpeg
 media-libs/gnonlin
+dev-python/gst-python
+media-plugins/gst-plugins-libav
+media-libs/gstreamer-editing-services
+
 
 ##
 # Blender is still unstable.
 ##
 media-gfx/blender
-sci-libs/suitesparseconfig
-dev-cpp/eigen
+
 sci-libs/ldl
+dev-cpp/eigen
+sci-libs/suitesparseconfig
 
 ##
-#
+# FSArchiver unstable? 
 ##
 app-backup/fsarchiver
 
