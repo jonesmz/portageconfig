@@ -39,6 +39,7 @@ net-misc/spice-gtk -pulseaudio gtk3
 
 ##
 # Blender needs glog to use gflags for arg parsing instead of default.
+# Also needs to specify the exact python version.
 ##
 dev-cpp/glog gflags
 media-gfx/blender python_single_target_python3_3
@@ -49,7 +50,7 @@ media-gfx/blender python_single_target_python3_3
 app-text/ghostscript-gpl cups
 
 ##
-# Can't statically link stuff that's naturally dynamically linked.
+# Can't statically link stuff that's naturally dynamically linked. Still TBD...
 ##
 #sys-apps/lshw -gtk
 #net-misc/openvpn -plugins -pam
