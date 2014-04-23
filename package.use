@@ -78,3 +78,4 @@ media-libs/mesa gbm gles1 gles2 llvm-shared-libs opencl openvg r600-llvm-compile
 # Doxygen is rather unimpressive without DOT support
 ##
 app-doc/doxygen dot
+media-libs/gd jpeg truetype png fontconfig
