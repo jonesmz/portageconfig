@@ -20,6 +20,7 @@ dev-qt/qtwebkit
 dev-qt/qtwidgets
 dev-qt/qtnetwork
 dev-qt/qtx11extras
+dev-qt/qtwebsockets
 dev-qt/qtconcurrent
 dev-qt/qtmultimedia
 dev-qt/qtserialport
@@ -35,6 +36,7 @@ dev-qt/qtgraphicaleffects
 x11-libs/xpyb
 x11-libs/libxcb
 x11-proto/xcb-proto
+x11-libs/libxkbcommon
 
 ##
 # No Java6 crap for us.

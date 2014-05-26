@@ -1,8 +1,34 @@
-##
-# Useflags needed by qt5.
+### Useflags needed by qt5.
 ##
 x11-libs/libxcb xkb
 dev-libs/libpcre pcre16
+
+##
+# Useflags for Qt5 itself
+##
+dev-qt/qtxml
+dev-qt/qtsql
+dev-qt/qtgui -udev
+dev-qt/qtsvg
+dev-qt/qtdbus
+dev-qt/qttest
+dev-qt/qtcore
+dev-qt/qtscript
+dev-qt/qtquick1
+dev-qt/qtopengl
+dev-qt/qtwebkit
+dev-qt/qtwidgets
+dev-qt/qtnetwork
+dev-qt/qtx11extras
+dev-qt/qtconcurrent
+dev-qt/qtmultimedia
+dev-qt/qtserialport
+dev-qt/qtwebsockets
+dev-qt/qtdeclarative
+dev-qt/qtxmlpatterns
+dev-qt/qtprintsupport
+dev-qt/qtquickcontrols
+dev-qt/qtgraphicaleffects
 
 ##
 # No sense in having firefox and thunderbird build their own copies of libraries...
