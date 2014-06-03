@@ -56,7 +56,9 @@ net-analyzer/wireshark -qt4
 ##
 # Systemd doesn't have the static-libs useflag. Need to put this here to avoid conflicts
 ##
-virtual/udev -static-libs
+virtual/udev     -static-libs
+virtual/libudev  -static-libs
+virtual/libgudev -static-libs
 
 ##
 # Spice-client can only have one sound-system and needs a gui toolkit
