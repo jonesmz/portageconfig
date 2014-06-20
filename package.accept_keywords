@@ -51,38 +51,6 @@ app-admin/eselect-java
 sys-apps/baselayout-java
 
 ##
-# Pitivi is considered unstable still, needs a few unstable deps.
+# version 3 plays nicely with qt5...
 ##
-media-video/pitivi
-
-virtual/ffmpeg
-#media-video/libav
-media-video/ffmpeg
-media-libs/gnonlin
-dev-python/gst-python
-media-plugins/gst-plugins-libav
-media-libs/gstreamer-editing-services
-
-
-##
-# Blender is still unstable.
-##
-media-gfx/blender
-
-sci-libs/ldl
-dev-cpp/eigen
-sci-libs/suitesparseconfig
-
-##
-# FSArchiver unstable? 
-##
-app-backup/fsarchiver
-
-
-##
-# Android dev stuff
-##
-dev-util/android-tools
-dev-util/android-sdk-update-manager **
-dev-util/android-ndk **
-
+=dev-qt/qt-creator-3.0.1 **

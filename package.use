@@ -8,6 +8,7 @@ dev-libs/libpcre pcre16
 ##
 dev-qt/qtxml
 dev-qt/qtsql
+#not doing this causes issues with systemd.
 dev-qt/qtgui -udev
 dev-qt/qtsvg
 dev-qt/qtdbus
@@ -66,18 +67,6 @@ virtual/libgudev -static-libs
 net-misc/spice-gtk -pulseaudio gtk3
 
 ##
-# Blender needs glog to use gflags for arg parsing instead of default.
-# Also needs to specify the exact python version.
-##
-dev-cpp/glog gflags
-media-gfx/blender python_single_target_python3_3
-
-##
-# Needed for scribus for pdfediting
-##
-app-text/ghostscript-gpl cups
-
-##
 # Can't statically link stuff that's naturally dynamically linked. Still TBD...
 ##
 #sys-apps/lshw -gtk
@@ -107,3 +96,8 @@ media-libs/mesa gbm gles1 gles2 llvm-shared-libs opencl openvg r600-llvm-compile
 ##
 app-doc/doxygen dot
 media-libs/gd jpeg truetype png fontconfig
+
+##
+# I love the idea of pidgin voice and video, but it causes annoyance with google voice for now. 
+##
+net-im/pidgin -* gtk networkmanager nls zeroconf spell
