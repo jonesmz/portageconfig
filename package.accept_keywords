@@ -59,3 +59,8 @@ sys-apps/baselayout-java
 # Needed for fastboot.
 ##
 dev-util/android-tools
+
+##
+# Btrfs snapshot management
+##
+app-backup/snapper
