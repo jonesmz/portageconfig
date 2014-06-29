@@ -8,7 +8,9 @@ dev-libs/libpcre pcre16
 ##
 dev-qt/qtxml
 dev-qt/qtsql
-#not doing this causes issues with systemd.
+##
+# Not doing this causes issues with systemd.
+##
 dev-qt/qtgui -udev
 dev-qt/qtsvg
 dev-qt/qtdbus
@@ -17,7 +19,10 @@ dev-qt/qtcore
 dev-qt/qtscript
 dev-qt/qtquick1
 dev-qt/qtopengl
-dev-qt/qtwebkit
+##
+# Need the widgets useflag because qtwebkit:5 won't compile without it >_<
+##
+dev-qt/qtwebkit widgets
 dev-qt/qtwidgets
 dev-qt/qtnetwork
 dev-qt/qtx11extras
@@ -67,17 +72,6 @@ virtual/libgudev -static-libs
 net-misc/spice-gtk -pulseaudio gtk3
 
 ##
-# Can't statically link stuff that's naturally dynamically linked. Still TBD...
-##
-#sys-apps/lshw -gtk
-#net-misc/openvpn -plugins -pam
-#app-emulation/qemu static-user static-softmmu -alsa -pulseaudio -gtk -spice -opengl
-#app-emulation/qemu -static
-#app-crypt/pinentry -gtk -qt4
-#sys-libs/ncurses -gpm
-
-
-##
 # Gnome 3.10 requires these for unexplained reasons >_<
 ##
 net-dialup/ppp ipv6
@@ -101,3 +95,8 @@ media-libs/gd jpeg truetype png fontconfig
 # I love the idea of pidgin voice and video, but it causes annoyance with google voice for now. 
 ##
 net-im/pidgin -* gtk networkmanager nls zeroconf spell
+
+##
+# Still haven't figured out how to get rid of cups...
+##
+app-text/ghostscript-gpl cups
