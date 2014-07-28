@@ -65,3 +65,9 @@ dev-util/android-tools
 # Btrfs snapshot management
 ##
 app-backup/snapper
+
+##
+# Spotify for musical ear-fun.
+##
+media-sound/spotify
+gnome-extra/gnome-integration-spotify
