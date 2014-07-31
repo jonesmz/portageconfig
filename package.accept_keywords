@@ -71,3 +71,9 @@ app-backup/snapper
 ##
 media-sound/spotify
 gnome-extra/gnome-integration-spotify
+
+##
+# Drupal and one of it's deps is unstable..?
+##
+www-apps/drupal
+dev-php/pecl-uploadprogress

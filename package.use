@@ -101,3 +101,9 @@ net-im/pidgin -* gtk networkmanager nls zeroconf spell
 ##
 app-text/ghostscript-gpl cups
 
+##
+# Mysql is evil!
+##
+www-apps/drupal -mysql
+dev-lang/php apache2 gd pdo
+app-admin/eselect-php apache2
