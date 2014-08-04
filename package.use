@@ -77,13 +77,11 @@ net-misc/spice-gtk -pulseaudio gtk3
 net-dialup/ppp ipv6
 gnome-base/gnome-control-center gnome-online-accounts
 
-
 ##
 # Need gbm for radion graphics card support
 # All the other stuff is to just provide the various APIs.
 ##
 media-libs/mesa gbm gles1 gles2 llvm-shared-libs opencl openvg r600-llvm-compiler vdpau wayland xa xvmc
-
 
 ##
 # Doxygen is rather unimpressive without DOT support
@@ -107,3 +105,11 @@ app-text/ghostscript-gpl cups
 www-apps/drupal -mysql
 dev-lang/php apache2 gd pdo
 app-admin/eselect-php apache2
+
+##
+# QEMU arm emulation support.
+##
+dev-libs/glib static-libs
+sys-libs/zlib static-libs
+app-emulation/qemu static-user
+

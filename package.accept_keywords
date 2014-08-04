@@ -54,7 +54,7 @@ sys-apps/baselayout-java
 ##
 # version 3 plays nicely with qt5...
 ##
-=dev-qt/qt-creator-3.0.1 **
+dev-qt/qt-creator
 
 ##
 # Needed for fastboot.
