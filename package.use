@@ -27,7 +27,7 @@ dev-qt/qtwidgets
 dev-qt/qtnetwork
 dev-qt/qtx11extras
 dev-qt/qtconcurrent
-dev-qt/qtmultimedia
+dev-qt/qtmultimedia -alsa
 dev-qt/qtserialport
 dev-qt/qtwebsockets
 dev-qt/qtdeclarative
