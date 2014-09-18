@@ -32,6 +32,30 @@ dev-qt/qtquickcontrols:5
 dev-qt/qtgraphicaleffects:5
 
 ##
+# Want to try out lxqt :-)
+##
+x11-libs/libfm
+x11-misc/obconf-qt
+x11-misc/pcmanfm-qt
+razorqt-base/libqtxdg
+
+lxqt-base/liblxqt
+lxqt-base/lxqt-meta
+lxqt-base/lxqt-about
+lxqt-base/lxqt-panel
+lxqt-base/libsysstat
+lxqt-base/lxqt-common
+lxqt-base/lxqt-runner
+lxqt-base/lxqt-config
+lxqt-base/lxqt-session
+lxqt-base/liblxqt-mount
+lxqt-base/lxqt-qtplugin
+lxqt-base/lxqt-policykit
+lxqt-base/lxqt-globalkeys
+lxqt-base/lxqt-config-randr
+lxqt-base/lxqt-notificationd
+
+##
 # ...and uses some unstable deps.
 ##
 x11-libs/xpyb
