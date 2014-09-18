@@ -4,6 +4,11 @@
 www-client/google-chrome
 
 ##
+# Deps for Qt5
+##
+media-libs/harfbuzz
+
+##
 # Qt5 is still considered unstable...
 ##
 dev-qt/qtxml:5
@@ -32,9 +37,9 @@ dev-qt/qtquickcontrols:5
 dev-qt/qtgraphicaleffects:5
 
 ##
-# Want to try out lxqt :-)
+# Want to try out lxqt
 ##
-x11-libs/libfm
+#x11-libs/libfm
 x11-misc/obconf-qt
 x11-misc/pcmanfm-qt
 razorqt-base/libqtxdg
