@@ -72,12 +72,6 @@ virtual/libgudev -static-libs
 net-misc/spice-gtk -pulseaudio gtk3
 
 ##
-# Gnome 3.10 requires these for unexplained reasons >_<
-##
-net-dialup/ppp ipv6
-gnome-base/gnome-control-center gnome-online-accounts
-
-##
 # Need gbm for radion graphics card support
 # All the other stuff is to just provide the various APIs.
 ##
@@ -111,5 +105,10 @@ app-admin/eselect-php apache2
 ##
 dev-libs/glib static-libs
 sys-libs/zlib static-libs
+sys-apps/attr static-libs
 app-emulation/qemu static-user
 
+##
+# Unneeded cruft
+##
+net-misc/networkmanager -modemmanager -ppp
