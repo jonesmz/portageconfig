@@ -107,8 +107,3 @@ dev-libs/glib static-libs
 sys-libs/zlib static-libs
 sys-apps/attr static-libs
 app-emulation/qemu static-user
-
-##
-# Unneeded cruft
-##
-net-misc/networkmanager -modemmanager -ppp
