@@ -106,3 +106,8 @@ gnome-extra/gnome-integration-spotify
 ##
 www-apps/drupal
 dev-php/pecl-uploadprogress
+
+##
+# New versions of Ceph are unstable still
+##
+sys-cluster/ceph
