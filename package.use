@@ -37,6 +37,11 @@ dev-qt/qtquickcontrols
 dev-qt/qtgraphicaleffects
 
 ##
+# Nifty options for the qt-creator ide.
+##
+dev-qt/qt-creator android autotools clang cmake 
+
+##
 # No sense in having firefox and thunderbird build their own copies of libraries...
 #
 # The Thunderbird Conversations plugin doesn't work right if you use system-icu....
