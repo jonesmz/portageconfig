@@ -59,6 +59,8 @@ lxqt-base/lxqt-policykit
 lxqt-base/lxqt-globalkeys
 lxqt-base/lxqt-config-randr
 lxqt-base/lxqt-notificationd
+net-misc/lxqt-openssh-askpass
+lxqt-base/lxqt-powermanagement
 
 ##
 # ...and uses some unstable deps.
@@ -111,3 +113,11 @@ dev-php/pecl-uploadprogress
 # New versions of Ceph are unstable still
 ##
 sys-cluster/ceph
+
+
+##
+# Awesome terminal
+##
+dev-libs/efl
+media-libs/elementary
+x11-terms/terminology

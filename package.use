@@ -39,7 +39,7 @@ dev-qt/qtgraphicaleffects
 ##
 # Nifty options for the qt-creator ide.
 ##
-dev-qt/qt-creator android autotools clang cmake 
+dev-qt/qt-creator android autotools clang cmake valgrind
 
 ##
 # No sense in having firefox and thunderbird build their own copies of libraries...
@@ -83,9 +83,9 @@ net-misc/spice-gtk -pulseaudio gtk3
 media-libs/mesa gbm gles1 gles2 llvm-shared-libs opencl openvg r600-llvm-compiler vdpau wayland xa xvmc
 
 ##
-# Doxygen is rather unimpressive without DOT support
+# Doxygen is rather unimpressive without DOT support. Don't need the wizard.
 ##
-app-doc/doxygen dot
+app-doc/doxygen dot -qt4
 media-libs/gd jpeg truetype png fontconfig
 
 ##
@@ -97,6 +97,7 @@ net-im/pidgin -* gtk networkmanager nls zeroconf spell
 # Still haven't figured out how to get rid of cups...
 ##
 app-text/ghostscript-gpl cups
+net-print/cups -X
 
 ##
 # Mysql is evil!
@@ -112,3 +113,37 @@ dev-libs/glib static-libs
 sys-libs/zlib static-libs
 sys-apps/attr static-libs
 app-emulation/qemu static-user
+
+##
+# Turning off the GUI of lshw, it's useless.
+##
+sys-apps/lshw -gtk
+
+##
+# Tweaking enlightenment apps
+##
+dev-libs/efl          -sdl
+media-libs/elementary -sdl -X
+
+##
+# Don't need no stinkin distcc monitor gui...
+##
+sys-devel/distcc -gtk
+
+##
+# 7zip is awesome, but only for windows. File-roller handles gui stuff for us.
+##
+app-arch/p7zip -wxwidgets
+
+##
+# No need for zenmap...
+##
+net-analyzer/nmap -gtk -lua
+
+##
+# Libreoffice doesn't need to be quite so heavy weight.
+##
+app-office/libreoffice -dbus -gnome -gstreamer -opengl -postgres -vba -webdav
+
+
+x11-misc/lightdm -introspection -qt4 gtk
