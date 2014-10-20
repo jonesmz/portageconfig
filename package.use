@@ -102,7 +102,7 @@ net-print/cups -X
 ##
 # Mysql is evil!
 ##
-www-apps/drupal -mysql
+www-apps/drupal -mysql postgres
 dev-lang/php apache2 gd pdo
 app-admin/eselect-php apache2
 
