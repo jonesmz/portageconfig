@@ -145,5 +145,8 @@ net-analyzer/nmap -gtk -lua
 ##
 app-office/libreoffice -dbus -gnome -gstreamer -opengl -postgres -vba -webdav
 
+##
+# Need tty-helpers useflag to support acupsd
+##
+sys-apps/util-linux tty-helpers
 
-x11-misc/lightdm -introspection -qt4 gtk
