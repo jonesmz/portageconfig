@@ -37,40 +37,6 @@ dev-qt/qtquickcontrols:5
 dev-qt/qtgraphicaleffects:5
 
 ##
-# Want to try out lxqt
-##
-#x11-libs/libfm
-x11-misc/obconf-qt
-x11-misc/pcmanfm-qt
-razorqt-base/libqtxdg
-
-lxqt-base/liblxqt
-lxqt-base/lxqt-meta
-lxqt-base/lxqt-about
-lxqt-base/lxqt-panel
-lxqt-base/libsysstat
-lxqt-base/lxqt-common
-lxqt-base/lxqt-runner
-lxqt-base/lxqt-config
-lxqt-base/lxqt-session
-lxqt-base/liblxqt-mount
-lxqt-base/lxqt-qtplugin
-lxqt-base/lxqt-policykit
-lxqt-base/lxqt-globalkeys
-lxqt-base/lxqt-config-randr
-lxqt-base/lxqt-notificationd
-net-misc/lxqt-openssh-askpass
-lxqt-base/lxqt-powermanagement
-
-##
-# ...and uses some unstable deps.
-##
-x11-libs/xpyb
-x11-libs/libxcb
-x11-proto/xcb-proto
-x11-libs/libxkbcommon
-
-##
 # No Java6 crap for us.
 ##
 virtual/jdk:1.7
@@ -78,9 +44,6 @@ virtual/jre:1.7
 dev-java/icedtea:7
 dev-java/icedtea-bin:7
 dev-java/icedtea-web:7
-dev-java/java-config
-app-admin/eselect-java
-sys-apps/baselayout-java
 
 ##
 # version 3 plays nicely with qt5...
@@ -98,12 +61,6 @@ dev-util/android-tools
 app-backup/snapper
 
 ##
-# Spotify for musical ear-fun.
-##
-media-sound/spotify
-gnome-extra/gnome-integration-spotify
-
-##
 # Drupal and one of it's deps is unstable..?
 ##
 www-apps/drupal
@@ -113,7 +70,6 @@ dev-php/pecl-uploadprogress
 # New versions of Ceph are unstable still
 ##
 sys-cluster/ceph
-
 
 ##
 # Awesome terminal
