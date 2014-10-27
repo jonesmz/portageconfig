@@ -131,11 +131,6 @@ media-libs/elementary -sdl -X
 sys-devel/distcc -gtk
 
 ##
-# 7zip is awesome, but only for windows. File-roller handles gui stuff for us.
-##
-app-arch/p7zip -wxwidgets
-
-##
 # No need for zenmap...
 ##
 net-analyzer/nmap -gtk -lua
@@ -150,3 +145,7 @@ app-office/libreoffice -dbus -gnome -gstreamer -opengl -postgres -vba -webdav
 ##
 sys-apps/util-linux tty-helpers
 
+##
+# Not doing this causes lvm2 to be installed
+##
+media-tv/xbmc -udisks
