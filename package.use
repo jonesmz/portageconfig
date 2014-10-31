@@ -47,8 +47,8 @@ dev-qt/qt-creator android autotools clang cmake valgrind
 # The Thunderbird Conversations plugin doesn't work right if you use system-icu....
 ##
 dev-db/sqlite secure-delete
-www-client/firefox      -* pgo  webm  gstreamer  pulseaudio minimal libnotify startup-notification jit system-cairo  system-icu system-jpeg system-sqlite
-mail-client/thunderbird -* pgo -webm -gstreamer -pulseaudio minimal libnotify startup-notification jit system-cairo -system-icu system-jpeg system-sqlite
+www-client/firefox      -* pgo  webm  gstreamer  pulseaudio minimal libnotify startup-notification jit system-cairo  system-icu system-jpeg system-sqlite system-libvpx hardened
+mail-client/thunderbird -* pgo -webm -gstreamer -pulseaudio minimal libnotify startup-notification jit system-cairo -system-icu system-jpeg system-sqlite system-libvpx hardened
 
 ##
 # Sadly, Java wants a lot of bullshit. Here I remove unnecessary cruft.
@@ -56,7 +56,7 @@ mail-client/thunderbird -* pgo -webm -gstreamer -pulseaudio minimal libnotify st
 ##
 x11-libs/cairo X
 dev-java/icedtea     -X -alsa -nsplugin -webstart -pulseaudio -cups
-dev-java/icedtea-bin -X -alsa -nsplugin -webstart -pulseaudio -cups
+#dev-java/icedtea-bin -X -alsa -nsplugin -webstart -pulseaudio -cups
 dev-java/icedtea-web -nsplugin -webstart
 
 ##
@@ -149,3 +149,12 @@ sys-apps/util-linux tty-helpers
 # Not doing this causes lvm2 to be installed
 ##
 media-tv/xbmc -udisks
+
+##
+# Some useflag changes to enable games
+##
+dev-games/cegui ogre
+media-libs/sdl-mixer midi timidity
+x11-base/xorg-server xvfb
+games-strategy/warzone2100 videos
+games-strategy/openra tools
