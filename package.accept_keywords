@@ -82,3 +82,10 @@ dev-vcs/perforce-cli
 dev-vcs/perforce-gui
 net-wireless/bcm43xx-fwcutter
 net-wireless/broadcom-sta
+
+##
+# GAMES
+##
+dev-games/ogre
+dev-games/mygui
+games-engines/openmw

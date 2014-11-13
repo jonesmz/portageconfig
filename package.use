@@ -153,8 +153,10 @@ media-tv/xbmc -udisks
 ##
 # Some useflag changes to enable games
 ##
-dev-games/cegui ogre
-media-libs/sdl-mixer midi timidity
-x11-base/xorg-server xvfb
+dev-games/ogre             cg ois
+dev-games/mygui            ogre -opengl
+dev-games/cegui            ogre
+media-libs/sdl-mixer       midi timidity
+x11-base/xorg-server       xvfb
+games-strategy/openra      tools
 games-strategy/warzone2100 videos
-games-strategy/openra tools
