@@ -160,3 +160,12 @@ media-libs/sdl-mixer       midi timidity
 x11-base/xorg-server       xvfb
 games-strategy/openra      tools
 games-strategy/warzone2100 videos
+
+##
+# Needed for RStudio
+##
+sys-devel/gcc fortran
+dev-lang/R bash-completion doc profile lapack
+
+
+app-editors/gedit -python
