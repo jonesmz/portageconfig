@@ -172,3 +172,9 @@ app-editors/gedit -python
 
 
 sci-mathematics/rstudio server
+
+
+##
+# On the RPI, we normally disable threads, but python explicitly needs threads support for Samba.
+##
+dev-lang/python threads
