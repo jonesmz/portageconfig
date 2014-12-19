@@ -47,7 +47,7 @@ dev-qt/qt-creator android autotools clang cmake valgrind
 # The Thunderbird Conversations plugin doesn't work right if you use system-icu....
 ##
 dev-db/sqlite secure-delete
-www-client/firefox      -* pgo  webm  gstreamer  pulseaudio minimal libnotify startup-notification jit system-cairo  system-icu system-jpeg system-sqlite system-libvpx hardened
+www-client/firefox      -* pgo  webm  gstreamer  pulseaudio minimal libnotify startup-notification jit system-cairo -system-icu system-jpeg system-sqlite system-libvpx hardened
 mail-client/thunderbird -* pgo -webm -gstreamer -pulseaudio minimal libnotify startup-notification jit system-cairo -system-icu system-jpeg system-sqlite system-libvpx hardened
 
 ##
@@ -169,3 +169,6 @@ dev-lang/R bash-completion doc profile lapack
 
 
 app-editors/gedit -python
+
+
+sci-mathematics/rstudio server

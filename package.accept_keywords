@@ -7,6 +7,7 @@ www-client/google-chrome
 # Deps for Qt5
 ##
 media-libs/harfbuzz
+x11-libs/libxkbcommon
 
 ##
 # Qt5 is still considered unstable...
@@ -34,6 +35,7 @@ dev-qt/qtwidgets:5
 dev-qt/qtnetwork:5
 dev-qt/qtsensors:5
 dev-qt/assistant:5
+dev-qt/qtwayland:5
 dev-qt/qtx11extras:5
 dev-qt/qtwebsockets:5
 dev-qt/qtconcurrent:5
@@ -145,3 +147,67 @@ games-engines/openmw
 
 
 dev-python/lxml
+
+
+##
+# RStudio needed for CSSE 513, need newest version for server mode.
+##
+sci-mathematics/rstudio
+
+##
+# Deps of rstudio
+##
+dev-haskell/enclosed-exceptions
+dev-haskell/scientific
+dev-haskell/exceptions
+dev-haskell/blaze-html
+dev-haskell/system-filepath
+dev-haskell/connection
+dev-haskell/crypto-pubkey
+dev-haskell/juicypixels
+dev-haskell/aeson-pretty
+dev-haskell/x509-store
+dev-haskell/x509
+dev-haskell/streaming-commons
+dev-haskell/pandoc-types
+dev-haskell/crypto-pubkey-types
+dev-haskell/network-uri
+dev-haskell/rfc5051
+dev-haskell/sha
+dev-haskell/asn1-parse
+app-text/pandoc
+dev-haskell/x509-system
+dev-haskell/haddock-library
+dev-haskell/regex-pcre-builtin
+dev-haskell/conduit-extra
+dev-haskell/zip-archive
+dev-haskell/x509-validation
+dev-haskell/parsec
+dev-haskell/network
+dev-haskell/http-client
+dev-haskell/tagsoup
+dev-haskell/highlighting-kate
+dev-haskell/cipher-des
+dev-haskell/case-insensitive
+dev-haskell/hs-bibutils
+dev-haskell/texmath
+dev-libs/mathjax
+dev-haskell/attoparsec
+dev-haskell/http-client-tls
+dev-haskell/tls
+dev-haskell/yaml
+dev-haskell/deepseq-generics
+dev-lang/ghc
+dev-haskell/resourcet
+dev-haskell/text
+dev-haskell/semigroups
+dev-haskell/asn1-types
+dev-haskell/aeson
+dev-haskell/cabal
+dev-haskell/asn1-encoding
+dev-haskell/conduit
+dev-haskell/pandoc-citeproc
+dev-haskell/blaze-markup
+dev-haskell/xml-conduit
+dev-haskell/hourglass
+
