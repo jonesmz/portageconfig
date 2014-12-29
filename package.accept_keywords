@@ -135,7 +135,6 @@ x11-terms/terminology
 
 dev-vcs/perforce-cli
 dev-vcs/perforce-gui
-net-wireless/bcm43xx-fwcutter
 net-wireless/broadcom-sta
 
 ##
@@ -144,10 +143,6 @@ net-wireless/broadcom-sta
 dev-games/ogre
 dev-games/mygui
 games-engines/openmw
-
-
-dev-python/lxml
-
 
 ##
 # RStudio needed for CSSE 513, need newest version for server mode.
@@ -210,4 +205,4 @@ dev-haskell/pandoc-citeproc
 dev-haskell/blaze-markup
 dev-haskell/xml-conduit
 dev-haskell/hourglass
-
+dev-haskell/network
