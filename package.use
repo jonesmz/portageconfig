@@ -179,8 +179,8 @@ app-text/pandoc -https -network-uri
 ##
 # On the RPI, we normally disable threads, but python explicitly needs threads support for Samba.
 ##
-dev-lang/python threads
+dev-libs/boost    threads
+dev-lang/python   threads
 dev-libs/beecrypt threads
-
 
 
