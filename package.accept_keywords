@@ -129,7 +129,8 @@ sys-cluster/ceph
 ##
 # Awesome terminal
 ##
-dev-libs/efl
+=dev-libs/efl-1.11.2
+dev-libs/libclc
 media-libs/elementary
 x11-terms/terminology
 
