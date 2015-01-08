@@ -149,3 +149,8 @@ games-engines/openmw
 # Accept debug edit for use on ARM
 ##
 dev-util/debugedit **
+
+##
+# Accept raspi kernel for raspi
+##
+sys-kernel/raspberrypi-sources
