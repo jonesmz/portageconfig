@@ -153,4 +153,4 @@ dev-util/debugedit **
 ##
 # Accept raspi kernel for raspi
 ##
-sys-kernel/raspberrypi-sources
+sys-kernel/raspberrypi-sources **
