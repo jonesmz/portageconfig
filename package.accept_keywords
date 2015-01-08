@@ -144,3 +144,8 @@ net-wireless/broadcom-sta
 dev-games/ogre
 dev-games/mygui
 games-engines/openmw
+
+##
+# Accept debug edit for use on ARM
+##
+dev-util/debugedit **
