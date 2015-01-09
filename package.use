@@ -47,7 +47,7 @@ dev-qt/qt-creator android autotools clang cmake valgrind
 # The Thunderbird Conversations plugin doesn't work right if you use system-icu....
 ##
 dev-db/sqlite secure-delete
-www-client/firefox      -* pgo  webm  gstreamer  pulseaudio minimal libnotify startup-notification jit system-cairo  system-icu system-jpeg system-sqlite system-libvpx hardened
+www-client/firefox      -* pgo  webm  gstreamer  pulseaudio minimal libnotify startup-notification jit system-cairo -system-icu system-jpeg system-sqlite system-libvpx hardened
 mail-client/thunderbird -* pgo -webm -gstreamer -pulseaudio minimal libnotify startup-notification jit system-cairo -system-icu system-jpeg system-sqlite system-libvpx hardened
 
 ##
@@ -107,12 +107,14 @@ dev-lang/php apache2 gd pdo
 app-admin/eselect-php apache2
 
 ##
-# QEMU arm emulation support.
+# QEMU arm emulation support, and more.
 ##
 dev-libs/glib static-libs
 sys-libs/zlib static-libs
 sys-apps/attr static-libs
-app-emulation/qemu static-user
+app-emulation/qemu static-user usbredir
+net-misc/spice-gtk usbredir
+
 
 ##
 # Turning off the GUI of lshw, it's useless.
@@ -160,3 +162,25 @@ media-libs/sdl-mixer       midi timidity
 x11-base/xorg-server       xvfb
 games-strategy/openra      tools
 games-strategy/warzone2100 videos
+
+##
+# Needed for RStudio
+##
+sys-devel/gcc fortran
+dev-lang/R bash-completion doc profile lapack
+
+
+app-editors/gedit python
+
+
+sci-mathematics/rstudio
+app-text/pandoc -https -network-uri
+
+##
+# On the RPI, we normally disable threads, but python explicitly needs threads support for Samba.
+##
+dev-libs/boost    threads
+dev-lang/python   threads
+dev-libs/beecrypt threads
+
+
