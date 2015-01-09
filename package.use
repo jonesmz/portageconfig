@@ -183,4 +183,7 @@ dev-libs/boost    threads
 dev-lang/python   threads
 dev-libs/beecrypt threads
 
-
+##
+# No need for some features
+##
+net-dns/avahi -autoipd
