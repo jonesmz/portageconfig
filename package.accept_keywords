@@ -89,3 +89,6 @@ net-wireless/broadcom-sta
 dev-games/ogre
 dev-games/mygui
 games-engines/openmw
+
+
+dev-python/lxml
