@@ -100,11 +100,12 @@ app-text/ghostscript-gpl cups
 net-print/cups -X
 
 ##
-# Mysql is evil!
+# Mysql is evil! Drupal for dads website experiment
 ##
 www-apps/drupal -mysql postgres
-dev-lang/php apache2 gd pdo
+dev-lang/php apache2 gd pdo postgres
 app-admin/eselect-php apache2
+virtual/postgresql server
 
 ##
 # QEMU arm emulation support, and more.
