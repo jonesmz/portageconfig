@@ -101,6 +101,14 @@ dev-java/icedtea-bin:7
 dev-java/icedtea-web:7
 
 ##
+# Raspberry Pi bootstraping.
+##
+dev-java/java-config
+app-admin/eselect-java
+dev-java/oracle-jdk-bin
+sys-apps/baselayout-java
+
+##
 # version 3 plays nicely with qt5...
 ##
 dev-qt/qt-creator
