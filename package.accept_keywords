@@ -96,7 +96,7 @@ dev-qt/qtgraphicaleffects:4
 ##
 virtual/jdk:1.7
 virtual/jre:1.7
-dev-java/icedtea:7
+dev-java/icedtea:7 **
 dev-java/icedtea-bin:7
 dev-java/icedtea-web:7
 
