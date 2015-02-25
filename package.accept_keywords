@@ -100,6 +100,19 @@ dev-java/icedtea:7 **
 dev-java/icedtea-bin:7
 dev-java/icedtea-web:7
 
+dev-java/icedtea:7 **
+sys-apps/baselayout-java ~arm
+dev-java/java-config ~arm
+dev-java/javatoolkit ~arm
+dev-java/ant-core ~arm
+app-admin/eselect-java ~arm
+
+dev-java/gcj-jdk
+dev-java/ecj-gcj
+dev-java/oracle-jdk-bin **
+
+
+
 ##
 # Raspberry Pi bootstraping.
 ##
@@ -164,3 +177,15 @@ dev-util/debugedit **
 sys-kernel/raspberrypi-sources **
 
 app-admin/systemrescuecd-x86
+
+
+##
+# Various things for ARM.
+##
+gnome-extra/nm-applet ~arm
+app-arch/zoo ~arm
+app-arch/p7zip ~arm
+net-misc/networkmanager-openvpn ~arm
+app-arch/arj ~arm
+lxde-base/lxdm ~arm
+

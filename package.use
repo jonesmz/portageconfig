@@ -108,7 +108,7 @@ net-im/pidgin -* gtk networkmanager nls zeroconf spell
 # Still haven't figured out how to get rid of cups...
 ##
 app-text/ghostscript-gpl cups
-net-print/cups -X
+net-print/cups -X -usb
 
 ##
 # Mysql is evil! Drupal for dads website experiment
@@ -178,7 +178,7 @@ games-strategy/warzone2100 videos
 ##
 # Needed for RStudio
 ##
-sys-devel/gcc fortran
+sys-devel/gcc fortran awt
 dev-lang/R bash-completion doc profile lapack
 
 
