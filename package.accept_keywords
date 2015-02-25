@@ -154,3 +154,5 @@ dev-util/debugedit **
 # Accept raspi kernel for raspi
 ##
 sys-kernel/raspberrypi-sources **
+
+app-admin/systemrescuecd-x86
