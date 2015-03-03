@@ -96,30 +96,9 @@ dev-qt/qtgraphicaleffects:4
 ##
 virtual/jdk:1.7
 virtual/jre:1.7
-dev-java/icedtea:7 **
+dev-java/icedtea:7
 dev-java/icedtea-bin:7
 dev-java/icedtea-web:7
-
-dev-java/icedtea:7 **
-sys-apps/baselayout-java ~arm
-dev-java/java-config ~arm
-dev-java/javatoolkit ~arm
-dev-java/ant-core ~arm
-app-admin/eselect-java ~arm
-
-dev-java/gcj-jdk
-dev-java/ecj-gcj
-dev-java/oracle-jdk-bin **
-
-
-
-##
-# Raspberry Pi bootstraping.
-##
-dev-java/java-config
-app-admin/eselect-java
-dev-java/oracle-jdk-bin
-sys-apps/baselayout-java
 
 ##
 # version 3 plays nicely with qt5...
@@ -174,13 +153,6 @@ dev-games/mygui
 games-engines/openmw
 
 ##
-# Accept debug edit for use on ARM
-##
-dev-util/debugedit **
-
-##
 # Just useful to have systemrescuecd already downloaded.
 ##
 app-admin/systemrescuecd-x86
-
-gnome-extra/nm-applet ~arm
