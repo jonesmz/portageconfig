@@ -197,3 +197,9 @@ dev-libs/beecrypt threads
 app-office/texmaker    -qt5 qt4
 media-video/vlc        -qt5 qt4
 net-analyzer/wireshark -qt4
+
+##
+# Dependency conflict when using libav on these. Need to revisit this.
+##
+media-libs/gegl -libav
+media-video/vlc -libav
