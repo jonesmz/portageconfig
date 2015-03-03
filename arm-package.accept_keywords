@@ -1,0 +1,468 @@
+##
+# google-chrome is probably never going to be considered stable by gentoo.
+##
+www-client/google-chrome
+
+##
+# Deps for Qt5
+##
+media-libs/harfbuzz
+x11-libs/libxkbcommon
+
+##
+# Qt5 is still considered unstable...
+##
+dev-qt/qtchooser
+
+dev-qt/qdoc:5
+dev-qt/qtxml:5
+dev-qt/qtsql:5
+dev-qt/qtgui:5
+dev-qt/qtsvg:5
+dev-qt/qdbus:5
+dev-qt/qtdiag:5
+dev-qt/qtdbus:5
+dev-qt/qttest:5
+dev-qt/qtcore:5
+dev-qt/qthelp:5
+dev-qt/qtpaths:5
+dev-qt/designer:5
+dev-qt/qtscript:5
+dev-qt/qtquick1:5
+dev-qt/qtopengl:5
+dev-qt/qtwebkit:5
+dev-qt/qtwidgets:5
+dev-qt/qtnetwork:5
+dev-qt/qtsensors:5
+dev-qt/assistant:5
+dev-qt/qtwayland:5
+dev-qt/qtx11extras:5
+dev-qt/qtwebsockets:5
+dev-qt/qtconcurrent:5
+dev-qt/qtmultimedia:5
+dev-qt/qtserialport:5
+dev-qt/qtpositioning:5
+dev-qt/qtdeclarative:5
+dev-qt/qtxmlpatterns:5
+dev-qt/linguist-tools:5
+dev-qt/qttranslations:5
+dev-qt/qtimageformats:5
+dev-qt/qtprintsupport:5
+dev-qt/qtquickcontrols:5
+dev-qt/qtgraphicaleffects:5
+
+##
+# Temporarily, need to enable testing qt4, due to upstream changes to the qt5 dependencies.
+# This section will go away before too long, especially since qt4 is reaching end of life after end of 2015
+##
+dev-qt/qdoc:4
+dev-qt/qtxml:4
+dev-qt/qtsql:4
+dev-qt/qtgui:4
+dev-qt/qtsvg:4
+dev-qt/qdbus:4
+dev-qt/qtdiag:4
+dev-qt/qtdbus:4
+dev-qt/qttest:4
+dev-qt/qtcore:4
+dev-qt/qthelp:4
+dev-qt/qtpaths:4
+dev-qt/designer:4
+dev-qt/qtscript:4
+dev-qt/qtquick1:4
+dev-qt/qtopengl:4
+dev-qt/qtwebkit:4
+dev-qt/qtwidgets:4
+dev-qt/qtnetwork:4
+dev-qt/qtsensors:4
+dev-qt/assistant:4
+dev-qt/qtx11extras:4
+dev-qt/qtwebsockets:4
+dev-qt/qtconcurrent:4
+dev-qt/qtmultimedia:4
+dev-qt/qtserialport:4
+dev-qt/qtpositioning:4
+dev-qt/qtdeclarative:4
+dev-qt/qtxmlpatterns:4
+dev-qt/linguist-tools:4
+dev-qt/qttranslations:4
+dev-qt/qtimageformats:4
+dev-qt/qtprintsupport:4
+dev-qt/qtquickcontrols:4
+dev-qt/qtgraphicaleffects:4
+
+##
+# No Java6 crap for us, plus some rpi accepts.
+##
+virtual/jdk:1.7
+virtual/jre:1.7
+dev-java/icedtea:7 **
+dev-java/icedtea-bin:7
+dev-java/icedtea-web:7
+
+dev-java/icedtea:7 **
+sys-apps/baselayout-java ~arm
+dev-java/java-config ~arm
+dev-java/javatoolkit ~arm
+dev-java/ant-core ~arm
+app-admin/eselect-java ~arm
+
+dev-java/gcj-jdk
+dev-java/ecj-gcj
+dev-java/oracle-jdk-bin **
+
+
+
+##
+# Raspberry Pi bootstraping.
+##
+dev-java/java-config
+app-admin/eselect-java
+dev-java/oracle-jdk-bin
+sys-apps/baselayout-java
+
+##
+# version 3 plays nicely with qt5...
+##
+dev-qt/qt-creator
+
+##
+# Needed for fastboot.
+##
+dev-util/android-tools
+
+##
+# Btrfs snapshot management
+##
+app-backup/snapper
+
+##
+# Drupal and one of it's deps is unstable..?
+##
+www-apps/drupal
+dev-php/pecl-uploadprogress
+
+##
+# New versions of Ceph are unstable still
+##
+sys-cluster/ceph
+
+##
+# Awesome terminal
+##
+=dev-libs/efl-1.11.2
+dev-libs/libclc
+=media-libs/elementary-1.11.2
+x11-terms/terminology
+
+##
+# Perforce support for development purposes.
+##
+dev-vcs/perforce-cli
+dev-vcs/perforce-gui
+
+##
+# Wifi card support for Dell latitude e6530
+##
+net-wireless/broadcom-sta
+
+##
+# GAMES, specifically morrowind.
+##
+dev-games/ogre
+dev-games/mygui
+games-engines/openmw
+
+##
+# Accept debug edit for use on ARM
+##
+dev-util/debugedit **
+
+##
+# Just useful to have systemrescuecd already downloaded.
+##
+app-admin/systemrescuecd-x86
+
+
+##
+# Various things for ARM. This is just going to be really messy for a while while I figure out everything...........
+##
+gnome-extra/nm-applet ~arm
+app-arch/zoo ~arm
+app-arch/p7zip ~arm
+net-misc/networkmanager-openvpn ~arm
+app-arch/arj ~arm
+lxde-base/lxdm ~arm
+www-client/chromium ~arm
+app-arch/file-roller ~arm
+app-text/evince ~arm
+sys-apps/baobab ~arm
+media-gfx/gnome-screenshot ~arm
+sys-block/gparted ~arm
+gnome-extra/gnome-calculator ~arm
+
+media-tv/xbmc  ~*
+media-tv/kodi  ~*
+
+# required by media-tv/xbmc-13.2-r1[sdl]
+# required by xbmc (argument)
+=media-libs/sdl-gfx-2.0.25 ~arm
+# required by media-tv/xbmc-13.2-r1
+# required by xbmc (argument)
+=media-fonts/roboto-1.2 ~arm
+# required by media-tv/xbmc-13.2-r1[projectm]
+# required by xbmc (argument)
+=media-libs/libprojectm-2.1.0-r1 ~arm
+# required by media-tv/xbmc-13.2-r1[libav]
+# required by xbmc (argument)
+=media-video/libav-11.2 ~arm
+# required by media-tv/xbmc-13.2-r1
+# required by xbmc (argument)
+=dev-libs/tinyxml-2.6.2-r2 ~arm
+# required by media-tv/xbmc-13.2-r1[sdl]
+# required by xbmc (argument)
+=media-libs/sdl-sound-1.0.3-r1 ~arm
+
+=media-video/ffmpeg-2.5.4 ~arm
+
+=x11-terms/terminology-0.7.0 **
+
+# required by app-office/libreoffice-4.4.1.2
+# required by @desktop-applications
+# required by @arm-desktop-applications (argument)
+=dev-libs/liborcus-0.7.0 ~arm
+# required by @desktop-applications
+# required by @arm-desktop-applications (argument)
+=app-office/texmaker-4.4.1 **
+# required by app-office/libreoffice-4.4.1.2
+# required by @desktop-applications
+# required by @arm-desktop-applications (argument)
+=dev-libs/librevenge-0.0.2 ~arm
+# required by app-office/libreoffice-4.4.1.2
+# required by @desktop-applications
+# required by @arm-desktop-applications (argument)
+=dev-util/mdds-0.11.2-r1 ~arm
+# required by app-office/libreoffice-4.4.1.2
+# required by @desktop-applications
+# required by @arm-desktop-applications (argument)
+=media-fonts/libertine-5.3.0.20120702-r1 ~arm
+# required by app-office/libreoffice-4.4.1.2
+# required by @desktop-applications
+# required by @arm-desktop-applications (argument)
+=dev-cpp/libcmis-0.5.0 ~arm
+# required by media-video/vlc-2.2.0[svg]
+# required by @desktop-applications
+# required by @arm-desktop-applications (argument)
+=x11-libs/cairo-1.14.0-r1 ~arm
+# required by sys-apps/systemd-216-r3
+# required by dev-libs/efl-1.11.2[systemd]
+# required by media-libs/elementary-1.11.2
+# required by x11-terms/terminology-0.7.0
+# required by @desktop-applications
+# required by @arm-desktop-applications (argument)
+=dev-libs/glib-2.42.2 ~arm
+# required by x11-libs/gtk+-3.14.9
+# required by media-gfx/eog-3.14.3
+# required by @desktop-applications
+# required by @arm-desktop-applications (argument)
+=x11-themes/adwaita-icon-theme-3.14.1 ~arm
+# required by app-office/libreoffice-4.4.1.2
+# required by @desktop-applications
+# required by @arm-desktop-applications (argument)
+=app-text/libetonyek-0.1.1 ~arm
+# required by app-office/libreoffice-4.4.1.2
+# required by @desktop-applications
+# required by @arm-desktop-applications (argument)
+=media-libs/libpagemaker-0.0.2 ~arm
+# required by app-office/libreoffice-4.4.1.2
+# required by @desktop-applications
+# required by @arm-desktop-applications (argument)
+=app-text/libwpg-0.3.0 ~arm
+# required by app-office/libreoffice-4.4.1.2
+# required by @desktop-applications
+# required by @arm-desktop-applications (argument)
+=app-text/libmwaw-0.3.4 ~arm
+# required by media-video/vlc-2.2.0[dvd]
+# required by @desktop-applications
+# required by @arm-desktop-applications (argument)
+=media-libs/libdvdread-5.0.2 ~arm
+# required by media-gfx/gnome-screenshot-3.14.0-r1
+# required by @desktop-applications
+# required by @arm-desktop-applications (argument)
+=x11-libs/gtk+-3.14.9 ~arm
+# required by sci-mathematics/lpsolve-5.5.2.0
+# required by app-office/libreoffice-4.4.1.2
+# required by @desktop-applications
+# required by @arm-desktop-applications (argument)
+=sci-libs/colamd-2.8.0 ~arm
+# required by @desktop-applications
+# required by @arm-desktop-applications (argument)
+=app-editors/gedit-3.14.3 ~arm
+# required by app-office/libreoffice-4.4.1.2
+# required by @desktop-applications
+# required by @arm-desktop-applications (argument)
+=app-text/libmspub-0.1.2 ~arm
+# required by app-office/libreoffice-4.4.1.2
+# required by @desktop-applications
+# required by @arm-desktop-applications (argument)
+=app-office/libreoffice-l10n-4.4.1.2 ~arm
+# required by app-office/libreoffice-4.4.1.2
+# required by @desktop-applications
+# required by @arm-desktop-applications (argument)
+=app-text/mythes-1.2.4 ~arm
+# required by app-office/libreoffice-4.4.1.2
+# required by @desktop-applications
+# required by @arm-desktop-applications (argument)
+=media-libs/libcdr-0.1.1 ~arm
+# required by app-office/libreoffice-4.4.1.2
+# required by @desktop-applications
+# required by @arm-desktop-applications (argument)
+=app-text/libebook-0.1.2 ~arm
+# required by app-text/libwps-0.3.1
+# required by app-office/libreoffice-4.4.1.2
+# required by @desktop-applications
+# required by @arm-desktop-applications (argument)
+=app-text/libwpd-0.10.0-r1 ~arm
+# required by app-office/texmaker-4.4.1
+# required by @desktop-applications
+# required by @arm-desktop-applications (argument)
+=dev-qt/qtsingleapplication-2.6.1_p20130904-r2 ~arm
+# required by www-client/chromium-41.0.2272.64
+# required by @desktop-applications
+# required by @arm-desktop-applications (argument)
+=dev-libs/re2-0_p20140304 ~arm
+# required by dev-libs/efl-1.11.2[-oldlua]
+# required by media-libs/elementary-1.11.2
+# required by x11-terms/terminology-0.7.0
+# required by @desktop-applications
+# required by @arm-desktop-applications (argument)
+=dev-lang/luajit-2.0.3 ~arm
+# required by @desktop-applications
+# required by @arm-desktop-applications (argument)
+=media-gfx/eog-3.14.3 ~arm
+# required by app-office/libreoffice-4.4.1.2
+# required by @desktop-applications
+# required by @arm-desktop-applications (argument)
+=app-text/libabw-0.1.1 ~arm
+# required by sci-libs/colamd-2.8.0
+# required by sci-mathematics/lpsolve-5.5.2.0
+# required by app-office/libreoffice-4.4.1.2
+# required by @desktop-applications
+# required by @arm-desktop-applications (argument)
+=sci-libs/suitesparseconfig-4.2.1 ~arm
+# required by dev-libs/liborcus-0.7.0
+# required by app-office/libreoffice-4.4.1.2
+# required by @desktop-applications
+# required by @arm-desktop-applications (argument)
+=dev-libs/libixion-0.7.0 ~arm
+# required by @desktop-applications
+# required by @arm-desktop-applications (argument)
+=mail-client/thunderbird-31.5.0 ~arm
+# required by @desktop-applications
+# required by @arm-desktop-applications (argument)
+=x11-misc/redshift-1.10 **
+# required by app-office/libreoffice-4.4.1.2
+# required by @desktop-applications
+# required by @arm-desktop-applications (argument)
+=sys-devel/ucpp-1.3.4 ~arm
+# required by dev-qt/qtsingleapplication-2.6.1_p20130904-r2
+# required by app-office/texmaker-4.4.1
+# required by @desktop-applications
+# required by @arm-desktop-applications (argument)
+=dev-qt/qtlockedfile-2.4.1_p20130904-r1 ~arm
+# required by dev-libs/libgee-0.6.8[introspection]
+# required by lxde-base/lxsession-0.4.9.2-r3
+# required by @lxde
+# required by @selected
+# required by @world (argument)
+=dev-libs/gobject-introspection-1.42.0-r1 ~arm
+# required by @desktop-applications
+# required by @arm-desktop-applications (argument)
+=app-cdr/brasero-3.12.0 ~arm
+# required by app-office/libreoffice-4.4.1.2
+# required by @desktop-applications
+# required by @arm-desktop-applications (argument)
+=app-text/libodfgen-0.1.3 ~arm
+# required by app-office/libreoffice-4.4.1.2
+# required by @desktop-applications
+# required by @arm-desktop-applications (argument)
+=app-text/liblangtag-0.5.2 ~arm
+# required by gnome-extra/gnome-calculator-3.14.1
+# required by @desktop-applications
+# required by @arm-desktop-applications (argument)
+=x11-libs/gtksourceview-3.14.3 ~arm
+# required by app-office/texmaker-4.4.1[qt4]
+# required by @desktop-applications
+# required by @arm-desktop-applications (argument)
+=app-i18n/ibus-qt-1.3.3 **
+# required by @desktop-applications
+# required by @arm-desktop-applications (argument)
+=net-p2p/deluge-1.3.11 ~arm
+# required by app-office/libreoffice-4.4.1.2
+# required by @desktop-applications
+# required by @arm-desktop-applications (argument)
+=media-libs/glm-0.9.6.1 ~arm
+# required by app-editors/gedit-3.14.3[python]
+# required by @desktop-applications
+# required by @arm-desktop-applications (argument)
+=dev-libs/libpeas-1.12.1 ~arm
+# required by net-p2p/deluge-1.3.11[sound,gtk]
+# required by @desktop-applications
+# required by @arm-desktop-applications (argument)
+=dev-python/pygame-1.9.2_pre20120101-r2 ~arm
+# required by www-client/chromium-41.0.2272.64
+# required by @desktop-applications
+# required by @arm-desktop-applications (argument)
+=dev-libs/jsoncpp-0.6.0_rc2 ~arm
+# required by app-office/libreoffice-4.4.1.2
+# required by @desktop-applications
+# required by @arm-desktop-applications (argument)
+=app-text/libexttextcat-3.4.0 ~arm
+# required by media-gfx/eog-3.14.3
+# required by @desktop-applications
+# required by @arm-desktop-applications (argument)
+=gnome-base/gnome-desktop-3.14.2 ~arm
+# required by app-cdr/brasero-3.12.0[css]
+# required by @desktop-applications
+# required by @arm-desktop-applications (argument)
+=media-libs/libdvdcss-1.3.99 ~arm
+# required by @desktop-applications
+# required by @arm-desktop-applications (argument)
+=app-office/libreoffice-4.4.1.2 ~arm
+# required by app-office/libreoffice-4.4.1.2
+# required by @desktop-applications
+# required by @arm-desktop-applications (argument)
+=sci-mathematics/lpsolve-5.5.2.0 ~arm
+# required by app-editors/gedit-3.14.3
+# required by @desktop-applications
+# required by @arm-desktop-applications (argument)
+=x11-themes/gnome-icon-theme-symbolic-3.12.0 ~arm
+# required by @desktop-applications
+# required by @arm-desktop-applications (argument)
+=media-video/vlc-2.2.0 ~arm
+# required by dev-libs/gobject-introspection-1.42.0-r1
+# required by media-gfx/eog-3.14.3[introspection]
+# required by @desktop-applications
+# required by @arm-desktop-applications (argument)
+=dev-libs/gobject-introspection-common-1.42.0 ~arm
+# required by app-office/libreoffice-4.4.1.2
+# required by @desktop-applications
+# required by @arm-desktop-applications (argument)
+=dev-libs/hyphen-2.8.8 ~arm
+# required by app-office/libreoffice-4.4.1.2
+# required by @desktop-applications
+# required by @arm-desktop-applications (argument)
+=media-libs/libvisio-0.1.1 ~arm
+# required by sys-apps/baobab-3.14.1
+# required by @desktop-applications
+# required by @arm-desktop-applications (argument)
+=x11-themes/gnome-icon-theme-extras-3.12.0 ~arm
+# required by app-office/libreoffice-4.4.1.2
+# required by @desktop-applications
+# required by @arm-desktop-applications (argument)
+=media-libs/libfreehand-0.1.0 ~arm
+# required by app-office/libreoffice-4.4.1.2
+# required by @desktop-applications
+# required by @arm-desktop-applications (argument)
+=app-text/libwps-0.3.1 ~arm
+
