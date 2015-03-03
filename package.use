@@ -1,4 +1,14 @@
-### Useflags needed by qt5.
+##
+# Systemd doesn't need extra cruft...
+##
+sys-apps/systemd -firmware-loader
+
+sys-apps/systemd -python
+sys-apps/systemd -python_targets_python2_7 -python_targets_python3_3 -python_targets_python3_4
+sys-apps/systemd -python_single_target_python2_7 -python_single_target_python3_3 -python_single_target_python3_4
+
+##
+# Useflags needed by qt5.
 ##
 x11-libs/libxcb xkb
 dev-libs/libpcre pcre16
@@ -8,6 +18,7 @@ dev-libs/libpcre pcre16
 ##
 dev-qt/qtxml
 dev-qt/qtsql
+
 ##
 # Not doing this causes issues with systemd.
 ##
@@ -19,6 +30,7 @@ dev-qt/qtcore
 dev-qt/qtscript
 dev-qt/qtquick1
 dev-qt/qtopengl
+
 ##
 # Need the widgets useflag because qtwebkit:5 won't compile without it >_<
 ##
@@ -60,11 +72,6 @@ dev-java/icedtea     -X -alsa -nsplugin -webstart -pulseaudio -cups
 dev-java/icedtea-web -nsplugin -webstart
 
 ##
-# wireshark can only be built with one GUI toolkit at this time.
-##
-net-analyzer/wireshark -qt4
-
-##
 # Systemd doesn't have the static-libs useflag. Need to put this here to avoid conflicts
 ##
 virtual/udev     -static-libs
@@ -78,14 +85,14 @@ net-misc/spice-gtk -pulseaudio gtk3
 
 ##
 # Need gbm for radion graphics card support
-# All the other stuff is to just provide the various APIs.
+# All the other stuff is to just provide the various APIs for generic use by various machines.
 ##
 media-libs/mesa gbm gles1 gles2 llvm-shared-libs opencl openvg r600-llvm-compiler vdpau wayland xa xvmc
 
 ##
 # Doxygen is rather unimpressive without DOT support. Don't need the wizard.
 ##
-app-doc/doxygen dot -qt4
+app-doc/doxygen dot -qt4 -qt5
 media-libs/gd jpeg truetype png fontconfig
 
 ##
@@ -97,14 +104,15 @@ net-im/pidgin -* gtk networkmanager nls zeroconf spell
 # Still haven't figured out how to get rid of cups...
 ##
 app-text/ghostscript-gpl cups
-net-print/cups -X
+net-print/cups -X -usb
 
 ##
-# Mysql is evil!
+# Mysql is evil! Drupal for website experiment
 ##
 www-apps/drupal -mysql postgres
-dev-lang/php apache2 gd pdo
+dev-lang/php apache2 gd pdo postgres
 app-admin/eselect-php apache2
+virtual/postgresql server
 
 ##
 # QEMU arm emulation support, and more.
@@ -151,6 +159,7 @@ sys-apps/util-linux tty-helpers
 # Not doing this causes lvm2 to be installed
 ##
 media-tv/xbmc -udisks
+media-tv/kodi -udisks
 
 ##
 # Some useflag changes to enable games
@@ -164,20 +173,19 @@ games-strategy/openra      tools
 games-strategy/warzone2100 videos
 
 ##
-# Needed for RStudio
+# Needed for RStudio. awt is for java support though.
 ##
-sys-devel/gcc fortran
+sys-devel/gcc fortran awt
 dev-lang/R bash-completion doc profile lapack
-
-
-app-editors/gedit python
-
-
-sci-mathematics/rstudio
 app-text/pandoc -https -network-uri
 
 ##
-# On the RPI, we normally disable threads, but python explicitly needs threads support for Samba.
+# Not sure what this is for. TODO: Figure out what this is for.
+##
+app-editors/gedit python
+
+##
+# On the RPI, we normally disable threads, but some apps explicitly need threads support for the various apps that are being installed.
 ##
 dev-libs/boost    threads
 dev-lang/python   threads
@@ -187,3 +195,10 @@ dev-libs/beecrypt threads
 # No need for some features
 ##
 net-dns/avahi -autoipd
+
+##
+# We need to explicitly state which version of qt to use for texmaker
+##
+app-office/texmaker    -qt5 qt4
+media-video/vlc        -qt5 qt4
+net-analyzer/wireshark -qt4
