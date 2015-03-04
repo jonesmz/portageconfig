@@ -120,7 +120,7 @@ virtual/postgresql server
 dev-libs/glib static-libs
 sys-libs/zlib static-libs
 sys-apps/attr static-libs
-app-emulation/qemu static-user usbredir
+app-emulation/qemu static-user usbredir virtfs numa spice
 net-misc/spice-gtk usbredir
 
 
@@ -195,6 +195,7 @@ dev-libs/beecrypt threads
 # No need for some features
 ##
 net-dns/avahi -autoipd
+net-misc/networkmanager -zeroconf
 
 ##
 # We need to explicitly state which version of qt to use for texmaker
