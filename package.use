@@ -59,6 +59,7 @@ dev-qt/qt-creator android autotools clang cmake valgrind
 # The Thunderbird Conversations plugin doesn't work right if you use system-icu....
 ##
 dev-db/sqlite secure-delete
+media-libs/libvpx postproc
 www-client/firefox      -* pgo  webm  gstreamer  pulseaudio minimal libnotify startup-notification jit system-cairo -system-icu system-jpeg system-sqlite system-libvpx hardened
 mail-client/thunderbird -* pgo -webm -gstreamer -pulseaudio minimal libnotify startup-notification jit system-cairo -system-icu system-jpeg system-sqlite system-libvpx hardened
 
@@ -122,7 +123,6 @@ sys-libs/zlib static-libs
 sys-apps/attr static-libs
 app-emulation/qemu static-user usbredir virtfs numa spice
 net-misc/spice-gtk usbredir
-
 
 ##
 # Turning off the GUI of lshw, it's useless.

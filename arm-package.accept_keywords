@@ -149,6 +149,7 @@ app-arch/p7zip
 app-text/evince
 sys-apps/baobab
 sys-block/gparted
+www-client/firefox
 www-client/chromium
 app-arch/file-roller
 gnome-extra/nm-applet
@@ -157,3 +158,9 @@ media-gfx/gnome-screenshot
 gnome-extra/gnome-calculator
 net-misc/networkmanager-openvpn
 
+
+##
+# Needed for firefox > 30
+##
+dev-libs/nspr
+dev-libs/nss
