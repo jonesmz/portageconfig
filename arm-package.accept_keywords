@@ -149,6 +149,7 @@ app-arch/p7zip
 app-text/evince
 sys-apps/baobab
 sys-block/gparted
+media-video/ffmpeg
 www-client/firefox
 www-client/chromium
 app-arch/file-roller
