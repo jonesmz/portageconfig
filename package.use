@@ -209,3 +209,8 @@ net-analyzer/wireshark -qt4
 ##
 media-libs/gegl -libav
 media-video/vlc -libav
+
+##
+# Qemu barfs on the messagemerge command. Read that this useflag change can help fix it.
+##
+sys-devel/gettext -openmp
