@@ -97,6 +97,7 @@ dev-java/icedtea-web:7
 
 dev-java/gcj-jdk
 dev-java/ecj-gcj
+dev-java/ant-core
 dev-java/oracle-jdk-bin **
 
 ##
@@ -140,8 +141,6 @@ dev-util/debugedit **
 ##
 # All versions of these are unstable on ARM.
 ##
-media-tv/kodi  ~*
-
 app-arch/zoo
 app-arch/arj
 lxde-base/lxdm
@@ -159,9 +158,23 @@ media-gfx/gnome-screenshot
 gnome-extra/gnome-calculator
 net-misc/networkmanager-openvpn
 
-
 ##
 # Needed for firefox > 30
 ##
 dev-libs/nspr
 dev-libs/nss
+
+##
+# Kodi entertainment software.
+##
+media-tv/kodi  ~*
+dev-libs/tinyxml
+media-fonts/roboto
+media-video/ffmpeg
+media-libs/libprojectm
+
+
+app-cdr/brasero
+dev-python/pygame
+net-p2p/deluge
+
