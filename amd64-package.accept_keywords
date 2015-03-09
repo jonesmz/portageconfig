@@ -92,7 +92,7 @@ dev-qt/qtquickcontrols:4
 dev-qt/qtgraphicaleffects:4
 
 ##
-# No Java6 crap for us.
+# No Java6 crap for us, plus some rpi accepts.
 ##
 virtual/jdk:1.7
 virtual/jre:1.7
@@ -134,23 +134,25 @@ dev-libs/libclc
 =media-libs/elementary-1.11.2
 x11-terms/terminology
 
+##
+# Perforce support for development purposes.
+##
 dev-vcs/perforce-cli
 dev-vcs/perforce-gui
+
+##
+# Wifi card support for Dell latitude e6530
+##
 net-wireless/broadcom-sta
 
 ##
-# GAMES
+# GAMES, specifically morrowind.
 ##
 dev-games/ogre
 dev-games/mygui
 games-engines/openmw
 
 ##
-# Accept debug edit for use on ARM
+# Just useful to have systemrescuecd already downloaded.
 ##
-dev-util/debugedit **
-
-##
-# Accept raspi kernel for raspi
-##
-sys-kernel/raspberrypi-sources **
+app-admin/systemrescuecd-x86
