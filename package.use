@@ -209,3 +209,10 @@ net-analyzer/wireshark -qt4
 ##
 media-libs/gegl -libav
 media-video/vlc -libav
+
+##
+# Samba 4 experiment
+##
+app-crypt/heimdal -ssl
+net-fs/samba client smbclient
+

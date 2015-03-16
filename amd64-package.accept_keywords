@@ -156,3 +156,10 @@ games-engines/openmw
 # Just useful to have systemrescuecd already downloaded.
 ##
 app-admin/systemrescuecd-x86
+
+
+##
+# Trying out samba4
+##
+net-fs/samba
+sys-libs/ntdb
