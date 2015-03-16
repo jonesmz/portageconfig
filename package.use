@@ -59,6 +59,7 @@ dev-qt/qt-creator android autotools clang cmake valgrind
 # The Thunderbird Conversations plugin doesn't work right if you use system-icu....
 ##
 dev-db/sqlite secure-delete
+media-libs/libvpx postproc
 www-client/firefox      -* pgo  webm  gstreamer  pulseaudio minimal libnotify startup-notification jit system-cairo -system-icu system-jpeg system-sqlite system-libvpx hardened
 mail-client/thunderbird -* pgo -webm -gstreamer -pulseaudio minimal libnotify startup-notification jit system-cairo -system-icu system-jpeg system-sqlite system-libvpx hardened
 
@@ -123,7 +124,6 @@ sys-apps/attr static-libs
 app-emulation/qemu static-user usbredir virtfs numa spice
 net-misc/spice-gtk usbredir
 
-
 ##
 # Turning off the GUI of lshw, it's useless.
 ##
@@ -175,7 +175,7 @@ games-strategy/warzone2100 videos
 ##
 # Needed for RStudio. awt is for java support though.
 ##
-sys-devel/gcc fortran
+sys-devel/gcc fortran awt
 dev-lang/R bash-completion doc profile lapack
 app-text/pandoc -https -network-uri
 
@@ -202,7 +202,7 @@ net-misc/networkmanager -zeroconf
 ##
 app-office/texmaker    -qt5 qt4
 media-video/vlc        -qt5 qt4
-net-analyzer/wireshark -qt4
+net-analyzer/wireshark -qt5 qt4
 
 ##
 # Dependency conflict when using libav on these. Need to revisit this.
@@ -216,3 +216,7 @@ media-video/vlc -libav
 app-crypt/heimdal -ssl
 net-fs/samba client smbclient
 
+##
+# Qemu barfs on the messagemerge command. Read that this useflag change can help fix it.
+##
+sys-devel/gettext -openmp

@@ -97,6 +97,7 @@ dev-java/icedtea-web:7
 
 dev-java/gcj-jdk
 dev-java/ecj-gcj
+dev-java/ant-core
 dev-java/oracle-jdk-bin **
 
 ##
@@ -140,8 +141,6 @@ dev-util/debugedit **
 ##
 # All versions of these are unstable on ARM.
 ##
-media-tv/kodi  ~*
-
 app-arch/zoo
 app-arch/arj
 lxde-base/lxdm
@@ -149,6 +148,8 @@ app-arch/p7zip
 app-text/evince
 sys-apps/baobab
 sys-block/gparted
+media-video/ffmpeg
+www-client/firefox
 www-client/chromium
 app-arch/file-roller
 gnome-extra/nm-applet
@@ -156,4 +157,49 @@ mail-client/thunderbird
 media-gfx/gnome-screenshot
 gnome-extra/gnome-calculator
 net-misc/networkmanager-openvpn
+
+##
+# Needed for firefox > 30
+##
+dev-libs/nspr
+dev-libs/nss
+
+##
+# Kodi entertainment software.
+##
+media-tv/kodi  ~*
+dev-libs/tinyxml
+media-fonts/roboto
+media-video/ffmpeg
+media-libs/libprojectm
+
+
+app-cdr/brasero
+dev-python/pygame
+net-p2p/deluge
+
+##
+# Development-cli
+##
+=dev-util/uncrustify-9999 **
+# required by @development-cli
+# required by @selected
+# required by @world (argument)
+=app-text/sloccount-2.26-r3 **
+
+##
+# Development-gui
+##
+# required by @development-gui (argument)
+=dev-util/meld-3.12.3 ~arm
+# required by dev-util/cppcheck-1.68
+# required by @development-gui (argument)
+=dev-libs/tinyxml2-2.2.0 ~arm
+# required by @development-gui (argument)
+=net-analyzer/wireshark-1.12.4 ~arm
+# required by dev-qt/qt-creator-3.3.2
+# required by @development-gui (argument)
+=dev-libs/botan-1.10.5 ~arm
+# required by @development-gui (argument)
+=dev-util/cppcheck-1.68 ~arm
 
