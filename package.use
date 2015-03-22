@@ -202,7 +202,7 @@ net-misc/networkmanager -zeroconf
 ##
 app-office/texmaker    -qt5 qt4
 media-video/vlc        -qt5 qt4
-net-analyzer/wireshark -qt4
+net-analyzer/wireshark -qt5 qt4
 
 ##
 # Dependency conflict when using libav on these. Need to revisit this.
