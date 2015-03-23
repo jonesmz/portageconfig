@@ -175,7 +175,7 @@ games-strategy/warzone2100 videos
 ##
 # Needed for RStudio. awt is for java support though.
 ##
-sys-devel/gcc fortran awt
+sys-devel/gcc fortran
 dev-lang/R bash-completion doc profile lapack
 app-text/pandoc -https -network-uri
 
