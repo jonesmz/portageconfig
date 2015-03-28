@@ -132,8 +132,8 @@ sys-apps/lshw -gtk
 ##
 # Tweaking enlightenment apps
 ##
-dev-libs/efl          -sdl X
-media-libs/elementary -sdl X
+dev-libs/efl          -sdl X -xcb
+media-libs/elementary -sdl X -xcb
 
 ##
 # Don't need no stinkin distcc monitor gui...
