@@ -107,6 +107,7 @@ dev-java/java-config
 app-admin/eselect-java
 dev-java/oracle-jdk-bin
 sys-apps/baselayout-java
+dev-java/javatoolkit
 
 ##
 # version 3 plays nicely with qt5...
@@ -203,3 +204,35 @@ net-p2p/deluge
 # required by @development-gui (argument)
 =dev-util/cppcheck-1.68 ~arm
 
+
+##
+# Required for redshift, from @desktop-applications
+##
+x11-misc/redshift **
+
+##
+# Required for EOG
+##
+# required by gnome-base/gnome-desktop-3.14.2
+# required by media-gfx/eog-3.14.3
+# required by eog (argument)
+=x11-libs/gtk+-3.14.9 ~arm
+# required by x11-libs/gtk+-3.14.9
+# required by gnome-base/gnome-desktop-3.14.2
+# required by media-gfx/eog-3.14.3
+# required by eog (argument)
+=x11-themes/adwaita-icon-theme-3.14.1 ~arm
+# required by www-client/firefox-31.5.0
+# required by @desktop-applications
+# required by @selected
+# required by @world (argument)
+=dev-libs/glib-2.42.2 ~arm
+# required by media-gfx/eog-3.14.3
+# required by eog (argument)
+=dev-libs/libpeas-1.12.1-r1 ~arm
+# required by eog (argument)
+=media-gfx/eog-3.14.3 ~arm
+# required by media-gfx/eog-3.14.3
+# required by eog (argument)
+=gnome-base/gnome-desktop-3.14.2 ~arm
+dev-util/gdbus-codegen
