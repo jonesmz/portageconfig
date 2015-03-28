@@ -51,7 +51,7 @@ dev-qt/qtgraphicaleffects
 ##
 # Nifty options for the qt-creator ide.
 ##
-dev-qt/qt-creator android autotools clang cmake valgrind
+dev-qt/qt-creator android autotools clang cmake
 
 ##
 # No sense in having firefox and thunderbird build their own copies of libraries...
@@ -175,7 +175,7 @@ games-strategy/warzone2100 videos
 ##
 # Needed for RStudio. awt is for java support though.
 ##
-sys-devel/gcc fortran awt
+sys-devel/gcc fortran
 dev-lang/R bash-completion doc profile lapack
 app-text/pandoc -https -network-uri
 

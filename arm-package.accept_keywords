@@ -203,3 +203,4 @@ net-p2p/deluge
 # required by @development-gui (argument)
 =dev-util/cppcheck-1.68 ~arm
 
+dev-libs/glib
