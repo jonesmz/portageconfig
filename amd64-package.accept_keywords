@@ -130,9 +130,8 @@ sys-cluster/ceph
 # Awesome terminal
 ##
 =dev-libs/efl-1.11.2
-dev-libs/libclc
 =media-libs/elementary-1.11.2
-x11-terms/terminology
+=x11-terms/terminology-0.7.0
 
 ##
 # Perforce support for development purposes.
@@ -156,3 +155,8 @@ games-engines/openmw
 # Just useful to have systemrescuecd already downloaded.
 ##
 app-admin/systemrescuecd-x86
+
+##
+# Doing work with turnserver lately.
+##
+www-servers/turnserver
