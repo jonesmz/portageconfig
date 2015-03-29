@@ -178,6 +178,7 @@ lxqt-base/lxqt-session
 lxqt-base/lxqt-qtplugin
 lxqt-base/lxqt-policykit
 lxqt-base/lxqt-globalkeys
+lxqt-base/lxqt-config-randr
 lxqt-base/lxqt-notificationd
 
 kde-frameworks/kf-env
