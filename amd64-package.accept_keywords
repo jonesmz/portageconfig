@@ -157,12 +157,6 @@ games-engines/openmw
 app-admin/systemrescuecd-x86
 
 ##
-# Trying out samba4
-##
-net-fs/samba
-sys-libs/ntdb
-
-##
 # Doing work with turnserver lately.
 ##
 www-servers/turnserver
