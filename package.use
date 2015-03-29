@@ -220,3 +220,9 @@ net-fs/samba client smbclient
 # Qemu barfs on the messagemerge command. Read that this useflag change can help fix it.
 ##
 sys-devel/gettext -openmp
+
+##
+# Need for lxqt
+##
+x11-misc/sddm -upower
+lxqt-base/lxqt-meta -policykit sddm
