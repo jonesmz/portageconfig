@@ -157,6 +157,43 @@ games-engines/openmw
 app-admin/systemrescuecd-x86
 
 ##
+# Trying out samba4
+##
+net-fs/samba
+sys-libs/ntdb
+
+##
 # Doing work with turnserver lately.
 ##
 www-servers/turnserver
+
+##
+# LXQT is the successor to LXDE. It seems mature enough to use regularly.
+##
+
+lxqt-base/liblxqt
+lxqt-base/liblxqt-mount
+
+lxqt-base/lxqt-meta
+lxqt-base/lxqt-about
+lxqt-base/lxqt-panel
+lxqt-base/lxqt-runner
+lxqt-base/lxqt-common
+lxqt-base/lxqt-config
+lxqt-base/lxqt-session
+lxqt-base/lxqt-qtplugin
+lxqt-base/lxqt-policykit
+lxqt-base/lxqt-globalkeys
+lxqt-base/lxqt-config-randr
+lxqt-base/lxqt-notificationd
+
+kde-frameworks/kf-env
+kde-frameworks/kguiaddons
+kde-frameworks/kwindowsystem
+
+x11-misc/sddm
+x11-misc/obconf-qt
+x11-misc/pcmanfm-qt
+
+dev-libs/libqtxdg
+dev-libs/extra-cmake-modules
