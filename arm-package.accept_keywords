@@ -173,6 +173,7 @@ dev-libs/tinyxml
 media-fonts/roboto
 media-video/ffmpeg
 media-libs/libprojectm
+media-libs/libsdl2
 
 
 app-cdr/brasero
@@ -260,4 +261,190 @@ media-video/vlc
 # required by @selected
 # required by @world (argument)
 =media-libs/libdvdnav-5.0.3 ~arm
+
+
+##
+# Terminology
+##
+# required by x11-terms/terminology-0.8.0
+# required by terminology (argument)
+=media-libs/elementary-1.13.1 ~arm
+# required by dev-libs/efl-1.13.1[-oldlua]
+# required by x11-terms/terminology-0.8.0
+# required by terminology (argument)
+=dev-lang/luajit-2.0.3-r1 ~arm
+# required by x11-terms/terminology-0.8.0
+# required by terminology (argument)
+=dev-libs/efl-1.13.1 ~arm
+
+##
+# texmaker
+##
+=app-office/texmaker-4.4.1 **
+# required by app-office/texmaker-4.4.1[qt4]
+# required by @desktop-applications
+# required by @selected
+# required by @world (argument)
+=app-i18n/ibus-qt-1.3.3 **
+# required by dev-qt/qtsingleapplication-2.6.1_p20130904-r2
+# required by app-office/texmaker-4.4.1
+# required by @desktop-applications
+# required by @selected
+# required by @world (argument)
+=dev-qt/qtlockedfile-2.4.1_p20130904-r1 ~arm
+# required by app-office/texmaker-4.4.1
+# required by @desktop-applications
+# required by @selected
+# required by @world (argument)
+=dev-qt/qtsingleapplication-2.6.1_p20130904-r2 ~arm
+
+##
+# Needed for Evince
+##
+# required by app-text/evince-3.14.2-r1
+# required by app-text/evince (argument)
+=x11-themes/gnome-icon-theme-symbolic-3.12.0 ~arm
+
+##
+# Needed for Baobab
+##
+# required by sys-apps/baobab-3.14.1
+# required by baobab (argument)
+=x11-themes/gnome-icon-theme-extras-3.12.0 ~arm
+
+##
+# Needed for gedit
+##
+# required by app-editors/gedit (argument)
+=app-editors/gedit-3.14.3 ~arm
+# required by gnome-extra/gnome-calculator-3.14.1
+# required by @desktop-applications
+# required by @selected
+# required by @world (argument)
+=x11-libs/gtksourceview-3.14.3 ~arm
+# required by dev-libs/gobject-introspection-1.42.0-r1
+# required by x11-libs/gtksourceview-3.14.3[introspection]
+# required by app-editors/gedit-3.14.3
+# required by @desktop-applications
+# required by @selected
+# required by @world (argument)
+=dev-libs/gobject-introspection-common-1.42.0 ~arm
+# required by gnome-base/gconf-3.2.6-r3[introspection]
+# required by x11-misc/notification-daemon-0.5.0
+# required by virtual/notification-daemon-0[-gnome]
+# required by x11-libs/libnotify-0.7.5-r1
+# required by app-arch/file-roller-3.14.2
+# required by @desktop-applications
+# required by @selected
+# required by @world (argument)
+=dev-libs/gobject-introspection-1.42.0-r1 ~arm
+
+
+##
+# Needed for libreoffice
+##
+# required by app-office/libreoffice-4.4.1.2
+# required by app-office/libreoffice (argument)
+=dev-cpp/libcmis-0.5.0 ~arm
+# required by app-office/libreoffice-4.4.1.2
+# required by app-office/libreoffice (argument)
+=sci-mathematics/lpsolve-5.5.2.0 ~arm
+# required by app-office/libreoffice-4.4.1.2
+# required by app-office/libreoffice (argument)
+=dev-libs/librevenge-0.0.2 ~arm
+# required by app-office/libreoffice-4.4.1.2
+# required by app-office/libreoffice (argument)
+=app-text/libodfgen-0.1.3 ~arm
+# required by app-office/libreoffice-4.4.1.2
+# required by app-office/libreoffice (argument)
+=dev-libs/liborcus-0.7.0 ~arm
+# required by app-office/libreoffice-4.4.1.2
+# required by app-office/libreoffice (argument)
+=media-libs/libpagemaker-0.0.2 ~arm
+# required by app-office/libreoffice-4.4.1.2
+# required by app-office/libreoffice (argument)
+=app-text/libwps-0.3.1 ~arm
+# required by app-office/libreoffice-4.4.1.2
+# required by app-office/libreoffice (argument)
+=app-text/libabw-0.1.1 ~arm
+# required by app-office/libreoffice-4.4.1.2
+# required by app-office/libreoffice (argument)
+=app-text/libetonyek-0.1.1 ~arm
+# required by app-office/libreoffice-4.4.1.2
+# required by app-office/libreoffice (argument)
+=media-libs/libfreehand-0.1.0 ~arm
+# required by dev-libs/liborcus-0.7.0
+# required by app-office/libreoffice-4.4.1.2
+# required by app-office/libreoffice (argument)
+=dev-libs/libixion-0.7.0 ~arm
+# required by app-office/libreoffice-4.4.1.2
+# required by app-office/libreoffice (argument)
+=media-libs/libvisio-0.1.1 ~arm
+# required by app-office/libreoffice-4.4.1.2
+# required by app-office/libreoffice (argument)
+=app-text/libmwaw-0.3.4 ~arm
+# required by app-office/libreoffice-4.4.1.2
+# required by app-office/libreoffice (argument)
+=app-text/libebook-0.1.2 ~arm
+# required by app-office/libreoffice-4.4.1.2
+# required by app-office/libreoffice (argument)
+=media-libs/glm-0.9.6.1 ~arm
+# required by sci-mathematics/lpsolve-5.5.2.0
+# required by app-office/libreoffice-4.4.1.2
+# required by app-office/libreoffice (argument)
+=sci-libs/colamd-2.8.0 ~arm
+# required by app-office/libreoffice-4.4.1.2
+# required by app-office/libreoffice (argument)
+=media-fonts/libertine-5.3.0.20120702-r1 ~arm
+# required by sci-libs/colamd-2.8.0
+# required by sci-mathematics/lpsolve-5.5.2.0
+# required by app-office/libreoffice-4.4.1.2
+# required by app-office/libreoffice (argument)
+=sci-libs/suitesparseconfig-4.2.1 ~arm
+# required by app-office/libreoffice-4.4.1.2
+# required by app-office/libreoffice (argument)
+=sys-devel/ucpp-1.3.4 ~arm
+# required by app-office/libreoffice-4.4.1.2
+# required by app-office/libreoffice (argument)
+=app-office/libreoffice-l10n-4.4.1.2 ~arm
+# required by app-office/libreoffice-4.4.1.2
+# required by app-office/libreoffice (argument)
+=app-text/mythes-1.2.4 ~arm
+# required by app-office/libreoffice-4.4.1.2
+# required by app-office/libreoffice (argument)
+=app-text/libexttextcat-3.4.0 ~arm
+# required by app-office/libreoffice-4.4.1.2
+# required by app-office/libreoffice (argument)
+=app-text/liblangtag-0.5.2 ~arm
+# required by app-office/libreoffice-4.4.1.2
+# required by app-office/libreoffice (argument)
+=app-text/libmspub-0.1.2 ~arm
+# required by app-office/libreoffice-4.4.1.2
+# required by app-office/libreoffice (argument)
+=media-libs/libcdr-0.1.1 ~arm
+# required by app-office/libreoffice-4.4.1.2
+# required by app-office/libreoffice (argument)
+=dev-util/mdds-0.11.2-r1 ~arm
+# required by app-office/libreoffice-4.4.1.2
+# required by app-office/libreoffice (argument)
+=app-text/libwpg-0.3.0 ~arm
+# required by app-office/libreoffice-4.4.1.2
+# required by app-office/libreoffice (argument)
+=dev-libs/hyphen-2.8.8 ~arm
+# required by app-text/libwps-0.3.1
+# required by app-office/libreoffice-4.4.1.2
+# required by app-office/libreoffice (argument)
+=app-text/libwpd-0.10.0-r1 ~arm
+# required by app-office/libreoffice (argument)
+=app-office/libreoffice-4.4.1.2 ~arm
+
+##
+# Needed for chromium
+##
+# required by www-client/chromium-42.0.2311.60
+# required by chromium (argument)
+=dev-libs/jsoncpp-0.6.0_rc2 ~arm
+# required by www-client/chromium-42.0.2311.60
+# required by chromium (argument)
+=dev-libs/re2-0_p20140304 ~arm
 
