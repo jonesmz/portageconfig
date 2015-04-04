@@ -4,12 +4,6 @@
 www-client/google-chrome
 
 ##
-# Deps for Qt5
-##
-media-libs/harfbuzz
-x11-libs/libxkbcommon
-
-##
 # Qt5 is still considered unstable...
 ##
 dev-qt/qtchooser
