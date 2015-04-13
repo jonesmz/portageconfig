@@ -178,10 +178,10 @@ lxqt-base/lxqt-notificationd
 kde-frameworks/kf-env
 kde-frameworks/kguiaddons
 kde-frameworks/kwindowsystem
+kde-frameworks/extra-cmake-modules
 
 x11-misc/sddm
 x11-misc/obconf-qt
 x11-misc/pcmanfm-qt
 
 dev-libs/libqtxdg
-dev-libs/extra-cmake-modules
