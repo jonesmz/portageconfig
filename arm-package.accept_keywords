@@ -500,3 +500,16 @@ x11-misc/pcmanfm-qt
 dev-libs/libqtxdg
 dev-libs/extra-cmake-modules
 
+# required by lxqt-base/lxqt-meta-0.9.0-r2[icons,oxygen]
+# required by @lxqt
+# required by @selected
+# required by @world (argument)
+=kde-base/oxygen-icons-4.14.3 ~arm
+# required by kde-frameworks/kguiaddons-5.9.0
+# required by lxqt-base/lxqt-panel-0.9.0
+# required by lxqt-base/lxqt-meta-0.9.0-r2
+# required by @lxqt
+# required by @selected
+# required by @world (argument)
+=kde-frameworks/extra-cmake-modules-5.9.0 ~arm
+
