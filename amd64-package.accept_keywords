@@ -46,46 +46,6 @@ dev-qt/qtquickcontrols:5
 dev-qt/qtgraphicaleffects:5
 
 ##
-# Temporarily, need to enable testing qt4, due to upstream changes to the qt5 dependencies.
-# This section will go away before too long, especially since qt4 is reaching end of life after end of 2015
-##
-dev-qt/qdoc:4
-dev-qt/qtxml:4
-dev-qt/qtsql:4
-dev-qt/qtgui:4
-dev-qt/qtsvg:4
-dev-qt/qdbus:4
-dev-qt/qtdiag:4
-dev-qt/qtdbus:4
-dev-qt/qttest:4
-dev-qt/qtcore:4
-dev-qt/qthelp:4
-dev-qt/qtpaths:4
-dev-qt/designer:4
-dev-qt/qtscript:4
-dev-qt/qtquick1:4
-dev-qt/qtopengl:4
-dev-qt/qtwebkit:4
-dev-qt/qtwidgets:4
-dev-qt/qtnetwork:4
-dev-qt/qtsensors:4
-dev-qt/assistant:4
-dev-qt/qtx11extras:4
-dev-qt/qtwebsockets:4
-dev-qt/qtconcurrent:4
-dev-qt/qtmultimedia:4
-dev-qt/qtserialport:4
-dev-qt/qtpositioning:4
-dev-qt/qtdeclarative:4
-dev-qt/qtxmlpatterns:4
-dev-qt/linguist-tools:4
-dev-qt/qttranslations:4
-dev-qt/qtimageformats:4
-dev-qt/qtprintsupport:4
-dev-qt/qtquickcontrols:4
-dev-qt/qtgraphicaleffects:4
-
-##
 # No Java6 crap for us, plus some rpi accepts.
 ##
 virtual/jdk:1.7
