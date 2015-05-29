@@ -60,8 +60,8 @@ dev-qt/qt-creator android autotools clang cmake
 ##
 dev-db/sqlite secure-delete
 media-libs/libvpx postproc
-www-client/firefox      -* pgo  webm  gstreamer  pulseaudio minimal libnotify startup-notification jit system-cairo -system-icu system-jpeg system-sqlite system-libvpx hardened
-mail-client/thunderbird -* pgo -webm -gstreamer -pulseaudio minimal libnotify startup-notification jit system-cairo -system-icu system-jpeg system-sqlite system-libvpx hardened
+www-client/firefox      -* pgo  webm  gstreamer  pulseaudio minimal libnotify startup-notification jit system-cairo -system-icu system-jpeg system-sqlite -system-libvpx hardened
+mail-client/thunderbird -* pgo -webm -gstreamer -pulseaudio minimal libnotify startup-notification jit system-cairo -system-icu system-jpeg system-sqlite -system-libvpx hardened
 
 ##
 # Sadly, Java wants a lot of bullshit. Here I remove unnecessary cruft.
@@ -226,3 +226,8 @@ sys-devel/gettext -openmp
 ##
 x11-misc/sddm -upower
 lxqt-base/lxqt-meta -policykit sddm
+
+##
+# Don't actually like using the desktop switcher, so I'm disabling it.
+##
+lxqt-base/lxqt-panel -desktopswitch
