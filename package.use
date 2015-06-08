@@ -22,7 +22,7 @@ dev-qt/qtsql
 ##
 # Not doing this causes issues with systemd.
 ##
-dev-qt/qtgui -udev
+dev-qt/qtgui -udev -accessibility -mng
 dev-qt/qtsvg
 dev-qt/qtdbus
 dev-qt/qttest
@@ -97,7 +97,7 @@ app-doc/doxygen dot -qt4 -qt5
 media-libs/gd jpeg truetype png fontconfig
 
 ##
-# I love the idea of pidgin voice and video, but it causes annoyance with google voice for now. 
+# I love the idea of pidgin voice and video, but it causes annoyance with google voice for now.
 ##
 net-im/pidgin -* gtk networkmanager nls zeroconf spell
 
@@ -105,7 +105,8 @@ net-im/pidgin -* gtk networkmanager nls zeroconf spell
 # Still haven't figured out how to get rid of cups...
 ##
 app-text/ghostscript-gpl cups
-net-print/cups -X -usb
+net-print/cups           -*
+net-print/cups-filters   -*
 
 ##
 # Mysql is evil! Drupal for website experiment
@@ -196,15 +197,14 @@ dev-libs/beecrypt threads
 ##
 # No need for some features
 ##
-net-dns/avahi -autoipd
-net-misc/networkmanager -zeroconf
-
+net-dns/avahi            -autoipd
+net-misc/networkmanager  -zeroconf -ncurses
 ##
 # We need to explicitly state which version of qt to use for texmaker
 ##
-app-office/texmaker    -qt5 qt4
-media-video/vlc        -qt5 qt4
-net-analyzer/wireshark -qt5 qt4
+app-office/texmaker    -qt5  qt4
+media-video/vlc        -qt5  qt4
+net-analyzer/wireshark -qt5 -qt4 -netlink
 
 ##
 # Dependency conflict when using libav on these. Need to revisit this.
@@ -233,3 +233,8 @@ lxqt-base/lxqt-meta -policykit sddm
 # Don't actually like using the desktop switcher, so I'm disabling it.
 ##
 lxqt-base/lxqt-panel -desktopswitch
+
+##
+# No need for the WPA_Supplicant gui, nor 802.11u
+##
+net-wireless/wpa_supplicant -qt4 -hs2-0
