@@ -8,6 +8,11 @@ sys-apps/systemd -python_targets_python2_7 -python_targets_python3_3 -python_tar
 sys-apps/systemd -python_single_target_python2_7 -python_single_target_python3_3 -python_single_target_python3_4
 
 ##
+# Some nice to haves
+##
+sys-apps/systemd elfutils gcrypt
+
+##
 # Useflags needed by qt5.
 ##
 x11-libs/libxcb xkb
