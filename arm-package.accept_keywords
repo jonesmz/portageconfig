@@ -3,6 +3,7 @@
 ##
 media-libs/harfbuzz
 x11-libs/libxkbcommon
+dev-libs/leveldb
 
 ##
 # Qt5 is still considered unstable...
@@ -104,7 +105,7 @@ dev-java/oracle-jdk-bin **
 # Raspberry Pi bootstraping.
 ##
 dev-java/java-config
-app-admin/eselect-java
+app-eselect/eselect-java
 dev-java/oracle-jdk-bin
 sys-apps/baselayout-java
 dev-java/javatoolkit
@@ -151,7 +152,7 @@ sys-apps/baobab
 sys-block/gparted
 media-video/ffmpeg
 www-client/firefox
-www-client/chromium
+<=www-client/chromium-45
 app-arch/file-roller
 gnome-extra/nm-applet
 mail-client/thunderbird
@@ -436,7 +437,7 @@ media-video/vlc
 # required by app-office/libreoffice (argument)
 =app-text/libwpd-0.10.0-r1 ~arm
 # required by app-office/libreoffice (argument)
-=app-office/libreoffice-4.4.1.2 ~arm
+app-office/libreoffice
 
 ##
 # Needed for chromium
@@ -511,5 +512,89 @@ dev-libs/extra-cmake-modules
 # required by @lxqt
 # required by @selected
 # required by @world (argument)
-=kde-frameworks/extra-cmake-modules-5.9.0 ~arm
+kde-frameworks/extra-cmake-modules
+
+
+# required by gnome-extra/gnome-calculator-3.16.2::gentoo
+# required by @desktop-applications
+# required by @selected
+# required by @world (argument)
+=x11-libs/gtksourceview-3.16.1 ~arm
+# required by app-editors/pluma-1.8.1::gentoo
+# required by @desktop-applications
+# required by @selected
+# required by @world (argument)
+=dev-libs/atk-2.16.0 ~arm
+# required by gnome-base/gvfs-1.22.3::gentoo
+# required by app-text/evince-3.16.1::gentoo
+# required by @desktop-applications
+# required by @selected
+# required by @world (argument)
+=dev-libs/glib-2.44.1 ~arm
+# required by gnome-base/gvfs-1.22.3::gentoo[gtk]
+# required by app-text/evince-3.16.1::gentoo
+# required by @desktop-applications
+# required by @selected
+# required by @world (argument)
+=x11-libs/gtk+-3.16.3 ~arm
+# required by kde-frameworks/kf-env-3::gentoo
+# required by kde-frameworks/kguiaddons-5.10.0::gentoo
+# required by lxqt-base/lxqt-panel-0.9.0::gentoo
+# required by lxqt-base/lxqt-meta-0.9.0-r2::gentoo
+# required by @lxqt
+# required by @selected
+# required by @world (argument)
+=x11-misc/xdg-utils-1.1.0_rc3_p20150119 ~arm
+# required by www-client/chromium-44.0.2403.30::gentoo
+# required by @desktop-applications
+# required by @selected
+# required by @world (argument)
+=media-libs/libvpx-1.4.0 ~arm
+# required by x11-libs/gtk+-3.16.3::gentoo
+# required by net-analyzer/wireshark-1.12.4::gentoo[gtk3]
+# required by @development-gui
+# required by @selected
+# required by @world (argument)
+=dev-util/gtk-update-icon-cache-3.16.3 ~arm
+# required by gnome-extra/gnome-calculator-3.16.2::gentoo
+# required by @desktop-applications
+# required by @selected
+# required by @world (argument)
+=x11-libs/gtksourceview-3.16.1 ~arm
+# required by app-editors/pluma-1.8.1::gentoo
+# required by @desktop-applications
+# required by @selected
+# required by @world (argument)
+=dev-libs/atk-2.16.0 ~arm
+# required by gnome-base/gvfs-1.22.3::gentoo
+# required by app-text/evince-3.16.1::gentoo
+# required by @desktop-applications
+# required by @selected
+# required by @world (argument)
+=dev-libs/glib-2.44.1 ~arm
+# required by gnome-base/gvfs-1.22.3::gentoo[gtk]
+# required by app-text/evince-3.16.1::gentoo
+# required by @desktop-applications
+# required by @selected
+# required by @world (argument)
+=x11-libs/gtk+-3.16.3 ~arm
+# required by kde-frameworks/kf-env-3::gentoo
+# required by kde-frameworks/kguiaddons-5.10.0::gentoo
+# required by lxqt-base/lxqt-panel-0.9.0::gentoo
+# required by lxqt-base/lxqt-meta-0.9.0-r2::gentoo
+# required by @lxqt
+# required by @selected
+# required by @world (argument)
+=x11-misc/xdg-utils-1.1.0_rc3_p20150119 ~arm
+# required by www-client/chromium-44.0.2403.30::gentoo
+# required by @desktop-applications
+# required by @selected
+# required by @world (argument)
+=media-libs/libvpx-1.4.0 ~arm
+# required by x11-libs/gtk+-3.16.3::gentoo
+# required by net-analyzer/wireshark-1.12.4::gentoo[gtk3]
+# required by @development-gui
+# required by @selected
+# required by @world (argument)
+=dev-util/gtk-update-icon-cache-3.16.3 ~arm
 
