@@ -571,7 +571,7 @@ kde-frameworks/extra-cmake-modules
 # required by @desktop-applications
 # required by @selected
 # required by @world (argument)
-=dev-libs/glib-2.44.1 ~arm
+dev-libs/glib
 # required by gnome-base/gvfs-1.22.3::gentoo[gtk]
 # required by app-text/evince-3.16.1::gentoo
 # required by @desktop-applications
@@ -598,3 +598,8 @@ kde-frameworks/extra-cmake-modules
 # required by @world (argument)
 =dev-util/gtk-update-icon-cache-3.16.3 ~arm
 
+
+##
+# Masked cause of bug in bash globbing
+##
+=sys-devel/gcc-4.8.4
