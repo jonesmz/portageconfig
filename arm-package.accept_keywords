@@ -223,11 +223,6 @@ x11-misc/redshift **
 # required by media-gfx/eog-3.14.3
 # required by eog (argument)
 =x11-themes/adwaita-icon-theme-3.14.1 ~arm
-# required by www-client/firefox-31.5.0
-# required by @desktop-applications
-# required by @selected
-# required by @world (argument)
-=dev-libs/glib-2.42.2 ~arm
 # required by media-gfx/eog-3.14.3
 # required by eog (argument)
 =dev-libs/libpeas-1.12.1-r1 ~arm
@@ -530,13 +525,7 @@ kde-frameworks/extra-cmake-modules
 # required by @desktop-applications
 # required by @selected
 # required by @world (argument)
-=dev-libs/glib-2.44.1 ~arm
-# required by gnome-base/gvfs-1.22.3::gentoo[gtk]
-# required by app-text/evince-3.16.1::gentoo
-# required by @desktop-applications
-# required by @selected
-# required by @world (argument)
-=x11-libs/gtk+-3.16.3 ~arm
+dev-libs/glib
 # required by kde-frameworks/kf-env-3::gentoo
 # required by kde-frameworks/kguiaddons-5.10.0::gentoo
 # required by lxqt-base/lxqt-panel-0.9.0::gentoo
@@ -555,7 +544,7 @@ kde-frameworks/extra-cmake-modules
 # required by @development-gui
 # required by @selected
 # required by @world (argument)
-=dev-util/gtk-update-icon-cache-3.16.3 ~arm
+dev-util/gtk-update-icon-cache
 # required by gnome-extra/gnome-calculator-3.16.2::gentoo
 # required by @desktop-applications
 # required by @selected
@@ -571,13 +560,13 @@ kde-frameworks/extra-cmake-modules
 # required by @desktop-applications
 # required by @selected
 # required by @world (argument)
-=dev-libs/glib-2.44.1 ~arm
+dev-libs/glib
 # required by gnome-base/gvfs-1.22.3::gentoo[gtk]
 # required by app-text/evince-3.16.1::gentoo
 # required by @desktop-applications
 # required by @selected
 # required by @world (argument)
-=x11-libs/gtk+-3.16.3 ~arm
+x11-libs/gtk+
 # required by kde-frameworks/kf-env-3::gentoo
 # required by kde-frameworks/kguiaddons-5.10.0::gentoo
 # required by lxqt-base/lxqt-panel-0.9.0::gentoo
@@ -598,3 +587,4 @@ kde-frameworks/extra-cmake-modules
 # required by @world (argument)
 =dev-util/gtk-update-icon-cache-3.16.3 ~arm
 
+=media-libs/libvpx-1.4.0 ~arm
