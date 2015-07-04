@@ -155,7 +155,7 @@ www-client/firefox
 <=www-client/chromium-45
 app-arch/file-roller
 gnome-extra/nm-applet
-mail-client/thunderbird
+=mail-client/thunderbird-31.7.0-r1
 media-gfx/gnome-screenshot
 gnome-extra/gnome-calculator
 net-misc/networkmanager-openvpn
@@ -217,7 +217,7 @@ x11-misc/redshift **
 # required by gnome-base/gnome-desktop-3.14.2
 # required by media-gfx/eog-3.14.3
 # required by eog (argument)
-=x11-libs/gtk+-3.14.9 ~arm
+x11-libs/gtk+
 # required by x11-libs/gtk+-3.14.9
 # required by gnome-base/gnome-desktop-3.14.2
 # required by media-gfx/eog-3.14.3
@@ -227,7 +227,7 @@ x11-misc/redshift **
 # required by @desktop-applications
 # required by @selected
 # required by @world (argument)
-=dev-libs/glib-2.42.2 ~arm
+dev-libs/glib
 # required by media-gfx/eog-3.14.3
 # required by eog (argument)
 =dev-libs/libpeas-1.12.1-r1 ~arm
@@ -530,13 +530,7 @@ kde-frameworks/extra-cmake-modules
 # required by @desktop-applications
 # required by @selected
 # required by @world (argument)
-=dev-libs/glib-2.44.1 ~arm
-# required by gnome-base/gvfs-1.22.3::gentoo[gtk]
-# required by app-text/evince-3.16.1::gentoo
-# required by @desktop-applications
-# required by @selected
-# required by @world (argument)
-=x11-libs/gtk+-3.16.3 ~arm
+dev-libs/glib
 # required by kde-frameworks/kf-env-3::gentoo
 # required by kde-frameworks/kguiaddons-5.10.0::gentoo
 # required by lxqt-base/lxqt-panel-0.9.0::gentoo
@@ -555,7 +549,7 @@ kde-frameworks/extra-cmake-modules
 # required by @development-gui
 # required by @selected
 # required by @world (argument)
-=dev-util/gtk-update-icon-cache-3.16.3 ~arm
+dev-util/gtk-update-icon-cache
 # required by gnome-extra/gnome-calculator-3.16.2::gentoo
 # required by @desktop-applications
 # required by @selected
@@ -571,13 +565,13 @@ kde-frameworks/extra-cmake-modules
 # required by @desktop-applications
 # required by @selected
 # required by @world (argument)
-=dev-libs/glib-2.44.1 ~arm
+dev-libs/glib
 # required by gnome-base/gvfs-1.22.3::gentoo[gtk]
 # required by app-text/evince-3.16.1::gentoo
 # required by @desktop-applications
 # required by @selected
 # required by @world (argument)
-=x11-libs/gtk+-3.16.3 ~arm
+x11-libs/gtk+
 # required by kde-frameworks/kf-env-3::gentoo
 # required by kde-frameworks/kguiaddons-5.10.0::gentoo
 # required by lxqt-base/lxqt-panel-0.9.0::gentoo
@@ -598,3 +592,9 @@ kde-frameworks/extra-cmake-modules
 # required by @world (argument)
 =dev-util/gtk-update-icon-cache-3.16.3 ~arm
 
+##
+# Masked cause of bug in bash globbing
+##
+=sys-devel/gcc-4.8.4
+
+=media-libs/libvpx-1.4.0 ~arm
