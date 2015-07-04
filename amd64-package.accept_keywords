@@ -44,6 +44,11 @@ dev-qt/qtquickcontrols:5
 dev-qt/qtgraphicaleffects:5
 
 ##
+# Needed for Qt5
+##
+dev-libs/leveldb
+
+##
 # No Java6 crap for us, plus some rpi accepts.
 ##
 virtual/jdk:1.7

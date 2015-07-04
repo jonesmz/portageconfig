@@ -1,6 +1,7 @@
 ##
 # Systemd doesn't need extra cruft...
 ##
+sys-apps/systemd terminal
 sys-apps/systemd -firmware-loader
 
 sys-apps/systemd -python
