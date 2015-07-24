@@ -171,6 +171,11 @@ media-tv/xbmc -udisks
 media-tv/kodi -udisks
 
 ##
+# Needed for kodi
+##
+net-libs/libmicrohttpd messages
+
+##
 # Some useflag changes to enable games
 ##
 dev-games/ogre             cg ois
