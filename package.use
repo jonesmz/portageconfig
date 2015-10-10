@@ -1,7 +1,6 @@
 ##
 # Systemd doesn't need extra cruft...
 ##
-sys-apps/systemd terminal
 sys-apps/systemd -firmware-loader
 
 sys-apps/systemd -python
@@ -11,7 +10,7 @@ sys-apps/systemd -python_single_target_python2_7 -python_single_target_python3_3
 ##
 # Some nice to haves
 ##
-sys-apps/systemd elfutils gcrypt
+sys-apps/systemd elfutils gcrypt terminal
 
 ##
 # Useflags needed by qt5.
@@ -22,37 +21,15 @@ dev-libs/libpcre pcre16
 ##
 # Useflags for Qt5 itself
 ##
-dev-qt/qtxml
-dev-qt/qtsql
-
 ##
 # Not doing this causes issues with systemd.
 ##
 dev-qt/qtgui -udev -accessibility -mng
-dev-qt/qtsvg
-dev-qt/qtdbus
-dev-qt/qttest
-dev-qt/qtcore
-dev-qt/qtscript
-dev-qt/qtquick1
-dev-qt/qtopengl
-
 ##
 # Need the widgets useflag because qtwebkit:5 won't compile without it >_<
 ##
 dev-qt/qtwebkit widgets
-dev-qt/qtwidgets
-dev-qt/qtnetwork
-dev-qt/qtx11extras
-dev-qt/qtconcurrent
 dev-qt/qtmultimedia -alsa
-dev-qt/qtserialport
-dev-qt/qtwebsockets
-dev-qt/qtdeclarative
-dev-qt/qtxmlpatterns
-dev-qt/qtprintsupport
-dev-qt/qtquickcontrols
-dev-qt/qtgraphicaleffects
 
 ##
 # Nifty options for the qt-creator ide.
@@ -130,8 +107,9 @@ app-eselect/eselect-php apache2
 dev-libs/glib static-libs
 sys-libs/zlib static-libs
 sys-apps/attr static-libs
-app-emulation/qemu static-user usbredir virtfs numa spice
+
 net-misc/spice-gtk usbredir
+app-emulation/qemu static-user usbredir virtfs numa spice
 
 ##
 # Turning off the GUI of lshw, it's useless.
@@ -165,7 +143,7 @@ app-office/libreoffice -dbus -gnome -gstreamer -opengl -postgres -vba -webdav
 sys-apps/util-linux tty-helpers
 
 ##
-# Not doing this causes lvm2 to be installed
+# Not doing this causes lvm2 to be installed. Don't want or need.
 ##
 media-tv/xbmc -udisks
 media-tv/kodi -udisks
@@ -187,19 +165,14 @@ games-strategy/openra      tools
 games-strategy/warzone2100 videos
 
 ##
-# Needed for RStudio. awt is for java support though.
+# Needed for RStudio.
 ##
 sys-devel/gcc fortran
 dev-lang/R bash-completion doc profile lapack
 app-text/pandoc -https -network-uri
 
 ##
-# Not sure what this is for. TODO: Figure out what this is for.
-##
-app-editors/gedit python
-
-##
-# On the RPI, we normally disable threads, but some apps explicitly need threads support for the various apps that are being installed.
+# On the RPI (version 1, the single core one), we normally disable threads, but some apps explicitly need threads support for the various apps that are being installed.
 ##
 dev-libs/boost    threads
 dev-lang/python   threads
@@ -210,12 +183,18 @@ dev-libs/beecrypt threads
 ##
 net-dns/avahi            -autoipd
 net-misc/networkmanager  -zeroconf -ncurses
+
 ##
-# We need to explicitly state which version of qt to use for texmaker
+# We need to explicitly state which version of qt to use for some apps.
 ##
 app-office/texmaker    -qt5  qt4
 media-video/vlc        -qt5  qt4
 net-analyzer/wireshark -qt5 -qt4 -netlink
+
+##
+# Want qt5 support. Only works with the version in the jonesmz-public overlay.
+##
+net-dns/avahi qt5
 
 ##
 # Dependency conflict when using libav on these. Need to revisit this.
@@ -230,7 +209,7 @@ app-crypt/heimdal -ssl
 net-fs/samba client smbclient
 
 ##
-# Qemu barfs on the messagemerge command. Read that this useflag change can help fix it.
+# When emulating ARM via Qemu, Qemu barfs on the messagemerge command. This useflag change makes it much less of a problem.
 ##
 sys-devel/gettext -openmp
 

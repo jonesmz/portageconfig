@@ -1,52 +1,13 @@
 ##
-# google-chrome is probably never going to be considered stable by gentoo.
+# Some parts of Qt5 are still considered unstable...
 ##
-www-client/google-chrome
-
-##
-# Qt5 is still considered unstable...
-##
-dev-qt/qdoc:5
-dev-qt/qtxml:5
-dev-qt/qtsql:5
-dev-qt/qtgui:5
-dev-qt/qtsvg:5
-dev-qt/qdbus:5
-dev-qt/qtdiag:5
-dev-qt/qtdbus:5
-dev-qt/qttest:5
-dev-qt/qtcore:5
-dev-qt/qthelp:5
-dev-qt/qtpaths:5
-dev-qt/designer:5
-dev-qt/qtscript:5
-dev-qt/qtquick1:5
-dev-qt/qtopengl:5
-dev-qt/qtwebkit:5
-dev-qt/qtwidgets:5
-dev-qt/qtnetwork:5
-dev-qt/qtsensors:5
-dev-qt/assistant:5
-dev-qt/qtwayland:5
-dev-qt/qtx11extras:5
-dev-qt/qtwebsockets:5
-dev-qt/qtconcurrent:5
-dev-qt/qtmultimedia:5
-dev-qt/qtserialport:5
-dev-qt/qtpositioning:5
-dev-qt/qtdeclarative:5
-dev-qt/qtxmlpatterns:5
-dev-qt/linguist-tools:5
-dev-qt/qttranslations:5
-dev-qt/qtimageformats:5
-dev-qt/qtprintsupport:5
-dev-qt/qtquickcontrols:5
-dev-qt/qtgraphicaleffects:5
-
-##
-# Needed for Qt5
-##
-dev-libs/leveldb
+dev-qt/qtdiag4
+dev-qt/qtpaths
+dev-qt/qtsensors
+dev-qt/qtserialport
+dev-qt/qtwebsockets
+dev-qt/qtpositioning
+dev-qt/qtimageformats
 
 ##
 # No Java6 crap for us, plus some rpi accepts.
@@ -59,11 +20,12 @@ dev-java/icedtea-web:7
 
 ##
 # version 3 plays nicely with qt5...
+# 3.5 requires unstable llvm though. Skip it for now.
 ##
-dev-qt/qt-creator
+<dev-qt/qt-creator-3.5.0
 
 ##
-# Needed for fastboot.
+# Needed for fastboot tool
 ##
 dev-util/android-tools
 
@@ -86,9 +48,9 @@ sys-cluster/ceph
 ##
 # Awesome terminal
 ##
-=dev-libs/efl-1.11.2
-=media-libs/elementary-1.11.2
-=x11-terms/terminology-0.7.0
+dev-libs/efl
+media-libs/elementary
+x11-terms/terminology
 
 ##
 # Perforce support for development purposes.
@@ -97,15 +59,13 @@ dev-vcs/perforce-cli
 dev-vcs/perforce-gui
 
 ##
-# Wifi card support for Dell latitude e6530
+# Wifi card support for Dell Latitude e6530
 ##
 net-wireless/broadcom-sta
 
 ##
-# GAMES, specifically morrowind.
+# GAMES, specifically TES3: Morrowind.
 ##
-dev-games/ogre
-dev-games/mygui
 games-engines/openmw
 
 ##
@@ -114,14 +74,13 @@ games-engines/openmw
 app-admin/systemrescuecd-x86
 
 ##
-# Doing work with turnserver lately.
+# Doing work with turnserver lately. Comes from jonesmz-public overlay.
 ##
 www-servers/turnserver
 
 ##
 # LXQT is the successor to LXDE. It seems mature enough to use regularly.
 ##
-
 lxqt-base/liblxqt
 lxqt-base/liblxqt-mount
 
@@ -149,3 +108,13 @@ x11-misc/obconf-qt
 x11-misc/pcmanfm-qt
 
 dev-libs/libqtxdg
+
+##
+# Music is music. Comes from jonesmz-public overlay.
+##
+media-sound/spotify
+
+##
+# Really awesome test tool that I want to play with.
+##
+app-forensics/afl
