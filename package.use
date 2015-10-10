@@ -24,12 +24,13 @@ dev-libs/libpcre pcre16
 ##
 # Not doing this causes issues with systemd.
 ##
-dev-qt/qtgui -udev -accessibility -mng
+dev-qt/qtgui -udev -accessibility
+
 ##
 # Need the widgets useflag because qtwebkit:5 won't compile without it >_<
 ##
-dev-qt/qtwebkit widgets
-dev-qt/qtmultimedia -alsa
+#dev-qt/qtwebkit widgets
+#dev-qt/qtmultimedia -alsa
 
 ##
 # Nifty options for the qt-creator ide.
@@ -228,3 +229,8 @@ lxqt-base/lxqt-panel -desktopswitch
 # No need for the WPA_Supplicant gui, nor 802.11u
 ##
 net-wireless/wpa_supplicant -qt4 -hs2-0
+
+##
+# Want support for the cephfs network filesystem
+##
+sys-cluster/ceph fuse

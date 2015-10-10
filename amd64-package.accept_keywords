@@ -1,7 +1,7 @@
 ##
 # Some parts of Qt5 are still considered unstable...
 ##
-dev-qt/qtdiag4
+dev-qt/qtdiag
 dev-qt/qtpaths
 dev-qt/qtsensors
 dev-qt/qtserialport
