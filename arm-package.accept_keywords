@@ -413,7 +413,7 @@ media-video/vlc
 =app-text/mythes-1.2.4 ~arm
 # required by app-office/libreoffice-4.4.1.2
 # required by app-office/libreoffice (argument)
-=app-text/libexttextcat-3.4.0 ~arm
+app-text/libexttextcat
 # required by app-office/libreoffice-4.4.1.2
 # required by app-office/libreoffice (argument)
 =app-text/liblangtag-0.5.2 ~arm
@@ -745,4 +745,38 @@ x11-libs/gtk+
 # required by @selected
 # required by @world (argument)
 =dev-python/libvirt-python-9999 **
+
+# required by @development-gui
+# required by @selected
+# required by @world (argument)
+=net-analyzer/wireshark-1.12.7 ~arm
+# required by app-office/texmaker-4.4.1::gentoo
+# required by @desktop-applications
+# required by @selected
+# required by @world (argument)
+=dev-qt/qtsingleapplication-2.6.1_p20150629 ~arm
+# required by app-office/libreoffice-4.4.5.2::gentoo
+# required by @desktop-applications
+# required by @selected
+# required by @world (argument)
+=media-fonts/libertine-5.3.0.20120702-r2 ~arm
+# required by app-office/libreoffice-4.4.5.2::gentoo
+# required by @desktop-applications
+# required by @selected
+# required by @world (argument)
+=app-office/libreoffice-l10n-4.4.5.2 ~arm
+# required by dev-qt/qtsingleapplication-2.6.1_p20150629::gentoo
+# required by app-office/texmaker-4.4.1::gentoo
+# required by @desktop-applications
+# required by @selected
+# required by @world (argument)
+=dev-qt/qtlockedfile-2.4.1_p20150629 ~arm
+# required by app-text/poppler-0.32.0::gentoo[png]
+# required by app-text/texlive-core-2012-r1::gentoo
+# required by dev-texlive/texlive-fontsrecommended-2012::gentoo
+# required by dev-texlive/texlive-latexextra-2012::gentoo
+# required by @desktop-applications
+# required by @selected
+# required by @world (argument)
+=media-libs/libpng-1.6.18 ~arm
 
