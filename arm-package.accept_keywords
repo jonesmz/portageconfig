@@ -151,7 +151,7 @@ app-text/evince
 sys-apps/baobab
 sys-block/gparted
 media-video/ffmpeg
-www-client/firefox
+<=www-client/firefox-40
 <=www-client/chromium-45
 app-arch/file-roller
 gnome-extra/nm-applet

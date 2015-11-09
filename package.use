@@ -44,8 +44,8 @@ dev-qt/qt-creator android autotools clang cmake
 ##
 dev-db/sqlite secure-delete
 media-libs/libvpx postproc
-www-client/firefox      -* pgo  webm  gstreamer  pulseaudio minimal libnotify startup-notification jit system-cairo -system-icu system-jpeg system-sqlite -system-libvpx hardened
-mail-client/thunderbird -* pgo -webm -gstreamer -pulseaudio minimal libnotify startup-notification jit system-cairo -system-icu system-jpeg system-sqlite -system-libvpx hardened
+www-client/firefox      -* pgo jemalloc3  egl  gmp-autoupdate  webm  gstreamer  pulseaudio minimal libnotify startup-notification jit system-cairo -system-icu system-jpeg system-sqlite -system-libvpx hardened
+mail-client/thunderbird -* pgo jemalloc3 -egl -gmp-autoupdate -webm -gstreamer -pulseaudio minimal libnotify startup-notification jit system-cairo -system-icu system-jpeg system-sqlite -system-libvpx hardened
 
 ##
 # Sadly, Java wants a lot of bullshit. Here I remove unnecessary cruft.
@@ -232,5 +232,15 @@ net-wireless/wpa_supplicant -qt4 -hs2-0
 
 ##
 # Want support for the cephfs network filesystem
+# but would rather use the native connector, over FUSE.
 ##
-sys-cluster/ceph fuse
+sys-cluster/ceph -fuse
+
+##
+# Settings for experimenting with wayland.
+##
+dev-libs/weston wayland-compositor xwayland
+x11-base/xorg-server wayland
+kde-base/kwin wayland
+kde-plasma/kwin wayland
+dev-libs/efl -opengl gles
