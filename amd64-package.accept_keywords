@@ -127,13 +127,16 @@ lxqt-base/lxqt-globalkeys
 lxqt-base/lxqt-config-randr
 lxqt-base/lxqt-notificationd
 
-x11-misc/xdg-utils
+kde-frameworks/solid
 kde-frameworks/kf-env
 kde-frameworks/kguiaddons
 kde-frameworks/kwindowsystem
 kde-frameworks/extra-cmake-modules
 
+kde-plasma/libkscreen
+
 x11-misc/sddm
+x11-misc/xdg-utils
 x11-misc/obconf-qt
 x11-misc/pcmanfm-qt
 
