@@ -1,13 +1,42 @@
 ##
 # Some parts of Qt5 are still considered unstable...
 ##
+dev-qt/qdoc
+dev-qt/qtxml
+dev-qt/qtsql
+dev-qt/qtgui
+dev-qt/qtsvg
+dev-qt/qdbus
 dev-qt/qtdiag
+dev-qt/qtdbus
+dev-qt/qttest
+dev-qt/qtcore
+dev-qt/qthelp
 dev-qt/qtpaths
+dev-qt/designer
+dev-qt/qtscript
+dev-qt/qtquick1
+dev-qt/qtopengl
+dev-qt/qtwebkit
+dev-qt/qtwidgets
+dev-qt/qtnetwork
 dev-qt/qtsensors
-dev-qt/qtserialport
+dev-qt/assistant
+dev-qt/qtwayland
+dev-qt/qtx11extras
 dev-qt/qtwebsockets
+dev-qt/qtconcurrent
+dev-qt/qtmultimedia
+dev-qt/qtserialport
 dev-qt/qtpositioning
+dev-qt/qtdeclarative
+dev-qt/qtxmlpatterns
+dev-qt/linguist-tools
+dev-qt/qttranslations
 dev-qt/qtimageformats
+dev-qt/qtprintsupport
+dev-qt/qtquickcontrols
+dev-qt/qtgraphicaleffects
 
 ##
 # No Java6 crap for us, plus some rpi accepts.
@@ -72,6 +101,7 @@ games-engines/openmw
 # Just useful to have systemrescuecd already downloaded.
 ##
 app-admin/systemrescuecd-x86
+sys-boot/systemrescuecd-x86-grub
 
 ##
 # Doing work with turnserver lately. Comes from jonesmz-public overlay.
@@ -97,13 +127,16 @@ lxqt-base/lxqt-globalkeys
 lxqt-base/lxqt-config-randr
 lxqt-base/lxqt-notificationd
 
-x11-misc/xdg-utils
+kde-frameworks/solid
 kde-frameworks/kf-env
 kde-frameworks/kguiaddons
 kde-frameworks/kwindowsystem
 kde-frameworks/extra-cmake-modules
 
+kde-plasma/libkscreen
+
 x11-misc/sddm
+x11-misc/xdg-utils
 x11-misc/obconf-qt
 x11-misc/pcmanfm-qt
 
@@ -118,3 +151,10 @@ media-sound/spotify
 # Really awesome test tool that I want to play with.
 ##
 app-forensics/afl
+
+##
+# Wayland here I come!
+##
+dev-libs/wayland
+dev-libs/weston
+kde-plasma/kwin
