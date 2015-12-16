@@ -48,12 +48,6 @@ dev-java/icedtea-bin:7
 dev-java/icedtea-web:7
 
 ##
-# version 3 plays nicely with qt5...
-# 3.5 requires unstable llvm though. Skip it for now.
-##
-<dev-qt/qt-creator-3.5.0
-
-##
 # Needed for fastboot tool
 ##
 dev-util/android-tools
@@ -136,7 +130,6 @@ kde-frameworks/extra-cmake-modules
 kde-plasma/libkscreen
 
 x11-misc/sddm
-x11-misc/xdg-utils
 x11-misc/obconf-qt
 x11-misc/pcmanfm-qt
 
@@ -158,3 +151,14 @@ app-forensics/afl
 dev-libs/wayland
 dev-libs/weston
 kde-plasma/kwin
+
+##
+# Temporarily accept new kernel so I can work around a compile failure.
+##
+sys-kernel/hardened-sources
+
+##
+# Zeromq has broken ipv6 prior to 4.1.3
+##
+net-libs/zeromq
+
