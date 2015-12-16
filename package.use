@@ -157,6 +157,7 @@ games-strategy/warzone2100 videos
 # On the RPI (version 1, the single core one), we normally disable threads, but some apps explicitly need threads support for the various apps that are being installed.
 ##
 dev-libs/boost    threads
+dev-libs/botan    threads
 dev-lang/python   threads
 dev-libs/beecrypt threads
 

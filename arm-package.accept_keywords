@@ -1,11 +1,4 @@
 ##
-# Deps for Qt5
-##
-media-libs/harfbuzz
-x11-libs/libxkbcommon
-dev-libs/leveldb
-
-##
 # Qt5 is still considered unstable...
 ##
 dev-qt/qtchooser
@@ -123,88 +116,85 @@ app-backup/snapper
 ##
 # Awesome terminal
 ##
-=dev-libs/efl-1.12.2
+dev-libs/efl
 dev-libs/libclc
-=media-libs/elementary-1.12.2
+media-libs/elementary
 x11-terms/terminology ~*
 
 ##
-# GAMES, specifically morrowind.
-##
-dev-games/ogre
-dev-games/mygui
-games-engines/openmw
-
-##
 # Accept debug edit for use on ARM
+# Used by portage for the splitdebug feature, if I recall correctly.
 ##
 dev-util/debugedit **
 
 ##
+# Compression format related
 # All versions of these are unstable on ARM.
 ##
 app-arch/zoo
 app-arch/arj
-lxde-base/lxdm
 app-arch/p7zip
+app-arch/file-roller
+
+##
+# General GUI Stuff
+##
+net-p2p/deluge
 app-text/evince
+app-cdr/brasero
 sys-apps/baobab
 sys-block/gparted
-media-video/ffmpeg
-<=www-client/firefox-40
-<=www-client/chromium-45
-app-arch/file-roller
+media-video/ffmpeg ## Maybe this doesn't need unmasking. There IS a stable version. Check this.
+www-client/chromium
 gnome-extra/nm-applet
-=mail-client/thunderbird-31.8.0
 media-gfx/gnome-screenshot
 gnome-extra/gnome-calculator
 net-misc/networkmanager-openvpn
 
 ##
+# Not sure what needs pygame?
+##
+dev-python/pygame
+
+##
+# Mozilla stuff doesn't even *compile*. Bugs reported.
+##
+www-client/firefox
+mail-client/thunderbird
+
+##
 # Needed for firefox > 30
 ##
-dev-libs/nspr
-dev-libs/nss
+dev-libs/nspr # There's a stable version of this. Double check.
+dev-libs/nss # There's a stable version of this. Double check.
 
 ##
 # Kodi entertainment software.
 ##
 media-tv/kodi  ~*
-dev-libs/tinyxml
 media-fonts/roboto
-media-video/ffmpeg
 media-libs/libprojectm
-media-libs/libsdl2
-
-
-app-cdr/brasero
-dev-python/pygame
-net-p2p/deluge
 
 ##
-# Development-cli
+# Seem to be needed by multiple things, such as kodi, or cppcheck, etc.
 ##
-=dev-util/uncrustify-9999 **
-# required by @development-cli
-# required by @selected
-# required by @world (argument)
-=app-text/sloccount-2.26-r3 **
+dev-libs/tinyxml
+dev-libs/tinyxml2
+
+##
+# Development-cli group
+# No stable versions of uncrustify OR sloccount exist on ARM.
+##
+dev-util/uncrustify ~*
+app-text/sloccount **
 
 ##
 # Development-gui
 ##
-# required by @development-gui (argument)
-=dev-util/meld-3.12.3 ~arm
-# required by dev-util/cppcheck-1.68
-# required by @development-gui (argument)
-=dev-libs/tinyxml2-2.2.0 ~arm
-# required by @development-gui (argument)
-=net-analyzer/wireshark-1.12.4 ~arm
-# required by dev-qt/qt-creator-3.3.2
-# required by @development-gui (argument)
-=dev-libs/botan-1.10.5 ~arm
-# required by @development-gui (argument)
-=dev-util/cppcheck-1.68 ~arm
+dev-util/meld
+dev-libs/botan
+dev-util/cppcheck
+net-analyzer/wireshark
 
 ##
 # Required for redshift, from @desktop-applications
@@ -214,262 +204,79 @@ x11-misc/redshift **
 ##
 # Required for EOG
 ##
-# required by gnome-base/gnome-desktop-3.14.2
-# required by media-gfx/eog-3.14.3
-# required by eog (argument)
-x11-libs/gtk+
-# required by x11-libs/gtk+-3.14.9
-# required by gnome-base/gnome-desktop-3.14.2
-# required by media-gfx/eog-3.14.3
-# required by eog (argument)
-=x11-themes/adwaita-icon-theme-3.14.1 ~arm
-# required by www-client/firefox-31.5.0
-# required by @desktop-applications
-# required by @selected
-# required by @world (argument)
-dev-libs/glib
-# required by media-gfx/eog-3.14.3
-# required by eog (argument)
-=dev-libs/libpeas-1.12.1-r1 ~arm
-# required by eog (argument)
-=media-gfx/eog-3.14.3 ~arm
-# required by media-gfx/eog-3.14.3
-# required by eog (argument)
-=gnome-base/gnome-desktop-3.14.2 ~arm
-dev-util/gdbus-codegen
+x11-libs/gtk+ #Check on this, there's a stable version.
+dev-libs/glib #Check on this, there's a stable version.
+dev-libs/libpeas
+media-gfx/eog
+gnome-base/gnome-desktop
+dev-util/gdbus-codegen #Check on this, there's a stable version
 
 ##
 # Needed for VLC
 ##
 media-video/vlc
-# required by x11-libs/gtk+-2.24.25-r1
-# required by media-video/vlc-2.2.0[libnotify]
-# required by @desktop-applications
-# required by @selected
-# required by @world (argument)
-=x11-libs/cairo-1.14.2 ~arm
-# required by media-video/vlc-2.2.0[dvd]
-# required by @desktop-applications
-# required by @selected
-# required by @world (argument)
-=media-libs/libdvdread-5.0.2 ~arm
-# required by app-cdr/brasero-3.12.0[css]
-# required by @selected
-# required by @world (argument)
-=media-libs/libdvdcss-1.3.99 ~arm
-# required by media-video/vlc-2.2.0[dvd]
-# required by @desktop-applications
-# required by @selected
-# required by @world (argument)
-=media-libs/libdvdnav-5.0.3 ~arm
-
-
-##
-# Terminology
-##
-# required by x11-terms/terminology-0.8.0
-# required by terminology (argument)
-=media-libs/elementary-1.13.1 ~arm
-# required by dev-libs/efl-1.13.1[-oldlua]
-# required by x11-terms/terminology-0.8.0
-# required by terminology (argument)
-=dev-lang/luajit-2.0.3-r1 ~arm
-# required by x11-terms/terminology-0.8.0
-# required by terminology (argument)
-=dev-libs/efl-1.13.1 ~arm
+media-libs/libdvdcss #double check this, there's a stable version.
 
 ##
 # texmaker
 ##
-=app-office/texmaker-4.4.1 **
-# required by app-office/texmaker-4.4.1[qt4]
-# required by @desktop-applications
-# required by @selected
-# required by @world (argument)
-=app-i18n/ibus-qt-1.3.3 **
-# required by dev-qt/qtsingleapplication-2.6.1_p20130904-r2
-# required by app-office/texmaker-4.4.1
-# required by @desktop-applications
-# required by @selected
-# required by @world (argument)
-=dev-qt/qtlockedfile-2.4.1_p20130904-r1 ~arm
-# required by app-office/texmaker-4.4.1
-# required by @desktop-applications
-# required by @selected
-# required by @world (argument)
-=dev-qt/qtsingleapplication-2.6.1_p20130904-r2 ~arm
-
-##
-# Needed for Evince
-##
-# required by app-text/evince-3.14.2-r1
-# required by app-text/evince (argument)
-=x11-themes/gnome-icon-theme-symbolic-3.12.0 ~arm
+app-office/texmaker **
+app-i18n/ibus-qt **
+dev-qt/qtlockedfile
+dev-qt/qtsingleapplication
 
 ##
 # Needed for Baobab
 ##
-# required by sys-apps/baobab-3.14.1
-# required by baobab (argument)
-=x11-themes/gnome-icon-theme-extras-3.12.0 ~arm
-
-##
-# Needed for gedit
-##
-# required by app-editors/gedit (argument)
-=app-editors/gedit-3.14.3 ~arm
-# required by gnome-extra/gnome-calculator-3.14.1
-# required by @desktop-applications
-# required by @selected
-# required by @world (argument)
-=x11-libs/gtksourceview-3.14.3 ~arm
-# required by dev-libs/gobject-introspection-1.42.0-r1
-# required by x11-libs/gtksourceview-3.14.3[introspection]
-# required by app-editors/gedit-3.14.3
-# required by @desktop-applications
-# required by @selected
-# required by @world (argument)
-=dev-libs/gobject-introspection-common-1.42.0 ~arm
-# required by gnome-base/gconf-3.2.6-r3[introspection]
-# required by x11-misc/notification-daemon-0.5.0
-# required by virtual/notification-daemon-0[-gnome]
-# required by x11-libs/libnotify-0.7.5-r1
-# required by app-arch/file-roller-3.14.2
-# required by @desktop-applications
-# required by @selected
-# required by @world (argument)
-=dev-libs/gobject-introspection-1.42.0-r1 ~arm
-
+x11-themes/gnome-icon-theme-extras
 
 ##
 # Needed for libreoffice
 ##
-# required by app-office/libreoffice-4.4.1.2
-# required by app-office/libreoffice (argument)
-=dev-cpp/libcmis-0.5.0 ~arm
-# required by app-office/libreoffice-4.4.1.2
-# required by app-office/libreoffice (argument)
-=sci-mathematics/lpsolve-5.5.2.0 ~arm
-# required by app-office/libreoffice-4.4.1.2
-# required by app-office/libreoffice (argument)
-=dev-libs/librevenge-0.0.2 ~arm
-# required by app-office/libreoffice-4.4.1.2
-# required by app-office/libreoffice (argument)
-=app-text/libodfgen-0.1.3 ~arm
-# required by app-office/libreoffice-4.4.1.2
-# required by app-office/libreoffice (argument)
-=dev-libs/liborcus-0.7.0 ~arm
-# required by app-office/libreoffice-4.4.1.2
-# required by app-office/libreoffice (argument)
-=media-libs/libpagemaker-0.0.2 ~arm
-# required by app-office/libreoffice-4.4.1.2
-# required by app-office/libreoffice (argument)
-=app-text/libwps-0.3.1 ~arm
-# required by app-office/libreoffice-4.4.1.2
-# required by app-office/libreoffice (argument)
-=app-text/libabw-0.1.1 ~arm
-# required by app-office/libreoffice-4.4.1.2
-# required by app-office/libreoffice (argument)
-=app-text/libetonyek-0.1.1 ~arm
-# required by app-office/libreoffice-4.4.1.2
-# required by app-office/libreoffice (argument)
-=media-libs/libfreehand-0.1.0 ~arm
-# required by dev-libs/liborcus-0.7.0
-# required by app-office/libreoffice-4.4.1.2
-# required by app-office/libreoffice (argument)
-=dev-libs/libixion-0.7.0 ~arm
-# required by app-office/libreoffice-4.4.1.2
-# required by app-office/libreoffice (argument)
-=media-libs/libvisio-0.1.1 ~arm
-# required by app-office/libreoffice-4.4.1.2
-# required by app-office/libreoffice (argument)
-=app-text/libmwaw-0.3.4 ~arm
-# required by app-office/libreoffice-4.4.1.2
-# required by app-office/libreoffice (argument)
-=app-text/libebook-0.1.2 ~arm
-# required by app-office/libreoffice-4.4.1.2
-# required by app-office/libreoffice (argument)
-=media-libs/glm-0.9.6.1 ~arm
-# required by sci-mathematics/lpsolve-5.5.2.0
-# required by app-office/libreoffice-4.4.1.2
-# required by app-office/libreoffice (argument)
-=sci-libs/colamd-2.8.0 ~arm
-# required by app-office/libreoffice-4.4.1.2
-# required by app-office/libreoffice (argument)
-=media-fonts/libertine-5.3.0.20120702-r1 ~arm
-# required by sci-libs/colamd-2.8.0
-# required by sci-mathematics/lpsolve-5.5.2.0
-# required by app-office/libreoffice-4.4.1.2
-# required by app-office/libreoffice (argument)
-=sci-libs/suitesparseconfig-4.2.1 ~arm
-# required by app-office/libreoffice-4.4.1.2
-# required by app-office/libreoffice (argument)
-=sys-devel/ucpp-1.3.4 ~arm
-# required by app-office/libreoffice-4.4.1.2
-# required by app-office/libreoffice (argument)
-=app-office/libreoffice-l10n-4.4.1.2 ~arm
-# required by app-office/libreoffice-4.4.1.2
-# required by app-office/libreoffice (argument)
-=app-text/mythes-1.2.4 ~arm
-# required by app-office/libreoffice-4.4.1.2
-# required by app-office/libreoffice (argument)
+dev-util/mdds
+sys-devel/ucpp
+media-libs/glm
+app-text/libabw
+app-text/libwps
+dev-cpp/libcmis
+sci-libs/colamd
+app-text/mythes
+app-text/libwpg
+dev-libs/hyphen
+app-text/libwpd
+app-text/libmwaw
+media-libs/libcdr
+app-text/libmspub
+dev-libs/libixion
+dev-libs/liborcus
+app-text/libebook
+app-text/libodfgen
+app-text/liblangtag
+media-libs/libvisio
+dev-libs/librevenge
+app-text/libetonyek
+media-fonts/libertine
+media-libs/libfreehand
 app-text/libexttextcat
-# required by app-office/libreoffice-4.4.1.2
-# required by app-office/libreoffice (argument)
-=app-text/liblangtag-0.5.2 ~arm
-# required by app-office/libreoffice-4.4.1.2
-# required by app-office/libreoffice (argument)
-=app-text/libmspub-0.1.2 ~arm
-# required by app-office/libreoffice-4.4.1.2
-# required by app-office/libreoffice (argument)
-=media-libs/libcdr-0.1.1 ~arm
-# required by app-office/libreoffice-4.4.1.2
-# required by app-office/libreoffice (argument)
-=dev-util/mdds-0.11.2-r1 ~arm
-# required by app-office/libreoffice-4.4.1.2
-# required by app-office/libreoffice (argument)
-=app-text/libwpg-0.3.0 ~arm
-# required by app-office/libreoffice-4.4.1.2
-# required by app-office/libreoffice (argument)
-=dev-libs/hyphen-2.8.8 ~arm
-# required by app-text/libwps-0.3.1
-# required by app-office/libreoffice-4.4.1.2
-# required by app-office/libreoffice (argument)
-=app-text/libwpd-0.10.0-r1 ~arm
-# required by app-office/libreoffice (argument)
+media-libs/libpagemaker
+sci-mathematics/lpsolve
+sci-libs/suitesparseconfig
+app-office/libreoffice-l10n
+
 app-office/libreoffice
 
 ##
 # Needed for chromium
 ##
-# required by www-client/chromium-42.0.2311.60
-# required by chromium (argument)
-=dev-libs/jsoncpp-0.6.0_rc2 ~arm
-# required by www-client/chromium-42.0.2311.60
-# required by chromium (argument)
-=dev-libs/re2-0_p20140304 ~arm
-
+=dev-libs/jsoncpp-0.6.0_rc2 ~arm ## Revisit this, has a stable version
+=dev-libs/re2-0_p20140304 ~arm ##Seems to be newest version?
 
 ##
 # Needed for pluma, replacement for gedit.
 ##
-
-# required by app-editors/pluma-1.8.1
-# required by @desktop-applications
-# required by @selected
-# required by @world (argument)
-=mate-base/mate-desktop-1.8.1-r1 ~arm
-# required by app-editors/pluma-1.8.1
-# required by @desktop-applications
-# required by @selected
-# required by @world (argument)
-=mate-base/mate-common-1.8.0 **
-# required by @desktop-applications
-# required by @selected
-# required by @world (argument)
-=app-editors/pluma-1.8.1 **
-
-
+mate-base/mate-desktop
+mate-base/mate-common **
+app-editors/pluma **
 
 ##
 # LXQT is the successor to LXDE. It seems mature enough to use regularly.
@@ -499,299 +306,49 @@ x11-misc/obconf-qt
 x11-misc/pcmanfm-qt
 
 dev-libs/libqtxdg
-dev-libs/extra-cmake-modules
-
-# required by lxqt-base/lxqt-meta-0.9.0-r2[icons,oxygen]
-# required by @lxqt
-# required by @selected
-# required by @world (argument)
-=kde-base/oxygen-icons-4.14.3 ~arm
-# required by kde-frameworks/kguiaddons-5.9.0
-# required by lxqt-base/lxqt-panel-0.9.0
-# required by lxqt-base/lxqt-meta-0.9.0-r2
-# required by @lxqt
-# required by @selected
-# required by @world (argument)
+kde-base/oxygen-icons
 kde-frameworks/extra-cmake-modules
 
-
-# required by gnome-extra/gnome-calculator-3.16.2::gentoo
-# required by @desktop-applications
-# required by @selected
-# required by @world (argument)
-=x11-libs/gtksourceview-3.16.1 ~arm
-# required by app-editors/pluma-1.8.1::gentoo
-# required by @desktop-applications
-# required by @selected
-# required by @world (argument)
-=dev-libs/atk-2.16.0 ~arm
-# required by gnome-base/gvfs-1.22.3::gentoo
-# required by app-text/evince-3.16.1::gentoo
-# required by @desktop-applications
-# required by @selected
-# required by @world (argument)
-dev-libs/glib
-# required by kde-frameworks/kf-env-3::gentoo
-# required by kde-frameworks/kguiaddons-5.10.0::gentoo
-# required by lxqt-base/lxqt-panel-0.9.0::gentoo
-# required by lxqt-base/lxqt-meta-0.9.0-r2::gentoo
-# required by @lxqt
-# required by @selected
-# required by @world (argument)
-=x11-misc/xdg-utils-1.1.0_rc3_p20150119 ~arm
-# required by www-client/chromium-44.0.2403.30::gentoo
-# required by @desktop-applications
-# required by @selected
-# required by @world (argument)
-=media-libs/libvpx-1.4.0 ~arm
-# required by x11-libs/gtk+-3.16.3::gentoo
-# required by net-analyzer/wireshark-1.12.4::gentoo[gtk3]
-# required by @development-gui
-# required by @selected
-# required by @world (argument)
-dev-util/gtk-update-icon-cache
-# required by gnome-extra/gnome-calculator-3.16.2::gentoo
-# required by @desktop-applications
-# required by @selected
-# required by @world (argument)
-=x11-libs/gtksourceview-3.16.1 ~arm
-# required by app-editors/pluma-1.8.1::gentoo
-# required by @desktop-applications
-# required by @selected
-# required by @world (argument)
-=dev-libs/atk-2.16.0 ~arm
-# required by gnome-base/gvfs-1.22.3::gentoo
-# required by app-text/evince-3.16.1::gentoo
-# required by @desktop-applications
-# required by @selected
-# required by @world (argument)
-dev-libs/glib
-# required by gnome-base/gvfs-1.22.3::gentoo[gtk]
-# required by app-text/evince-3.16.1::gentoo
-# required by @desktop-applications
-# required by @selected
-# required by @world (argument)
-x11-libs/gtk+
-# required by kde-frameworks/kf-env-3::gentoo
-# required by kde-frameworks/kguiaddons-5.10.0::gentoo
-# required by lxqt-base/lxqt-panel-0.9.0::gentoo
-# required by lxqt-base/lxqt-meta-0.9.0-r2::gentoo
-# required by @lxqt
-# required by @selected
-# required by @world (argument)
-=x11-misc/xdg-utils-1.1.0_rc3_p20150119 ~arm
-# required by www-client/chromium-44.0.2403.30::gentoo
-# required by @desktop-applications
-# required by @selected
-# required by @world (argument)
-=media-libs/libvpx-1.4.0 ~arm
-# required by x11-libs/gtk+-3.16.3::gentoo
-# required by net-analyzer/wireshark-1.12.4::gentoo[gtk3]
-# required by @development-gui
-# required by @selected
-# required by @world (argument)
-=dev-util/gtk-update-icon-cache-3.16.3 ~arm
+##
+# Qemu stuff, many probably going away thanks to removing x86 emulation.
+##
+sys-devel/bin86 **
+net-libs/gtk-vnc
+dev-python/urlgrabber
+sys-firmware/vgabios **
+sys-firmware/seabios **
+app-emulation/libvirt ~*
+net-misc/x11-ssh-askpass **
+app-emulation/spice-protocol
+app-text/xhtml1 **
+sys-libs/libosinfo
+app-misc/scrub **
+app-emulation/spice **
+app-emulation/libvirt-glib **
+app-emulation/qemu **
+dev-perl/XML-XPath
+sys-devel/dev86 **
+app-emulation/virt-manager ~*
+dev-python/libvirt-python ~*
 
 ##
-# Masked cause of bug in bash globbing
+#raspberry pi stuff?
 ##
-=sys-devel/gcc-4.8.4
-
-=media-libs/libvpx-1.4.0 ~arm
-
-
-
-# required by sys-devel/dev86-0.16.21::gentoo
-# required by sys-firmware/vgabios-0.7a-r1::gentoo[-binary]
-# required by app-emulation/qemu-9999::gentoo[qemu_softmmu_targets_i386,pin-upstream-blobs,qemu_softmmu_targets_x86_64]
-# required by app-emulation/libvirt-9999::gentoo[qemu]
-# required by app-emulation/libvirt-glib-0.2.1::gentoo
-# required by app-emulation/virt-manager-9999::gentoo
-# required by @virt-client
-# required by @selected
-# required by @world (argument)
-=sys-devel/bin86-0.16.21 **
-# required by app-emulation/virt-manager-9999::gentoo[gtk]
-# required by @virt-client
-# required by @selected
-# required by @world (argument)
-=net-libs/gtk-vnc-0.5.4 ~arm
-# required by app-emulation/virt-manager-9999::gentoo
-# required by @virt-client
-# required by @selected
-# required by @world (argument)
-=dev-python/urlgrabber-3.10.1 ~arm
-# required by app-emulation/qemu-9999::gentoo[qemu_softmmu_targets_i386,pin-upstream-blobs,qemu_softmmu_targets_x86_64]
-# required by app-emulation/libvirt-9999::gentoo[qemu]
-# required by app-emulation/libvirt-glib-0.2.1::gentoo
-# required by app-emulation/virt-manager-9999::gentoo
-# required by @virt-client
-# required by @selected
-# required by @world (argument)
-=sys-firmware/vgabios-0.7a-r1 **
-# required by app-emulation/qemu-9999::gentoo[qemu_softmmu_targets_i386,pin-upstream-blobs,qemu_softmmu_targets_x86_64]
-# required by app-emulation/libvirt-9999::gentoo[qemu]
-# required by app-emulation/libvirt-glib-0.2.1::gentoo
-# required by app-emulation/virt-manager-9999::gentoo
-# required by @virt-client
-# required by @selected
-# required by @world (argument)
-=sys-firmware/seabios-1.7.5-r1 **
-# required by app-emulation/libvirt-glib-0.2.1::gentoo
-# required by app-emulation/virt-manager-9999::gentoo
-# required by @virt-client
-# required by @selected
-# required by @world (argument)
-=app-emulation/libvirt-9999 **
-# required by app-emulation/virt-manager-9999::gentoo[gtk]
-# required by @virt-client
-# required by @selected
-# required by @world (argument)
-=net-misc/x11-ssh-askpass-1.2.4.1-r1 **
-# required by app-emulation/qemu-9999::gentoo[spice]
-# required by app-emulation/libvirt-9999::gentoo[qemu]
-# required by app-emulation/libvirt-glib-0.2.1::gentoo
-# required by app-emulation/virt-manager-9999::gentoo
-# required by @virt-client
-# required by @selected
-# required by @world (argument)
-=app-emulation/spice-protocol-0.12.7 ~arm
-# required by app-emulation/libvirt-9999::gentoo
-# required by app-emulation/libvirt-glib-0.2.1::gentoo
-# required by app-emulation/virt-manager-9999::gentoo
-# required by @virt-client
-# required by @selected
-# required by @world (argument)
-=app-text/xhtml1-20020801-r4 **
-# required by app-emulation/virt-manager-9999::gentoo
-# required by @virt-client
-# required by @selected
-# required by @world (argument)
-=sys-libs/libosinfo-0.2.12 ~arm
-# required by app-emulation/libvirt-9999::gentoo
-# required by app-emulation/libvirt-glib-0.2.1::gentoo
-# required by app-emulation/virt-manager-9999::gentoo
-# required by @virt-client
-# required by @selected
-# required by @world (argument)
-=app-misc/scrub-2.6.1 **
-# required by @terminal
-# required by @selected
-# required by @world (argument)
-=x11-terms/terminology-0.7.0 **
-# required by app-emulation/qemu-9999::gentoo[spice,qemu_softmmu_targets_i386,-qemu_softmmu_targets_ppcemb,qemu_softmmu_targets_aarch64,-qemu_softmmu_targets_mips64,-qemu_softmmu_targets_s390x,-qemu_softmmu_targets_moxie,-qemu_softmmu_targets_sparc64,qemu_softmmu_targets_arm,-qemu_softmmu_targets_alpha,-qemu_softmmu_targets_microblaze,-qemu_softmmu_targets_mips,-qemu_softmmu_targets_ppc,-qemu_softmmu_targets_sh4,-qemu_softmmu_targets_cris,-qemu_softmmu_targets_xtensaeb,-qemu_softmmu_targets_sparc,-qemu_softmmu_targets_mips64el,-qemu_softmmu_targets_or32,-qemu_softmmu_targets_m68k,-static-softmmu,-qemu_softmmu_targets_mipsel,qemu_softmmu_targets_x86_64,-qemu_softmmu_targets_lm32,-qemu_softmmu_targets_unicore32,-qemu_softmmu_targets_microblazeel,-qemu_softmmu_targets_ppc64,-qemu_softmmu_targets_sh4eb,-qemu_softmmu_targets_xtensa]
-# required by app-emulation/libvirt-9999::gentoo[qemu]
-# required by app-emulation/libvirt-glib-0.2.1::gentoo
-# required by app-emulation/virt-manager-9999::gentoo
-# required by @virt-client
-# required by @selected
-# required by @world (argument)
-=app-emulation/spice-0.12.5-r1 **
-# required by app-emulation/virt-manager-9999::gentoo
-# required by @virt-client
-# required by @selected
-# required by @world (argument)
-=app-emulation/libvirt-glib-0.2.1 **
-# required by app-emulation/libvirt-9999::gentoo[qemu]
-# required by app-emulation/libvirt-glib-0.2.1::gentoo
-# required by app-emulation/virt-manager-9999::gentoo
-# required by @virt-client
-# required by @selected
-# required by @world (argument)
-=app-emulation/qemu-9999 **
-# required by app-emulation/qemu-9999::gentoo[qemu_softmmu_targets_i386,pin-upstream-blobs,qemu_softmmu_targets_x86_64]
-# required by app-emulation/libvirt-9999::gentoo[qemu]
-# required by app-emulation/libvirt-glib-0.2.1::gentoo
-# required by app-emulation/virt-manager-9999::gentoo
-# required by @virt-client
-# required by @selected
-# required by @world (argument)
-=sys-firmware/sgabios-0.1_pre8 **
-# required by app-emulation/libvirt-9999::gentoo
-# required by app-emulation/libvirt-glib-0.2.1::gentoo
-# required by app-emulation/virt-manager-9999::gentoo
-# required by @virt-client
-# required by @selected
-# required by @world (argument)
-=dev-perl/XML-XPath-1.130.0-r1 ~arm
-# required by sys-firmware/vgabios-0.7a-r1::gentoo[-binary]
-# required by app-emulation/qemu-9999::gentoo[qemu_softmmu_targets_i386,pin-upstream-blobs,qemu_softmmu_targets_x86_64]
-# required by app-emulation/libvirt-9999::gentoo[qemu]
-# required by app-emulation/libvirt-glib-0.2.1::gentoo
-# required by app-emulation/virt-manager-9999::gentoo
-# required by @virt-client
-# required by @selected
-# required by @world (argument)
-=sys-devel/dev86-0.16.21 **
-# required by app-emulation/virt-manager-9999::gentoo
-# required by @virt-client
-# required by @selected
-# required by @world (argument)
-=dev-python/ipaddr-2.1.11 **
-# required by app-emulation/qemu-9999::gentoo[qemu_softmmu_targets_x86_64,qemu_softmmu_targets_i386]
-# required by app-emulation/libvirt-9999::gentoo[qemu]
-# required by app-emulation/libvirt-glib-0.2.1::gentoo
-# required by app-emulation/virt-manager-9999::gentoo
-# required by @virt-client
-# required by @selected
-# required by @world (argument)
-=sys-firmware/ipxe-1.0.0_p20130925 **
-# required by @virt-client
-# required by @selected
-# required by @world (argument)
-=app-emulation/virt-manager-9999 **
-# required by app-emulation/virt-manager-9999::gentoo
-# required by @virt-client
-# required by @selected
-# required by @world (argument)
-=dev-python/libvirt-python-9999 **
-
 media-libs/raspberrypi-userland
 
-# required by app-office/libreoffice-5.0.1.2::gentoo
-# required by @desktop-applications
-# required by @arm-desktop-applications
-# required by @selected
-# required by @world (argument)
-=app-text/libetonyek-0.1.3 ~arm
-# required by app-office/libreoffice-5.0.1.2::gentoo
-# required by @desktop-applications
-# required by @arm-desktop-applications
-# required by @selected
-# required by @world (argument)
-=app-text/libwps-0.4.1 ~arm
-# required by app-office/libreoffice-5.0.1.2::gentoo
-# required by @desktop-applications
-# required by @arm-desktop-applications
-# required by @selected
-# required by @world (argument)
-=app-office/libreoffice-l10n-5.0.1.2 ~arm
-# required by app-text/libetonyek-0.1.3::gentoo
-# required by app-office/libreoffice-5.0.1.2::gentoo
-# required by @desktop-applications
-# required by @arm-desktop-applications
-# required by @selected
-# required by @world (argument)
-=dev-util/mdds-0.12.1 ~arm
-# required by app-office/libreoffice-5.0.1.2::gentoo
-# required by @desktop-applications
-# required by @arm-desktop-applications
-# required by @selected
-# required by @world (argument)
-=app-text/libmwaw-0.3.6 ~arm
+##
+# Wayland related?
+##
+dev-libs/wayland #double check this, stable version exists.
+x11-libs/pango #double check this, stable version exists
 
-=net-analyzer/wireshark-1.12.7 ~arm
-# required by x11-terms/terminology-0.9.1::gentoo
-# required by @desktop-applications
-# required by @arm-desktop-applications
-# required by @selected
-# required by @world (argument)
-=media-libs/elementary-1.15.2 ~arm
-# required by media-libs/elementary-1.15.2::gentoo
-# required by x11-terms/terminology-0.9.1::gentoo
-# required by @desktop-applications
-# required by @arm-desktop-applications
-# required by @selected
-# required by @world (argument)
-=dev-libs/efl-1.15.2 ~arm
+##
+# lxqt stuff?
+##
+x11-libs/libXrandr
+x11-proto/randrproto
 
+##
+# Double check this, has a stable version.
+##
+dev-db/sqlite
