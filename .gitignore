@@ -5,6 +5,5 @@ savedconfig
 bin
 sets
 make.local
-repos.conf
 package.accept_keywords
 repo.postsync.d

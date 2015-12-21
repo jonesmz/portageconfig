@@ -24,13 +24,7 @@ dev-libs/libpcre pcre16
 ##
 # Not doing this causes issues with systemd.
 ##
-dev-qt/qtgui -udev -accessibility
-
-##
-# Need the widgets useflag because qtwebkit:5 won't compile without it >_<
-##
-#dev-qt/qtwebkit widgets
-#dev-qt/qtmultimedia -alsa
+dev-qt/qtgui -accessibility
 
 ##
 # Nifty options for the qt-creator ide.
@@ -81,11 +75,6 @@ app-doc/doxygen dot -qt4 -qt5
 media-libs/gd jpeg truetype png fontconfig
 
 ##
-# I love the idea of pidgin voice and video, but it causes annoyance with google voice for now.
-##
-net-im/pidgin -* gtk networkmanager nls zeroconf spell
-
-##
 # Still haven't figured out how to get rid of cups...
 ##
 app-text/ghostscript-gpl cups
@@ -100,7 +89,6 @@ dev-lang/php apache2 gd pdo postgres
 app-admin/eselect-php apache2
 virtual/postgresql server
 app-eselect/eselect-php apache2
-
 
 ##
 # QEMU arm emulation support, and more.
@@ -129,7 +117,7 @@ media-libs/elementary -sdl X -xcb
 sys-devel/distcc -gtk
 
 ##
-# No need for zenmap...
+# No need for the nmap gui, zenmap...
 ##
 net-analyzer/nmap -gtk -lua
 
@@ -166,16 +154,10 @@ games-strategy/openra      tools
 games-strategy/warzone2100 videos
 
 ##
-# Needed for RStudio.
-##
-sys-devel/gcc fortran
-dev-lang/R bash-completion doc profile lapack
-app-text/pandoc -https -network-uri
-
-##
 # On the RPI (version 1, the single core one), we normally disable threads, but some apps explicitly need threads support for the various apps that are being installed.
 ##
 dev-libs/boost    threads
+dev-libs/botan    threads
 dev-lang/python   threads
 dev-libs/beecrypt threads
 
@@ -210,7 +192,7 @@ app-crypt/heimdal -ssl
 net-fs/samba client smbclient
 
 ##
-# When emulating ARM via Qemu, Qemu barfs on the messagemerge command. This useflag change makes it much less of a problem.
+# When emulating ARM via Qemu, Qemu barfs on the messagemerge command. This useflag change makes it much less of a problem, at the cost of slightly reduced speed.
 ##
 sys-devel/gettext -openmp
 
@@ -235,6 +217,11 @@ net-wireless/wpa_supplicant -qt4 -hs2-0
 # but would rather use the native connector, over FUSE.
 ##
 sys-cluster/ceph -fuse
+
+##
+# Supporting flash for southpark!
+##
+www-plugins/chrome-binary-plugins widevine flash
 
 ##
 # Settings for experimenting with wayland.
