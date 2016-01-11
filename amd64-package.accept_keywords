@@ -109,7 +109,6 @@ lxqt-base/liblxqt
 lxqt-base/liblxqt-mount
 
 lxqt-base/lxqt-meta
-lxqt-base/lxqt-about
 lxqt-base/lxqt-panel
 lxqt-base/lxqt-runner
 lxqt-base/lxqt-common
@@ -120,6 +119,8 @@ lxqt-base/lxqt-policykit
 lxqt-base/lxqt-globalkeys
 lxqt-base/lxqt-config-randr
 lxqt-base/lxqt-notificationd
+
+media-gfx/lximage-qt
 
 kde-frameworks/solid
 kde-frameworks/kf-env

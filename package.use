@@ -200,7 +200,7 @@ sys-devel/gettext -openmp
 # Need for lxqt
 ##
 x11-misc/sddm -upower
-lxqt-base/lxqt-meta -policykit sddm
+lxqt-base/lxqt-meta -policykit -about sddm lximage
 
 ##
 # Don't actually like using the desktop switcher, so I'm disabling it.
