@@ -53,9 +53,10 @@ dev-java/icedtea-web -nsplugin -webstart
 ##
 # Systemd doesn't have the static-libs useflag. Need to put this here to avoid conflicts
 ##
-virtual/udev     -static-libs
-virtual/libudev  -static-libs
-virtual/libgudev -static-libs
+virtual/udev      -static-libs
+virtual/libudev   -static-libs
+virtual/libgudev  -static-libs
+dev-libs/libgudev -static-libs
 
 ##
 # Spice-client can only have one sound-system and needs a gui toolkit
@@ -200,7 +201,7 @@ sys-devel/gettext -openmp
 # Need for lxqt
 ##
 x11-misc/sddm -upower
-lxqt-base/lxqt-meta -policykit sddm
+lxqt-base/lxqt-meta -policykit -about sddm lximage
 
 ##
 # Don't actually like using the desktop switcher, so I'm disabling it.
