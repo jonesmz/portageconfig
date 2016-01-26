@@ -232,3 +232,4 @@ x11-base/xorg-server wayland
 kde-base/kwin wayland
 kde-plasma/kwin wayland
 dev-libs/efl -opengl gles
+sys-cluster/corosync doc
