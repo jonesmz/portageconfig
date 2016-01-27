@@ -273,3 +273,5 @@ dev-libs/efl -opengl gles
 # required by dev-lang/ruby-2.1.6-r1::gentoo
 # required by dev-ruby/rake-0.9.6-r1::gentoo[ruby_targets_ruby21]
 >=virtual/rubygems-10 ruby_targets_ruby21
+
+sys-cluster/corosync doc
