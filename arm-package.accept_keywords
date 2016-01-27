@@ -276,6 +276,9 @@ app-office/libreoffice
 ##
 mate-base/mate-desktop
 mate-base/mate-common **
+
+mate-extra/mate-calc **
+
 app-editors/pluma **
 
 ##
@@ -335,6 +338,7 @@ dev-python/libvirt-python ~*
 #raspberry pi stuff?
 ##
 media-libs/raspberrypi-userland
+sys-boot/raspberrypi-firmware **
 
 ##
 # Wayland related?

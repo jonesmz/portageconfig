@@ -109,7 +109,7 @@ sys-apps/lshw -gtk
 ##
 # Tweaking enlightenment apps
 ##
-dev-libs/efl          -sdl X -xcb
+dev-libs/efl          -sdl X -xcb egl
 media-libs/elementary -sdl X -xcb
 
 ##
@@ -275,3 +275,16 @@ dev-libs/efl -opengl gles
 >=virtual/rubygems-10 ruby_targets_ruby21
 
 sys-cluster/corosync doc
+
+# required by dev-libs/botan-1.10.5::gentoo[ssl]
+# required by dev-qt/qt-creator-3.5.0::gentoo
+# required by @development-gui
+# required by @selected
+# required by @world (argument)
+>=dev-libs/openssl-1.0.2d -bindist
+# required by dev-qt/qt-creator-3.5.0::gentoo
+# required by @development-gui
+# required by @selected
+# required by @world (argument)
+>=dev-libs/botan-1.10.5 -bindist
+
