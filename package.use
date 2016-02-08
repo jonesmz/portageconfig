@@ -1,7 +1,7 @@
 ##
 # Systemd doesn't need extra cruft...
 ##
-sys-apps/systemd -firmware-loader
+sys-apps/systemd -firmware-loader -ssl
 
 sys-apps/systemd -python
 sys-apps/systemd -python_targets_python2_7 -python_targets_python3_3 -python_targets_python3_4
@@ -10,7 +10,7 @@ sys-apps/systemd -python_single_target_python2_7 -python_single_target_python3_3
 ##
 # Some nice to haves
 ##
-sys-apps/systemd elfutils gcrypt terminal
+sys-apps/systemd elfutils gcrypt terminal lzma
 
 ##
 # Useflags needed by qt5.
