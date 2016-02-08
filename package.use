@@ -46,8 +46,8 @@ mail-client/thunderbird -* pgo jemalloc3 -egl -gmp-autoupdate -webm -gstreamer -
 # But despite telling it to disable X, it still wants it >_<
 ##
 x11-libs/cairo X
-dev-java/icedtea     -X -alsa -nsplugin -webstart -pulseaudio -cups
-#dev-java/icedtea-bin -X -alsa -nsplugin -webstart -pulseaudio -cups
+dev-java/icedtea     headless-awt -X -gtk -alsa -nsplugin -webstart -pulseaudio -cups
+dev-java/icedtea-bin headless-awt -X -gtk -alsa -nsplugin -webstart -pulseaudio -cups
 dev-java/icedtea-web -nsplugin -webstart
 
 ##
@@ -233,3 +233,13 @@ kde-base/kwin wayland
 kde-plasma/kwin wayland
 dev-libs/efl -opengl gles
 sys-cluster/corosync doc
+
+##
+# Purging gstreamer 0.10
+# Disable gstreamer in wine, to get rid of version 0.10 dependency
+# Disabling model-viewer, and editor, removes the wxGTK package
+# which hard depends on 0.10
+##
+dev-qt/qtwebkit -gstreamer
+app-emulation/wine -gstreamer
+games-strategy/megaglest -model-viewer -editor
