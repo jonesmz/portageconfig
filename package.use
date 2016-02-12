@@ -165,7 +165,7 @@ dev-libs/beecrypt threads
 ##
 # No need for some features
 ##
-net-dns/avahi            -autoipd -python
+net-dns/avahi            -autoipd -python -gdbm -gtk -introspection -mdnsresponder-compat -nls -qt4
 net-misc/networkmanager  -zeroconf -ncurses
 
 ##
