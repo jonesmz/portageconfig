@@ -162,3 +162,28 @@ net-libs/zeromq
 # Corosync work
 ##
 sys-cluster/corosync
+
+
+##
+# Video conversion work for Matt.
+##
+media-libs/gstreamer
+media-plugins/gst-plugins-mpeg2dec
+media-plugins/gst-plugins-meta
+media-plugins/gst-plugins-mad
+media-plugins/gst-plugins-libav
+media-plugins/gst-plugins-flac
+media-plugins/gst-plugins-faad
+media-plugins/gst-plugins-dvdread
+media-plugins/gst-plugins-dts
+media-plugins/gst-plugins-cdparanoia
+media-plugins/gst-plugins-a52dec
+media-plugins/gst-plugins-pulse
+media-plugins/gst-plugins-resindvd
+media-plugins/gst-plugins-x264
+media-plugins/gst-plugins-v4l2
+
+media-libs/gst-plugins-ugly
+media-libs/gst-plugins-good
+media-libs/gst-plugins-base
+media-libs/gst-plugins-bad
