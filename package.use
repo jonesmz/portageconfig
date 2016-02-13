@@ -18,13 +18,19 @@ sys-apps/systemd elfutils gcrypt terminal lzma
 x11-libs/libxcb xkb
 dev-libs/libpcre pcre16
 
-##
+#####################################
 # Useflags for Qt5 itself
-##
+#####################################
+
 ##
 # Not doing this causes issues with systemd.
 ##
 dev-qt/qtgui -accessibility
+
+##
+# Needed by texmaker's qt5 version.
+##
+dev-qt/qtwebkit printsupport
 
 ##
 # Nifty options for the qt-creator ide.
@@ -61,7 +67,7 @@ dev-libs/libgudev -static-libs
 ##
 # Spice-client can only have one sound-system and needs a gui toolkit
 ##
-net-misc/spice-gtk -pulseaudio gtk3
+net-misc/spice-gtk -pulseaudio gtk3 -introspection
 
 ##
 # Need gbm for radion graphics card support
@@ -153,7 +159,6 @@ media-libs/sdl-mixer       midi timidity
 x11-base/xorg-server       xvfb
 games-strategy/openra      tools
 games-strategy/warzone2100 videos
-
 ##
 # On the RPI (version 1, the single core one), we normally disable threads, but some apps explicitly need threads support for the various apps that are being installed.
 ##
@@ -171,9 +176,9 @@ net-misc/networkmanager  -zeroconf -ncurses
 ##
 # We need to explicitly state which version of qt to use for some apps.
 ##
-app-office/texmaker    -qt5  qt4
-media-video/vlc        -qt5  qt4
-net-analyzer/wireshark -qt5 -qt4 -netlink
+app-office/texmaker    -qt4 qt5
+media-video/vlc        -qt4 qt5
+net-analyzer/wireshark -qt4 qt5 -netlink
 
 ##
 # Want qt5 support. Only works with the version in the jonesmz-public overlay.
@@ -240,6 +245,26 @@ sys-cluster/corosync doc
 # Disabling model-viewer, and editor, removes the wxGTK package
 # which hard depends on 0.10
 ##
-dev-qt/qtwebkit -gstreamer
+dev-qt/qtwebkit    -gstreamer
 app-emulation/wine -gstreamer
 games-strategy/megaglest -model-viewer -editor
+
+##
+# Disabling introspection on various packages. It's, for the most part, not useful for my usage cases.
+##
+x11-libs/vte           -introspection
+x11-libs/gtksourceview -introspection
+
+x11-libs/gtk+           introspection
+dev-libs/atk            introspection
+x11-libs/pango          introspection
+sys-auth/polkit         introspection
+net-misc/spice-gtk      introspection
+x11-libs/gdk-pixbuf     introspection
+
+##
+# Hrmm... trying to remove speech-dispatcher from the system.
+# Seems like the gn useflag makes chromium build with "Generate Ninja" instead of something else? Horribly unclear
+# but, bizarrely, this is the flag that makes it bring in the speech dispatcher. Wtf?
+##
+www-client/chromium gn system-ffmpeg
