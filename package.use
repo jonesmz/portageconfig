@@ -268,3 +268,8 @@ x11-libs/gdk-pixbuf     introspection
 # but, bizarrely, this is the flag that makes it bring in the speech dispatcher. Wtf?
 ##
 www-client/chromium gn system-ffmpeg
+
+##
+# lynx won't build on musl with nls
+##
+www-client/lynx -nls
