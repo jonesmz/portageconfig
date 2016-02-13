@@ -170,20 +170,29 @@ dev-libs/beecrypt threads
 ##
 # No need for some features
 ##
-net-dns/avahi            -autoipd -python -gdbm -gtk -introspection -mdnsresponder-compat -nls -qt4
+net-dns/avahi            -autoipd -python -gdbm -gtk -introspection -mdnsresponder-compat -nls
 net-misc/networkmanager  -zeroconf -ncurses
 
 ##
 # We need to explicitly state which version of qt to use for some apps.
+# Avahi only works with jonesmz-overlay for now.
 ##
-app-office/texmaker    -qt4 qt5
-media-video/vlc        -qt4 qt5
-net-analyzer/wireshark -qt4 qt5 -netlink
+net-dns/avahi              -qt4 qt5
+dev-util/cmake             -qt4 qt5
+media-video/vlc            -qt4 qt5
+app-text/poppler           -qt4 qt5
+dev-util/cppcheck          -qt4 qt5
+media-gfx/graphviz         -qt4 qt5
+app-office/texmaker        -qt4 qt5
+dev-qt/qtlockedfile        -qt4 qt5
+net-analyzer/wireshark     -qt4 qt5
+dev-libs/libdbusmenu-qt    -qt4 qt5
+dev-qt/qtsingleapplication -qt4 qt5
 
 ##
-# Want qt5 support. Only works with the version in the jonesmz-public overlay.
+# Don't actually remember what this one is for...
 ##
-net-dns/avahi qt5
+net-analyzer/wireshark -netlink -gtk3
 
 ##
 # Dependency conflict when using libav on these. Need to revisit this.
