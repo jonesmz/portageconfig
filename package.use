@@ -125,8 +125,10 @@ sys-devel/distcc -gtk
 
 ##
 # No need for the nmap gui, zenmap...
+#
+# The ncat flag adds ipv6 capable netcat implementation
 ##
-net-analyzer/nmap -gtk -lua
+net-analyzer/nmap -gtk -lua ncat
 
 ##
 # Libreoffice doesn't need to be quite so heavy weight.
@@ -282,3 +284,5 @@ www-client/chromium gn system-ffmpeg
 # lynx won't build on musl with nls
 ##
 www-client/lynx -nls
+
+sys-apps/dbus systemd
