@@ -143,7 +143,6 @@ sys-apps/util-linux tty-helpers
 ##
 # Not doing this causes lvm2 to be installed. Don't want or need.
 ##
-media-tv/xbmc -udisks
 media-tv/kodi -udisks
 
 ##
