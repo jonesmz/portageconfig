@@ -84,7 +84,7 @@ media-libs/gd jpeg truetype png fontconfig
 ##
 # Still haven't figured out how to get rid of cups...
 ##
-app-text/ghostscript-gpl cups
+app-text/ghostscript-gpl -cups
 net-print/cups           -*
 net-print/cups-filters   -*
 
@@ -178,9 +178,9 @@ net-misc/networkmanager  -zeroconf -ncurses
 # Avahi only works with jonesmz-overlay for now.
 ##
 net-dns/avahi              -qt4 qt5
-dev-util/cmake             -qt4 qt5
+dev-util/cmake             -qt4 -qt5
 media-video/vlc            -qt4 qt5
-app-text/poppler           -qt4 qt5
+app-text/poppler           -qt4 -qt5
 dev-util/cppcheck          -qt4 qt5
 media-gfx/graphviz         -qt4 qt5
 app-office/texmaker        -qt4 qt5
