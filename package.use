@@ -94,7 +94,6 @@ net-print/cups-filters   -*
 ##
 www-apps/drupal -mysql postgres
 dev-lang/php apache2 gd pdo postgres
-app-admin/eselect-php apache2
 virtual/postgresql server
 app-eselect/eselect-php apache2
 
@@ -291,3 +290,8 @@ www-client/lynx -nls
 ##
 sys-apps/dbus systemd
 
+##
+# Adds support for the None cipher. Literally this cipher performs absolutely no encryption, and as such is as insecure as can possibly be,
+# but it's also very cpu friendly and therefore useful when doing security insensitive things like file transfers.
+##
+net-misc/openssh hpn
