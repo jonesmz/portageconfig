@@ -1,7 +1,7 @@
 ##
 # Systemd doesn't need extra cruft...
 ##
-sys-apps/systemd -firmware-loader -ssl
+sys-apps/systemd -firmware-loader -ssl -kdbus -lz4
 
 sys-apps/systemd -python
 sys-apps/systemd -python_targets_python2_7 -python_targets_python3_3 -python_targets_python3_4
@@ -10,7 +10,7 @@ sys-apps/systemd -python_single_target_python2_7 -python_single_target_python3_3
 ##
 # Some nice to haves
 ##
-sys-apps/systemd elfutils gcrypt terminal lzma
+sys-apps/systemd elfutils gcrypt lzma
 
 ##
 # Useflags needed by qt5.
@@ -21,16 +21,17 @@ dev-libs/libpcre pcre16
 #####################################
 # Useflags for Qt5 itself
 #####################################
+dev-qt/qtgui:4 -accessibility
+dev-qt/qtgui:5 -accessibility
 
-##
-# Not doing this causes issues with systemd.
-##
-dev-qt/qtgui -accessibility
+dev-qt/qtgui:4    -exceptions
+dev-qt/qtcore:4   -exceptions
+dev-qt/qtscript:4 -exceptions
 
 ##
 # Needed by texmaker's qt5 version.
 ##
-dev-qt/qtwebkit printsupport
+dev-qt/qtwebkit:5 printsupport -opengl
 
 ##
 # Nifty options for the qt-creator ide.
@@ -53,7 +54,7 @@ mail-client/thunderbird -* pgo jemalloc3 -egl -gmp-autoupdate -webm -gstreamer -
 ##
 x11-libs/cairo X
 dev-java/icedtea     headless-awt -X -gtk -alsa -nsplugin -webstart -pulseaudio -cups
-dev-java/icedtea-bin headless-awt -X -gtk -alsa -nsplugin -webstart -pulseaudio -cups
+dev-java/icedtea-bin -headless-awt X  gtk -alsa -nsplugin -webstart  pulseaudio -cups
 dev-java/icedtea-web -nsplugin -webstart
 
 ##
@@ -67,7 +68,7 @@ dev-libs/libgudev -static-libs
 ##
 # Spice-client can only have one sound-system and needs a gui toolkit
 ##
-net-misc/spice-gtk -pulseaudio gtk3 -introspection
+net-misc/spice-gtk -pulseaudio gtk3
 
 ##
 # Need gbm for radion graphics card support
@@ -84,7 +85,7 @@ media-libs/gd jpeg truetype png fontconfig
 ##
 # Still haven't figured out how to get rid of cups...
 ##
-app-text/ghostscript-gpl cups
+app-text/ghostscript-gpl -cups
 net-print/cups           -*
 net-print/cups-filters   -*
 
@@ -136,14 +137,13 @@ net-analyzer/nmap -gtk -lua ncat
 app-office/libreoffice -dbus -gnome -gstreamer -opengl -postgres -vba -webdav
 
 ##
-# Need tty-helpers useflag to support acupsd
+# Need tty-helpers useflag to support apcupsd
 ##
 sys-apps/util-linux tty-helpers
 
 ##
 # Not doing this causes lvm2 to be installed. Don't want or need.
 ##
-media-tv/xbmc -udisks
 media-tv/kodi -udisks
 
 ##
@@ -179,17 +179,17 @@ net-misc/networkmanager  -zeroconf -ncurses
 # We need to explicitly state which version of qt to use for some apps.
 # Avahi only works with jonesmz-overlay for now.
 ##
-net-dns/avahi              -qt4 qt5
-dev-util/cmake             -qt4 qt5
-media-video/vlc            -qt4 qt5
-app-text/poppler           -qt4 qt5
-dev-util/cppcheck          -qt4 qt5
-media-gfx/graphviz         -qt4 qt5
-app-office/texmaker        -qt4 qt5
-dev-qt/qtlockedfile        -qt4 qt5
-net-analyzer/wireshark     -qt4 qt5
-dev-libs/libdbusmenu-qt    -qt4 qt5
-dev-qt/qtsingleapplication -qt4 qt5
+net-dns/avahi              -qt4  qt5
+dev-util/cmake             -qt4 -qt5
+media-video/vlc            -qt4  qt5
+app-text/poppler           -qt4  qt5
+dev-util/cppcheck          -qt4  qt5
+media-gfx/graphviz         -qt4  qt5
+app-office/texmaker        -qt4  qt5
+dev-qt/qtlockedfile        -qt4  qt5
+net-analyzer/wireshark     -qt4  qt5
+dev-libs/libdbusmenu-qt    -qt4  qt5
+dev-qt/qtsingleapplication -qt4  qt5
 
 ##
 # Don't actually remember what this one is for...
@@ -248,7 +248,6 @@ x11-base/xorg-server wayland
 kde-base/kwin wayland
 kde-plasma/kwin wayland
 dev-libs/efl -opengl gles
-sys-cluster/corosync doc
 
 ##
 # Purging gstreamer 0.10
@@ -263,15 +262,17 @@ games-strategy/megaglest -model-viewer -editor
 ##
 # Disabling introspection on various packages. It's, for the most part, not useful for my usage cases.
 ##
-x11-libs/vte           -introspection
-x11-libs/gtksourceview -introspection
+x11-libs/vte              -introspection
+x11-libs/gtksourceview    -introspection
 
-x11-libs/gtk+           introspection
-dev-libs/atk            introspection
-x11-libs/pango          introspection
-sys-auth/polkit         introspection
-net-misc/spice-gtk      introspection
-x11-libs/gdk-pixbuf     introspection
+x11-libs/gtk+              introspection
+dev-libs/atk               introspection
+x11-libs/pango             introspection
+sys-auth/polkit            introspection
+sys-libs/libosinfo         introspection
+net-misc/spice-gtk         introspection
+x11-libs/gdk-pixbuf        introspection
+app-emulation/libvirt-glib introspection
 
 ##
 # Hrmm... trying to remove speech-dispatcher from the system.
@@ -285,4 +286,8 @@ www-client/chromium gn system-ffmpeg kerberos
 ##
 www-client/lynx -nls
 
+##
+# Very much not clear on why this needs to be specified. Further investigation needed.
+##
 sys-apps/dbus systemd
+
