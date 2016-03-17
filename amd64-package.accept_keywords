@@ -150,3 +150,8 @@ net-libs/zeromq
 # Corosync work
 ##
 sys-cluster/corosync
+
+##
+# Need dracut for multi-device btrfs root fs.
+##
+sys-kernel/dracut
