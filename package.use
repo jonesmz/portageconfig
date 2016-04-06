@@ -294,3 +294,9 @@ sys-apps/dbus systemd
 # but it's also very cpu friendly and therefore useful when doing security insensitive things like file transfers.
 ##
 net-misc/openssh hpn
+
+##
+# Virtual Machine Disk Image Management needs this
+##
+app-arch/unzip natspec
+app-emulation/libguestfs ocaml
