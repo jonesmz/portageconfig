@@ -204,8 +204,7 @@ media-video/vlc -libav
 ##
 # Samba 4 experiment
 ##
-app-crypt/heimdal -ssl
-net-fs/samba client smbclient
+net-fs/samba client smbclient -avahi aio fam
 
 ##
 # When emulating ARM via Qemu, Qemu barfs on the messagemerge command. This useflag change makes it much less of a problem, at the cost of slightly reduced speed.
