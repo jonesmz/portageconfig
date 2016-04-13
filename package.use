@@ -204,8 +204,7 @@ media-video/vlc -libav
 ##
 # Samba 4 experiment
 ##
-app-crypt/heimdal -ssl
-net-fs/samba client smbclient
+net-fs/samba client smbclient -avahi aio fam
 
 ##
 # When emulating ARM via Qemu, Qemu barfs on the messagemerge command. This useflag change makes it much less of a problem, at the cost of slightly reduced speed.
@@ -295,3 +294,9 @@ sys-apps/dbus systemd
 # but it's also very cpu friendly and therefore useful when doing security insensitive things like file transfers.
 ##
 net-misc/openssh hpn
+
+##
+# Virtual Machine Disk Image Management needs this
+##
+app-arch/unzip natspec
+app-emulation/libguestfs ocaml

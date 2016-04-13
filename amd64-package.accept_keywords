@@ -128,6 +128,7 @@ kde-frameworks/kguiaddons
 kde-frameworks/kwindowsystem
 kde-frameworks/extra-cmake-modules
 
+kde-plasma/kwayland
 kde-plasma/libkscreen
 
 x11-misc/sddm
@@ -155,3 +156,19 @@ sys-cluster/corosync
 # Need dracut for multi-device btrfs root fs.
 ##
 sys-kernel/dracut
+
+##
+# Gives virtual machine disk image management features
+##
+app-arch/lzma
+app-emulation/libguestfs
+app-emulation/libguestfs-appliance
+
+dev-ml/camomile
+dev-ml/ocaml-gettext
+dev-ml/ocaml-fileutils
+
+##
+# Need newer gdb to embed printers directly into shared libraries.
+##
+sys-devel/gdb
