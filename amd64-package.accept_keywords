@@ -172,3 +172,13 @@ dev-ml/ocaml-fileutils
 # Need newer gdb to embed printers directly into shared libraries.
 ##
 sys-devel/gdb
+
+##
+# Newer qt creator
+##
+sys-devel/llvm
+sys-devel/clang
+dev-qt/qt-creator
+
+dev-libs/libclc
+

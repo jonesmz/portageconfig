@@ -74,7 +74,8 @@ net-misc/spice-gtk -pulseaudio gtk3
 # Need gbm for radion graphics card support
 # All the other stuff is to just provide the various APIs for generic use by various machines.
 ##
-media-libs/mesa gbm gles1 gles2 llvm-shared-libs opencl openvg r600-llvm-compiler vdpau wayland xa xvmc
+media-libs/mesa gbm gles1 gles2 llvm-shared-libs opencl openvg r600-llvm-compiler vaapi vdpau wayland xa xvmc
+x11-libs/libva vdpau wayland
 
 ##
 # Doxygen is rather unimpressive without DOT support. Don't need the wizard.
@@ -136,7 +137,7 @@ net-analyzer/nmap -gtk -lua ncat
 app-office/libreoffice -dbus -gnome -gstreamer -opengl -postgres -vba -webdav
 
 ##
-# Need tty-helpers useflag to support apcupsd
+# Need tty-helpers useflag to support apcupsd requested by jay for his ups.
 ##
 sys-apps/util-linux tty-helpers
 
@@ -246,6 +247,7 @@ x11-base/xorg-server wayland
 kde-base/kwin wayland
 kde-plasma/kwin wayland
 dev-libs/efl -opengl gles
+media-plugins/gst-plugins-vaapi wayland
 
 ##
 # Purging gstreamer 0.10
@@ -271,6 +273,10 @@ sys-libs/libosinfo         introspection
 net-misc/spice-gtk         introspection
 x11-libs/gdk-pixbuf        introspection
 app-emulation/libvirt-glib introspection
+
+x11-libs/vte               introspection
+net-libs/gtk-vnc           introspection
+
 
 ##
 # Hrmm... trying to remove speech-dispatcher from the system.
