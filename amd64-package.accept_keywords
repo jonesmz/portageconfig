@@ -41,11 +41,10 @@ dev-qt/qtgraphicaleffects:5
 ##
 # No Java6 crap for us, plus some rpi accepts.
 ##
-virtual/jdk:1.7
-virtual/jre:1.7
-dev-java/icedtea:7
-dev-java/icedtea-bin:7
-dev-java/icedtea-web:7
+virtual/jdk:1.8
+virtual/jre:1.8
+dev-java/icedtea:8
+dev-java/icedtea-bin:8
 
 ##
 # Needed for fastboot tool
