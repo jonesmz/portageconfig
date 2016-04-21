@@ -366,3 +366,7 @@ sys-apps/dbus **
 app-text/poppler
 
 dev-util/diffuse **
+
+dev-db/mongodb **
+dev-libs/snowball-stemmer
+dev-cpp/yaml-cpp
