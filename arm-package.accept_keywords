@@ -273,10 +273,17 @@ app-office/libreoffice
 
 ##
 # Needed for pluma, replacement for gedit.
+# and other mate apps.
 ##
 mate-base/mate-desktop
 mate-base/mate-common **
+
+mate-extra/mate-calc **
+
 app-editors/pluma **
+media-gfx/eom
+mate-extra/mate-calc **
+x11-themes/mate-icon-theme
 
 ##
 # LXQT is the successor to LXDE. It seems mature enough to use regularly.
@@ -335,6 +342,7 @@ dev-python/libvirt-python ~*
 #raspberry pi stuff?
 ##
 media-libs/raspberrypi-userland
+sys-boot/raspberrypi-firmware **
 
 ##
 # Wayland related?
@@ -354,3 +362,11 @@ x11-proto/randrproto
 dev-db/sqlite
 
 sys-apps/dbus **
+
+app-text/poppler
+
+dev-util/diffuse **
+
+dev-db/mongodb **
+dev-libs/snowball-stemmer
+dev-cpp/yaml-cpp
