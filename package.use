@@ -1,7 +1,7 @@
 ##
 # Systemd doesn't need extra cruft...
 ##
-sys-apps/systemd -firmware-loader -ssl
+sys-apps/systemd -firmware-loader -ssl -kdbus -lz4
 
 sys-apps/systemd -python
 sys-apps/systemd -python_targets_python2_7 -python_targets_python3_3 -python_targets_python3_4
@@ -10,7 +10,7 @@ sys-apps/systemd -python_single_target_python2_7 -python_single_target_python3_3
 ##
 # Some nice to haves
 ##
-sys-apps/systemd elfutils gcrypt terminal lzma
+sys-apps/systemd elfutils gcrypt lzma
 
 ##
 # Useflags needed by qt5.
@@ -21,16 +21,17 @@ dev-libs/libpcre pcre16
 #####################################
 # Useflags for Qt5 itself
 #####################################
+dev-qt/qtgui:4 -accessibility
+dev-qt/qtgui:5 -accessibility
 
-##
-# Not doing this causes issues with systemd.
-##
-dev-qt/qtgui -accessibility
+dev-qt/qtgui:4    -exceptions
+dev-qt/qtcore:4   -exceptions
+dev-qt/qtscript:4 -exceptions
 
 ##
 # Needed by texmaker's qt5 version.
 ##
-dev-qt/qtwebkit printsupport
+dev-qt/qtwebkit:5 printsupport -opengl
 
 ##
 # Nifty options for the qt-creator ide.
@@ -53,7 +54,7 @@ mail-client/thunderbird -* pgo jemalloc3 -egl -gmp-autoupdate -webm -gstreamer -
 ##
 x11-libs/cairo X
 dev-java/icedtea     headless-awt -X -gtk -alsa -nsplugin -webstart -pulseaudio -cups
-dev-java/icedtea-bin headless-awt -X -gtk -alsa -nsplugin -webstart -pulseaudio -cups
+dev-java/icedtea-bin -headless-awt X  gtk -alsa -nsplugin -webstart  pulseaudio -cups
 dev-java/icedtea-web -nsplugin -webstart
 
 ##
@@ -67,13 +68,14 @@ dev-libs/libgudev -static-libs
 ##
 # Spice-client can only have one sound-system and needs a gui toolkit
 ##
-net-misc/spice-gtk -pulseaudio gtk3 -introspection
+net-misc/spice-gtk -pulseaudio gtk3
 
 ##
 # Need gbm for radion graphics card support
 # All the other stuff is to just provide the various APIs for generic use by various machines.
 ##
-media-libs/mesa gbm gles1 gles2 llvm-shared-libs opencl openvg r600-llvm-compiler vdpau wayland xa xvmc
+media-libs/mesa gbm gles1 gles2 llvm-shared-libs opencl openvg r600-llvm-compiler vaapi vdpau wayland xa xvmc
+x11-libs/libva vdpau wayland
 
 ##
 # Doxygen is rather unimpressive without DOT support. Don't need the wizard.
@@ -84,7 +86,7 @@ media-libs/gd jpeg truetype png fontconfig
 ##
 # Still haven't figured out how to get rid of cups...
 ##
-app-text/ghostscript-gpl cups
+app-text/ghostscript-gpl -cups
 net-print/cups           -*
 net-print/cups-filters   -*
 
@@ -93,7 +95,6 @@ net-print/cups-filters   -*
 ##
 www-apps/drupal -mysql postgres
 dev-lang/php apache2 gd pdo postgres
-app-admin/eselect-php apache2
 virtual/postgresql server
 app-eselect/eselect-php apache2
 
@@ -125,8 +126,10 @@ sys-devel/distcc -gtk
 
 ##
 # No need for the nmap gui, zenmap...
+#
+# The ncat flag adds ipv6 capable netcat implementation
 ##
-net-analyzer/nmap -gtk -lua
+net-analyzer/nmap -gtk -lua ncat
 
 ##
 # Libreoffice doesn't need to be quite so heavy weight.
@@ -134,14 +137,13 @@ net-analyzer/nmap -gtk -lua
 app-office/libreoffice -dbus -gnome -gstreamer -opengl -postgres -vba -webdav
 
 ##
-# Need tty-helpers useflag to support acupsd
+# Need tty-helpers useflag to support apcupsd requested by jay for his ups.
 ##
 sys-apps/util-linux tty-helpers
 
 ##
 # Not doing this causes lvm2 to be installed. Don't want or need.
 ##
-media-tv/xbmc -udisks
 media-tv/kodi -udisks
 
 ##
@@ -177,17 +179,17 @@ net-misc/networkmanager  -zeroconf -ncurses
 # We need to explicitly state which version of qt to use for some apps.
 # Avahi only works with jonesmz-overlay for now.
 ##
-net-dns/avahi              -qt4 qt5
-dev-util/cmake             -qt4 qt5
-media-video/vlc            -qt4 qt5
-app-text/poppler           -qt4 qt5
-dev-util/cppcheck          -qt4 qt5
-media-gfx/graphviz         -qt4 qt5
-app-office/texmaker        -qt4 qt5
-dev-qt/qtlockedfile        -qt4 qt5
-net-analyzer/wireshark     -qt4 qt5
-dev-libs/libdbusmenu-qt    -qt4 qt5
-dev-qt/qtsingleapplication -qt4 qt5
+net-dns/avahi              -qt4  qt5
+dev-util/cmake             -qt4 -qt5
+media-video/vlc            -qt4  qt5
+app-text/poppler           -qt4  qt5
+dev-util/cppcheck          -qt4  qt5
+media-gfx/graphviz         -qt4  qt5
+app-office/texmaker        -qt4  qt5
+dev-qt/qtlockedfile        -qt4  qt5
+net-analyzer/wireshark     -qt4  qt5
+dev-libs/libdbusmenu-qt    -qt4  qt5
+dev-qt/qtsingleapplication -qt4  qt5
 
 ##
 # Don't actually remember what this one is for...
@@ -203,8 +205,7 @@ media-video/vlc -libav
 ##
 # Samba 4 experiment
 ##
-app-crypt/heimdal -ssl
-net-fs/samba client smbclient
+net-fs/samba client smbclient -avahi aio fam
 
 ##
 # When emulating ARM via Qemu, Qemu barfs on the messagemerge command. This useflag change makes it much less of a problem, at the cost of slightly reduced speed.
@@ -247,48 +248,7 @@ kde-base/kwin wayland
 kde-plasma/kwin wayland
 dev-libs/efl -opengl gles
 
-# required by virtual/rubygems-10::gentoo[ruby_targets_ruby21]
-# required by dev-ruby/json-1.8.2-r1::gentoo[-test,ruby_targets_ruby20]
-# required by dev-lang/ruby-2.0.0_p645::gentoo
-# required by dev-ruby/rdoc-4.0.1-r2::gentoo[ruby_targets_ruby20]
-# required by dev-lang/ruby-2.1.6-r1::gentoo[rdoc]
-# required by dev-ruby/racc-1.4.11::gentoo[ruby_targets_ruby21]
->=dev-ruby/rubygems-2.2.5-r1 ruby_targets_ruby21
-# required by dev-lang/ruby-2.1.6-r1::gentoo
-# required by virtual/rubygems-10::gentoo[ruby_targets_ruby21]
-# required by dev-ruby/json-1.8.2-r1::gentoo[-test,ruby_targets_ruby20]
-# required by dev-lang/ruby-2.0.0_p645::gentoo
-# required by dev-ruby/rdoc-4.0.1-r2::gentoo[ruby_targets_ruby20]
-# required by dev-lang/ruby-1.9.3_p551-r1::gentoo[rdoc]
-# required by dev-ruby/racc-1.4.11::gentoo[ruby_targets_ruby19]
->=dev-ruby/rake-0.9.6-r1 ruby_targets_ruby21
-# required by dev-ruby/rdoc-4.0.1-r2::gentoo[ruby_targets_ruby21]
-# required by dev-lang/ruby-2.0.0_p645::gentoo[rdoc]
-# required by virtual/rubygems-10::gentoo[ruby_targets_ruby20]
-# required by dev-ruby/json-1.8.2-r1::gentoo[-test,ruby_targets_ruby20]
-# required by dev-lang/ruby-2.1.6-r1::gentoo
-# required by dev-ruby/rake-0.9.6-r1::gentoo[ruby_targets_ruby21]
->=dev-ruby/racc-1.4.11 ruby_targets_ruby21
-# required by dev-lang/ruby-2.1.6-r1::gentoo[rdoc]
-# required by virtual/rubygems-10::gentoo[ruby_targets_ruby21]
-# required by dev-ruby/json-1.8.2-r1::gentoo[-test,ruby_targets_ruby20]
-# required by dev-lang/ruby-2.0.0_p645::gentoo
-# required by dev-ruby/racc-1.4.11::gentoo[ruby_targets_ruby20]
->=dev-ruby/rdoc-4.0.1-r2 ruby_targets_ruby21
-# required by dev-ruby/rdoc-4.0.1-r2::gentoo[ruby_targets_ruby21]
-# required by dev-lang/ruby-2.0.0_p645::gentoo[rdoc]
-# required by virtual/rubygems-10::gentoo[ruby_targets_ruby20]
-# required by dev-ruby/racc-1.4.11::gentoo[-test,ruby_targets_ruby20]
->=dev-ruby/json-1.8.2-r1 ruby_targets_ruby21
-# required by dev-ruby/racc-1.4.11::gentoo[ruby_targets_ruby21,-test]
-# required by dev-ruby/rdoc-4.0.1-r2::gentoo[ruby_targets_ruby19]
-# required by dev-lang/ruby-2.0.0_p645::gentoo[rdoc]
-# required by dev-ruby/json-1.8.2-r1::gentoo[ruby_targets_ruby20]
-# required by dev-lang/ruby-2.1.6-r1::gentoo
-# required by dev-ruby/rake-0.9.6-r1::gentoo[ruby_targets_ruby21]
->=virtual/rubygems-10 ruby_targets_ruby21
-
-sys-cluster/corosync doc
+media-plugins/gst-plugins-vaapi wayland
 
 # required by dev-libs/botan-1.10.5::gentoo[ssl]
 # required by dev-qt/qt-creator-3.5.0::gentoo
@@ -315,19 +275,46 @@ games-strategy/megaglest -model-viewer -editor
 ##
 # Disabling introspection on various packages. It's, for the most part, not useful for my usage cases.
 ##
-x11-libs/vte           -introspection
-x11-libs/gtksourceview -introspection
+x11-libs/vte              -introspection
+x11-libs/gtksourceview    -introspection
 
-x11-libs/gtk+           introspection
-dev-libs/atk            introspection
-x11-libs/pango          introspection
-sys-auth/polkit         introspection
-net-misc/spice-gtk      introspection
-x11-libs/gdk-pixbuf     introspection
+x11-libs/gtk+              introspection
+dev-libs/atk               introspection
+x11-libs/pango             introspection
+sys-auth/polkit            introspection
+sys-libs/libosinfo         introspection
+net-misc/spice-gtk         introspection
+x11-libs/gdk-pixbuf        introspection
+app-emulation/libvirt-glib introspection
+
+x11-libs/vte               introspection
+net-libs/gtk-vnc           introspection
 
 ##
 # Hrmm... trying to remove speech-dispatcher from the system.
 # Seems like the gn useflag makes chromium build with "Generate Ninja" instead of something else? Horribly unclear
 # but, bizarrely, this is the flag that makes it bring in the speech dispatcher. Wtf?
 ##
-www-client/chromium gn system-ffmpeg
+www-client/chromium gn system-ffmpeg kerberos
+
+##
+# lynx won't build on musl with nls
+##
+www-client/lynx -nls
+
+##
+# Very much not clear on why this needs to be specified. Further investigation needed.
+##
+sys-apps/dbus systemd
+
+##
+# Adds support for the None cipher. Literally this cipher performs absolutely no encryption, and as such is as insecure as can possibly be,
+# but it's also very cpu friendly and therefore useful when doing security insensitive things like file transfers.
+##
+net-misc/openssh hpn
+
+##
+# Virtual Machine Disk Image Management needs this
+##
+app-arch/unzip natspec
+app-emulation/libguestfs ocaml

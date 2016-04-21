@@ -273,6 +273,7 @@ app-office/libreoffice
 
 ##
 # Needed for pluma, replacement for gedit.
+# and other mate apps.
 ##
 mate-base/mate-desktop
 mate-base/mate-common **
@@ -280,6 +281,9 @@ mate-base/mate-common **
 mate-extra/mate-calc **
 
 app-editors/pluma **
+media-gfx/eom
+mate-extra/mate-calc **
+x11-themes/mate-icon-theme
 
 ##
 # LXQT is the successor to LXDE. It seems mature enough to use regularly.
@@ -356,3 +360,9 @@ x11-proto/randrproto
 # Double check this, has a stable version.
 ##
 dev-db/sqlite
+
+sys-apps/dbus **
+
+app-text/poppler
+
+dev-util/diffuse **
