@@ -176,6 +176,10 @@ net-dns/avahi            -autoipd -python -gdbm -gtk -introspection -mdnsrespond
 net-misc/networkmanager  -zeroconf -ncurses
 
 ##
+# Custom flags for vlc
+##
+media-video/vlc -* X a52 avcodec avformat cdda dbus dts dvbpsi dvd ffmpeg flac gcrypt gnome jpeg libnotify libsamplerate mp3 mpeg ncurses ogg opengl png pulseaudio qt5 samba sdl svg swscale theora udev vaapi vdpau vorbis x264 xcb xml xv zeroconf cpu_flags_x86_mmx cpu_flags_x86_sse
+##
 # We need to explicitly state which version of qt to use for some apps.
 # Avahi only works with jonesmz-overlay for now.
 ##
@@ -189,7 +193,9 @@ app-office/texmaker        -qt4  qt5
 dev-qt/qtlockedfile        -qt4  qt5
 net-analyzer/wireshark     -qt4  qt5
 dev-libs/libdbusmenu-qt    -qt4  qt5
+dev-games/openscenegraph   -qt4  qt5
 dev-qt/qtsingleapplication -qt4  qt5
+
 
 ##
 # Don't actually remember what this one is for...
