@@ -36,7 +36,7 @@ dev-qt/qtwebkit:5 printsupport -opengl
 ##
 # Nifty options for the qt-creator ide.
 ##
-dev-qt/qt-creator android autotools clang cmake
+dev-qt/qt-creator android autotools clang cmake systemd
 
 ##
 # No sense in having firefox and thunderbird build their own copies of libraries...
@@ -324,3 +324,9 @@ net-misc/openssh hpn
 ##
 app-arch/unzip natspec
 app-emulation/libguestfs ocaml
+
+##
+# Needed for spotify
+##
+net-print/cups ssl
+
