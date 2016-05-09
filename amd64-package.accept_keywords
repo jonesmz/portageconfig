@@ -131,9 +131,11 @@ sys-devel/gdb
 ##
 # Newer qt creator
 ##
-sys-devel/llvm
-sys-devel/clang
+=sys-devel/llvm-3.6.2
+=sys-devel/clang-3.6.2-r100
 dev-qt/qt-creator
 
-dev-libs/libclc
+=dev-libs/libclc-0.1.0_pre20150305
+
+=media-libs/freetype-2.6.3-r1 ~amd64
 
