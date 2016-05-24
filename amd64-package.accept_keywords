@@ -88,9 +88,6 @@ kde-frameworks/kguiaddons
 kde-frameworks/kwindowsystem
 kde-frameworks/extra-cmake-modules
 
-kde-plasma/kwayland
-kde-plasma/libkscreen
-
 x11-misc/sddm
 x11-misc/obconf-qt
 x11-misc/pcmanfm-qt
@@ -131,9 +128,5 @@ sys-devel/gdb
 ##
 # Newer qt creator
 ##
-sys-devel/llvm
-sys-devel/clang
 dev-qt/qt-creator
-
-dev-libs/libclc
 
