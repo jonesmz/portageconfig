@@ -178,7 +178,7 @@ net-misc/networkmanager  -zeroconf -ncurses
 ##
 # Custom flags for vlc
 ##
-media-video/vlc -* X a52 avcodec avformat cdda dbus dts dvbpsi dvd ffmpeg flac gcrypt gnome jpeg libnotify libsamplerate mp3 mpeg ncurses ogg opengl png pulseaudio qt5 samba sdl svg swscale theora udev vaapi vdpau vorbis x264 xcb xml xv zeroconf cpu_flags_x86_mmx cpu_flags_x86_sse
+media-video/vlc -* X a52 avcodec avformat cdda dbus dts dvbpsi dvd ffmpeg flac gcrypt gnome jpeg libnotify libsamplerate mp3 mpeg ncurses ogg opengl png pulseaudio qt5 samba sdl svg swscale theora udev vaapi vdpau vorbis x264 xcb xml xv zeroconf opus cpu_flags_x86_mmx cpu_flags_x86_sse
 ##
 # We need to explicitly state which version of qt to use for some apps.
 # Avahi only works with jonesmz-overlay for now.
@@ -237,8 +237,10 @@ net-wireless/wpa_supplicant -qt4 -hs2-0
 ##
 # Want support for the cephfs network filesystem
 # but would rather use the native connector, over FUSE.
+#
+# Revisit this, and find a way to disable radosgw
 ##
-sys-cluster/ceph -fuse
+sys-cluster/ceph cephfs -fuse radosgw
 
 ##
 # Supporting flash for southpark!
@@ -301,7 +303,7 @@ net-libs/gtk-vnc           introspection
 # Seems like the gn useflag makes chromium build with "Generate Ninja" instead of something else? Horribly unclear
 # but, bizarrely, this is the flag that makes it bring in the speech dispatcher. Wtf?
 ##
-www-client/chromium gn system-ffmpeg kerberos
+www-client/chromium gn kerberos system-ffmpeg
 
 ##
 # lynx won't build on musl with nls
