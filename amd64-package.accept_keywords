@@ -82,12 +82,6 @@ lxqt-base/lxqt-notificationd
 
 media-gfx/lximage-qt
 
-kde-frameworks/solid
-kde-frameworks/kf-env
-kde-frameworks/kguiaddons
-kde-frameworks/kwindowsystem
-kde-frameworks/extra-cmake-modules
-
 x11-misc/sddm
 x11-misc/obconf-qt
 x11-misc/pcmanfm-qt
