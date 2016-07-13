@@ -319,7 +319,7 @@ sys-apps/dbus systemd
 # Adds support for the None cipher. Literally this cipher performs absolutely no encryption, and as such is as insecure as can possibly be,
 # but it's also very cpu friendly and therefore useful when doing security insensitive things like file transfers.
 ##
-net-misc/openssh hpn
+#net-misc/openssh hpn
 
 ##
 # Virtual Machine Disk Image Management needs this
