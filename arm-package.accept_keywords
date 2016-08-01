@@ -1,93 +1,11 @@
 ##
-# Qt5 is still considered unstable...
-##
-dev-qt/qtchooser
-
-dev-qt/qdoc:5
-dev-qt/qtxml:5
-dev-qt/qtsql:5
-dev-qt/qtgui:5
-dev-qt/qtsvg:5
-dev-qt/qdbus:5
-dev-qt/qtdiag:5
-dev-qt/qtdbus:5
-dev-qt/qttest:5
-dev-qt/qtcore:5
-dev-qt/qthelp:5
-dev-qt/qtpaths:5
-dev-qt/designer:5
-dev-qt/qtscript:5
-dev-qt/qtquick1:5
-dev-qt/qtopengl:5
-dev-qt/qtwebkit:5
-dev-qt/qtwidgets:5
-dev-qt/qtnetwork:5
-dev-qt/qtsensors:5
-dev-qt/assistant:5
-dev-qt/qtwayland:5
-dev-qt/qtx11extras:5
-dev-qt/qtwebsockets:5
-dev-qt/qtconcurrent:5
-dev-qt/qtmultimedia:5
-dev-qt/qtserialport:5
-dev-qt/qtpositioning:5
-dev-qt/qtdeclarative:5
-dev-qt/qtxmlpatterns:5
-dev-qt/linguist-tools:5
-dev-qt/qttranslations:5
-dev-qt/qtimageformats:5
-dev-qt/qtprintsupport:5
-dev-qt/qtquickcontrols:5
-dev-qt/qtgraphicaleffects:5
-
-##
-# Temporarily, need to enable testing qt4, due to upstream changes to the qt5 dependencies.
-# This section will go away before too long, especially since qt4 is reaching end of life after end of 2015
-##
-dev-qt/qdoc:4
-dev-qt/qtxml:4
-dev-qt/qtsql:4
-dev-qt/qtgui:4
-dev-qt/qtsvg:4
-dev-qt/qdbus:4
-dev-qt/qtdiag:4
-dev-qt/qtdbus:4
-dev-qt/qttest:4
-dev-qt/qtcore:4
-dev-qt/qthelp:4
-dev-qt/qtpaths:4
-dev-qt/designer:4
-dev-qt/qtscript:4
-dev-qt/qtquick1:4
-dev-qt/qtopengl:4
-dev-qt/qtwebkit:4
-dev-qt/qtwidgets:4
-dev-qt/qtnetwork:4
-dev-qt/qtsensors:4
-dev-qt/assistant:4
-dev-qt/qtx11extras:4
-dev-qt/qtwebsockets:4
-dev-qt/qtconcurrent:4
-dev-qt/qtmultimedia:4
-dev-qt/qtserialport:4
-dev-qt/qtpositioning:4
-dev-qt/qtdeclarative:4
-dev-qt/qtxmlpatterns:4
-dev-qt/linguist-tools:4
-dev-qt/qttranslations:4
-dev-qt/qtimageformats:4
-dev-qt/qtprintsupport:4
-dev-qt/qtquickcontrols:4
-dev-qt/qtgraphicaleffects:4
-
-##
 # No Java6 crap for us, plus some rpi accepts.
 ##
-virtual/jdk:1.7
-virtual/jre:1.7
-dev-java/icedtea:7 **
-dev-java/icedtea-bin:7
-dev-java/icedtea-web:7
+virtual/jdk:1.8
+virtual/jre:1.8
+dev-java/icedtea:8 **
+dev-java/icedtea-bin:8
+dev-java/icedtea-web:8
 
 dev-java/gcj-jdk
 dev-java/ecj-gcj
@@ -309,6 +227,7 @@ kde-frameworks/kguiaddons
 kde-frameworks/kwindowsystem
 
 x11-misc/sddm
+x11-misc/xdg-utils
 x11-misc/obconf-qt
 x11-misc/pcmanfm-qt
 
@@ -370,3 +289,60 @@ dev-util/diffuse **
 dev-db/mongodb **
 dev-libs/snowball-stemmer
 dev-cpp/yaml-cpp
+
+# required by lxqt-base/lxqt-qtplugin-0.10.0::gentoo
+# required by lxqt-base/lxqt-meta-0.10.0::gentoo
+# required by @lxqt
+# required by @selected
+# required by @world (argument)
+=dev-libs/libdbusmenu-qt-0.9.3_pre20140619-r1 ~arm
+# required by media-tv/kodi-16.0::gentoo
+# required by @selected
+# required by @world (argument)
+=media-sound/dcadec-0.2.0 ~arm
+# required by media-tv/kodi-16.0::gentoo
+# required by @selected
+# required by @world (argument)
+=dev-libs/crossguid-0_pre20150817 ~arm
+# required by dev-cpp/libcmis-0.5.1::gentoo
+# required by app-office/libreoffice-5.1.2.2::gentoo
+# required by @desktop-applications
+# required by @arm-desktop-applications
+# required by @selected
+# required by @world (argument)
+=sys-devel/boost-m4-0.4_p20160328 ~arm
+# required by lxqt-base/lxqt-panel-0.10.0-r1::gentoo[mount]
+# required by lxqt-base/lxqt-meta-0.10.0::gentoo
+# required by @lxqt
+# required by @selected
+# required by @world (argument)
+=kde-frameworks/solid-5.21.0 ~arm
+# required by lxqt-base/lxqt-config-0.10.0::gentoo
+# required by lxqt-base/lxqt-meta-0.10.0::gentoo
+# required by @lxqt
+# required by @selected
+# required by @world (argument)
+=kde-plasma/libkscreen-5.6.3 ~arm
+# required by kde-plasma/libkscreen-5.6.3::gentoo
+# required by lxqt-base/lxqt-config-0.10.0::gentoo
+# required by lxqt-base/lxqt-meta-0.10.0::gentoo
+# required by @lxqt
+# required by @selected
+# required by @world (argument)
+=kde-plasma/kwayland-5.6.3 ~arm
+
+# required by app-text/texlive-core-2014-r4::gentoo
+# required by dev-texlive/texlive-fontsrecommended-2014::gentoo
+# required by dev-texlive/texlive-latexextra-2014::gentoo
+# required by @desktop-applications
+# required by @arm-desktop-applications
+# required by @selected
+# required by @world (argument)
+=media-libs/freetype-2.6.3-r1 ~arm
+# required by app-office/libreoffice-5.1.2.2::gentoo
+# required by @desktop-applications
+# required by @arm-desktop-applications
+# required by @selected
+# required by @world (argument)
+=media-libs/harfbuzz-1.2.6 ~arm
+

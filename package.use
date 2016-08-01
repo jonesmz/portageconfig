@@ -332,3 +332,11 @@ app-emulation/libguestfs ocaml
 ##
 net-print/cups ssl
 
+>=dev-libs/botan-1.10.12 bindist
+# required by net-misc/openssh-7.2_p2::gentoo[-static,ssl]
+# required by sys-fs/sshfs-2.5::gentoo
+# required by @base-system
+# required by @selected
+# required by @world (argument)
+>=dev-libs/openssl-1.0.2g-r2 bindist
+
