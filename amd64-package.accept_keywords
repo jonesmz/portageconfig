@@ -114,6 +114,9 @@ sys-devel/gdb
 ##
 # Newer qt creator
 ##
+sys-devel/llvm
+sys-devel/clang
+dev-libs/libclc
 dev-qt/qt-creator
 
 ##
