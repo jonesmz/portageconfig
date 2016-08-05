@@ -101,9 +101,10 @@ app-eselect/eselect-php apache2
 ##
 # QEMU arm emulation support, and more.
 ##
-dev-libs/glib static-libs
-sys-libs/zlib static-libs
-sys-apps/attr static-libs
+dev-libs/glib  static-libs
+sys-libs/zlib  static-libs
+sys-apps/attr  static-libs
+app-arch/bzip2 static-libs
 
 net-misc/spice-gtk usbredir
 app-emulation/qemu static-user usbredir virtfs numa spice
@@ -319,7 +320,7 @@ sys-apps/dbus systemd
 # Adds support for the None cipher. Literally this cipher performs absolutely no encryption, and as such is as insecure as can possibly be,
 # but it's also very cpu friendly and therefore useful when doing security insensitive things like file transfers.
 ##
-net-misc/openssh hpn
+#net-misc/openssh hpn
 
 ##
 # Virtual Machine Disk Image Management needs this
