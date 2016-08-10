@@ -101,9 +101,10 @@ app-eselect/eselect-php apache2
 ##
 # QEMU arm emulation support, and more.
 ##
-dev-libs/glib static-libs
-sys-libs/zlib static-libs
-sys-apps/attr static-libs
+dev-libs/glib  static-libs
+sys-libs/zlib  static-libs
+sys-apps/attr  static-libs
+app-arch/bzip2 static-libs
 
 net-misc/spice-gtk usbredir
 app-emulation/qemu static-user usbredir virtfs numa spice
