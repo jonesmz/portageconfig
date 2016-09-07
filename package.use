@@ -304,7 +304,8 @@ net-libs/gtk-vnc           introspection
 # Seems like the gn useflag makes chromium build with "Generate Ninja" instead of something else? Horribly unclear
 # but, bizarrely, this is the flag that makes it bring in the speech dispatcher. Wtf?
 ##
-www-client/chromium gn kerberos system-ffmpeg
+www-client/chromium kerberos system-ffmpeg
+#www-client/chromium gn
 
 ##
 # lynx won't build on musl with nls
