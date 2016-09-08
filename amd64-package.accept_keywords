@@ -123,3 +123,9 @@ dev-qt/qt-creator
 # Interesting compiler infastructure type tools
 ##
 =dev-libs/capstone-3.0.4-r1 ~amd64
+
+##
+# Better virtual machine management
+##
+app-emulation/libvirt
+app-emulation/virt-manager
