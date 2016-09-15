@@ -114,6 +114,9 @@ sys-devel/gdb
 ##
 # Newer qt creator
 ##
+sys-devel/llvm
+sys-devel/clang
+dev-libs/libclc
 dev-qt/qt-creator
 
 ##
@@ -126,3 +129,8 @@ dev-qt/qt-creator
 ##
 app-emulation/libvirt
 app-emulation/virt-manager
+
+##
+# Trying out lumina desktop for the hell of it
+##
+x11-wm/lumina

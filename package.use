@@ -28,6 +28,9 @@ dev-qt/qtgui:4    -exceptions
 dev-qt/qtcore:4   -exceptions
 dev-qt/qtscript:4 -exceptions
 
+dev-qt/qtmultimedia:5 widgets
+
+
 ##
 # Needed by texmaker's qt5 version.
 ##
@@ -36,7 +39,7 @@ dev-qt/qtwebkit:5 printsupport -opengl
 ##
 # Nifty options for the qt-creator ide.
 ##
-dev-qt/qt-creator android autotools clang cmake systemd
+dev-qt/qt-creator android autotools cmake clang clangcodemodel clangstaticanalyzer
 
 ##
 # No sense in having firefox and thunderbird build their own copies of libraries...
