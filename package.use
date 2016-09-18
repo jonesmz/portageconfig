@@ -81,7 +81,7 @@ media-libs/mesa gbm gles1 gles2 llvm-shared-libs opencl openvg r600-llvm-compile
 x11-libs/libva vdpau wayland
 
 ##
-# Doxygen is rather unimpressive without DOT support. Don't need the wizard.
+# Doxygen is rather unimpressive without DOT support but don't need the wizard.
 ##
 app-doc/doxygen dot -qt4 -qt5
 media-libs/gd jpeg truetype png fontconfig
@@ -166,8 +166,9 @@ media-libs/sdl-mixer       midi timidity
 x11-base/xorg-server       xvfb
 games-strategy/openra      tools
 games-strategy/warzone2100 videos
+
 ##
-# On the RPI (version 1, the single core one), we normally disable threads, but some apps explicitly need threads support for the various apps that are being installed.
+# On the RPI (version 1, the single core one), we normally disable threads, but some libs explicitly need threads support for the various apps that are being installed.
 ##
 dev-libs/boost    threads
 dev-libs/botan    threads
@@ -184,6 +185,7 @@ net-misc/networkmanager  -zeroconf -ncurses
 # Custom flags for vlc
 ##
 media-video/vlc -* X a52 avcodec avformat cdda dbus dts dvbpsi dvd ffmpeg flac gcrypt gnome jpeg libnotify libsamplerate mp3 mpeg ncurses ogg opengl png pulseaudio qt5 samba sdl svg swscale theora udev vaapi vdpau vorbis x264 xcb xml xv zeroconf opus cpu_flags_x86_mmx cpu_flags_x86_sse
+
 ##
 # We need to explicitly state which version of qt to use for some apps.
 # Avahi only works with jonesmz-overlay for now.
@@ -255,13 +257,17 @@ www-plugins/chrome-binary-plugins widevine flash
 ##
 # Settings for experimenting with wayland.
 ##
-dev-libs/weston wayland-compositor xwayland
-x11-base/xorg-server wayland
-kde-base/kwin wayland
-kde-plasma/kwin wayland
-dev-libs/efl -opengl gles
+dev-libs/efl			-opengl gles
+kde-base/kwin			wayland
+kde-plasma/kwin			wayland
+dev-libs/weston			wayland-compositor xwayland
+x11-base/xorg-server		wayland
+media-plugins/gst-plugins-vaapi	wayland
 
-media-plugins/gst-plugins-vaapi wayland
+##
+# Need glamor for radeon cards.
+##
+x11-base/xorg-server glamor
 
 # required by dev-libs/botan-1.10.5::gentoo[ssl]
 # required by dev-qt/qt-creator-3.5.0::gentoo
@@ -309,6 +315,10 @@ net-libs/gtk-vnc           introspection
 # but, bizarrely, this is the flag that makes it bring in the speech dispatcher. Wtf?
 ##
 www-client/chromium kerberos system-ffmpeg
+
+##
+# Chromium has some new build system, but it doesn't seem happy yet.
+##
 #www-client/chromium gn
 
 ##
@@ -323,7 +333,7 @@ sys-apps/dbus systemd
 
 ##
 # Adds support for the None cipher. Literally this cipher performs absolutely no encryption, and as such is as insecure as can possibly be,
-# but it's also very cpu friendly and therefore useful when doing security insensitive things like file transfers.
+# but it's also very cpu friendly and therefore useful when doing security insensitive things like file transfers on local networks
 ##
 #net-misc/openssh hpn
 
