@@ -96,6 +96,7 @@ net-print/cups-filters   -*
 ##
 # Mysql is evil! Drupal for website experiment
 ##
+www-servers/apache -ssl
 www-apps/drupal -mysql postgres
 dev-lang/php apache2 gd pdo postgres
 virtual/postgresql server

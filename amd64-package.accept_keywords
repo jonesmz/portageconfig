@@ -134,3 +134,12 @@ app-emulation/virt-manager
 # Trying out lumina desktop for the hell of it
 ##
 x11-wm/lumina
+
+##
+# Windows 10 isn't working correctly with Sambas virtual server personality support.
+# Trying newer releases...
+##
+net-fs/samba
+sys-libs/talloc
+
+sys-fs/duperemove
