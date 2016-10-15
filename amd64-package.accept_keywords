@@ -129,8 +129,22 @@ dev-qt/qt-creator
 ##
 app-emulation/libvirt
 app-emulation/virt-manager
+app-emulation/libvirt-glib
+
+dev-python/libvirt-python
 
 ##
 # Trying out lumina desktop for the hell of it
 ##
 x11-wm/lumina
+
+
+
+
+x11-misc/arandr
+
+##
+# Repoman for gentoo dev
+##
+dev-python/lxml
+app-portage/repoman

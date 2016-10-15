@@ -154,7 +154,7 @@ sys-apps/util-linux tty-helpers
 ##
 # Not doing this causes lvm2 to be installed. Don't want or need.
 ##
-media-tv/kodi -udisks
+media-tv/kodi -udisks upnp
 
 ##
 # Needed for kodi
@@ -189,7 +189,7 @@ net-misc/networkmanager  -zeroconf -ncurses
 ##
 # Custom flags for vlc
 ##
-media-video/vlc -* X a52 avcodec avformat cdda dbus dts dvbpsi dvd ffmpeg flac gcrypt gnome jpeg libnotify libsamplerate mp3 mpeg ncurses ogg opengl png pulseaudio qt5 samba sdl svg swscale theora udev vaapi vdpau vorbis x264 xcb xml xv zeroconf opus cpu_flags_x86_mmx cpu_flags_x86_sse
+media-video/vlc -* X a52 avcodec avformat cdda dbus dts dvbpsi dvd ffmpeg flac gcrypt gnome jpeg libnotify libsamplerate mp3 mpeg ncurses ogg opengl png pulseaudio qt5 samba sdl svg swscale theora udev vaapi vdpau vorbis x264 xcb xml xv zeroconf opus cpu_flags_x86_mmx cpu_flags_x86_sse upnp
 
 ##
 # We need to explicitly state which version of qt to use for some apps.
@@ -301,7 +301,7 @@ games-strategy/megaglest -model-viewer -editor
 # Disabling introspection on various packages. It's, for the most part, not useful for my usage cases.
 ##
 x11-libs/vte              -introspection
-x11-libs/gtksourceview    -introspection
+x11-libs/gtksourceview     introspection
 
 x11-libs/gtk+              introspection
 dev-libs/atk               introspection
@@ -320,7 +320,9 @@ net-libs/gtk-vnc           introspection
 # Seems like the gn useflag makes chromium build with "Generate Ninja" instead of something else? Horribly unclear
 # but, bizarrely, this is the flag that makes it bring in the speech dispatcher. Wtf?
 ##
-www-client/chromium kerberos system-ffmpeg
+www-client/chromium gn kerberos system-ffmpeg
+media-libs/libvpx svc
+
 
 ##
 # Chromium has some new build system, but it doesn't seem happy yet.
