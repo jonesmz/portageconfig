@@ -41,10 +41,11 @@ dev-vcs/perforce-gui
 net-wireless/broadcom-sta
 
 ##
-# GAMES, specifically TES3: Morrowind.
+# GAMES, specifically TES3: Morrowind and dwarffortress
 ##
 games-engines/openmw
 dev-games/openscenegraph
+games-roguelike/dwarf-fortress
 
 ##
 # Just useful to have systemrescuecd already downloaded.
@@ -148,3 +149,18 @@ x11-misc/arandr
 ##
 dev-python/lxml
 app-portage/repoman
+
+
+##
+# Steam
+##
+games-util/esteam
+games-util/steam-meta
+games-util/steam-launcher
+games-util/steam-games-meta
+games-util/steam-client-meta
+
+##
+# Newer xfreerdp for usb redirection
+##
+net-misc/freerdp
