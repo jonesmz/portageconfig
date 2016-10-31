@@ -77,9 +77,11 @@ lxqt-base/lxqt-notificationd
 
 media-gfx/lximage-qt
 
+x11-libs/libfm-qt
 x11-misc/obconf-qt
 x11-misc/pcmanfm-qt
 
+dev-util/cmake
 dev-libs/libqtxdg
 
 ##
@@ -117,7 +119,7 @@ sys-devel/gdb
 ##
 #sys-devel/llvm
 #sys-devel/clang
-dev-libs/libclc
+#dev-libs/libclc
 dev-qt/qt-creator
 
 ##
@@ -164,3 +166,4 @@ games-util/steam-client-meta
 # Newer xfreerdp for usb redirection
 ##
 net-misc/freerdp
+
