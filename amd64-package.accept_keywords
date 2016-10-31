@@ -41,10 +41,11 @@ dev-vcs/perforce-gui
 net-wireless/broadcom-sta
 
 ##
-# GAMES, specifically TES3: Morrowind.
+# GAMES, specifically TES3: Morrowind and dwarffortress
 ##
 games-engines/openmw
 dev-games/openscenegraph
+games-roguelike/dwarf-fortress
 
 ##
 # Just useful to have systemrescuecd already downloaded.
@@ -76,9 +77,11 @@ lxqt-base/lxqt-notificationd
 
 media-gfx/lximage-qt
 
+x11-libs/libfm-qt
 x11-misc/obconf-qt
 x11-misc/pcmanfm-qt
 
+dev-util/cmake
 dev-libs/libqtxdg
 
 ##
@@ -116,7 +119,7 @@ sys-devel/gdb
 ##
 #sys-devel/llvm
 #sys-devel/clang
-dev-libs/libclc
+#dev-libs/libclc
 dev-qt/qt-creator
 
 ##
@@ -129,12 +132,16 @@ dev-qt/qt-creator
 ##
 app-emulation/libvirt
 app-emulation/virt-manager
+app-emulation/libvirt-glib
+
+dev-python/libvirt-python
 
 ##
 # Trying out lumina desktop for the hell of it
 ##
 x11-wm/lumina
 
+<<<<<<< HEAD
 ##
 # Windows 10 isn't working correctly with Sambas virtual server personality support.
 # Trying newer releases...
@@ -143,3 +150,26 @@ net-fs/samba
 sys-libs/talloc
 
 sys-fs/duperemove
+
+x11-misc/arandr
+
+##
+# Repoman for gentoo dev
+##
+dev-python/lxml
+app-portage/repoman
+
+
+##
+# Steam
+##
+games-util/esteam
+games-util/steam-meta
+games-util/steam-launcher
+games-util/steam-games-meta
+games-util/steam-client-meta
+
+##
+# Newer xfreerdp for usb redirection
+##
+net-misc/freerdp

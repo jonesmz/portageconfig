@@ -1,4 +1,9 @@
 ##
+# Spice things up with a bit of optimization
+##
+sys-devel/gcc graphite sanitize
+
+##
 # Systemd doesn't need extra cruft...
 ##
 sys-apps/systemd -firmware-loader -ssl -kdbus -lz4
@@ -77,7 +82,7 @@ net-misc/spice-gtk -pulseaudio gtk3
 # Need gbm for radion graphics card support
 # All the other stuff is to just provide the various APIs for generic use by various machines.
 ##
-media-libs/mesa gbm gles1 gles2 llvm-shared-libs opencl openvg r600-llvm-compiler vaapi vdpau wayland xa xvmc
+media-libs/mesa gbm gles1 gles2 llvm-shared-libs opencl openvg r600-llvm-compiler vaapi vdpau wayland xa xvmc -vaapi
 x11-libs/libva vdpau wayland
 
 ##
@@ -150,7 +155,7 @@ sys-apps/util-linux tty-helpers
 ##
 # Not doing this causes lvm2 to be installed. Don't want or need.
 ##
-media-tv/kodi -udisks
+media-tv/kodi -udisks upnp
 
 ##
 # Needed for kodi
@@ -185,7 +190,7 @@ net-misc/networkmanager  -zeroconf -ncurses
 ##
 # Custom flags for vlc
 ##
-media-video/vlc -* X a52 avcodec avformat cdda dbus dts dvbpsi dvd ffmpeg flac gcrypt gnome jpeg libnotify libsamplerate mp3 mpeg ncurses ogg opengl png pulseaudio qt5 samba sdl svg swscale theora udev vaapi vdpau vorbis x264 xcb xml xv zeroconf opus cpu_flags_x86_mmx cpu_flags_x86_sse
+media-video/vlc -* X a52 avcodec avformat cdda dbus dts dvbpsi dvd ffmpeg flac gcrypt gnome jpeg libnotify libsamplerate mp3 mpeg ncurses ogg opengl png pulseaudio qt5 samba sdl svg swscale theora udev vaapi vdpau vorbis x264 xcb xml xv zeroconf opus cpu_flags_x86_mmx cpu_flags_x86_sse upnp
 
 ##
 # We need to explicitly state which version of qt to use for some apps.
@@ -262,6 +267,7 @@ dev-libs/efl			-opengl gles
 kde-base/kwin			wayland
 kde-plasma/kwin			wayland
 dev-libs/weston			wayland-compositor xwayland
+media-libs/libsdl2		gles
 x11-base/xorg-server		wayland
 media-plugins/gst-plugins-vaapi	wayland
 
@@ -296,7 +302,7 @@ games-strategy/megaglest -model-viewer -editor
 # Disabling introspection on various packages. It's, for the most part, not useful for my usage cases.
 ##
 x11-libs/vte              -introspection
-x11-libs/gtksourceview    -introspection
+x11-libs/gtksourceview     introspection
 
 x11-libs/gtk+              introspection
 dev-libs/atk               introspection
@@ -315,7 +321,9 @@ net-libs/gtk-vnc           introspection
 # Seems like the gn useflag makes chromium build with "Generate Ninja" instead of something else? Horribly unclear
 # but, bizarrely, this is the flag that makes it bring in the speech dispatcher. Wtf?
 ##
-www-client/chromium kerberos system-ffmpeg
+#www-client/chromium system-ffmpeg
+media-libs/libvpx svc
+
 
 ##
 # Chromium has some new build system, but it doesn't seem happy yet.
@@ -348,4 +356,137 @@ app-emulation/libguestfs ocaml
 # Needed for spotify
 ##
 net-print/cups ssl
+
+media-tv/kodi upnp
+
+##
+# 32 bit libraries needed by steam
+##
+virtual/jpeg:0 		abi_x86_32
+virtual/libffi		abi_x86_32
+virtual/libelf		abi_x86_32
+virtual/opengl		abi_x86_32
+virtual/libintl		abi_x86_32
+virtual/libudev		abi_x86_32
+virtual/libiconv	abi_x86_32
+virtual/pkgconfig	abi_x86_32
+
+sys-fs/udev		abi_x86_32
+dev-db/sqlite		abi_x86_32
+net-misc/curl		abi_x86_32
+sys-apps/attr		abi_x86_32
+sys-devel/llvm		abi_x86_32
+app-arch/bzip2		abi_x86_32
+sys-devel/clang		abi_x86_32
+sys-apps/systemd	abi_x86_32
+app-arch/xz-utils	abi_x86_32
+dev-util/pkgconfig	abi_x86_32
+gnome-base/librsvg	abi_x86_32
+sys-apps/util-linux	abi_x86_32
+media-gfx/graphite2	abi_x86_32
+
+sys-libs/gpm		abi_x86_32
+sys-libs/zlib		abi_x86_32
+sys-libs/libcap		abi_x86_32
+sys-libs/ncurses	abi_x86_32
+sys-libs/readline	abi_x86_32
+sys-libs/binutils-libs	abi_x86_32
+
+dev-libs/nss			abi_x86_32
+dev-libs/icu			abi_x86_32
+dev-libs/atk			abi_x86_32
+dev-libs/nspr			abi_x86_32
+dev-libs/lzo			abi_x86_32
+dev-libs/glib			abi_x86_32
+dev-libs/expat			abi_x86_32
+dev-libs/libffi			abi_x86_32
+dev-libs/libxml2		abi_x86_32
+dev-libs/openssl		abi_x86_32
+dev-libs/libpcre		abi_x86_32
+dev-libs/wayland		abi_x86_32
+dev-libs/libcroco		abi_x86_32
+dev-libs/elfutils		abi_x86_32
+dev-libs/libgcrypt		abi_x86_32
+dev-libs/libgpg-error		abi_x86_32
+dev-libs/libpthread-stubs	abi_x86_32
+
+media-libs/mesa			abi_x86_32
+media-libs/tiff			abi_x86_32
+media-libs/libpng		abi_x86_32
+media-libs/freetype 		abi_x86_32
+media-libs/harfbuzz		abi_x86_32
+media-libs/fontconfig		abi_x86_32
+media-libs/libtxc_dxtn		abi_x86_32
+media-libs/libjpeg-turbo	abi_x86_32
+
+x11-proto/xproto		abi_x86_32
+x11-proto/glproto 		abi_x86_32
+x11-proto/kbproto		abi_x86_32
+x11-proto/xcb-proto		abi_x86_32
+x11-proto/xextproto		abi_x86_32
+x11-proto/dri2proto		abi_x86_32
+x11-proto/dri3proto		abi_x86_32
+x11-proto/randrproto		abi_x86_32
+x11-proto/fixesproto		abi_x86_32
+x11-proto/inputproto		abi_x86_32
+x11-proto/videoproto		abi_x86_32
+x11-proto/damageproto		abi_x86_32
+x11-proto/xf86driproto		abi_x86_32
+x11-proto/presentproto		abi_x86_32
+x11-proto/xineramaproto		abi_x86_32
+x11-proto/compositeproto	abi_x86_32
+x11-proto/xf86bigfontproto	abi_x86_32
+x11-proto/xf86vidmodeproto	abi_x86_32
+
+x11-libs/gtk+:2			abi_x86_32
+x11-libs/pixma			abi_x86_32
+x11-libs/cairo			abi_x86_32
+x11-libs/libXv			abi_x86_32
+x11-libs/pango			abi_x86_32
+x11-libs/libXi			abi_x86_32
+x11-libs/libXft			abi_x86_32
+x11-libs/libdrm			abi_x86_32
+x11-libs/libX11			abi_x86_32
+x11-libs/libXau			abi_x86_32
+x11-libs/libxcb			abi_x86_32
+x11-libs/libXvMC		abi_x86_32
+x11-libs/libXext		abi_x86_32
+x11-libs/libXdmcp		abi_x86_32
+x11-libs/libvdpau		abi_x86_32
+x11-libs/libXrandr		abi_x86_32
+x11-libs/libXfixes		abi_x86_32
+x11-libs/libXdamage		abi_x86_32
+x11-libs/libXcursor		abi_x86_32
+x11-libs/gdk-pixbuf		abi_x86_32
+x11-libs/libXxf86vm		abi_x86_32
+x11-libs/libXrender		abi_x86_32
+x11-libs/libXinerama		abi_x86_32
+x11-libs/libpciaccess		abi_x86_32
+x11-libs/libxshmfence		abi_x86_32
+x11-libs/libXcomposite		abi_x86_32
+
+
+
+# required by x11-libs/cairo-1.14.6::gentoo
+# required by media-libs/harfbuzz-1.3.1::gentoo[cairo]
+# required by x11-libs/pango-1.40.3::gentoo
+# required by gnome-base/librsvg-2.40.16::gentoo
+# required by x11-libs/gtk+-2.24.31::gentoo
+# required by app-editors/pluma-1.12.2-r1::gentoo[-gtk3]
+# required by @desktop-applications
+# required by @amd64-desktop-applications
+# required by @selected
+# required by @world (argument)
+>=x11-libs/pixman-0.34.0 abi_x86_32
+# required by x11-libs/cairo-1.14.6::gentoo[X]
+# required by media-libs/harfbuzz-1.3.1::gentoo[cairo]
+# required by x11-libs/pango-1.40.3::gentoo
+# required by gnome-base/librsvg-2.40.16::gentoo
+# required by x11-libs/gtk+-2.24.31::gentoo
+# required by app-editors/pluma-1.12.2-r1::gentoo[-gtk3]
+# required by @desktop-applications
+# required by @amd64-desktop-applications
+# required by @selected
+# required by @world (argument)
+>=x11-proto/renderproto-0.11.1-r1 abi_x86_32
 
