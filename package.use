@@ -53,8 +53,8 @@ dev-qt/qt-creator android autotools cmake clang clangcodemodel clangstaticanalyz
 ##
 dev-db/sqlite secure-delete
 media-libs/libvpx postproc
-www-client/firefox      -* pgo jemalloc3  egl  gmp-autoupdate  webm  gstreamer  pulseaudio minimal libnotify startup-notification jit system-cairo -system-icu system-jpeg system-sqlite -system-libvpx hardened
-mail-client/thunderbird -* pgo jemalloc3 -egl -gmp-autoupdate -webm -gstreamer -pulseaudio minimal libnotify startup-notification jit system-cairo -system-icu system-jpeg system-sqlite -system-libvpx hardened
+www-client/firefox      -* pgo jemalloc3  egl  gmp-autoupdate  webm  gstreamer  pulseaudio minimal libnotify startup-notification jit system-cairo -system-icu system-jpeg system-sqlite -system-libvpx hardened hwaccel pgo system-harfbuzz system-icu system-libevent
+mail-client/thunderbird -* pgo jemalloc3 -egl -gmp-autoupdate -webm -gstreamer -pulseaudio minimal libnotify startup-notification jit system-cairo -system-icu system-jpeg system-sqlite -system-libvpx hardened hwaccel pgo system-harfbuzz system-icu system-libevent
 
 ##
 # Sadly, Java wants a lot of bullshit. Here I remove unnecessary cruft.
