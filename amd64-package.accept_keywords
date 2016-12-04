@@ -41,21 +41,17 @@ dev-vcs/perforce-gui
 net-wireless/broadcom-sta
 
 ##
-# GAMES, specifically TES3: Morrowind.
+# GAMES, specifically TES3: Morrowind and dwarffortress
 ##
 games-engines/openmw
 dev-games/openscenegraph
+games-roguelike/dwarf-fortress
 
 ##
 # Just useful to have systemrescuecd already downloaded.
 ##
 app-admin/systemrescuecd-x86
 sys-boot/systemrescuecd-x86-grub
-
-##
-# Doing work with turnserver lately. Comes from jonesmz-public overlay.
-##
-www-servers/turnserver
 
 ##
 # LXQT is the successor to LXDE. It seems mature enough to use regularly.
@@ -76,9 +72,11 @@ lxqt-base/lxqt-notificationd
 
 media-gfx/lximage-qt
 
+x11-libs/libfm-qt
 x11-misc/obconf-qt
 x11-misc/pcmanfm-qt
 
+dev-util/cmake
 dev-libs/libqtxdg
 
 ##
@@ -119,5 +117,46 @@ dev-qt/qt-creator
 ##
 # Interesting compiler infastructure type tools
 ##
-=dev-libs/capstone-3.0.4-r1 ~amd64
+dev-libs/capstone
 
+##
+# Better virtual machine management
+##
+app-emulation/libvirt
+app-emulation/libvirt-glib
+
+dev-python/libvirt-python
+
+##
+# Trying out lumina desktop for the hell of it
+##
+x11-wm/lumina
+
+##
+# Multi monitor management
+##
+x11-misc/arandr
+
+##
+# Steam
+##
+games-util/esteam
+games-util/steam-meta
+games-util/steam-launcher
+games-util/steam-games-meta
+games-util/steam-client-meta
+
+##
+# Newer xfreerdp for usb redirection
+##
+net-misc/freerdp
+
+##
+# UEFI files for qemu? - pulled from jonesmz-public-overlay
+##
+sys-boot/udk
+
+##
+# Testing work stuff
+##
+net-im/coturn

@@ -1,4 +1,9 @@
 ##
+# Spice things up with a bit of optimization
+##
+sys-devel/gcc graphite sanitize
+
+##
 # Systemd doesn't need extra cruft...
 ##
 sys-apps/systemd -firmware-loader -ssl -kdbus -lz4
@@ -28,6 +33,9 @@ dev-qt/qtgui:4    -exceptions
 dev-qt/qtcore:4   -exceptions
 dev-qt/qtscript:4 -exceptions
 
+dev-qt/qtmultimedia:5 widgets
+
+
 ##
 # Needed by texmaker's qt5 version.
 ##
@@ -36,7 +44,7 @@ dev-qt/qtwebkit:5 printsupport -opengl
 ##
 # Nifty options for the qt-creator ide.
 ##
-dev-qt/qt-creator android autotools clang cmake systemd
+dev-qt/qt-creator android autotools cmake clang clangcodemodel clangstaticanalyzer
 
 ##
 # No sense in having firefox and thunderbird build their own copies of libraries...
@@ -45,8 +53,8 @@ dev-qt/qt-creator android autotools clang cmake systemd
 ##
 dev-db/sqlite secure-delete
 media-libs/libvpx postproc
-www-client/firefox      -* pgo jemalloc3  egl  gmp-autoupdate  webm  gstreamer  pulseaudio minimal libnotify startup-notification jit system-cairo -system-icu system-jpeg system-sqlite -system-libvpx hardened
-mail-client/thunderbird -* pgo jemalloc3 -egl -gmp-autoupdate -webm -gstreamer -pulseaudio minimal libnotify startup-notification jit system-cairo -system-icu system-jpeg system-sqlite -system-libvpx hardened
+www-client/firefox      -* pgo jemalloc3  egl  gmp-autoupdate  webm  gstreamer  pulseaudio minimal libnotify startup-notification jit system-cairo -system-icu system-jpeg system-sqlite -system-libvpx hardened hwaccel pgo system-harfbuzz system-icu system-libevent
+mail-client/thunderbird -* pgo jemalloc3 -egl -gmp-autoupdate -webm -gstreamer -pulseaudio minimal libnotify startup-notification jit system-cairo -system-icu system-jpeg system-sqlite -system-libvpx hardened hwaccel pgo system-harfbuzz system-icu system-libevent
 
 ##
 # Sadly, Java wants a lot of bullshit. Here I remove unnecessary cruft.
@@ -74,11 +82,11 @@ net-misc/spice-gtk -pulseaudio gtk3
 # Need gbm for radion graphics card support
 # All the other stuff is to just provide the various APIs for generic use by various machines.
 ##
-media-libs/mesa gbm gles1 gles2 llvm-shared-libs opencl openvg r600-llvm-compiler vaapi vdpau wayland xa xvmc
+media-libs/mesa gbm gles1 gles2 llvm-shared-libs opencl openvg r600-llvm-compiler vaapi vdpau wayland xa xvmc -vaapi
 x11-libs/libva vdpau wayland
 
 ##
-# Doxygen is rather unimpressive without DOT support. Don't need the wizard.
+# Doxygen is rather unimpressive without DOT support but don't need the wizard.
 ##
 app-doc/doxygen dot -qt4 -qt5
 media-libs/gd jpeg truetype png fontconfig
@@ -101,10 +109,11 @@ app-eselect/eselect-php apache2
 ##
 # QEMU arm emulation support, and more.
 ##
-dev-libs/glib  static-libs
-sys-libs/zlib  static-libs
-sys-apps/attr  static-libs
-app-arch/bzip2 static-libs
+dev-libs/glib    static-libs
+sys-libs/zlib    static-libs
+sys-apps/attr    static-libs
+app-arch/bzip2   static-libs
+dev-libs/libpcre static-libs
 
 net-misc/spice-gtk usbredir
 app-emulation/qemu static-user usbredir virtfs numa spice
@@ -145,7 +154,7 @@ sys-apps/util-linux tty-helpers
 ##
 # Not doing this causes lvm2 to be installed. Don't want or need.
 ##
-media-tv/kodi -udisks
+media-tv/kodi -udisks upnp
 
 ##
 # Needed for kodi
@@ -162,8 +171,9 @@ media-libs/sdl-mixer       midi timidity
 x11-base/xorg-server       xvfb
 games-strategy/openra      tools
 games-strategy/warzone2100 videos
+
 ##
-# On the RPI (version 1, the single core one), we normally disable threads, but some apps explicitly need threads support for the various apps that are being installed.
+# On the RPI (version 1, the single core one), we normally disable threads, but some libs explicitly need threads support for the various apps that are being installed.
 ##
 dev-libs/boost    threads
 dev-libs/botan    threads
@@ -179,7 +189,8 @@ net-misc/networkmanager  -zeroconf -ncurses
 ##
 # Custom flags for vlc
 ##
-media-video/vlc -* X a52 avcodec avformat cdda dbus dts dvbpsi dvd ffmpeg flac gcrypt gnome jpeg libnotify libsamplerate mp3 mpeg ncurses ogg opengl png pulseaudio qt5 samba sdl svg swscale theora udev vaapi vdpau vorbis x264 xcb xml xv zeroconf opus cpu_flags_x86_mmx cpu_flags_x86_sse
+media-video/vlc -* X a52 avcodec avformat cdda dbus dts dvbpsi dvd ffmpeg flac gcrypt gnome jpeg libnotify libsamplerate mp3 mpeg ncurses ogg opengl png pulseaudio qt5 samba sdl svg swscale theora udev vaapi vdpau vorbis x264 xcb xml xv zeroconf opus cpu_flags_x86_mmx cpu_flags_x86_sse upnp
+
 ##
 # We need to explicitly state which version of qt to use for some apps.
 # Avahi only works with jonesmz-overlay for now.
@@ -251,13 +262,18 @@ www-plugins/chrome-binary-plugins widevine flash
 ##
 # Settings for experimenting with wayland.
 ##
-dev-libs/weston wayland-compositor xwayland
-x11-base/xorg-server wayland
-kde-base/kwin wayland
-kde-plasma/kwin wayland
-dev-libs/efl -opengl gles
+dev-libs/efl			-opengl gles
+kde-base/kwin			wayland
+kde-plasma/kwin			wayland
+dev-libs/weston			wayland-compositor xwayland
+media-libs/libsdl2		gles
+x11-base/xorg-server		wayland
+media-plugins/gst-plugins-vaapi	wayland
 
-media-plugins/gst-plugins-vaapi wayland
+##
+# Need glamor for radeon cards.
+##
+x11-base/xorg-server glamor
 
 # required by dev-libs/botan-1.10.5::gentoo[ssl]
 # required by dev-qt/qt-creator-3.5.0::gentoo
@@ -285,7 +301,7 @@ games-strategy/megaglest -model-viewer -editor
 # Disabling introspection on various packages. It's, for the most part, not useful for my usage cases.
 ##
 x11-libs/vte              -introspection
-x11-libs/gtksourceview    -introspection
+x11-libs/gtksourceview     introspection
 
 x11-libs/gtk+              introspection
 dev-libs/atk               introspection
@@ -304,7 +320,14 @@ net-libs/gtk-vnc           introspection
 # Seems like the gn useflag makes chromium build with "Generate Ninja" instead of something else? Horribly unclear
 # but, bizarrely, this is the flag that makes it bring in the speech dispatcher. Wtf?
 ##
-www-client/chromium gn kerberos system-ffmpeg
+#www-client/chromium system-ffmpeg
+media-libs/libvpx svc
+
+
+##
+# Chromium has some new build system, but it doesn't seem happy yet.
+##
+#www-client/chromium gn
 
 ##
 # lynx won't build on musl with nls
@@ -318,7 +341,7 @@ sys-apps/dbus systemd
 
 ##
 # Adds support for the None cipher. Literally this cipher performs absolutely no encryption, and as such is as insecure as can possibly be,
-# but it's also very cpu friendly and therefore useful when doing security insensitive things like file transfers.
+# but it's also very cpu friendly and therefore useful when doing security insensitive things like file transfers on local networks
 ##
 #net-misc/openssh hpn
 
@@ -333,11 +356,148 @@ app-emulation/libguestfs ocaml
 ##
 net-print/cups ssl
 
->=dev-libs/botan-1.10.12 bindist
+dev-libs/botan bindist
 # required by net-misc/openssh-7.2_p2::gentoo[-static,ssl]
 # required by sys-fs/sshfs-2.5::gentoo
 # required by @base-system
 # required by @selected
 # required by @world (argument)
->=dev-libs/openssl-1.0.2g-r2 bindist
+dev-libs/openssl bindist
+
+##
+# Supporting DNLA/upnp servers
+##
+media-tv/kodi upnp
+
+##
+# 32 bit libraries needed by steam
+##
+virtual/jpeg:0 		abi_x86_32
+virtual/libffi		abi_x86_32
+virtual/libelf		abi_x86_32
+virtual/opengl		abi_x86_32
+virtual/libintl		abi_x86_32
+virtual/libudev		abi_x86_32
+virtual/libiconv	abi_x86_32
+virtual/pkgconfig	abi_x86_32
+
+sys-fs/udev		abi_x86_32
+dev-db/sqlite		abi_x86_32
+net-misc/curl		abi_x86_32
+sys-apps/attr		abi_x86_32
+sys-devel/llvm		abi_x86_32
+app-arch/bzip2		abi_x86_32
+sys-devel/clang		abi_x86_32
+sys-apps/systemd	abi_x86_32
+app-arch/xz-utils	abi_x86_32
+dev-util/pkgconfig	abi_x86_32
+gnome-base/librsvg	abi_x86_32
+sys-apps/util-linux	abi_x86_32
+media-gfx/graphite2	abi_x86_32
+
+sys-libs/gpm		abi_x86_32
+sys-libs/zlib		abi_x86_32
+sys-libs/libcap		abi_x86_32
+sys-libs/ncurses	abi_x86_32
+sys-libs/readline	abi_x86_32
+sys-libs/binutils-libs	abi_x86_32
+
+dev-libs/nss			abi_x86_32
+dev-libs/icu			abi_x86_32
+dev-libs/atk			abi_x86_32
+dev-libs/nspr			abi_x86_32
+dev-libs/lzo			abi_x86_32
+dev-libs/glib			abi_x86_32
+dev-libs/expat			abi_x86_32
+dev-libs/libffi			abi_x86_32
+dev-libs/libxml2		abi_x86_32
+dev-libs/openssl		abi_x86_32
+dev-libs/libpcre		abi_x86_32
+dev-libs/wayland		abi_x86_32
+dev-libs/libcroco		abi_x86_32
+dev-libs/elfutils		abi_x86_32
+dev-libs/libgcrypt		abi_x86_32
+dev-libs/libgpg-error		abi_x86_32
+dev-libs/libpthread-stubs	abi_x86_32
+
+media-libs/mesa			abi_x86_32
+media-libs/tiff			abi_x86_32
+media-libs/libpng		abi_x86_32
+media-libs/freetype 		abi_x86_32
+media-libs/harfbuzz		abi_x86_32
+media-libs/fontconfig		abi_x86_32
+media-libs/libtxc_dxtn		abi_x86_32
+media-libs/libjpeg-turbo	abi_x86_32
+
+x11-proto/xproto		abi_x86_32
+x11-proto/glproto 		abi_x86_32
+x11-proto/kbproto		abi_x86_32
+x11-proto/xcb-proto		abi_x86_32
+x11-proto/xextproto		abi_x86_32
+x11-proto/dri2proto		abi_x86_32
+x11-proto/dri3proto		abi_x86_32
+x11-proto/randrproto		abi_x86_32
+x11-proto/fixesproto		abi_x86_32
+x11-proto/inputproto		abi_x86_32
+x11-proto/videoproto		abi_x86_32
+x11-proto/damageproto		abi_x86_32
+x11-proto/xf86driproto		abi_x86_32
+x11-proto/presentproto		abi_x86_32
+x11-proto/xineramaproto		abi_x86_32
+x11-proto/compositeproto	abi_x86_32
+x11-proto/xf86bigfontproto	abi_x86_32
+x11-proto/xf86vidmodeproto	abi_x86_32
+
+x11-libs/gtk+:2			abi_x86_32
+x11-libs/pixma			abi_x86_32
+x11-libs/cairo			abi_x86_32
+x11-libs/libXv			abi_x86_32
+x11-libs/pango			abi_x86_32
+x11-libs/libXi			abi_x86_32
+x11-libs/libXft			abi_x86_32
+x11-libs/libdrm			abi_x86_32
+x11-libs/libX11			abi_x86_32
+x11-libs/libXau			abi_x86_32
+x11-libs/libxcb			abi_x86_32
+x11-libs/libXvMC		abi_x86_32
+x11-libs/libXext		abi_x86_32
+x11-libs/libXdmcp		abi_x86_32
+x11-libs/libvdpau		abi_x86_32
+x11-libs/libXrandr		abi_x86_32
+x11-libs/libXfixes		abi_x86_32
+x11-libs/libXdamage		abi_x86_32
+x11-libs/libXcursor		abi_x86_32
+x11-libs/gdk-pixbuf		abi_x86_32
+x11-libs/libXxf86vm		abi_x86_32
+x11-libs/libXrender		abi_x86_32
+x11-libs/libXinerama		abi_x86_32
+x11-libs/libpciaccess		abi_x86_32
+x11-libs/libxshmfence		abi_x86_32
+x11-libs/libXcomposite		abi_x86_32
+
+
+
+# required by x11-libs/cairo-1.14.6::gentoo
+# required by media-libs/harfbuzz-1.3.1::gentoo[cairo]
+# required by x11-libs/pango-1.40.3::gentoo
+# required by gnome-base/librsvg-2.40.16::gentoo
+# required by x11-libs/gtk+-2.24.31::gentoo
+# required by app-editors/pluma-1.12.2-r1::gentoo[-gtk3]
+# required by @desktop-applications
+# required by @amd64-desktop-applications
+# required by @selected
+# required by @world (argument)
+>=x11-libs/pixman-0.34.0 abi_x86_32
+# required by x11-libs/cairo-1.14.6::gentoo[X]
+# required by media-libs/harfbuzz-1.3.1::gentoo[cairo]
+# required by x11-libs/pango-1.40.3::gentoo
+# required by gnome-base/librsvg-2.40.16::gentoo
+# required by x11-libs/gtk+-2.24.31::gentoo
+# required by app-editors/pluma-1.12.2-r1::gentoo[-gtk3]
+# required by @desktop-applications
+# required by @amd64-desktop-applications
+# required by @selected
+# required by @world (argument)
+>=x11-proto/renderproto-0.11.1-r1 abi_x86_32
+>>>>>>> 45f49461ef56f4359b2cfe01f1186758cc39e003
 
