@@ -275,17 +275,8 @@ media-plugins/gst-plugins-vaapi	wayland
 ##
 x11-base/xorg-server glamor
 
-# required by dev-libs/botan-1.10.5::gentoo[ssl]
-# required by dev-qt/qt-creator-3.5.0::gentoo
-# required by @development-gui
-# required by @selected
-# required by @world (argument)
->=dev-libs/openssl-1.0.2d -bindist
-# required by dev-qt/qt-creator-3.5.0::gentoo
-# required by @development-gui
-# required by @selected
-# required by @world (argument)
->=dev-libs/botan-1.10.5 -bindist
+dev-libs/openssl bindist
+dev-libs/botan bindist
 
 ##
 # Purging gstreamer 0.10
@@ -499,5 +490,5 @@ x11-libs/libXcomposite		abi_x86_32
 # required by @selected
 # required by @world (argument)
 >=x11-proto/renderproto-0.11.1-r1 abi_x86_32
->>>>>>> 45f49461ef56f4359b2cfe01f1186758cc39e003
 
+x11-themes/gnome-themes-standard -gtk

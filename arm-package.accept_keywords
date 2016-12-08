@@ -186,8 +186,7 @@ app-office/libreoffice
 ##
 # Needed for chromium
 ##
-=dev-libs/jsoncpp-0.6.0_rc2 ~arm ## Revisit this, has a stable version
-=dev-libs/re2-0_p20140304 ~arm ##Seems to be newest version?
+dev-libs/re2
 
 ##
 # Needed for pluma, replacement for gedit.
@@ -263,27 +262,6 @@ dev-python/libvirt-python ~*
 media-libs/raspberrypi-userland
 sys-boot/raspberrypi-firmware **
 
-##
-# Wayland related?
-##
-dev-libs/wayland #double check this, stable version exists.
-x11-libs/pango #double check this, stable version exists
-
-##
-# lxqt stuff?
-##
-x11-libs/libXrandr
-x11-proto/randrproto
-
-##
-# Double check this, has a stable version.
-##
-dev-db/sqlite
-
-sys-apps/dbus **
-
-app-text/poppler
-
 dev-util/diffuse **
 
 dev-db/mongodb **
@@ -346,3 +324,256 @@ dev-cpp/yaml-cpp
 # required by @world (argument)
 =media-libs/harfbuzz-1.2.6 ~arm
 
+# required by @base-system
+# required by @selected
+# required by @world (argument)
+sys-kernel/dracut
+# required by net-misc/wget-1.17.1-r1::gentoo[-static,-gnutls,ssl]
+# required by @system
+# required by @world (argument)
+dev-libs/openssl
+# required by @development-gui
+# required by @selected
+# required by @world (argument)
+dev-qt/qt-creator
+
+# required by kde-frameworks/kwindowsystem-5.24.0::gentoo[nls]
+# required by lxqt-base/lxqt-session-0.10.0::gentoo
+# required by lxqt-base/lxqt-meta-0.10.0::gentoo
+# required by @lxqt
+# required by @selected
+# required by @world (argument)
+=dev-qt/linguist-tools-5.6.1 ~arm
+# required by kde-frameworks/kguiaddons-5.24.0::gentoo
+# required by lxqt-base/lxqt-panel-0.10.0-r1::gentoo
+# required by lxqt-base/lxqt-meta-0.10.0::gentoo
+# required by @lxqt
+# required by @selected
+# required by @world (argument)
+=dev-qt/qtx11extras-5.6.1 ~arm
+# required by x11-libs/gtk+-3.20.6::gentoo[wayland]
+# required by www-client/firefox-47.0.1::gentoo[-gtk2]
+# required by @desktop-applications
+# required by @arm-desktop-applications
+# required by @selected
+# required by @world (argument)
+=dev-libs/wayland-protocols-1.5 ~arm
+# required by net-misc/networkmanager-openvpn-1.2.2::gentoo
+# required by @network-manager
+# required by @selected
+# required by @world (argument)
+=net-misc/networkmanager-1.2.2 ~arm
+# required by dev-qt/qtgui-5.6.1::gentoo[dbus]
+# required by kde-frameworks/kguiaddons-5.24.0::gentoo
+# required by lxqt-base/lxqt-panel-0.10.0-r1::gentoo
+# required by lxqt-base/lxqt-meta-0.10.0::gentoo
+# required by @lxqt
+# required by @selected
+# required by @world (argument)
+=dev-qt/qtdbus-5.6.1 ~arm
+# required by dev-qt/qtdbus-5.6.1::gentoo
+# required by dev-qt/qtgui-5.6.1::gentoo[dbus]
+# required by kde-frameworks/kguiaddons-5.24.0::gentoo
+# required by lxqt-base/lxqt-panel-0.10.0-r1::gentoo
+# required by lxqt-base/lxqt-meta-0.10.0::gentoo
+# required by @lxqt
+# required by @selected
+# required by @world (argument)
+=dev-qt/qtcore-5.6.1 ~arm
+# required by media-video/vlc-2.2.4::gentoo[qt5]
+# required by @desktop-applications
+# required by @arm-desktop-applications
+# required by @selected
+# required by @world (argument)
+=dev-qt/qtwidgets-5.6.1 ~arm
+# required by dev-qt/linguist-tools-5.6.1::gentoo
+# required by net-analyzer/wireshark-2.1.1::gentoo[qt5]
+# required by @development-gui
+# required by @selected
+# required by @world (argument)
+=dev-qt/qtxml-5.6.1 ~arm
+# required by dev-qt/qtx11extras-5.6.1::gentoo
+# required by kde-frameworks/kguiaddons-5.24.0::gentoo
+# required by lxqt-base/lxqt-panel-0.10.0-r1::gentoo
+# required by lxqt-base/lxqt-meta-0.10.0::gentoo
+# required by @lxqt
+# required by @selected
+# required by @world (argument)
+=dev-qt/qtgui-5.6.1 ~arm
+
+# required by dev-qt/qtdeclarative-5.6.1-r1::gentoo[xml]
+# required by x11-misc/sddm-0.13.0-r4::gentoo
+# required by lxqt-base/lxqt-meta-0.10.0::gentoo[sddm]
+# required by @lxqt
+# required by @selected
+# required by @world (argument)
+=dev-qt/qtxmlpatterns-5.6.1 ~arm
+# required by app-office/texmaker-4.5::gentoo[qt5]
+# required by @desktop-applications
+# required by @arm-desktop-applications
+# required by @selected
+# required by @world (argument)
+=dev-qt/qtwebkit-5.6.1 ~arm
+# required by kde-frameworks/solid-5.21.0::gentoo
+# required by lxqt-base/lxqt-panel-0.10.0-r1::gentoo[mount]
+# required by lxqt-base/lxqt-meta-0.10.0::gentoo
+# required by @lxqt
+# required by @selected
+# required by @world (argument)
+=dev-qt/qtdeclarative-5.6.1-r1 ~arm
+# required by dev-qt/qtwebkit-5.6.1::gentoo[printsupport]
+# required by app-office/texmaker-4.5::gentoo[qt5]
+# required by @desktop-applications
+# required by @arm-desktop-applications
+# required by @selected
+# required by @world (argument)
+=dev-qt/qtprintsupport-5.6.1 ~arm
+# required by net-wireless/wpa_supplicant-2.5-r1::gentoo[qt5]
+# required by net-misc/networkmanager-1.2.2::gentoo[wifi]
+# required by dev-qt/qtnetwork-5.6.1::gentoo[networkmanager]
+# required by x11-misc/sddm-0.13.0-r4::gentoo
+# required by lxqt-base/lxqt-meta-0.10.0::gentoo[sddm]
+# required by @lxqt
+# required by @selected
+# required by @world (argument)
+=dev-qt/qtsvg-5.6.1 ~arm
+# required by dev-qt/qtdeclarative-5.6.1-r1::gentoo[-test]
+# required by x11-misc/sddm-0.13.0-r4::gentoo
+# required by lxqt-base/lxqt-meta-0.10.0::gentoo[sddm]
+# required by @lxqt
+# required by @selected
+# required by @world (argument)
+=dev-qt/qttest-5.6.1 ~arm
+# required by lxqt-base/lxqt-config-0.10.0::gentoo
+# required by lxqt-base/lxqt-meta-0.10.0::gentoo
+# required by @lxqt
+# required by @selected
+# required by @world (argument)
+=dev-qt/qtconcurrent-5.6.1 ~arm
+# required by lxqt-base/lxqt-runner-0.10.0::gentoo
+# required by lxqt-base/lxqt-meta-0.10.0::gentoo
+# required by @lxqt
+# required by @selected
+# required by @world (argument)
+=dev-qt/qtscript-5.6.1 ~arm
+# required by net-analyzer/wireshark-2.1.1::gentoo[qt5]
+# required by @development-gui
+# required by @selected
+# required by @world (argument)
+=dev-qt/qtmultimedia-5.6.1 ~arm
+# required by dev-qt/qtwebkit-5.6.1::gentoo
+# required by app-office/texmaker-4.5::gentoo[qt5]
+# required by @desktop-applications
+# required by @arm-desktop-applications
+# required by @selected
+# required by @world (argument)
+=dev-qt/qtsql-5.6.1 ~arm
+# required by dev-qt/qtdeclarative-5.6.1-r1::gentoo[xml]
+# required by x11-misc/sddm-0.13.0-r4::gentoo
+# required by lxqt-base/lxqt-meta-0.10.0::gentoo[sddm]
+# required by @lxqt
+# required by @selected
+# required by @world (argument)
+=dev-qt/qtnetwork-5.6.1 ~arm
+# required by dev-qt/qtdeclarative-5.6.1-r1::gentoo[xml]
+# required by x11-misc/sddm-0.13.0-r4::gentoo
+# required by lxqt-base/lxqt-meta-0.10.0::gentoo[sddm]
+# required by @lxqt
+# required by @selected
+# required by @world (argument)
+=dev-qt/qtxmlpatterns-5.6.1 ~arm
+# required by app-office/texmaker-4.5::gentoo[qt5]
+# required by @desktop-applications
+# required by @arm-desktop-applications
+# required by @selected
+# required by @world (argument)
+=dev-qt/qtwebkit-5.6.1 ~arm
+# required by kde-frameworks/solid-5.21.0::gentoo
+# required by lxqt-base/lxqt-panel-0.10.0-r1::gentoo[mount]
+# required by lxqt-base/lxqt-meta-0.10.0::gentoo
+# required by @lxqt
+# required by @selected
+# required by @world (argument)
+=dev-qt/qtdeclarative-5.6.1-r1 ~arm
+# required by dev-qt/qtwebkit-5.6.1::gentoo[printsupport]
+# required by app-office/texmaker-4.5::gentoo[qt5]
+# required by @desktop-applications
+# required by @arm-desktop-applications
+# required by @selected
+# required by @world (argument)
+=dev-qt/qtprintsupport-5.6.1 ~arm
+# required by net-wireless/wpa_supplicant-2.5-r1::gentoo[qt5]
+# required by net-misc/networkmanager-1.2.2::gentoo[wifi]
+# required by dev-qt/qtnetwork-5.6.1::gentoo[networkmanager]
+# required by x11-misc/sddm-0.13.0-r4::gentoo
+# required by lxqt-base/lxqt-meta-0.10.0::gentoo[sddm]
+# required by @lxqt
+# required by @selected
+# required by @world (argument)
+=dev-qt/qtsvg-5.6.1 ~arm
+# required by dev-qt/qtdeclarative-5.6.1-r1::gentoo[-test]
+# required by x11-misc/sddm-0.13.0-r4::gentoo
+# required by lxqt-base/lxqt-meta-0.10.0::gentoo[sddm]
+# required by @lxqt
+# required by @selected
+# required by @world (argument)
+=dev-qt/qttest-5.6.1 ~arm
+# required by lxqt-base/lxqt-config-0.10.0::gentoo
+# required by lxqt-base/lxqt-meta-0.10.0::gentoo
+# required by @lxqt
+# required by @selected
+# required by @world (argument)
+=dev-qt/qtconcurrent-5.6.1 ~arm
+# required by lxqt-base/lxqt-runner-0.10.0::gentoo
+# required by lxqt-base/lxqt-meta-0.10.0::gentoo
+# required by @lxqt
+# required by @selected
+# required by @world (argument)
+=dev-qt/qtscript-5.6.1 ~arm
+# required by net-analyzer/wireshark-2.1.1::gentoo[qt5]
+# required by @development-gui
+# required by @selected
+# required by @world (argument)
+=dev-qt/qtmultimedia-5.6.1 ~arm
+# required by dev-qt/qtwebkit-5.6.1::gentoo
+# required by app-office/texmaker-4.5::gentoo[qt5]
+# required by @desktop-applications
+# required by @arm-desktop-applications
+# required by @selected
+# required by @world (argument)
+=dev-qt/qtsql-5.6.1 ~arm
+# required by dev-qt/qtdeclarative-5.6.1-r1::gentoo[xml]
+# required by x11-misc/sddm-0.13.0-r4::gentoo
+# required by lxqt-base/lxqt-meta-0.10.0::gentoo[sddm]
+# required by @lxqt
+# required by @selected
+# required by @world (argument)
+=dev-qt/qtnetwork-5.6.1 ~arm
+
+# required by x11-libs/gtk+-3.22.4::gentoo[wayland]
+# required by x11-libs/gtksourceview-3.18.2::gentoo
+# required by gnome-extra/gnome-calculator-3.22.2::gentoo
+# required by @desktop-applications
+# required by @arm-desktop-applications
+# required by @selected
+# required by @world (argument)
+=dev-libs/wayland-protocols-1.7 ~arm
+# required by @desktop-applications
+# required by @arm-desktop-applications
+# required by @selected
+# required by @world (argument)
+=x11-misc/arandr-0.1.9 **
+# required by sys-apps/baobab-3.22.1::gentoo
+# required by @desktop-applications
+# required by @arm-desktop-applications
+# required by @selected
+# required by @world (argument)
+=sys-devel/gettext-0.19.8.1 ~arm
+# required by x11-libs/gtk+-2.24.31-r1::gentoo
+# required by x11-themes/gnome-themes-standard-3.18.0::gentoo[gtk]
+=x11-themes/gtk-engines-adwaita-3.20.2 ~arm
+# required by gnome-extra/nm-applet-1.4.2::gentoo
+# required by @network-manager
+# required by @selected
+# required by @world (argument)
+=net-misc/networkmanager-1.4.2 ~arm
