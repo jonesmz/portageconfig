@@ -82,7 +82,7 @@ net-misc/spice-gtk -pulseaudio gtk3
 # Need gbm for radion graphics card support
 # All the other stuff is to just provide the various APIs for generic use by various machines.
 ##
-media-libs/mesa gbm gles1 gles2 llvm opencl openvg vaapi vdpau wayland xa xvmc -vaapi
+media-libs/mesa gbm gles1 gles2 llvm opencl openvg vaapi vdpau wayland xa xvmc openmax vaapi
 x11-libs/libva vdpau wayland
 
 ##
