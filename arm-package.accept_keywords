@@ -1,5 +1,5 @@
 ##
-# No Java6 crap for us, plus some rpi accepts.
+# No Java6 crap
 ##
 virtual/jdk:1.8
 virtual/jre:1.8
@@ -13,7 +13,14 @@ dev-java/ant-core
 dev-java/oracle-jdk-bin **
 
 ##
-# Raspberry Pi bootstraping.
+# Part of the "base-system" set, needed for booting from raid arrays
+# Very likely not worth having on arm devices.
+# consider moving to amd64-base-system.
+##
+sys-kernel/dracut
+
+##
+# Raspberry Pi java bootstraping.
 ##
 dev-java/java-config
 app-eselect/eselect-java
@@ -22,9 +29,9 @@ sys-apps/baselayout-java
 dev-java/javatoolkit
 
 ##
-# version 3 plays nicely with qt5...
+# version 3+ plays nicely with qt5...
 ##
-<dev-qt/qt-creator-3.5.0
+dev-qt/qt-creator
 
 ##
 # Btrfs snapshot management
@@ -34,10 +41,9 @@ app-backup/snapper
 ##
 # Awesome terminal
 ##
-dev-libs/efl
-dev-libs/libclc
-media-libs/elementary
+dev-libs/libclc ~*
 x11-terms/terminology ~*
+media-libs/elementary
 
 ##
 # Accept debug edit for use on ARM
@@ -64,10 +70,7 @@ sys-apps/baobab
 sys-block/gparted
 media-video/ffmpeg ## Maybe this doesn't need unmasking. There IS a stable version. Check this.
 www-client/chromium
-gnome-extra/nm-applet
-media-gfx/gnome-screenshot
 gnome-extra/gnome-calculator
-net-misc/networkmanager-openvpn
 
 ##
 # Not sure what needs pygame?
@@ -83,14 +86,15 @@ mail-client/thunderbird
 ##
 # Needed for firefox > 30
 ##
-dev-libs/nspr # There's a stable version of this. Double check.
-dev-libs/nss # There's a stable version of this. Double check.
+#dev-libs/nspr # There's a stable version of this. Double check.
+#dev-libs/nss # There's a stable version of this. Double check.
 
 ##
 # Kodi entertainment software.
 ##
 media-tv/kodi  ~*
 media-fonts/roboto
+dev-libs/crossguid
 media-libs/libprojectm
 
 ##
@@ -112,7 +116,6 @@ app-text/sloccount **
 dev-util/meld
 dev-libs/botan
 dev-util/cppcheck
-net-analyzer/wireshark
 
 ##
 # Required for redshift, from @desktop-applications
@@ -122,26 +125,22 @@ x11-misc/redshift **
 ##
 # Required for EOG
 ##
-x11-libs/gtk+ #Check on this, there's a stable version.
-dev-libs/glib #Check on this, there's a stable version.
+#x11-libs/gtk+ #Check on this, there's a stable version.
+#dev-libs/glib #Check on this, there's a stable version.
 dev-libs/libpeas
-media-gfx/eog
-gnome-base/gnome-desktop
-dev-util/gdbus-codegen #Check on this, there's a stable version
+#dev-util/gdbus-codegen #Check on this, there's a stable version
 
 ##
 # Needed for VLC
 ##
 media-video/vlc
-media-libs/libdvdcss #double check this, there's a stable version.
+#media-libs/libdvdcss #double check this, there's a stable version.
 
 ##
 # texmaker
 ##
 app-office/texmaker **
 app-i18n/ibus-qt **
-dev-qt/qtlockedfile
-dev-qt/qtsingleapplication
 
 ##
 # Needed for Baobab
@@ -169,13 +168,12 @@ dev-libs/libixion
 dev-libs/liborcus
 app-text/libebook
 app-text/libodfgen
+sys-devel/boost-m4
 app-text/liblangtag
 media-libs/libvisio
 dev-libs/librevenge
 app-text/libetonyek
-media-fonts/libertine
 media-libs/libfreehand
-app-text/libexttextcat
 media-libs/libpagemaker
 sci-mathematics/lpsolve
 sci-libs/suitesparseconfig
@@ -193,14 +191,9 @@ dev-libs/re2
 # and other mate apps.
 ##
 mate-base/mate-desktop
-mate-base/mate-common **
+mate-base/mate-common
 
-mate-extra/mate-calc **
-
-app-editors/pluma **
-media-gfx/eom
-mate-extra/mate-calc **
-x11-themes/mate-icon-theme
+app-editors/pluma
 
 ##
 # LXQT is the successor to LXDE. It seems mature enough to use regularly.
@@ -209,7 +202,6 @@ lxqt-base/liblxqt
 lxqt-base/liblxqt-mount
 
 lxqt-base/lxqt-meta
-lxqt-base/lxqt-about
 lxqt-base/lxqt-panel
 lxqt-base/lxqt-runner
 lxqt-base/lxqt-common
@@ -221,40 +213,23 @@ lxqt-base/lxqt-globalkeys
 lxqt-base/lxqt-config-randr
 lxqt-base/lxqt-notificationd
 
+media-gfx/lximage-qt
+
+kde-frameworks/solid
 kde-frameworks/kf-env
 kde-frameworks/kguiaddons
 kde-frameworks/kwindowsystem
 
 x11-misc/sddm
-x11-misc/xdg-utils
 x11-misc/obconf-qt
 x11-misc/pcmanfm-qt
 
 dev-libs/libqtxdg
+media-sound/dcadec
+kde-plasma/kwayland
+kde-plasma/libkscreen
 kde-base/oxygen-icons
-kde-frameworks/extra-cmake-modules
-
-##
-# Qemu stuff, many probably going away thanks to removing x86 emulation.
-##
-sys-devel/bin86 **
-net-libs/gtk-vnc
-dev-python/urlgrabber
-sys-firmware/vgabios **
-sys-firmware/seabios **
-app-emulation/libvirt ~*
-net-misc/x11-ssh-askpass **
-app-emulation/spice-protocol
-app-text/xhtml1 **
-sys-libs/libosinfo
-app-misc/scrub **
-app-emulation/spice **
-app-emulation/libvirt-glib **
-app-emulation/qemu **
-dev-perl/XML-XPath
-sys-devel/dev86 **
-app-emulation/virt-manager ~*
-dev-python/libvirt-python ~*
+dev-libs/libdbusmenu-qt
 
 ##
 #raspberry pi stuff?
@@ -268,288 +243,6 @@ dev-db/mongodb **
 dev-libs/snowball-stemmer
 dev-cpp/yaml-cpp
 
-# required by lxqt-base/lxqt-qtplugin-0.10.0::gentoo
-# required by lxqt-base/lxqt-meta-0.10.0::gentoo
-# required by @lxqt
-# required by @selected
-# required by @world (argument)
-=dev-libs/libdbusmenu-qt-0.9.3_pre20140619-r1 ~arm
-# required by media-tv/kodi-16.0::gentoo
-# required by @selected
-# required by @world (argument)
-=media-sound/dcadec-0.2.0 ~arm
-# required by media-tv/kodi-16.0::gentoo
-# required by @selected
-# required by @world (argument)
-=dev-libs/crossguid-0_pre20150817 ~arm
-# required by dev-cpp/libcmis-0.5.1::gentoo
-# required by app-office/libreoffice-5.1.2.2::gentoo
-# required by @desktop-applications
-# required by @arm-desktop-applications
-# required by @selected
-# required by @world (argument)
-=sys-devel/boost-m4-0.4_p20160328 ~arm
-# required by lxqt-base/lxqt-panel-0.10.0-r1::gentoo[mount]
-# required by lxqt-base/lxqt-meta-0.10.0::gentoo
-# required by @lxqt
-# required by @selected
-# required by @world (argument)
-=kde-frameworks/solid-5.21.0 ~arm
-# required by lxqt-base/lxqt-config-0.10.0::gentoo
-# required by lxqt-base/lxqt-meta-0.10.0::gentoo
-# required by @lxqt
-# required by @selected
-# required by @world (argument)
-=kde-plasma/libkscreen-5.6.3 ~arm
-# required by kde-plasma/libkscreen-5.6.3::gentoo
-# required by lxqt-base/lxqt-config-0.10.0::gentoo
-# required by lxqt-base/lxqt-meta-0.10.0::gentoo
-# required by @lxqt
-# required by @selected
-# required by @world (argument)
-=kde-plasma/kwayland-5.6.3 ~arm
-
-# required by app-text/texlive-core-2014-r4::gentoo
-# required by dev-texlive/texlive-fontsrecommended-2014::gentoo
-# required by dev-texlive/texlive-latexextra-2014::gentoo
-# required by @desktop-applications
-# required by @arm-desktop-applications
-# required by @selected
-# required by @world (argument)
-=media-libs/freetype-2.6.3-r1 ~arm
-# required by app-office/libreoffice-5.1.2.2::gentoo
-# required by @desktop-applications
-# required by @arm-desktop-applications
-# required by @selected
-# required by @world (argument)
-=media-libs/harfbuzz-1.2.6 ~arm
-
-# required by @base-system
-# required by @selected
-# required by @world (argument)
-sys-kernel/dracut
-# required by net-misc/wget-1.17.1-r1::gentoo[-static,-gnutls,ssl]
-# required by @system
-# required by @world (argument)
-dev-libs/openssl
-# required by @development-gui
-# required by @selected
-# required by @world (argument)
-dev-qt/qt-creator
-
-# required by kde-frameworks/kwindowsystem-5.24.0::gentoo[nls]
-# required by lxqt-base/lxqt-session-0.10.0::gentoo
-# required by lxqt-base/lxqt-meta-0.10.0::gentoo
-# required by @lxqt
-# required by @selected
-# required by @world (argument)
-=dev-qt/linguist-tools-5.6.1 ~arm
-# required by kde-frameworks/kguiaddons-5.24.0::gentoo
-# required by lxqt-base/lxqt-panel-0.10.0-r1::gentoo
-# required by lxqt-base/lxqt-meta-0.10.0::gentoo
-# required by @lxqt
-# required by @selected
-# required by @world (argument)
-=dev-qt/qtx11extras-5.6.1 ~arm
-# required by x11-libs/gtk+-3.20.6::gentoo[wayland]
-# required by www-client/firefox-47.0.1::gentoo[-gtk2]
-# required by @desktop-applications
-# required by @arm-desktop-applications
-# required by @selected
-# required by @world (argument)
-=dev-libs/wayland-protocols-1.5 ~arm
-# required by net-misc/networkmanager-openvpn-1.2.2::gentoo
-# required by @network-manager
-# required by @selected
-# required by @world (argument)
-=net-misc/networkmanager-1.2.2 ~arm
-# required by dev-qt/qtgui-5.6.1::gentoo[dbus]
-# required by kde-frameworks/kguiaddons-5.24.0::gentoo
-# required by lxqt-base/lxqt-panel-0.10.0-r1::gentoo
-# required by lxqt-base/lxqt-meta-0.10.0::gentoo
-# required by @lxqt
-# required by @selected
-# required by @world (argument)
-=dev-qt/qtdbus-5.6.1 ~arm
-# required by dev-qt/qtdbus-5.6.1::gentoo
-# required by dev-qt/qtgui-5.6.1::gentoo[dbus]
-# required by kde-frameworks/kguiaddons-5.24.0::gentoo
-# required by lxqt-base/lxqt-panel-0.10.0-r1::gentoo
-# required by lxqt-base/lxqt-meta-0.10.0::gentoo
-# required by @lxqt
-# required by @selected
-# required by @world (argument)
-=dev-qt/qtcore-5.6.1 ~arm
-# required by media-video/vlc-2.2.4::gentoo[qt5]
-# required by @desktop-applications
-# required by @arm-desktop-applications
-# required by @selected
-# required by @world (argument)
-=dev-qt/qtwidgets-5.6.1 ~arm
-# required by dev-qt/linguist-tools-5.6.1::gentoo
-# required by net-analyzer/wireshark-2.1.1::gentoo[qt5]
-# required by @development-gui
-# required by @selected
-# required by @world (argument)
-=dev-qt/qtxml-5.6.1 ~arm
-# required by dev-qt/qtx11extras-5.6.1::gentoo
-# required by kde-frameworks/kguiaddons-5.24.0::gentoo
-# required by lxqt-base/lxqt-panel-0.10.0-r1::gentoo
-# required by lxqt-base/lxqt-meta-0.10.0::gentoo
-# required by @lxqt
-# required by @selected
-# required by @world (argument)
-=dev-qt/qtgui-5.6.1 ~arm
-
-# required by dev-qt/qtdeclarative-5.6.1-r1::gentoo[xml]
-# required by x11-misc/sddm-0.13.0-r4::gentoo
-# required by lxqt-base/lxqt-meta-0.10.0::gentoo[sddm]
-# required by @lxqt
-# required by @selected
-# required by @world (argument)
-=dev-qt/qtxmlpatterns-5.6.1 ~arm
-# required by app-office/texmaker-4.5::gentoo[qt5]
-# required by @desktop-applications
-# required by @arm-desktop-applications
-# required by @selected
-# required by @world (argument)
-=dev-qt/qtwebkit-5.6.1 ~arm
-# required by kde-frameworks/solid-5.21.0::gentoo
-# required by lxqt-base/lxqt-panel-0.10.0-r1::gentoo[mount]
-# required by lxqt-base/lxqt-meta-0.10.0::gentoo
-# required by @lxqt
-# required by @selected
-# required by @world (argument)
-=dev-qt/qtdeclarative-5.6.1-r1 ~arm
-# required by dev-qt/qtwebkit-5.6.1::gentoo[printsupport]
-# required by app-office/texmaker-4.5::gentoo[qt5]
-# required by @desktop-applications
-# required by @arm-desktop-applications
-# required by @selected
-# required by @world (argument)
-=dev-qt/qtprintsupport-5.6.1 ~arm
-# required by net-wireless/wpa_supplicant-2.5-r1::gentoo[qt5]
-# required by net-misc/networkmanager-1.2.2::gentoo[wifi]
-# required by dev-qt/qtnetwork-5.6.1::gentoo[networkmanager]
-# required by x11-misc/sddm-0.13.0-r4::gentoo
-# required by lxqt-base/lxqt-meta-0.10.0::gentoo[sddm]
-# required by @lxqt
-# required by @selected
-# required by @world (argument)
-=dev-qt/qtsvg-5.6.1 ~arm
-# required by dev-qt/qtdeclarative-5.6.1-r1::gentoo[-test]
-# required by x11-misc/sddm-0.13.0-r4::gentoo
-# required by lxqt-base/lxqt-meta-0.10.0::gentoo[sddm]
-# required by @lxqt
-# required by @selected
-# required by @world (argument)
-=dev-qt/qttest-5.6.1 ~arm
-# required by lxqt-base/lxqt-config-0.10.0::gentoo
-# required by lxqt-base/lxqt-meta-0.10.0::gentoo
-# required by @lxqt
-# required by @selected
-# required by @world (argument)
-=dev-qt/qtconcurrent-5.6.1 ~arm
-# required by lxqt-base/lxqt-runner-0.10.0::gentoo
-# required by lxqt-base/lxqt-meta-0.10.0::gentoo
-# required by @lxqt
-# required by @selected
-# required by @world (argument)
-=dev-qt/qtscript-5.6.1 ~arm
-# required by net-analyzer/wireshark-2.1.1::gentoo[qt5]
-# required by @development-gui
-# required by @selected
-# required by @world (argument)
-=dev-qt/qtmultimedia-5.6.1 ~arm
-# required by dev-qt/qtwebkit-5.6.1::gentoo
-# required by app-office/texmaker-4.5::gentoo[qt5]
-# required by @desktop-applications
-# required by @arm-desktop-applications
-# required by @selected
-# required by @world (argument)
-=dev-qt/qtsql-5.6.1 ~arm
-# required by dev-qt/qtdeclarative-5.6.1-r1::gentoo[xml]
-# required by x11-misc/sddm-0.13.0-r4::gentoo
-# required by lxqt-base/lxqt-meta-0.10.0::gentoo[sddm]
-# required by @lxqt
-# required by @selected
-# required by @world (argument)
-=dev-qt/qtnetwork-5.6.1 ~arm
-# required by dev-qt/qtdeclarative-5.6.1-r1::gentoo[xml]
-# required by x11-misc/sddm-0.13.0-r4::gentoo
-# required by lxqt-base/lxqt-meta-0.10.0::gentoo[sddm]
-# required by @lxqt
-# required by @selected
-# required by @world (argument)
-=dev-qt/qtxmlpatterns-5.6.1 ~arm
-# required by app-office/texmaker-4.5::gentoo[qt5]
-# required by @desktop-applications
-# required by @arm-desktop-applications
-# required by @selected
-# required by @world (argument)
-=dev-qt/qtwebkit-5.6.1 ~arm
-# required by kde-frameworks/solid-5.21.0::gentoo
-# required by lxqt-base/lxqt-panel-0.10.0-r1::gentoo[mount]
-# required by lxqt-base/lxqt-meta-0.10.0::gentoo
-# required by @lxqt
-# required by @selected
-# required by @world (argument)
-=dev-qt/qtdeclarative-5.6.1-r1 ~arm
-# required by dev-qt/qtwebkit-5.6.1::gentoo[printsupport]
-# required by app-office/texmaker-4.5::gentoo[qt5]
-# required by @desktop-applications
-# required by @arm-desktop-applications
-# required by @selected
-# required by @world (argument)
-=dev-qt/qtprintsupport-5.6.1 ~arm
-# required by net-wireless/wpa_supplicant-2.5-r1::gentoo[qt5]
-# required by net-misc/networkmanager-1.2.2::gentoo[wifi]
-# required by dev-qt/qtnetwork-5.6.1::gentoo[networkmanager]
-# required by x11-misc/sddm-0.13.0-r4::gentoo
-# required by lxqt-base/lxqt-meta-0.10.0::gentoo[sddm]
-# required by @lxqt
-# required by @selected
-# required by @world (argument)
-=dev-qt/qtsvg-5.6.1 ~arm
-# required by dev-qt/qtdeclarative-5.6.1-r1::gentoo[-test]
-# required by x11-misc/sddm-0.13.0-r4::gentoo
-# required by lxqt-base/lxqt-meta-0.10.0::gentoo[sddm]
-# required by @lxqt
-# required by @selected
-# required by @world (argument)
-=dev-qt/qttest-5.6.1 ~arm
-# required by lxqt-base/lxqt-config-0.10.0::gentoo
-# required by lxqt-base/lxqt-meta-0.10.0::gentoo
-# required by @lxqt
-# required by @selected
-# required by @world (argument)
-=dev-qt/qtconcurrent-5.6.1 ~arm
-# required by lxqt-base/lxqt-runner-0.10.0::gentoo
-# required by lxqt-base/lxqt-meta-0.10.0::gentoo
-# required by @lxqt
-# required by @selected
-# required by @world (argument)
-=dev-qt/qtscript-5.6.1 ~arm
-# required by net-analyzer/wireshark-2.1.1::gentoo[qt5]
-# required by @development-gui
-# required by @selected
-# required by @world (argument)
-=dev-qt/qtmultimedia-5.6.1 ~arm
-# required by dev-qt/qtwebkit-5.6.1::gentoo
-# required by app-office/texmaker-4.5::gentoo[qt5]
-# required by @desktop-applications
-# required by @arm-desktop-applications
-# required by @selected
-# required by @world (argument)
-=dev-qt/qtsql-5.6.1 ~arm
-# required by dev-qt/qtdeclarative-5.6.1-r1::gentoo[xml]
-# required by x11-misc/sddm-0.13.0-r4::gentoo
-# required by lxqt-base/lxqt-meta-0.10.0::gentoo[sddm]
-# required by @lxqt
-# required by @selected
-# required by @world (argument)
-=dev-qt/qtnetwork-5.6.1 ~arm
-
 # required by x11-libs/gtk+-3.22.4::gentoo[wayland]
 # required by x11-libs/gtksourceview-3.18.2::gentoo
 # required by gnome-extra/gnome-calculator-3.22.2::gentoo
@@ -558,11 +251,12 @@ dev-qt/qt-creator
 # required by @selected
 # required by @world (argument)
 =dev-libs/wayland-protocols-1.7 ~arm
+
 # required by @desktop-applications
 # required by @arm-desktop-applications
 # required by @selected
 # required by @world (argument)
-=x11-misc/arandr-0.1.9 **
+x11-misc/arandr **
 # required by sys-apps/baobab-3.22.1::gentoo
 # required by @desktop-applications
 # required by @arm-desktop-applications
@@ -572,8 +266,3 @@ dev-qt/qt-creator
 # required by x11-libs/gtk+-2.24.31-r1::gentoo
 # required by x11-themes/gnome-themes-standard-3.18.0::gentoo[gtk]
 =x11-themes/gtk-engines-adwaita-3.20.2 ~arm
-# required by gnome-extra/nm-applet-1.4.2::gentoo
-# required by @network-manager
-# required by @selected
-# required by @world (argument)
-=net-misc/networkmanager-1.4.2 ~arm

@@ -82,7 +82,7 @@ net-misc/spice-gtk -pulseaudio gtk3
 # Need gbm for radion graphics card support
 # All the other stuff is to just provide the various APIs for generic use by various machines.
 ##
-media-libs/mesa gbm gles1 gles2 llvm-shared-libs opencl openvg r600-llvm-compiler vaapi vdpau wayland xa xvmc -vaapi
+media-libs/mesa gbm gles1 gles2 llvm opencl openvg vaapi vdpau wayland xa xvmc -vaapi
 x11-libs/libva vdpau wayland
 
 ##
@@ -138,6 +138,7 @@ sys-devel/distcc -gtk
 # No need for the nmap gui, zenmap...
 #
 # The ncat flag adds ipv6 capable netcat implementation
+#	Why that's part of nmap is anyones guess...
 ##
 net-analyzer/nmap -gtk -lua ncat
 
@@ -152,7 +153,9 @@ app-office/libreoffice -dbus -gnome -gstreamer -opengl -postgres -vba -webdav
 sys-apps/util-linux tty-helpers
 
 ##
-# Not doing this causes lvm2 to be installed. Don't want or need.
+# Not disabling udisks causes lvm2 to be installed. Don't want or need.
+#
+# Supporting DNLA/upnp servers with the use flag.
 ##
 media-tv/kodi -udisks upnp
 
@@ -164,13 +167,11 @@ net-libs/libmicrohttpd messages
 ##
 # Some useflag changes to enable games
 ##
-dev-games/ogre             cg ois
-dev-games/mygui            ogre -opengl
-dev-games/cegui            ogre
-media-libs/sdl-mixer       midi timidity
-x11-base/xorg-server       xvfb
-games-strategy/openra      tools
-games-strategy/warzone2100 videos
+dev-games/mygui			-opengl
+media-libs/sdl-mixer		midi timidity
+x11-base/xorg-server		xvfb
+games-strategy/openra		tools
+games-strategy/warzone2100	videos
 
 ##
 # On the RPI (version 1, the single core one), we normally disable threads, but some libs explicitly need threads support for the various apps that are being installed.
@@ -256,6 +257,7 @@ sys-cluster/ceph cephfs -fuse radosgw
 
 ##
 # Supporting flash for southpark!
+# Widevine for netflix
 ##
 www-plugins/chrome-binary-plugins widevine flash
 
@@ -275,8 +277,11 @@ media-plugins/gst-plugins-vaapi	wayland
 ##
 x11-base/xorg-server glamor
 
-dev-libs/openssl bindist
-dev-libs/botan bindist
+##
+# Todo: What needs this?
+##
+dev-libs/botan		bindist
+dev-libs/openssl	bindist
 
 ##
 # Purging gstreamer 0.10
@@ -289,36 +294,31 @@ app-emulation/wine -gstreamer
 games-strategy/megaglest -model-viewer -editor
 
 ##
-# Disabling introspection on various packages. It's, for the most part, not useful for my usage cases.
+# I disable introspection globally, but a handful of packages need it anyway...
 ##
-x11-libs/vte              -introspection
+x11-libs/vte               introspection
 x11-libs/gtksourceview     introspection
 
 x11-libs/gtk+              introspection
 dev-libs/atk               introspection
 x11-libs/pango             introspection
 sys-auth/polkit            introspection
+net-libs/gtk-vnc           introspection
 sys-libs/libosinfo         introspection
 net-misc/spice-gtk         introspection
 x11-libs/gdk-pixbuf        introspection
 app-emulation/libvirt-glib introspection
 
-x11-libs/vte               introspection
-net-libs/gtk-vnc           introspection
 
 ##
 # Hrmm... trying to remove speech-dispatcher from the system.
 # Seems like the gn useflag makes chromium build with "Generate Ninja" instead of something else? Horribly unclear
 # but, bizarrely, this is the flag that makes it bring in the speech dispatcher. Wtf?
 ##
+#www-client/chromium gn
 #www-client/chromium system-ffmpeg
 media-libs/libvpx svc
 
-
-##
-# Chromium has some new build system, but it doesn't seem happy yet.
-##
-#www-client/chromium gn
 
 ##
 # lynx won't build on musl with nls
@@ -334,7 +334,7 @@ sys-apps/dbus systemd
 # Adds support for the None cipher. Literally this cipher performs absolutely no encryption, and as such is as insecure as can possibly be,
 # but it's also very cpu friendly and therefore useful when doing security insensitive things like file transfers on local networks
 ##
-#net-misc/openssh hpn
+net-misc/openssh hpn
 
 ##
 # Virtual Machine Disk Image Management needs this
@@ -347,46 +347,38 @@ app-emulation/libguestfs ocaml
 ##
 net-print/cups ssl
 
-dev-libs/botan bindist
-dev-libs/openssl bindist
-
-##
-# Supporting DNLA/upnp servers
-##
-media-tv/kodi upnp
-
 ##
 # 32 bit libraries needed by steam
 ##
-virtual/jpeg:0 		abi_x86_32
-virtual/libffi		abi_x86_32
-virtual/libelf		abi_x86_32
-virtual/opengl		abi_x86_32
-virtual/libintl		abi_x86_32
-virtual/libudev		abi_x86_32
-virtual/libiconv	abi_x86_32
-virtual/pkgconfig	abi_x86_32
+virtual/jpeg:0			abi_x86_32
+virtual/libffi			abi_x86_32
+virtual/libelf			abi_x86_32
+virtual/opengl			abi_x86_32
+virtual/libintl			abi_x86_32
+virtual/libudev			abi_x86_32
+virtual/libiconv		abi_x86_32
+virtual/pkgconfig		abi_x86_32
 
-sys-fs/udev		abi_x86_32
-dev-db/sqlite		abi_x86_32
-net-misc/curl		abi_x86_32
-sys-apps/attr		abi_x86_32
-sys-devel/llvm		abi_x86_32
-app-arch/bzip2		abi_x86_32
-sys-devel/clang		abi_x86_32
-sys-apps/systemd	abi_x86_32
-app-arch/xz-utils	abi_x86_32
-dev-util/pkgconfig	abi_x86_32
-gnome-base/librsvg	abi_x86_32
-sys-apps/util-linux	abi_x86_32
-media-gfx/graphite2	abi_x86_32
+sys-fs/udev			abi_x86_32
+dev-db/sqlite			abi_x86_32
+net-misc/curl			abi_x86_32
+sys-apps/attr			abi_x86_32
+sys-devel/llvm			abi_x86_32
+app-arch/bzip2			abi_x86_32
+sys-devel/clang			abi_x86_32
+sys-apps/systemd		abi_x86_32
+app-arch/xz-utils		abi_x86_32
+dev-util/pkgconfig		abi_x86_32
+gnome-base/librsvg		abi_x86_32
+sys-apps/util-linux		abi_x86_32
+media-gfx/graphite2		abi_x86_32
 
-sys-libs/gpm		abi_x86_32
-sys-libs/zlib		abi_x86_32
-sys-libs/libcap		abi_x86_32
-sys-libs/ncurses	abi_x86_32
-sys-libs/readline	abi_x86_32
-sys-libs/binutils-libs	abi_x86_32
+sys-libs/gpm			abi_x86_32
+sys-libs/zlib			abi_x86_32
+sys-libs/libcap			abi_x86_32
+sys-libs/ncurses		abi_x86_32
+sys-libs/readline		abi_x86_32
+sys-libs/binutils-libs		abi_x86_32
 
 dev-libs/nss			abi_x86_32
 dev-libs/icu			abi_x86_32
