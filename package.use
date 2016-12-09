@@ -167,7 +167,7 @@ net-libs/libmicrohttpd messages
 ##
 # Some useflag changes to enable games
 ##
-dev-games/mygui			-opengl
+dev-games/mygui			-ogre opengl
 media-libs/sdl-mixer		midi timidity
 x11-base/xorg-server		xvfb
 games-strategy/openra		tools
