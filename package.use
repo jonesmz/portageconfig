@@ -348,6 +348,11 @@ app-emulation/libguestfs ocaml
 net-print/cups ssl
 
 ##
+# Busybox apparently doesn't want to builwith "pam static" use flags.
+##
+sys-apps/busybox	-static
+
+##
 # 32 bit libraries needed by steam
 ##
 virtual/jpeg:0			abi_x86_32
