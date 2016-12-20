@@ -141,13 +141,12 @@ dev-python/libvirt-python
 ##
 x11-wm/lumina
 
-<<<<<<< HEAD
 ##
 # Windows 10 isn't working correctly with Sambas virtual server personality support.
 # Trying newer releases...
 ##
-net-fs/samba
-sys-libs/talloc
+#<=net-fs/samba-4.4.5
+#sys-libs/talloc
 
 sys-fs/duperemove
 
