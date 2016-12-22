@@ -109,14 +109,32 @@ app-eselect/eselect-php apache2
 ##
 # QEMU arm emulation support, and more.
 ##
-dev-libs/glib    static-libs
-sys-libs/zlib    static-libs
-sys-apps/attr    static-libs
-app-arch/bzip2   static-libs
-dev-libs/libpcre static-libs
+sys-apps/dtc			static-libs
+dev-libs/lzo			static-libs
+virtual/jpeg			static-libs
+dev-libs/glib			static-libs
+sys-libs/zlib			static-libs
+sys-apps/attr			static-libs
+net-misc/curl			static-libs
+app-arch/bzip2			static-libs
+dev-libs/libaio			static-libs
+media-libs/celt			static-libs
+media-libs/opus 		static-libs
+x11-libs/pixman			static-libs
+app-arch/snappy			static-libs
+sys-libs/ncurses		static-libs
+dev-libs/openssl		static-libs
+dev-libs/libpcre		static-libs
+media-libs/libpng		static-libs
+sys-apps/usbredir		static-libs
+sys-libs/libcap-ng		static-libs
+sys-apps/util-linux		static-libs
+app-emulation/spice		static-libs
+sys-libs/libseccomp		static-libs
+media-libs/libjpeg-turbo	static-libs
 
 net-misc/spice-gtk usbredir
-app-emulation/qemu static-user usbredir virtfs numa spice
+app-emulation/qemu static-user usbredir virtfs numa spice lzo -sdl -alsa -gtk -pulseaudio -opengl -curl -snappy
 
 ##
 # Turning off the GUI of lshw, it's useless.
@@ -322,7 +340,6 @@ net-libs/gtk-vnc           introspection
 ##
 #www-client/chromium system-ffmpeg
 media-libs/libvpx svc
-
 
 ##
 # Chromium has some new build system, but it doesn't seem happy yet.
