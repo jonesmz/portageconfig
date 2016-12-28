@@ -281,7 +281,7 @@ x11-base/xorg-server glamor
 # Todo: What needs this?
 ##
 dev-libs/botan		bindist
-dev-libs/openssl	bindist
+dev-libs/openssl	-bindist
 
 ##
 # Purging gstreamer 0.10
