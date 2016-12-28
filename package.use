@@ -365,7 +365,7 @@ app-emulation/libguestfs ocaml
 net-print/cups ssl
 
 ##
-# Busybox apparently doesn't want to builwith "pam static" use flags.
+# Busybox apparently doesn't want to build with "pam static" use flags.
 ##
 sys-apps/busybox	-static
 

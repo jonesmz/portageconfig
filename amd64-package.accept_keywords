@@ -120,14 +120,6 @@ dev-qt/qt-creator
 dev-libs/capstone
 
 ##
-# Better virtual machine management
-##
-app-emulation/libvirt
-app-emulation/libvirt-glib
-
-dev-python/libvirt-python
-
-##
 # Trying out lumina desktop for the hell of it
 ##
 x11-wm/lumina
