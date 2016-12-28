@@ -54,11 +54,6 @@ app-admin/systemrescuecd-x86
 sys-boot/systemrescuecd-x86-grub
 
 ##
-# Doing work with turnserver lately. Comes from jonesmz-public overlay.
-##
-www-servers/turnserver
-
-##
 # LXQT is the successor to LXDE. It seems mature enough to use regularly.
 ##
 lxqt-base/liblxqt
@@ -117,21 +112,17 @@ sys-devel/gdb
 ##
 # Newer qt creator
 ##
-#sys-devel/llvm
-#sys-devel/clang
-#dev-libs/libclc
 dev-qt/qt-creator
 
 ##
 # Interesting compiler infastructure type tools
 ##
-=dev-libs/capstone-3.0.4-r1 ~amd64
+dev-libs/capstone
 
 ##
 # Better virtual machine management
 ##
 app-emulation/libvirt
-app-emulation/virt-manager
 app-emulation/libvirt-glib
 
 dev-python/libvirt-python
@@ -153,11 +144,9 @@ sys-fs/duperemove
 x11-misc/arandr
 
 ##
-# Repoman for gentoo dev
+# Multi monitor management
 ##
-dev-python/lxml
-app-portage/repoman
-
+x11-misc/arandr
 
 ##
 # Steam
@@ -172,3 +161,28 @@ games-util/steam-client-meta
 # Newer xfreerdp for usb redirection
 ##
 net-misc/freerdp
+
+##
+# UEFI files for qemu? - pulled from jonesmz-public-overlay
+##
+sys-boot/udk
+
+##
+# Testing work stuff
+##
+net-im/coturn
+
+##
+# Old version doesn't seem to work properly with systemd
+##
+net-analyzer/fail2ban
+
+##
+# Backup windows machines
+##
+app-backup/urbackup-server
+
+##
+# Maybe a bit better than grub?
+##
+sys-boot/systemd-boot
