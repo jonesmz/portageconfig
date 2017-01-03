@@ -139,11 +139,6 @@ games-util/steam-games-meta
 games-util/steam-client-meta
 
 ##
-# Newer xfreerdp for usb redirection
-##
-net-misc/freerdp
-
-##
 # UEFI files for qemu? - pulled from jonesmz-public-overlay
 ##
 sys-boot/udk
@@ -152,3 +147,8 @@ sys-boot/udk
 # Testing work stuff
 ##
 net-im/coturn
+
+##
+# media-gfx/krita
+##
+media-gfx/krita
