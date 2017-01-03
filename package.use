@@ -271,7 +271,7 @@ net-wireless/wpa_supplicant -qt4 -hs2-0
 #
 # Revisit this, and find a way to disable radosgw
 ##
-sys-cluster/ceph cephfs -fuse radosgw
+sys-cluster/ceph cephfs fuse radosgw
 
 ##
 # Supporting flash for southpark!
@@ -479,3 +479,8 @@ x11-libs/libpciaccess		abi_x86_32
 x11-libs/libxshmfence		abi_x86_32
 x11-libs/libXcomposite		abi_x86_32
 x11-libs/libva-vdpau-driver	abi_x86_32
+
+##
+# Examples for udk? Currently doesn't compile. See https://bugs.gentoo.org/show_bug.cgi?id=603986
+##
+sys-boot/udk -examples
