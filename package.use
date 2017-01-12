@@ -484,3 +484,8 @@ x11-libs/libva-vdpau-driver	abi_x86_32
 # Examples for udk? Currently doesn't compile. See https://bugs.gentoo.org/show_bug.cgi?id=603986
 ##
 sys-boot/udk -examples
+
+##
+# Remove python support from pluma so that we can drop the gtk2 dependency
+##
+app-editors/pluma -python
