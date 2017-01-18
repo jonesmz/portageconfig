@@ -163,7 +163,7 @@ net-analyzer/nmap -gtk -lua ncat
 ##
 # Libreoffice doesn't need to be quite so heavy weight.
 ##
-app-office/libreoffice -dbus -gnome -gstreamer -opengl -postgres -vba -webdav
+app-office/libreoffice -dbus -gnome -gstreamer -opengl -postgres -vba -webdav -gtk
 
 ##
 # Need tty-helpers useflag to support apcupsd requested by jay for his ups.
@@ -208,7 +208,7 @@ net-misc/networkmanager  -zeroconf -ncurses
 ##
 # Custom flags for vlc
 ##
-media-video/vlc -* X a52 avcodec avformat cdda dbus dts dvbpsi dvd ffmpeg flac gcrypt gnome jpeg libnotify libsamplerate mp3 mpeg ncurses ogg opengl png pulseaudio qt5 samba sdl svg swscale theora udev vaapi vdpau vorbis x264 xcb xml xv zeroconf opus cpu_flags_x86_mmx cpu_flags_x86_sse upnp
+media-video/vlc -* X a52 avcodec avformat cdda dbus dts dvbpsi dvd ffmpeg flac gcrypt gnome jpeg -libnotify libsamplerate mp3 mpeg ncurses ogg opengl png pulseaudio qt5 samba sdl svg swscale theora udev vaapi vdpau vorbis x264 xcb xml xv zeroconf opus cpu_flags_x86_mmx cpu_flags_x86_sse upnp
 
 ##
 # We need to explicitly state which version of qt to use for some apps.
@@ -327,6 +327,10 @@ net-misc/spice-gtk         introspection
 x11-libs/gdk-pixbuf        introspection
 app-emulation/libvirt-glib introspection
 
+##
+# Prefer gtk3 over gtk2
+##
+www-client/chromium gtk3
 
 ##
 # Hrmm... trying to remove speech-dispatcher from the system.
@@ -479,6 +483,7 @@ x11-libs/libpciaccess		abi_x86_32
 x11-libs/libxshmfence		abi_x86_32
 x11-libs/libXcomposite		abi_x86_32
 x11-libs/libva-vdpau-driver	abi_x86_32
+x11-libs/libva-intel-driver	abi_x86_32
 
 ##
 # Examples for udk? Currently doesn't compile. See https://bugs.gentoo.org/show_bug.cgi?id=603986
@@ -489,3 +494,12 @@ sys-boot/udk -examples
 # Remove python support from pluma so that we can drop the gtk2 dependency
 ##
 app-editors/pluma -python
+
+##
+# Trying to purge gtk2
+##
+app-crypt/pinentry		-gtk
+app-text/ghostscript-gpl	-gtk
+media-libs/libcanberra		-gtk
+x11-libs/libfm			-gtk
+dev-vcs/git			-gtk
