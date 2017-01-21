@@ -35,7 +35,6 @@ dev-qt/qtscript:4 -exceptions
 
 dev-qt/qtmultimedia:5 widgets
 
-
 ##
 # Needed by texmaker's qt5 version.
 ##
@@ -227,7 +226,6 @@ dev-libs/libdbusmenu-qt    -qt4  qt5
 dev-games/openscenegraph   -qt4  qt5
 dev-qt/qtsingleapplication -qt4  qt5
 
-
 ##
 # Don't actually remember what this one is for...
 ##
@@ -298,7 +296,7 @@ x11-base/xorg-server glamor
 ##
 # Todo: What needs this?
 ##
-dev-libs/botan		bindist
+dev-libs/botan		-bindist
 dev-libs/openssl	-bindist
 
 ##
@@ -511,16 +509,6 @@ x11-libs/libva-vdpau-driver	abi_x86_32
 x11-libs/libva-intel-driver	abi_x86_32
 
 ##
-# Examples for udk? Currently doesn't compile. See https://bugs.gentoo.org/show_bug.cgi?id=603986
-##
-sys-boot/udk -examples
-
-##
-# Remove python support from pluma so that we can drop the gtk2 dependency
-##
-app-editors/pluma -python
-
-##
 # Trying to purge gtk2
 ##
 app-crypt/pinentry		-gtk
@@ -528,3 +516,8 @@ app-text/ghostscript-gpl	-gtk
 media-libs/libcanberra		-gtk
 x11-libs/libfm			-gtk
 dev-vcs/git			-gtk
+
+##
+# Trying to purge berkdb
+##
+dev-lang/python -gdbm
