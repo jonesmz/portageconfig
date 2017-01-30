@@ -1,12 +1,7 @@
 ##
-# No Java6 or 8 crap for us, plus some rpi accepts.
+# No Java6 or 8 crap for us.
 ##
 dev-java/icedtea:8
-
-##
-# Needed for fastboot tool
-##
-dev-util/android-tools
 
 ##
 # Btrfs snapshot management
@@ -44,7 +39,10 @@ net-wireless/broadcom-sta
 # GAMES, specifically TES3: Morrowind and dwarffortress
 ##
 games-engines/openmw
-dev-games/openscenegraph
+##
+# Only needs v 3.3.4 or newer.
+##
+#dev-games/openscenegraph
 games-roguelike/dwarf-fortress
 
 ##
@@ -76,7 +74,6 @@ x11-libs/libfm-qt
 x11-misc/obconf-qt
 x11-misc/pcmanfm-qt
 
-dev-util/cmake
 dev-libs/libqtxdg
 
 ##
@@ -88,11 +85,6 @@ app-forensics/afl
 # Corosync work
 ##
 sys-cluster/corosync
-
-##
-# Need dracut for multi-device btrfs root fs.
-##
-sys-kernel/dracut
 
 ##
 # Gives virtual machine disk image management features
@@ -125,11 +117,6 @@ dev-libs/capstone
 x11-wm/lumina
 
 ##
-# Multi monitor management
-##
-x11-misc/arandr
-
-##
 # Steam
 ##
 games-util/esteam
@@ -152,4 +139,13 @@ net-im/coturn
 # media-gfx/krita
 ##
 media-gfx/krita
+
+##
+# Open TES Arena
+##
 media-sound/wildmidi
+
+##
+# Used to provide webbrowser for metashell
+##
+www-misc/shellinabox

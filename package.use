@@ -6,11 +6,7 @@ sys-devel/gcc graphite sanitize
 ##
 # Systemd doesn't need extra cruft...
 ##
-sys-apps/systemd -firmware-loader -ssl -kdbus -lz4
-
-sys-apps/systemd -python
-sys-apps/systemd -python_targets_python2_7 -python_targets_python3_3 -python_targets_python3_4
-sys-apps/systemd -python_single_target_python2_7 -python_single_target_python3_3 -python_single_target_python3_4
+sys-apps/systemd -ssl -lz4 -kdbus
 
 ##
 # Some nice to haves
@@ -26,14 +22,7 @@ dev-libs/libpcre pcre16
 #####################################
 # Useflags for Qt5 itself
 #####################################
-dev-qt/qtgui:4 -accessibility
 dev-qt/qtgui:5 -accessibility
-
-dev-qt/qtgui:4    -exceptions
-dev-qt/qtcore:4   -exceptions
-dev-qt/qtscript:4 -exceptions
-
-dev-qt/qtmultimedia:5 widgets
 
 ##
 # Needed by texmaker's qt5 version.
@@ -52,8 +41,8 @@ dev-qt/qt-creator android autotools cmake clang clangcodemodel clangstaticanalyz
 ##
 dev-db/sqlite secure-delete
 media-libs/libvpx postproc
-www-client/firefox      -* pgo jemalloc3  egl  gmp-autoupdate  webm  gstreamer  pulseaudio minimal libnotify startup-notification jit system-cairo -system-icu system-jpeg system-sqlite -system-libvpx hardened hwaccel pgo system-harfbuzz system-icu system-libevent
-mail-client/thunderbird -* pgo jemalloc3 -egl -gmp-autoupdate -webm -gstreamer -pulseaudio minimal libnotify startup-notification jit system-cairo -system-icu system-jpeg system-sqlite -system-libvpx hardened hwaccel pgo system-harfbuzz system-icu system-libevent
+www-client/firefox jit pgo hwaccel hardened jemalloc3 gstreamer pulseaudio startup-notification system-cairo system-harfbuzz system-icu system-jpeg system-libevent system-libvpx system-sqlite
+www-client/firefox -dbus -wifi -ffmpeg
 
 ##
 # Sadly, Java wants a lot of bullshit. Here I remove unnecessary cruft.
@@ -165,11 +154,6 @@ net-analyzer/nmap -gtk -lua ncat
 app-office/libreoffice -dbus -gnome -gstreamer -opengl -postgres -vba -webdav -gtk
 
 ##
-# Need tty-helpers useflag to support apcupsd requested by jay for his ups.
-##
-sys-apps/util-linux tty-helpers
-
-##
 # Not disabling udisks causes lvm2 to be installed. Don't want or need.
 #
 # Supporting DNLA/upnp servers with the use flag.
@@ -232,12 +216,6 @@ dev-qt/qtsingleapplication -qt4  qt5
 net-analyzer/wireshark -netlink -gtk3
 
 ##
-# Dependency conflict when using libav on these. Need to revisit this.
-##
-media-libs/gegl -libav
-media-video/vlc -libav
-
-##
 # Samba 4 experiment
 ##
 net-fs/samba client smbclient -avahi aio fam
@@ -272,10 +250,9 @@ net-wireless/wpa_supplicant -qt4 -hs2-0
 sys-cluster/ceph cephfs fuse radosgw
 
 ##
-# Supporting flash for southpark!
 # Widevine for netflix
 ##
-www-plugins/chrome-binary-plugins widevine flash
+www-plugins/chrome-binary-plugins widevine
 
 ##
 # Settings for experimenting with wayland.
@@ -326,18 +303,14 @@ x11-libs/gdk-pixbuf        introspection
 app-emulation/libvirt-glib introspection
 
 ##
-# Prefer gtk3 over gtk2
+# Prefer gtk3 over gtk2, prefer system libs over bundled when possible.
 ##
-www-client/chromium gtk3
+www-client/chromium gtk3 system-ffmpeg
 
 ##
 # Hrmm... trying to remove speech-dispatcher from the system.
-# Seems like the gn useflag makes chromium build with "Generate Ninja" instead of something else? Horribly unclear
-# but, bizarrely, this is the flag that makes it bring in the speech dispatcher. Wtf?
 ##
-#www-client/chromium gn
-#www-client/chromium system-ffmpeg
-media-libs/libvpx svc
+#media-libs/libvpx svc
 
 ##
 # lynx won't build on musl with nls
@@ -369,7 +342,7 @@ net-print/cups ssl
 ##
 # Busybox apparently doesn't want to build with "pam static" use flags.
 ##
-sys-apps/busybox	-static
+sys-apps/busybox -static
 
 ##
 # Examples for udk? Currently doesn't compile. See https://bugs.gentoo.org/show_bug.cgi?id=603986
@@ -511,13 +484,20 @@ x11-libs/libva-intel-driver	abi_x86_32
 ##
 # Trying to purge gtk2
 ##
-app-crypt/pinentry		-gtk
-app-text/ghostscript-gpl	-gtk
-media-libs/libcanberra		-gtk
-x11-libs/libfm			-gtk
 dev-vcs/git			-gtk
+x11-libs/libfm			-gtk
+app-crypt/pinentry		-gtk
+media-libs/libcanberra		-gtk
+app-text/ghostscript-gpl	-gtk
 
 ##
 # Trying to purge berkdb
 ##
 dev-lang/python -gdbm
+
+##
+# Running non built in shells fails if pam is enabled.
+# Probably need to hand craft some configuration files to make it work
+# Would rather simply not include the logic to begin with
+##
+www-misc/shellinabox -pam
