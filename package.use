@@ -310,7 +310,7 @@ www-client/chromium gtk3 system-ffmpeg
 ##
 # Hrmm... trying to remove speech-dispatcher from the system.
 ##
-#media-libs/libvpx svc
+media-libs/libvpx svc
 
 ##
 # lynx won't build on musl with nls
