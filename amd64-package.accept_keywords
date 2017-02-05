@@ -103,8 +103,9 @@ sys-devel/gdb
 
 ##
 # Newer qt creator
+# Disabled until newer llvms are stabilized
 ##
-dev-qt/qt-creator
+#dev-qt/qt-creator
 
 ##
 # Interesting compiler infastructure type tools
