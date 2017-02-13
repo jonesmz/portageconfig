@@ -248,7 +248,7 @@ net-wireless/wpa_supplicant -qt4 -hs2-0
 #
 # Revisit this, and find a way to disable radosgw
 ##
-sys-cluster/ceph cephfs fuse radosgw
+sys-cluster/ceph cephfs fuse radosgw -gtk
 
 ##
 # Widevine for netflix
@@ -380,6 +380,7 @@ dev-libs/json-c			abi_x86_32
 sys-devel/clang			abi_x86_32
 sys-apps/systemd		abi_x86_32
 app-arch/xz-utils		abi_x86_32
+sys-devel/gettext		abi_x86_32
 media-libs/libsdl		abi_x86_32
 media-libs/libsdl2              abi_x86_32
 media-libs/sdl-ttf		abi_x86_32
