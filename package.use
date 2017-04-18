@@ -192,7 +192,7 @@ net-misc/networkmanager  -zeroconf -ncurses
 ##
 # Custom flags for vlc
 ##
-media-video/vlc -* X a52 avcodec avformat cdda dbus dts dvbpsi dvd ffmpeg flac gcrypt gnome jpeg -libnotify libsamplerate mp3 mpeg ncurses ogg opengl png pulseaudio qt5 samba sdl svg swscale theora udev vaapi vdpau vorbis x264 xcb xml xv zeroconf opus cpu_flags_x86_mmx cpu_flags_x86_sse upnp
+media-video/vlc -* X a52 avcodec avformat cdda dbus dts dvbpsi dvd ffmpeg flac gcrypt gnome jpeg -libnotify libsamplerate mp3 mpeg ncurses ogg opengl png pulseaudio qt5 samba sdl svg swscale theora udev vaapi vdpau vorbis x264 xcb xml xv zeroconf opus cpu_flags_x86_mmx cpu_flags_x86_sse upnp chromecast encode gnutls
 
 ##
 # We need to explicitly state which version of qt to use for some apps.
@@ -401,6 +401,7 @@ sys-libs/ncurses		abi_x86_32
 sys-libs/readline		abi_x86_32
 sys-libs/binutils-libs		abi_x86_32
 
+dev-libs/gmp			abi_x86_32
 dev-libs/nss			abi_x86_32
 dev-libs/icu			abi_x86_32
 dev-libs/atk			abi_x86_32
@@ -408,6 +409,7 @@ dev-libs/nspr			abi_x86_32
 dev-libs/lzo			abi_x86_32
 dev-libs/glib			abi_x86_32
 dev-libs/expat			abi_x86_32
+dev-libs/nettle			abi_x86_32
 dev-libs/libffi			abi_x86_32
 dev-libs/libxml2		abi_x86_32
 dev-libs/openssl		abi_x86_32
@@ -525,3 +527,7 @@ www-misc/shellinabox -pam
 # Hardened useflag seems to cause trouble.
 ##
 app-backup/urbackup-server -hardened
+
+dev-qt/qt-creator -webengine
+
+media-video/ffmpeg vdpau
