@@ -1,1 +1,3 @@
 dev-qt/qtcore:4
+dev-java/icedtea:7
+dev-java/icedtea-bin:7
