@@ -192,7 +192,7 @@ net-misc/networkmanager  -zeroconf -ncurses
 ##
 # Custom flags for vlc
 ##
-media-video/vlc -* X a52 avcodec avformat cdda dbus dts dvbpsi dvd ffmpeg flac gcrypt gnome jpeg -libnotify libsamplerate mp3 mpeg ncurses ogg opengl png pulseaudio qt5 samba sdl svg swscale theora udev vaapi vdpau vorbis x264 xcb xml xv zeroconf opus cpu_flags_x86_mmx cpu_flags_x86_sse upnp chromecast encode gnutls
+media-video/vlc -* X a52 avcodec avformat cdda dbus dts dvbpsi dvd ffmpeg flac gcrypt gnome jpeg -libnotify libsamplerate mp3 mpeg ncurses ogg opengl png pulseaudio qt5 samba sdl svg swscale theora udev vaapi vdpau vorbis x264 xcb xml xv zeroconf opus cpu_flags_x86_mmx cpu_flags_x86_sse upnp chromecast encode rtsp httpd gstreamer mtp lua gnutls
 
 ##
 # We need to explicitly state which version of qt to use for some apps.
@@ -240,7 +240,7 @@ lxqt-base/lxqt-panel -desktopswitch
 ##
 # No need for the WPA_Supplicant gui, nor 802.11u
 ##
-net-wireless/wpa_supplicant -qt4 -hs2-0
+net-wireless/wpa_supplicant -qt5 -qt4 -hs2-0
 
 ##
 # Want support for the cephfs network filesystem
@@ -450,10 +450,12 @@ dev-libs/icu			abi_x86_32
 dev-libs/atk			abi_x86_32
 dev-libs/nspr			abi_x86_32
 dev-libs/lzo			abi_x86_32
+dev-libs/gmp			abi_x86_32
 dev-libs/glib			abi_x86_32
 dev-libs/expat			abi_x86_32
 dev-libs/nettle			abi_x86_32
 dev-libs/libffi			abi_x86_32
+dev-libs/nettle			abi_x86_32
 dev-libs/libxml2		abi_x86_32
 dev-libs/openssl		abi_x86_32
 dev-libs/libpcre		abi_x86_32
@@ -541,3 +543,35 @@ x11-libs/libXcomposite		abi_x86_32
 x11-libs/libva-vdpau-driver	abi_x86_32
 x11-libs/libva-intel-driver	abi_x86_32
 
+##
+# Why have a mail sending program that can't send mail...
+##
+mail-client/nail net
+
+##
+# Trying to purge gtk2
+##
+dev-vcs/git			-gtk
+x11-libs/libfm			-gtk
+app-crypt/pinentry		-gtk
+media-libs/libcanberra		-gtk
+app-text/ghostscript-gpl	-gtk
+
+##
+# Trying to purge berkdb
+##
+dev-lang/python -gdbm
+
+##
+# Running non built in shells fails if pam is enabled.
+# Probably need to hand craft some configuration files to make it work
+# Would rather simply not include the logic to begin with
+##
+www-misc/shellinabox -pam
+
+##
+# Hardened useflag seems to cause trouble.
+##
+app-backup/urbackup-server -hardened
+
+media-video/ffmpeg vdpau
