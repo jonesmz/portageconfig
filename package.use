@@ -6,7 +6,7 @@ sys-devel/gcc graphite sanitize
 ##
 # Systemd doesn't need extra cruft...
 ##
-sys-apps/systemd -ssl -lz4 -kdbus
+sys-apps/systemd -ssl -lz4 -kdbus gnuefi
 
 ##
 # Some nice to haves
@@ -219,7 +219,10 @@ net-analyzer/wireshark -netlink -gtk3
 ##
 # Samba 4 experiment
 ##
-net-fs/samba client smbclient -avahi aio fam
+net-fs/samba client smbclient aio fam addc addns winbind ads gnutls ldap -avahi -system-mitkrb5
+
+app-crypt/heimdal -ssl
+net-dns/bind-tools gssapi
 
 ##
 # When emulating ARM via Qemu, Qemu barfs on the messagemerge command. This useflag change makes it much less of a problem, at the cost of slightly reduced speed.
