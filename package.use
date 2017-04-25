@@ -219,7 +219,7 @@ net-analyzer/wireshark -netlink -gtk3
 ##
 # Samba 4 experiment
 ##
-net-fs/samba client smbclient -avahi aio fam
+net-fs/samba client smbclient aio fam winbind -avahi
 
 ##
 # When emulating ARM via Qemu, Qemu barfs on the messagemerge command. This useflag change makes it much less of a problem, at the cost of slightly reduced speed.
@@ -356,8 +356,44 @@ sys-boot/udk -examples
 app-editors/pluma -python
 
 ##
+# Why have a mail sending program that can't send mail...
+##
+mail-client/nail net
+
+##
+# Trying to purge gtk2
+##
+dev-vcs/git			-gtk
+x11-libs/libfm			-gtk
+app-crypt/pinentry		-gtk
+media-libs/libcanberra		-gtk
+app-text/ghostscript-gpl	-gtk
+
+##
+# Trying to purge berkdb
+##
+dev-lang/python -gdbm
+
+##
+# Running non built in shells fails if pam is enabled.
+# Probably need to hand craft some configuration files to make it work
+# Would rather simply not include the logic to begin with
+##
+www-misc/shellinabox -pam
+
+##
+# Hardened useflag seems to cause trouble.
+##
+app-backup/urbackup-server -hardened
+
+dev-qt/qt-creator -webengine
+
+media-video/ffmpeg vdpau
+
+##
 # 32 bit libraries needed by steam
 ##
+virtual/pam			abi_x86_32
 virtual/glu			abi_x86_32
 virtual/jpeg:0			abi_x86_32
 virtual/libffi			abi_x86_32
@@ -373,15 +409,22 @@ dev-db/sqlite			abi_x86_32
 sys-apps/dbus			abi_x86_32
 net-misc/curl			abi_x86_32
 sys-apps/attr			abi_x86_32
+sys-libs/pam			abi_x86_32
+sys-devel/flex			abi_x86_32
 media-libs/glu			abi_x86_32
 sys-devel/llvm			abi_x86_32
 app-arch/bzip2			abi_x86_32
+net-libs/gnutls			abi_x86_32
 dev-libs/json-c			abi_x86_32
 sys-devel/clang			abi_x86_32
+dev-libs/libxslt		abi_x86_32
 sys-apps/systemd		abi_x86_32
 app-arch/xz-utils		abi_x86_32
 sys-devel/gettext		abi_x86_32
+dev-libs/libtasn1		abi_x86_32
+sys-libs/cracklib		abi_x86_32
 media-libs/libsdl		abi_x86_32
+media-sound/mpg123		abi_x86_32
 media-libs/libsdl2              abi_x86_32
 media-libs/sdl-ttf		abi_x86_32
 dev-util/pkgconfig		abi_x86_32
@@ -425,6 +468,7 @@ media-libs/mesa			abi_x86_32
 media-libs/tiff			abi_x86_32
 media-libs/flac			abi_x86_32
 media-libs/glew			abi_x86_32
+media-libs/lcms			abi_x86_32
 media-libs/libpng		abi_x86_32
 media-libs/libogg		abi_x86_32
 media-libs/openal		abi_x86_32
@@ -497,37 +541,3 @@ x11-libs/libXcomposite		abi_x86_32
 x11-libs/libva-vdpau-driver	abi_x86_32
 x11-libs/libva-intel-driver	abi_x86_32
 
-##
-# Why have a mail sending program that can't send mail...
-##
-mail-client/nail net
-
-##
-# Trying to purge gtk2
-##
-dev-vcs/git			-gtk
-x11-libs/libfm			-gtk
-app-crypt/pinentry		-gtk
-media-libs/libcanberra		-gtk
-app-text/ghostscript-gpl	-gtk
-
-##
-# Trying to purge berkdb
-##
-dev-lang/python -gdbm
-
-##
-# Running non built in shells fails if pam is enabled.
-# Probably need to hand craft some configuration files to make it work
-# Would rather simply not include the logic to begin with
-##
-www-misc/shellinabox -pam
-
-##
-# Hardened useflag seems to cause trouble.
-##
-app-backup/urbackup-server -hardened
-
-dev-qt/qt-creator -webengine
-
-media-video/ffmpeg vdpau

@@ -1,5 +1,5 @@
 ##
-# No Java6 or 8 crap for us.
+# No Java6 or 7 crap for us.
 ##
 dev-java/icedtea:8
 
