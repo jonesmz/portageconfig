@@ -39,10 +39,6 @@ net-wireless/broadcom-sta
 # GAMES, specifically TES3: Morrowind and dwarffortress
 ##
 games-engines/openmw
-##
-# Only needs v 3.3.4 or newer.
-##
-#dev-games/openscenegraph
 games-roguelike/dwarf-fortress
 
 ##
@@ -97,11 +93,6 @@ dev-ml/ocaml-gettext
 dev-ml/ocaml-fileutils
 
 ##
-# Need newer gdb to embed printers directly into shared libraries.
-##
-sys-devel/gdb
-
-##
 # Newer qt creator
 # Disabled until newer llvms are stabilized
 ##
@@ -118,18 +109,6 @@ dev-libs/capstone
 x11-wm/lumina
 
 ##
-# Windows 10 isn't working correctly with Sambas virtual server personality support.
-# Trying newer releases...
-##
-#<=net-fs/samba-4.4.5
-#sys-libs/talloc
-
-##
-# Multi monitor management
-##
-x11-misc/arandr
-
-##
 # Steam
 ##
 games-util/esteam
@@ -139,19 +118,15 @@ games-util/steam-games-meta
 games-util/steam-client-meta
 
 ##
-# UEFI files for qemu? - pulled from jonesmz-public-overlay
+# UEFI files for qemu
 ##
-sys-boot/udk
+#sys-boot/udk
+sys-firmware/edk2-ovmf
 
 ##
 # Testing work stuff
 ##
 net-im/coturn
-
-##
-# Old version doesn't seem to work properly with systemd
-##
-net-analyzer/fail2ban
 
 ##
 # Backup windows machines
@@ -164,16 +139,6 @@ app-backup/urbackup-server
 sys-boot/systemd-boot
 
 ##
-# krita, for melissa
-##
-media-gfx/krita
-
-##
 # Open TES Arena
 ##
 media-sound/wildmidi
-
-##
-# Used to provide webbrowser for metashell
-##
-www-misc/shellinabox
