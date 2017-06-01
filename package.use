@@ -41,7 +41,7 @@ dev-qt/qt-creator android autotools cmake clang clangcodemodel clangstaticanalyz
 ##
 dev-db/sqlite secure-delete
 media-libs/libvpx postproc
-www-client/firefox jit pgo hwaccel hardened jemalloc3 gstreamer pulseaudio startup-notification system-cairo system-harfbuzz system-icu system-jpeg system-libevent system-libvpx system-sqlite
+www-client/firefox jit pgo hwaccel hardened jemalloc3 gstreamer pulseaudio startup-notification system-cairo system-harfbuzz system-icu system-jpeg system-libevent system-libvpx system-sqlite gmp-autoupdate
 www-client/firefox -dbus -wifi -ffmpeg
 
 ##
@@ -420,6 +420,7 @@ app-arch/bzip2			abi_x86_32
 net-libs/gnutls			abi_x86_32
 dev-libs/json-c			abi_x86_32
 sys-devel/clang			abi_x86_32
+net-dns/libidn2			abi_x86_32
 dev-libs/libxslt		abi_x86_32
 sys-apps/systemd		abi_x86_32
 app-arch/xz-utils		abi_x86_32
@@ -465,6 +466,7 @@ dev-libs/libcroco		abi_x86_32
 dev-libs/elfutils		abi_x86_32
 dev-libs/libgcrypt		abi_x86_32
 dev-libs/libgpg-error		abi_x86_32
+dev-libs/libunistring		abi_x86_32
 dev-libs/libpthread-stubs	abi_x86_32
 
 media-libs/mesa			abi_x86_32
@@ -487,7 +489,7 @@ media-libs/libjpeg-turbo	abi_x86_32
 media-libs/libomxil-bellagio	abi_x86_32
 
 x11-proto/xproto		abi_x86_32
-x11-proto/glproto 		abi_x86_32
+x11-proto/glproto		abi_x86_32
 x11-proto/kbproto		abi_x86_32
 x11-proto/xcb-proto		abi_x86_32
 x11-proto/xextproto		abi_x86_32
@@ -543,4 +545,9 @@ x11-libs/libxkbcommon		abi_x86_32
 x11-libs/libXcomposite		abi_x86_32
 x11-libs/libva-vdpau-driver	abi_x86_32
 x11-libs/libva-intel-driver	abi_x86_32
+
+##
+# Used for gerbera media server
+##
+net-libs/libupnp	reuseaddr
 
