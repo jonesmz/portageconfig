@@ -363,6 +363,12 @@ app-backup/urbackup-server -hardened
 media-video/ffmpeg vdpau fdk
 
 ##
+# Needed for emby server
+##
+media-video/ffmpeg vpx
+media-gfx/imagemagick jpeg png jpeg2k webp
+
+##
 # Changes needed for shotwell
 ##
 net-libs/webkit-gtk -geolocation
@@ -520,12 +526,3 @@ x11-libs/libXinerama		abi_x86_32
 x11-libs/libXcomposite		abi_x86_32
 #x11-libs/libva-vdpau-driver	abi_x86_32
 #x11-libs/libva-intel-driver	abi_x86_32
-
-
-# required by media-tv/emby-server-3.2.19.0-r1::megacoffee
-# required by emby-server (argument)
->=media-video/ffmpeg-3.2.4 vpx
-# required by media-tv/emby-server-3.2.19.0-r1::megacoffee
-# required by emby-server (argument)
->=media-gfx/imagemagick-6.9.8.6 jpeg png jpeg2k webp
-

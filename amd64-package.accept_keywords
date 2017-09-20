@@ -126,6 +126,9 @@ sys-boot/systemd-boot
 media-video/handbrake
 media-libs/libbluray
 
+##
+# Open source alternative to plex.
+##
+dev-lang/mono
 media-tv/emby-server
 dev-dotnet/referenceassemblies-pcl
-dev-lang/mono
