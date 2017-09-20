@@ -1,1 +1,10 @@
+##
+# Netflix support, et. al.
+##
 www-plugins/chrome-binary-plugins google-chrome
+
+##
+# Used for handbreak
+##
+media-libs/fdk-aac FraunhoferFDK
+

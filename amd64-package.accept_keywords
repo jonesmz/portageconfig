@@ -9,26 +9,9 @@ dev-java/icedtea:8
 app-backup/snapper
 
 ##
-# Drupal and one of it's deps is unstable..?
-##
-www-apps/drupal
-dev-php/pecl-uploadprogress
-
-##
-# New versions of Ceph are unstable still
-##
-sys-cluster/ceph
-
-##
 # Awesome terminal
 ##
 x11-terms/terminology
-
-##
-# Perforce support for development purposes.
-##
-dev-vcs/perforce-cli
-dev-vcs/perforce-gui
 
 ##
 # Wifi card support for Dell Latitude e6530
@@ -36,7 +19,7 @@ dev-vcs/perforce-gui
 net-wireless/broadcom-sta
 
 ##
-# GAMES, specifically TES3: Morrowind and dwarffortress
+# GAMES: specifically TES3: Morrowind and dwarffortress
 ##
 games-engines/openmw
 games-roguelike/dwarf-fortress
@@ -64,13 +47,13 @@ lxqt-base/lxqt-globalkeys
 lxqt-base/lxqt-config-randr
 lxqt-base/lxqt-notificationd
 
-media-gfx/lximage-qt
+dev-libs/libqtxdg
 
 x11-libs/libfm-qt
 x11-misc/obconf-qt
 x11-misc/pcmanfm-qt
 
-dev-libs/libqtxdg
+media-gfx/lximage-qt
 
 ##
 # Really awesome test tool that I want to play with.
@@ -120,7 +103,6 @@ games-util/steam-client-meta
 ##
 # UEFI files for qemu
 ##
-#sys-boot/udk
 sys-firmware/edk2-ovmf
 
 ##
@@ -139,11 +121,8 @@ app-backup/urbackup-server
 sys-boot/systemd-boot
 
 ##
-# Open TES Arena
+# Dvd re-encoding to server to chromecasts from plex
 ##
-media-sound/wildmidi
-
-net-misc/gerbera
-dev-lang/duktape
-net-libs/libupnp
+media-video/handbrake
+media-libs/libbluray
 

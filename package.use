@@ -6,12 +6,12 @@ sys-devel/gcc graphite sanitize
 ##
 # Systemd doesn't need extra cruft...
 ##
-sys-apps/systemd -ssl -lz4 -kdbus gnuefi
+sys-apps/systemd -ssl -lz4
 
 ##
 # Some nice to haves
 ##
-sys-apps/systemd elfutils gcrypt lzma
+sys-apps/systemd elfutils gcrypt lzma gnuefi
 
 ##
 # Useflags needed by qt5.
@@ -22,10 +22,8 @@ dev-libs/libpcre pcre16
 #####################################
 # Useflags for Qt5 itself
 #####################################
-dev-qt/qtgui:5 -accessibility
-
 ##
-# Needed by texmaker's qt5 version.
+# Printsupport Needed by texmaker's qt5 version.
 ##
 dev-qt/qtwebkit:5 printsupport -opengl
 
@@ -33,11 +31,10 @@ dev-qt/qtwebkit:5 printsupport -opengl
 # Nifty options for the qt-creator ide.
 ##
 dev-qt/qt-creator android autotools cmake clang clangcodemodel clangstaticanalyzer
+dev-qt/qt-creator -webengine
 
 ##
-# No sense in having firefox and thunderbird build their own copies of libraries...
-#
-# The Thunderbird Conversations plugin doesn't work right if you use system-icu....
+# No sense in having firefox build its own copies of libraries...
 ##
 dev-db/sqlite secure-delete
 media-libs/libvpx postproc
@@ -49,9 +46,9 @@ www-client/firefox -dbus -wifi -ffmpeg
 # But despite telling it to disable X, it still wants it >_<
 ##
 x11-libs/cairo X
-dev-java/icedtea     headless-awt -X -gtk -alsa -nsplugin -webstart -pulseaudio -cups
-dev-java/icedtea-bin -headless-awt X  gtk -alsa -nsplugin -webstart  pulseaudio -cups
-dev-java/icedtea-web -nsplugin -webstart
+dev-java/icedtea      headless-awt -X -gtk -alsa -nsplugin -webstart -pulseaudio -cups -source -sunec  jbootstrap
+dev-java/icedtea-bin -headless-awt  X  gtk -alsa -nsplugin -webstart  pulseaudio -cups -source -sunec -jbootstrap
+dev-java/icedtea-web -*
 
 ##
 # Systemd doesn't have the static-libs useflag. Need to put this here to avoid conflicts
@@ -83,17 +80,11 @@ media-libs/gd jpeg truetype png fontconfig
 # Still haven't figured out how to get rid of cups...
 ##
 app-text/ghostscript-gpl -cups
-net-print/cups           -*
-net-print/cups-filters   -*
 
 ##
-# Mysql is evil! Drupal for website experiment
+# No need for ssl support with apache. Not running interactive web pages.
 ##
 www-servers/apache -ssl
-www-apps/drupal -mysql postgres
-dev-lang/php apache2 gd pdo postgres
-virtual/postgresql server
-app-eselect/eselect-php apache2
 
 ##
 # QEMU arm emulation support, and more.
@@ -108,7 +99,7 @@ net-misc/curl			static-libs
 app-arch/bzip2			static-libs
 dev-libs/libaio			static-libs
 media-libs/celt			static-libs
-media-libs/opus 		static-libs
+media-libs/opus			static-libs
 x11-libs/pixman			static-libs
 app-arch/snappy			static-libs
 sys-libs/ncurses		static-libs
@@ -155,18 +146,6 @@ net-analyzer/nmap -gtk -lua ncat
 app-office/libreoffice -dbus -gnome -gstreamer -opengl -postgres -vba -webdav -gtk
 
 ##
-# Not disabling udisks causes lvm2 to be installed. Don't want or need.
-#
-# Supporting DNLA/upnp servers with the use flag.
-##
-media-tv/kodi -udisks upnp
-
-##
-# Needed for kodi
-##
-net-libs/libmicrohttpd messages
-
-##
 # Some useflag changes to enable games
 ##
 dev-games/mygui			-ogre opengl
@@ -174,14 +153,6 @@ media-libs/sdl-mixer		midi timidity
 x11-base/xorg-server		xvfb
 games-strategy/openra		tools
 games-strategy/warzone2100	videos
-
-##
-# On the RPI (version 1, the single core one), we normally disable threads, but some libs explicitly need threads support for the various apps that are being installed.
-##
-dev-libs/boost    threads
-dev-libs/botan    threads
-dev-lang/python   threads
-dev-libs/beecrypt threads
 
 ##
 # No need for some features
@@ -202,11 +173,7 @@ net-dns/avahi              -qt4  qt5
 dev-util/cmake             -qt4 -qt5
 media-video/vlc            -qt4  qt5
 app-text/poppler           -qt4  qt5
-dev-util/cppcheck          -qt4  qt5
-media-gfx/graphviz         -qt4  qt5
-app-office/texmaker        -qt4  qt5
 dev-qt/qtlockedfile        -qt4  qt5
-net-analyzer/wireshark     -qt4  qt5
 dev-libs/libdbusmenu-qt    -qt4  qt5
 dev-games/openscenegraph   -qt4  qt5
 dev-qt/qtsingleapplication -qt4  qt5
@@ -293,33 +260,32 @@ games-strategy/megaglest -model-viewer -editor
 ##
 # I disable introspection globally, but a handful of packages need it anyway...
 ##
-x11-libs/vte               introspection
-x11-libs/gtksourceview     introspection
+x11-libs/vte			introspection
+dev-libs/atk			introspection
+x11-libs/gtk+			introspection
+x11-libs/pango			introspection
+sys-auth/polkit			introspection
+net-libs/gtk-vnc		introspection
+virtual/libgudev		introspection
+dev-libs/libgudev		introspection
+sys-libs/libosinfo		introspection
+net-misc/spice-gtk		introspection
+x11-libs/gdk-pixbuf		introspection
+x11-libs/gtksourceview		introspection
+app-emulation/libvirt-glib	introspection
 
-x11-libs/gtk+              introspection
-dev-libs/atk               introspection
-x11-libs/pango             introspection
-sys-auth/polkit            introspection
-net-libs/gtk-vnc           introspection
-sys-libs/libosinfo         introspection
-net-misc/spice-gtk         introspection
-x11-libs/gdk-pixbuf        introspection
-app-emulation/libvirt-glib introspection
+# required by media-gfx/shotwell-0.24.6::gentoo
+# required by shotwell (argument)
 
 ##
 # Prefer gtk3 over gtk2, prefer system libs over bundled when possible.
 ##
-www-client/chromium gtk3 system-ffmpeg
+www-client/chromium gtk3 system-ffmpeg system-libvpx
 
 ##
 # Hrmm... trying to remove speech-dispatcher from the system.
 ##
 media-libs/libvpx svc
-
-##
-# lynx won't build on musl with nls
-##
-www-client/lynx -nls
 
 ##
 # Very much not clear on why this needs to be specified. Further investigation needed.
@@ -360,6 +326,7 @@ app-editors/pluma -python
 
 ##
 # Why have a mail sending program that can't send mail...
+# Used on servers to send automated alerts.
 ##
 mail-client/nail net
 
@@ -373,7 +340,7 @@ media-libs/libcanberra		-gtk
 app-text/ghostscript-gpl	-gtk
 
 ##
-# Trying to purge berkdb
+# Preventing the need for the berkdb useflag from gdbm.
 ##
 dev-lang/python -gdbm
 
@@ -389,9 +356,17 @@ www-misc/shellinabox -pam
 ##
 app-backup/urbackup-server -hardened
 
-dev-qt/qt-creator -webengine
+##
+# fdk is needed to support handbrake.
+# unclear what vdpau is needed for.
+##
+media-video/ffmpeg vdpau fdk
 
-media-video/ffmpeg vdpau
+##
+# Changes needed for shotwell
+##
+net-libs/webkit-gtk -geolocation
+media-libs/gexiv2 -python
 
 ##
 # 32 bit libraries needed by steam
@@ -400,154 +375,149 @@ virtual/pam			abi_x86_32
 virtual/glu			abi_x86_32
 virtual/jpeg:0			abi_x86_32
 virtual/libffi			abi_x86_32
-virtual/libelf			abi_x86_32
+#virtual/libelf			abi_x86_32
 virtual/opengl			abi_x86_32
 virtual/libintl			abi_x86_32
 virtual/libudev			abi_x86_32
 virtual/libiconv		abi_x86_32
 virtual/pkgconfig		abi_x86_32
 
-sys-fs/udev			abi_x86_32
-dev-db/sqlite			abi_x86_32
+#sys-fs/udev			abi_x86_32
+#dev-db/sqlite			abi_x86_32
 sys-apps/dbus			abi_x86_32
-net-misc/curl			abi_x86_32
+#net-misc/curl			abi_x86_32
 sys-apps/attr			abi_x86_32
 sys-libs/pam			abi_x86_32
 sys-devel/flex			abi_x86_32
-media-libs/glu			abi_x86_32
+#media-libs/glu			abi_x86_32
 sys-devel/llvm			abi_x86_32
 app-arch/bzip2			abi_x86_32
 net-libs/gnutls			abi_x86_32
-dev-libs/json-c			abi_x86_32
+#dev-libs/json-c			abi_x86_32
 sys-devel/clang			abi_x86_32
-net-dns/libidn2			abi_x86_32
+#net-dns/libidn2			abi_x86_32
 dev-libs/libxslt		abi_x86_32
 sys-apps/systemd		abi_x86_32
 app-arch/xz-utils		abi_x86_32
 sys-devel/gettext		abi_x86_32
 dev-libs/libtasn1		abi_x86_32
 sys-libs/cracklib		abi_x86_32
-media-libs/libsdl		abi_x86_32
-media-sound/mpg123		abi_x86_32
-media-libs/libsdl2              abi_x86_32
-media-libs/sdl-ttf		abi_x86_32
+#media-libs/libsdl		abi_x86_32
+#media-sound/mpg123		abi_x86_32
+#media-libs/libsdl2              abi_x86_32
+#media-libs/sdl-ttf		abi_x86_32
 dev-util/pkgconfig		abi_x86_32
-gnome-base/librsvg		abi_x86_32
+#gnome-base/librsvg		abi_x86_32
 sys-apps/util-linux		abi_x86_32
 net-libs/libasyncns		abi_x86_32
-media-gfx/graphite2		abi_x86_32
-media-libs/sdl-image		abi_x86_32
+#media-gfx/graphite2		abi_x86_32
+#media-libs/sdl-image		abi_x86_32
 sys-apps/tcp-wrappers		abi_x86_32
 media-sound/pulseaudio		abi_x86_32
-media-plugins/alsa-plugins	abi_x86_32
+#media-plugins/alsa-plugins	abi_x86_32
 
 sys-libs/gpm			abi_x86_32
 sys-libs/zlib			abi_x86_32
 sys-libs/libcap			abi_x86_32
 sys-libs/ncurses		abi_x86_32
-sys-libs/readline		abi_x86_32
-sys-libs/binutils-libs		abi_x86_32
+#sys-libs/readline		abi_x86_32
+#sys-libs/binutils-libs		abi_x86_32
 
 dev-libs/gmp			abi_x86_32
-dev-libs/nss			abi_x86_32
+#dev-libs/nss			abi_x86_32
 dev-libs/icu			abi_x86_32
-dev-libs/atk			abi_x86_32
-dev-libs/nspr			abi_x86_32
-dev-libs/lzo			abi_x86_32
+#dev-libs/atk			abi_x86_32
+#dev-libs/nspr			abi_x86_32
+#dev-libs/lzo			abi_x86_32
 dev-libs/glib			abi_x86_32
 dev-libs/expat			abi_x86_32
 dev-libs/nettle			abi_x86_32
 dev-libs/libffi			abi_x86_32
 dev-libs/libxml2		abi_x86_32
-dev-libs/openssl		abi_x86_32
+#dev-libs/openssl		abi_x86_32
 dev-libs/libpcre		abi_x86_32
 dev-libs/wayland		abi_x86_32
-dev-libs/libcroco		abi_x86_32
+#dev-libs/libcroco		abi_x86_32
 dev-libs/elfutils		abi_x86_32
 dev-libs/libgcrypt		abi_x86_32
 dev-libs/libgpg-error		abi_x86_32
-dev-libs/libunistring		abi_x86_32
-dev-libs/libpthread-stubs	abi_x86_32
+#dev-libs/libunistring		abi_x86_32
+#dev-libs/libpthread-stubs	abi_x86_32
 
 media-libs/mesa			abi_x86_32
 media-libs/tiff			abi_x86_32
 media-libs/flac			abi_x86_32
-media-libs/glew			abi_x86_32
+#media-libs/glew			abi_x86_32
 media-libs/lcms			abi_x86_32
 media-libs/libpng		abi_x86_32
 media-libs/libogg		abi_x86_32
-media-libs/openal		abi_x86_32
-media-libs/freetype 		abi_x86_32
-media-libs/harfbuzz		abi_x86_32
+#media-libs/openal		abi_x86_32
+media-libs/freetype		abi_x86_32
+#media-libs/harfbuzz		abi_x86_32
 media-libs/alsa-lib		abi_x86_32
 media-libs/libvorbis		abi_x86_32
-media-libs/audiofile		abi_x86_32
+#media-libs/audiofile		abi_x86_32
 media-libs/libsndfile		abi_x86_32
 media-libs/fontconfig		abi_x86_32
-media-libs/libtxc_dxtn		abi_x86_32
+#media-libs/libtxc_dxtn		abi_x86_32
 media-libs/libjpeg-turbo	abi_x86_32
-media-libs/libomxil-bellagio	abi_x86_32
+#media-libs/libomxil-bellagio	abi_x86_32
 
 x11-proto/xproto		abi_x86_32
-x11-proto/glproto		abi_x86_32
+#x11-proto/glproto		abi_x86_32
 x11-proto/kbproto		abi_x86_32
 x11-proto/xcb-proto		abi_x86_32
 x11-proto/xextproto		abi_x86_32
-x11-proto/dri2proto		abi_x86_32
-x11-proto/dri3proto		abi_x86_32
-x11-proto/randrproto		abi_x86_32
+#x11-proto/dri2proto		abi_x86_32
+#x11-proto/dri3proto		abi_x86_32
+#x11-proto/randrproto		abi_x86_32
 x11-proto/fixesproto		abi_x86_32
 x11-proto/inputproto		abi_x86_32
 x11-proto/videoproto		abi_x86_32
 x11-proto/recordproto		abi_x86_32
 x11-proto/renderproto		abi_x86_32
 x11-proto/damageproto		abi_x86_32
-x11-proto/xf86driproto		abi_x86_32
-x11-proto/presentproto		abi_x86_32
+#x11-proto/xf86driproto		abi_x86_32
+#x11-proto/presentproto		abi_x86_32
 x11-proto/xineramaproto		abi_x86_32
-x11-proto/compositeproto	abi_x86_32
+#x11-proto/compositeproto	abi_x86_32
 x11-proto/xf86bigfontproto	abi_x86_32
-x11-proto/xf86vidmodeproto	abi_x86_32
+#x11-proto/xf86vidmodeproto	abi_x86_32
 
-x11-libs/gtk+:2			abi_x86_32
-x11-libs/pixma			abi_x86_32
-x11-libs/cairo			abi_x86_32
-x11-libs/libva			abi_x86_32
+#x11-libs/gtk+:2			abi_x86_32
+#x11-libs/pixma			abi_x86_32
+#x11-libs/cairo			abi_x86_32
+#x11-libs/libva			abi_x86_32
 x11-libs/libSM			abi_x86_32
-x11-libs/libXv			abi_x86_32
-x11-libs/pango			abi_x86_32
+#x11-libs/libXv			abi_x86_32
+#x11-libs/pango			abi_x86_32
 x11-libs/libXi			abi_x86_32
-x11-libs/libXt			abi_x86_32
-x11-libs/libXmu			abi_x86_32
+#x11-libs/libXt			abi_x86_32
+#x11-libs/libXmu			abi_x86_32
 x11-libs/libICE			abi_x86_32
-x11-libs/pixman			abi_x86_32
-x11-libs/libXft			abi_x86_32
-x11-libs/libdrm			abi_x86_32
+#x11-libs/pixman			abi_x86_32
+#x11-libs/libXft			abi_x86_32
+#x11-libs/libdrm			abi_x86_32
 x11-libs/libX11			abi_x86_32
 x11-libs/libXau			abi_x86_32
 x11-libs/libxcb			abi_x86_32
 x11-libs/libXtst		abi_x86_32
-x11-libs/libXvMC		abi_x86_32
+#x11-libs/libXvMC		abi_x86_32
 x11-libs/libXext		abi_x86_32
-x11-libs/libXdmcp		abi_x86_32
-x11-libs/libvdpau		abi_x86_32
+#x11-libs/libXdmcp		abi_x86_32
+#x11-libs/libvdpau		abi_x86_32
 x11-libs/libXrandr		abi_x86_32
 x11-libs/libXfixes		abi_x86_32
 x11-libs/libXdamage		abi_x86_32
 x11-libs/libXcursor		abi_x86_32
-x11-libs/gdk-pixbuf		abi_x86_32
-x11-libs/libXxf86vm		abi_x86_32
+#x11-libs/gdk-pixbuf		abi_x86_32
+#x11-libs/libXxf86vm		abi_x86_32
 x11-libs/libXrender		abi_x86_32
 x11-libs/libXinerama		abi_x86_32
-x11-libs/libpciaccess		abi_x86_32
-x11-libs/libxshmfence		abi_x86_32
-x11-libs/libxkbcommon		abi_x86_32
+#x11-libs/libpciaccess		abi_x86_32
+#x11-libs/libxshmfence		abi_x86_32
+#x11-libs/libxkbcommon		abi_x86_32
 x11-libs/libXcomposite		abi_x86_32
-x11-libs/libva-vdpau-driver	abi_x86_32
-x11-libs/libva-intel-driver	abi_x86_32
-
-##
-# Used for gerbera media server
-##
-net-libs/libupnp	reuseaddr
+#x11-libs/libva-vdpau-driver	abi_x86_32
+#x11-libs/libva-intel-driver	abi_x86_32
 
