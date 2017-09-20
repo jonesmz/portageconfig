@@ -163,7 +163,7 @@ net-misc/networkmanager  -zeroconf -ncurses
 ##
 # Custom flags for vlc
 ##
-media-video/vlc -* X a52 avcodec avformat cdda dbus dts dvbpsi dvd ffmpeg flac gcrypt gnome jpeg -libnotify libsamplerate mp3 mpeg ncurses ogg opengl png pulseaudio qt5 samba sdl svg swscale theora udev vaapi vdpau vorbis x264 xcb xml xv zeroconf opus cpu_flags_x86_mmx cpu_flags_x86_sse upnp chromecast encode rtsp httpd gstreamer mtp lua gnutls
+media-video/vlc -* X a52 avcodec avformat cdda dbus dts dvbpsi dvd ffmpeg flac gcrypt gnome jpeg -libnotify libsamplerate mp3 mpeg ncurses ogg opengl png pulseaudio qt5 samba sdl svg swscale theora udev vaapi vdpau vorbis x264 xcb xml xv zeroconf opus cpu_flags_x86_mmx cpu_flags_x86_sse upnp  gnutls
 
 ##
 # We need to explicitly state which version of qt to use for some apps.
@@ -273,9 +273,6 @@ net-misc/spice-gtk		introspection
 x11-libs/gdk-pixbuf		introspection
 x11-libs/gtksourceview		introspection
 app-emulation/libvirt-glib	introspection
-
-# required by media-gfx/shotwell-0.24.6::gentoo
-# required by shotwell (argument)
 
 ##
 # Prefer gtk3 over gtk2, prefer system libs over bundled when possible.
@@ -433,7 +430,6 @@ dev-libs/glib			abi_x86_32
 dev-libs/expat			abi_x86_32
 dev-libs/nettle			abi_x86_32
 dev-libs/libffi			abi_x86_32
-dev-libs/nettle			abi_x86_32
 dev-libs/libxml2		abi_x86_32
 #dev-libs/openssl		abi_x86_32
 dev-libs/libpcre		abi_x86_32
@@ -521,58 +517,3 @@ x11-libs/libXinerama		abi_x86_32
 x11-libs/libXcomposite		abi_x86_32
 #x11-libs/libva-vdpau-driver	abi_x86_32
 #x11-libs/libva-intel-driver	abi_x86_32
-
-##
-# Why have a mail sending program that can't send mail...
-##
-mail-client/nail net
-
-##
-# Trying to purge gtk2
-##
-dev-vcs/git			-gtk
-x11-libs/libfm			-gtk
-app-crypt/pinentry		-gtk
-media-libs/libcanberra		-gtk
-app-text/ghostscript-gpl	-gtk
-
-##
-# Trying to purge berkdb
-##
-dev-lang/python -gdbm
-
-##
-# Running non built in shells fails if pam is enabled.
-# Probably need to hand craft some configuration files to make it work
-# Would rather simply not include the logic to begin with
-##
-www-misc/shellinabox -pam
-
-##
-# Hardened useflag seems to cause trouble.
-##
-app-backup/urbackup-server -hardened
-
-media-video/ffmpeg vdpau
-
->=net-dns/libidn2-2.0.2 abi_x86_32
-
->=media-video/ffmpeg-3.2.4 fdk
-
-app-emulation/wine staging
-
-
-##
-# For shotwell
-##
->=media-libs/vigra-1.9.0 openexr
-
-sci-libs/hdf5 -threads
-
-net-libs/webkit-gtk:4 -geolocation
-media-libs/gexiv2 -python
->=dev-libs/libgudev-231 introspection
-# required by media-gfx/shotwell-0.24.6::gentoo
-# required by shotwell (argument)
->=virtual/libgudev-230 introspection
-

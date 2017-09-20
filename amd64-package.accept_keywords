@@ -11,7 +11,6 @@ app-backup/snapper
 ##
 # Awesome terminal
 ##
-dev-libs/efl
 x11-terms/terminology
 
 ##
@@ -127,26 +126,3 @@ sys-boot/systemd-boot
 media-video/handbrake
 media-libs/libbluray
 
-##
-# Used to provide webbrowser for metashell
-##
-www-misc/shellinabox
-
-#media-video/vlc **
-
-media-video/makemkv
-=media-libs/libbluray-1.0.1 ~amd64
-=media-video/handbrake-1.0.7 ~amd64
-
-
-# required by net-dns/libidn2-0.16-r1::gentoo
-# required by net-libs/gnutls-3.5.10::gentoo[idn]
-# required by app-emulation/wine-1.8.3::gentoo[ssl]
-# required by wine (argument)
-=dev-libs/libunistring-0.9.7 ~amd64
-
-
-=dev-libs/nss-3.30.1 ~amd64
-net-misc/youtube-dl
-
-app-emulation/wine
