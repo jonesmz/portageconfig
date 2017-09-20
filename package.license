@@ -8,3 +8,8 @@ www-plugins/chrome-binary-plugins google-chrome
 ##
 media-libs/fdk-aac FraunhoferFDK
 
+##
+# Used for emby
+##
+dev-dotnet/referenceassemblies-pcl dotnet-eula
+

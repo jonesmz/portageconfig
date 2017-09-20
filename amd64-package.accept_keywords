@@ -126,3 +126,6 @@ sys-boot/systemd-boot
 media-video/handbrake
 media-libs/libbluray
 
+media-tv/emby-server
+dev-dotnet/referenceassemblies-pcl
+dev-lang/mono
