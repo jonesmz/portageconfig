@@ -360,6 +360,12 @@ app-backup/urbackup-server -hardened
 media-video/ffmpeg vdpau fdk
 
 ##
+# Needed for emby server
+##
+media-video/ffmpeg vpx
+media-gfx/imagemagick jpeg png jpeg2k webp
+
+##
 # Changes needed for shotwell
 ##
 net-libs/webkit-gtk -geolocation
