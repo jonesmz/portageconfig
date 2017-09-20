@@ -9,27 +9,10 @@ dev-java/icedtea:8
 app-backup/snapper
 
 ##
-# Drupal and one of it's deps is unstable..?
-##
-www-apps/drupal
-dev-php/pecl-uploadprogress
-
-##
-# New versions of Ceph are unstable still
-##
-sys-cluster/ceph
-
-##
 # Awesome terminal
 ##
 dev-libs/efl
 x11-terms/terminology
-
-##
-# Perforce support for development purposes.
-##
-dev-vcs/perforce-cli
-dev-vcs/perforce-gui
 
 ##
 # Wifi card support for Dell Latitude e6530
@@ -37,13 +20,9 @@ dev-vcs/perforce-gui
 net-wireless/broadcom-sta
 
 ##
-# GAMES, specifically TES3: Morrowind and dwarffortress
+# GAMES: specifically TES3: Morrowind and dwarffortress
 ##
 games-engines/openmw
-##
-# Only needs v 3.3.4 or newer.
-##
-#dev-games/openscenegraph
 games-roguelike/dwarf-fortress
 
 ##
@@ -69,13 +48,13 @@ lxqt-base/lxqt-globalkeys
 lxqt-base/lxqt-config-randr
 lxqt-base/lxqt-notificationd
 
-media-gfx/lximage-qt
+dev-libs/libqtxdg
 
 x11-libs/libfm-qt
 x11-misc/obconf-qt
 x11-misc/pcmanfm-qt
 
-dev-libs/libqtxdg
+media-gfx/lximage-qt
 
 ##
 # Really awesome test tool that I want to play with.
@@ -98,15 +77,10 @@ dev-ml/ocaml-gettext
 dev-ml/ocaml-fileutils
 
 ##
-# Need newer gdb to embed printers directly into shared libraries.
-##
-sys-devel/gdb
-
-##
 # Newer qt creator
 # Disabled until newer llvms are stabilized
 ##
-#dev-qt/qt-creator
+dev-qt/qt-creator
 
 ##
 # Interesting compiler infastructure type tools
@@ -119,18 +93,6 @@ dev-libs/capstone
 x11-wm/lumina
 
 ##
-# Windows 10 isn't working correctly with Sambas virtual server personality support.
-# Trying newer releases...
-##
-#<=net-fs/samba-4.4.5
-#sys-libs/talloc
-
-##
-# Multi monitor management
-##
-x11-misc/arandr
-
-##
 # Steam
 ##
 games-util/esteam
@@ -140,19 +102,14 @@ games-util/steam-games-meta
 games-util/steam-client-meta
 
 ##
-# UEFI files for qemu? - pulled from jonesmz-public-overlay
+# UEFI files for qemu
 ##
-sys-boot/udk
+sys-firmware/edk2-ovmf
 
 ##
 # Testing work stuff
 ##
 net-im/coturn
-
-##
-# Old version doesn't seem to work properly with systemd
-##
-net-analyzer/fail2ban
 
 ##
 # Backup windows machines
@@ -165,14 +122,10 @@ app-backup/urbackup-server
 sys-boot/systemd-boot
 
 ##
-# krita, for melissa
+# Dvd re-encoding to server to chromecasts from plex
 ##
-media-gfx/krita
-
-##
-# Open TES Arena
-##
-media-sound/wildmidi
+media-video/handbrake
+media-libs/libbluray
 
 ##
 # Used to provide webbrowser for metashell
@@ -195,4 +148,3 @@ www-client/firefox
 
 
 =dev-libs/nss-3.30.1 ~amd64
-
