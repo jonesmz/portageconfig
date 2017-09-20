@@ -133,11 +133,10 @@ media-libs/libbluray
 www-misc/shellinabox
 
 #media-video/vlc **
-sys-devel/gettext
-net-libs/gnutls
-net-dns/libidn2
-www-client/firefox
 
+media-video/makemkv
+=media-libs/libbluray-1.0.1 ~amd64
+=media-video/handbrake-1.0.7 ~amd64
 
 
 # required by net-dns/libidn2-0.16-r1::gentoo
@@ -148,3 +147,6 @@ www-client/firefox
 
 
 =dev-libs/nss-3.30.1 ~amd64
+net-misc/youtube-dl
+
+app-emulation/wine

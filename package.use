@@ -149,7 +149,7 @@ app-office/libreoffice -dbus -gnome -gstreamer -opengl -postgres -vba -webdav -g
 # Some useflag changes to enable games
 ##
 dev-games/mygui			-ogre opengl
-media-libs/sdl-mixer		midi timidity
+media-libs/sdl-mixer		midi timidity mad
 x11-base/xorg-server		xvfb
 games-strategy/openra		tools
 games-strategy/warzone2100	videos
@@ -554,3 +554,25 @@ www-misc/shellinabox -pam
 app-backup/urbackup-server -hardened
 
 media-video/ffmpeg vdpau
+
+>=net-dns/libidn2-2.0.2 abi_x86_32
+
+>=media-video/ffmpeg-3.2.4 fdk
+
+app-emulation/wine staging
+
+
+##
+# For shotwell
+##
+>=media-libs/vigra-1.9.0 openexr
+
+sci-libs/hdf5 -threads
+
+net-libs/webkit-gtk:4 -geolocation
+media-libs/gexiv2 -python
+>=dev-libs/libgudev-231 introspection
+# required by media-gfx/shotwell-0.24.6::gentoo
+# required by shotwell (argument)
+>=virtual/libgudev-230 introspection
+
