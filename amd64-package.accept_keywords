@@ -132,3 +132,10 @@ media-libs/libbluray
 dev-lang/mono
 media-tv/emby-server
 dev-dotnet/referenceassemblies-pcl
+
+##
+# Cephfs cluster filesystem
+##
+sys-cluster/ceph
+sys-apps/keyutils
+dev-util/google-perftools

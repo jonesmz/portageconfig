@@ -218,7 +218,7 @@ net-wireless/wpa_supplicant -qt5 -qt4 -hs2-0
 #
 # Revisit this, and find a way to disable radosgw
 ##
-sys-cluster/ceph cephfs fuse radosgw -gtk
+sys-cluster/ceph cephfs fuse
 
 ##
 # Widevine for netflix
@@ -370,6 +370,12 @@ media-gfx/imagemagick jpeg png jpeg2k webp
 ##
 net-libs/webkit-gtk -geolocation
 media-libs/gexiv2 -python
+
+##
+# Support for CephFS
+##
+dev-lang/python sqlite
+dev-libs/boost context
 
 ##
 # 32 bit libraries needed by steam
