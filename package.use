@@ -404,7 +404,7 @@ app-arch/bzip2			abi_x86_32
 net-libs/gnutls			abi_x86_32
 #dev-libs/json-c			abi_x86_32
 sys-devel/clang			abi_x86_32
-#net-dns/libidn2			abi_x86_32
+net-dns/libidn2			abi_x86_32
 dev-libs/libxslt		abi_x86_32
 sys-apps/systemd		abi_x86_32
 app-arch/xz-utils		abi_x86_32
@@ -412,7 +412,7 @@ sys-devel/gettext		abi_x86_32
 dev-libs/libtasn1		abi_x86_32
 sys-libs/cracklib		abi_x86_32
 #media-libs/libsdl		abi_x86_32
-#media-sound/mpg123		abi_x86_32
+media-sound/mpg123		abi_x86_32
 #media-libs/libsdl2              abi_x86_32
 #media-libs/sdl-ttf		abi_x86_32
 dev-util/pkgconfig		abi_x86_32
