@@ -231,7 +231,7 @@ www-plugins/chrome-binary-plugins widevine
 dev-libs/efl			-opengl gles
 kde-base/kwin			wayland
 kde-plasma/kwin			wayland
-dev-libs/weston			wayland-compositor xwayland
+dev-libs/weston			wayland-compositor xwayland fbdev
 media-libs/libsdl2		gles
 x11-base/xorg-server		wayland
 media-plugins/gst-plugins-vaapi	wayland
