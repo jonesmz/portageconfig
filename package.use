@@ -412,7 +412,7 @@ sys-devel/gettext		abi_x86_32
 dev-libs/libtasn1		abi_x86_32
 sys-libs/cracklib		abi_x86_32
 #media-libs/libsdl		abi_x86_32
-#media-sound/mpg123		abi_x86_32
+media-sound/mpg123		abi_x86_32
 #media-libs/libsdl2              abi_x86_32
 #media-libs/sdl-ttf		abi_x86_32
 dev-util/pkgconfig		abi_x86_32
