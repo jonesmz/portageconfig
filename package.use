@@ -30,6 +30,7 @@ dev-qt/qtwebkit:5 printsupport -opengl
 ##
 # Nifty options for the qt-creator ide.
 ##
+dev-util/cmake    server
 dev-qt/qt-creator android autotools cmake clang clangcodemodel clangstaticanalyzer
 dev-qt/qt-creator -webengine
 

@@ -22,6 +22,7 @@ net-wireless/broadcom-sta
 # GAMES: specifically TES3: Morrowind and dwarffortress
 ##
 games-engines/openmw
+sci-physics/bullet
 games-roguelike/dwarf-fortress
 
 ##
