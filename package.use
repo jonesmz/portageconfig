@@ -158,7 +158,7 @@ games-strategy/warzone2100	videos
 ##
 # No need for some features
 ##
-net-dns/avahi            -autoipd -python -gdbm -gtk -introspection -mdnsresponder-compat -nls
+net-dns/avahi            -autoipd -python -gdbm -gtk -gtk3 -introspection -mdnsresponder-compat -nls
 net-misc/networkmanager  -zeroconf -ncurses
 
 ##
@@ -182,7 +182,7 @@ dev-qt/qtsingleapplication -qt4  qt5
 ##
 # Don't actually remember what this one is for...
 ##
-net-analyzer/wireshark -netlink -gtk3
+net-analyzer/wireshark -netlink -gtk3 -gtk
 
 ##
 # Samba 4 experiment
