@@ -9,82 +9,22 @@ dev-java/icedtea:8
 app-backup/snapper
 
 ##
-# Awesome terminal
-##
-x11-terms/terminology
-
-##
-# Wifi card support for Dell Latitude e6530
-##
-net-wireless/broadcom-sta
-
-##
 # GAMES: specifically TES3: Morrowind and dwarffortress
 ##
-games-engines/openmw
 sci-physics/bullet
+games-engines/openmw
 games-roguelike/dwarf-fortress
-
-##
-# Just useful to have systemrescuecd already downloaded.
-##
-app-admin/systemrescuecd-x86
-sys-boot/systemrescuecd-x86-grub
-
-##
-# LXQT is the successor to LXDE. It seems mature enough to use regularly.
-##
-lxqt-base/liblxqt
-
-lxqt-base/lxqt-meta
-lxqt-base/lxqt-panel
-lxqt-base/lxqt-runner
-lxqt-base/lxqt-common
-lxqt-base/lxqt-config
-lxqt-base/lxqt-session
-lxqt-base/lxqt-qtplugin
-lxqt-base/lxqt-policykit
-lxqt-base/lxqt-globalkeys
-lxqt-base/lxqt-config-randr
-lxqt-base/lxqt-notificationd
-
-dev-libs/libqtxdg
-
-x11-libs/libfm-qt
-x11-misc/obconf-qt
-x11-misc/pcmanfm-qt
-
-media-gfx/lximage-qt
-
-##
-# Really awesome test tool that I want to play with.
-##
-app-forensics/afl
-
-##
-# Corosync work
-##
-sys-cluster/corosync
 
 ##
 # Gives virtual machine disk image management features
 ##
 app-arch/lzma
+sys-libs/libxcrypt
 app-emulation/libguestfs
 app-emulation/libguestfs-appliance
 
 dev-ml/ocaml-gettext
 dev-ml/ocaml-fileutils
-
-##
-# Interesting compiler infastructure type tools
-##
-dev-libs/capstone
-
-##
-# Trying out lumina desktop for the hell of it
-##
-x11-wm/lumina
 
 ##
 # Steam
@@ -96,41 +36,20 @@ games-util/steam-games-meta
 games-util/steam-client-meta
 
 ##
-# UEFI files for qemu
-##
-sys-firmware/edk2-ovmf
-
-##
-# Testing work stuff
-##
-net-im/coturn
-
-##
 # Backup windows machines
 ##
 app-backup/urbackup-server
 
 ##
-# Maybe a bit better than grub?
-##
-sys-boot/systemd-boot
-
-##
 # Dvd re-encoding to server to chromecasts from plex
 ##
-media-video/handbrake
+<=media-video/handbrake-1
 media-libs/libbluray
-
-##
-# Open source alternative to plex.
-##
-dev-lang/mono
-media-tv/emby-server
-dev-dotnet/referenceassemblies-pcl
 
 ##
 # Cephfs cluster filesystem
 ##
-sys-cluster/ceph
+sys-cluster/ceph **
 sys-apps/keyutils
+sys-auth/oath-toolkit
 dev-util/google-perftools

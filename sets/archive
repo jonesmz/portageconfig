@@ -1,0 +1,11 @@
+app-arch/lha
+app-arch/arj
+app-arch/rpm
+app-arch/zip
+app-arch/zoo
+app-arch/cpio
+app-arch/dpkg
+app-arch/lzop
+app-arch/p7zip
+app-arch/unrar
+

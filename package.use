@@ -1,7 +1,7 @@
 ##
 # Spice things up with a bit of optimization
 ##
-sys-devel/gcc graphite sanitize
+sys-devel/gcc cxx graphite pch pgo pie sanatize ssp vtv
 
 ##
 # Systemd doesn't need extra cruft...
@@ -14,10 +14,17 @@ sys-apps/systemd -ssl -lz4
 sys-apps/systemd elfutils gcrypt lzma gnuefi
 
 ##
+# Mount needed by os-prober
+# Others are just to reduce bloat.
+##
+sys-boot/grub mount -sdl -truetype -themes
+
+##
 # Useflags needed by qt5.
 ##
-x11-libs/libxcb xkb
-dev-libs/libpcre pcre16
+x11-libs/libxcb		xkb
+dev-libs/libpcre	pcre16
+dev-libs/libpcre2	pcre16
 
 #####################################
 # Useflags for Qt5 itself
@@ -26,29 +33,29 @@ dev-libs/libpcre pcre16
 # Printsupport Needed by texmaker's qt5 version.
 ##
 dev-qt/qtwebkit:5 printsupport -opengl
+dev-qt/qtmultimedia:5 widgets
 
 ##
 # Nifty options for the qt-creator ide.
 ##
 dev-util/cmake    server
-dev-qt/qt-creator android autotools cmake clang clangcodemodel clangstaticanalyzer
-dev-qt/qt-creator -webengine
+dev-qt/qt-creator cmake clang clangcodemodel clangstaticanalyzer -webengine
 
 ##
 # No sense in having firefox build its own copies of libraries...
 ##
 dev-db/sqlite secure-delete
 media-libs/libvpx postproc
-www-client/firefox jit pgo hwaccel hardened jemalloc3 gstreamer pulseaudio startup-notification system-cairo system-harfbuzz system-icu system-jpeg system-libevent system-libvpx system-sqlite gmp-autoupdate
-www-client/firefox -dbus -wifi -ffmpeg
+www-client/firefox gmp-autoupdate hardened hwaccel jemalloc3 pulseaudio system-cairo system-harfbuzz system-icu system-jpeg system-libevent system-libvpx system-sqlite
+www-client/firefox -dbus -wifi -screenshot -startup-notification
 
 ##
 # Sadly, Java wants a lot of bullshit. Here I remove unnecessary cruft.
 # But despite telling it to disable X, it still wants it >_<
 ##
 x11-libs/cairo X
-dev-java/icedtea      headless-awt -X -gtk -alsa -nsplugin -webstart -pulseaudio -cups -source -sunec  jbootstrap
-dev-java/icedtea-bin -headless-awt  X  gtk -alsa -nsplugin -webstart  pulseaudio -cups -source -sunec -jbootstrap
+dev-java/icedtea     -alsa -cups -gtk headless-awt jbootstrap pch -pulseaudio -source -sunec -webstart
+dev-java/icedtea-bin -alsa -cups -gtk headless-awt jbootstrap pch -pulseaudio -source -sunec -webstart
 dev-java/icedtea-web -*
 
 ##
@@ -60,32 +67,17 @@ virtual/libgudev  -static-libs
 dev-libs/libgudev -static-libs
 
 ##
-# Spice-client can only have one sound-system and needs a gui toolkit
-##
-net-misc/spice-gtk -pulseaudio gtk3
-
-##
 # Need gbm for radion graphics card support
+# Need "classic" for intel drivers
 # All the other stuff is to just provide the various APIs for generic use by various machines.
 ##
-media-libs/mesa gbm gles1 gles2 llvm opencl openvg vaapi vdpau wayland xa xvmc openmax vaapi
-x11-libs/libva vdpau wayland
-
-##
-# Doxygen is rather unimpressive without DOT support but don't need the wizard.
-##
-app-doc/doxygen dot -qt4 -qt5
-media-libs/gd jpeg truetype png fontconfig
+media-libs/mesa classic gbm gles1 gles2 llvm opencl openvg vaapi vdpau wayland xa xvmc openmax vaapi
+x11-libs/libva vdpau wayland X opengl
 
 ##
 # Still haven't figured out how to get rid of cups...
 ##
-app-text/ghostscript-gpl -cups
-
-##
-# No need for ssl support with apache. Not running interactive web pages.
-##
-www-servers/apache -ssl
+app-text/ghostscript-gpl -cups -X -gtk
 
 ##
 # QEMU arm emulation support, and more.
@@ -93,6 +85,7 @@ www-servers/apache -ssl
 sys-apps/dtc			static-libs
 dev-libs/lzo			static-libs
 virtual/jpeg			static-libs
+dev-lang/orc			static-libs
 dev-libs/glib			static-libs
 sys-libs/zlib			static-libs
 sys-apps/attr			static-libs
@@ -115,18 +108,13 @@ sys-libs/libseccomp		static-libs
 media-libs/libjpeg-turbo	static-libs
 
 net-misc/spice-gtk usbredir
-app-emulation/qemu static-user usbredir virtfs numa spice lzo -sdl -alsa -gtk -pulseaudio -opengl -curl -snappy
+app-emulation/qemu static-user usbredir numa spice lzo -bzip2 -sdl -alsa -gtk -pulseaudio -opengl -curl -snappy -vnc -jpeg -png -nls -xattr -ncurses
 
 ##
 # Turning off the GUI of lshw, it's useless.
+# Also don't need sqlite support
 ##
-sys-apps/lshw -gtk
-
-##
-# Tweaking enlightenment apps
-##
-dev-libs/efl          -sdl X -xcb egl
-media-libs/elementary -sdl X -xcb
+sys-apps/lshw -gtk -sqlite
 
 ##
 # Don't need no stinkin distcc monitor gui...
@@ -145,6 +133,7 @@ net-analyzer/nmap -gtk -lua ncat
 # Libreoffice doesn't need to be quite so heavy weight.
 ##
 app-office/libreoffice -dbus -gnome -gstreamer -opengl -postgres -vba -webdav -gtk
+dev-libs/xmlsec	nss
 
 ##
 # Some useflag changes to enable games
@@ -164,20 +153,18 @@ net-misc/networkmanager  -zeroconf -ncurses
 ##
 # Custom flags for vlc
 ##
-media-video/vlc -* X a52 avcodec avformat cdda dbus dts dvbpsi dvd ffmpeg flac gcrypt gnome jpeg -libnotify libsamplerate mp3 mpeg ncurses ogg opengl png pulseaudio qt5 samba sdl svg swscale theora udev vaapi vdpau vorbis x264 xcb xml xv zeroconf opus cpu_flags_x86_mmx cpu_flags_x86_sse upnp  gnutls
+media-video/vlc -* X a52 avcodec avformat cdda dbus dts dvbpsi dvd ffmpeg flac gcrypt gnome jpeg -libnotify libsamplerate mp3 mpeg ncurses ogg opengl png pulseaudio qt5 samba sdl svg swscale theora udev vaapi vdpau vorbis x264 xcb xml xv zeroconf opus cpu_flags_x86_mmx cpu_flags_x86_sse upnp gnutls microdns
 
 ##
 # We need to explicitly state which version of qt to use for some apps.
 # Avahi only works with jonesmz-overlay for now.
 ##
-net-dns/avahi              -qt4  qt5
+net-dns/avahi              -qt4 -qt5
 dev-util/cmake             -qt4 -qt5
 media-video/vlc            -qt4  qt5
 app-text/poppler           -qt4  qt5
-dev-qt/qtlockedfile        -qt4  qt5
 dev-libs/libdbusmenu-qt    -qt4  qt5
 dev-games/openscenegraph   -qt4  qt5
-dev-qt/qtsingleapplication -qt4  qt5
 
 ##
 # Don't actually remember what this one is for...
@@ -185,9 +172,9 @@ dev-qt/qtsingleapplication -qt4  qt5
 net-analyzer/wireshark -netlink -gtk3 -gtk
 
 ##
-# Samba 4 experiment
+# Samba 4 use flags
 ##
-net-fs/samba client smbclient aio fam addc addns winbind ads gnutls ldap -avahi -system-mitkrb5
+net-fs/samba client smbclient aio fam addc addns winbind ads gnutls ldap -avahi -system-mitkrb5 -ceph
 
 app-crypt/heimdal -ssl
 net-dns/bind-tools gssapi
@@ -219,7 +206,13 @@ net-wireless/wpa_supplicant -qt5 -qt4 -hs2-0
 #
 # Revisit this, and find a way to disable radosgw
 ##
-sys-cluster/ceph cephfs fuse
+sys-cluster/ceph cephfs fuse system-boost
+
+##
+# Support for CephFS
+##
+dev-lang/python sqlite
+dev-libs/boost context
 
 ##
 # Widevine for netflix
@@ -227,11 +220,17 @@ sys-cluster/ceph cephfs fuse
 www-plugins/chrome-binary-plugins widevine
 
 ##
-# Settings for experimenting with wayland.
+# Tweaking efl, for use with terminology
+##
+dev-libs/efl -sdl X egl
+
+##
+# Settings for experimenting with wayland
 ##
 dev-libs/efl			-opengl gles
 kde-base/kwin			wayland
 kde-plasma/kwin			wayland
+media-libs/cogl			gles2
 dev-libs/weston			wayland-compositor xwayland fbdev
 media-libs/libsdl2		gles
 x11-base/xorg-server		wayland
@@ -255,7 +254,7 @@ dev-libs/openssl	-bindist
 # which hard depends on 0.10
 ##
 dev-qt/qtwebkit    -gstreamer
-app-emulation/wine -gstreamer
+app-emulation/wine-vanilla -gstreamer
 games-strategy/megaglest -model-viewer -editor
 
 ##
@@ -278,7 +277,7 @@ app-emulation/libvirt-glib	introspection
 ##
 # Prefer gtk3 over gtk2, prefer system libs over bundled when possible.
 ##
-www-client/chromium gtk3 system-ffmpeg system-libvpx
+www-client/chromium jumbo-build system-ffmpeg system-icu system-libvpx
 
 ##
 # Hrmm... trying to remove speech-dispatcher from the system.
@@ -297,25 +296,20 @@ sys-apps/dbus systemd
 net-misc/openssh hpn
 
 ##
+# VPN Support
+##
+dev-libs/nss utils
+
+##
 # Virtual Machine Disk Image Management needs this
 ##
 app-arch/unzip natspec
 app-emulation/libguestfs ocaml
 
 ##
-# Needed for spotify
-##
-net-print/cups ssl
-
-##
 # Busybox apparently doesn't want to build with "pam static" use flags.
 ##
 sys-apps/busybox -static
-
-##
-# Examples for udk? Currently doesn't compile. See https://bugs.gentoo.org/show_bug.cgi?id=603986
-##
-sys-boot/udk -examples
 
 ##
 # Remove python support from pluma so that we can drop the gtk2 dependency
@@ -331,11 +325,8 @@ mail-client/nail net
 ##
 # Trying to purge gtk2
 ##
-dev-vcs/git			-gtk
-x11-libs/libfm			-gtk
-app-crypt/pinentry		-gtk
-media-libs/libcanberra		-gtk
-app-text/ghostscript-gpl	-gtk
+app-crypt/pinentry	-gtk
+media-libs/libcanberra	-gtk
 
 ##
 # Preventing the need for the berkdb useflag from gdbm.
@@ -361,22 +352,19 @@ app-backup/urbackup-server -hardened
 media-video/ffmpeg vdpau fdk
 
 ##
-# Needed for emby server
-##
-media-video/ffmpeg vpx
-media-gfx/imagemagick jpeg png jpeg2k webp
-
-##
 # Changes needed for shotwell
 ##
 net-libs/webkit-gtk -geolocation
 media-libs/gexiv2 -python
 
 ##
-# Support for CephFS
+# Support for rdp server
 ##
-dev-lang/python sqlite
-dev-libs/boost context
+net-misc/freerdp server
+
+# Needed to run the clang compiler from work
+##
+sys-libs/ncurses tinfo
 
 ##
 # 32 bit libraries needed by steam
@@ -385,7 +373,7 @@ virtual/pam			abi_x86_32
 virtual/glu			abi_x86_32
 virtual/jpeg:0			abi_x86_32
 virtual/libffi			abi_x86_32
-#virtual/libelf			abi_x86_32
+virtual/libelf			abi_x86_32
 virtual/opengl			abi_x86_32
 virtual/libintl			abi_x86_32
 virtual/libudev			abi_x86_32
@@ -399,7 +387,7 @@ sys-apps/dbus			abi_x86_32
 sys-apps/attr			abi_x86_32
 sys-libs/pam			abi_x86_32
 sys-devel/flex			abi_x86_32
-#media-libs/glu			abi_x86_32
+media-libs/glu			abi_x86_32
 sys-devel/llvm			abi_x86_32
 app-arch/bzip2			abi_x86_32
 net-libs/gnutls			abi_x86_32
@@ -414,7 +402,7 @@ dev-libs/libtasn1		abi_x86_32
 sys-libs/cracklib		abi_x86_32
 #media-libs/libsdl		abi_x86_32
 media-sound/mpg123		abi_x86_32
-#media-libs/libsdl2              abi_x86_32
+#media-libs/libsdl2		abi_x86_32
 #media-libs/sdl-ttf		abi_x86_32
 dev-util/pkgconfig		abi_x86_32
 #gnome-base/librsvg		abi_x86_32
@@ -424,7 +412,8 @@ net-libs/libasyncns		abi_x86_32
 #media-libs/sdl-image		abi_x86_32
 sys-apps/tcp-wrappers		abi_x86_32
 media-sound/pulseaudio		abi_x86_32
-#media-plugins/alsa-plugins	abi_x86_32
+app-emulation/wine-gecko	abi_x86_32
+media-plugins/alsa-plugins	abi_x86_32
 
 sys-libs/gpm			abi_x86_32
 sys-libs/zlib			abi_x86_32
@@ -451,14 +440,15 @@ dev-libs/wayland		abi_x86_32
 dev-libs/elfutils		abi_x86_32
 dev-libs/libgcrypt		abi_x86_32
 dev-libs/libgpg-error		abi_x86_32
-#dev-libs/libunistring		abi_x86_32
-#dev-libs/libpthread-stubs	abi_x86_32
+dev-libs/libunistring		abi_x86_32
+dev-libs/libpthread-stubs	abi_x86_32
 
 media-libs/mesa			abi_x86_32
 media-libs/tiff			abi_x86_32
 media-libs/flac			abi_x86_32
 #media-libs/glew			abi_x86_32
 media-libs/lcms			abi_x86_32
+media-libs/libv4l		abi_x86_32
 media-libs/libpng		abi_x86_32
 media-libs/libogg		abi_x86_32
 #media-libs/openal		abi_x86_32
@@ -471,35 +461,37 @@ media-libs/libsndfile		abi_x86_32
 media-libs/fontconfig		abi_x86_32
 #media-libs/libtxc_dxtn		abi_x86_32
 media-libs/libjpeg-turbo	abi_x86_32
-#media-libs/libomxil-bellagio	abi_x86_32
+media-libs/libomxil-bellagio	abi_x86_32
+
+x11-base/xcb-proto		abi_x86_32
 
 x11-proto/xproto		abi_x86_32
-#x11-proto/glproto		abi_x86_32
+x11-proto/glproto		abi_x86_32
 x11-proto/kbproto		abi_x86_32
-x11-proto/xcb-proto		abi_x86_32
+x11-base/xcb-proto		abi_x86_32
 x11-proto/xextproto		abi_x86_32
-#x11-proto/dri2proto		abi_x86_32
-#x11-proto/dri3proto		abi_x86_32
-#x11-proto/randrproto		abi_x86_32
+x11-proto/dri2proto		abi_x86_32
+x11-proto/dri3proto		abi_x86_32
+x11-proto/randrproto		abi_x86_32
 x11-proto/fixesproto		abi_x86_32
 x11-proto/inputproto		abi_x86_32
 x11-proto/videoproto		abi_x86_32
 x11-proto/recordproto		abi_x86_32
 x11-proto/renderproto		abi_x86_32
 x11-proto/damageproto		abi_x86_32
-#x11-proto/xf86driproto		abi_x86_32
-#x11-proto/presentproto		abi_x86_32
+x11-proto/xf86driproto		abi_x86_32
+x11-proto/presentproto		abi_x86_32
 x11-proto/xineramaproto		abi_x86_32
-#x11-proto/compositeproto	abi_x86_32
+x11-proto/compositeproto	abi_x86_32
 x11-proto/xf86bigfontproto	abi_x86_32
-#x11-proto/xf86vidmodeproto	abi_x86_32
+x11-proto/xf86vidmodeproto	abi_x86_32
 
 #x11-libs/gtk+:2			abi_x86_32
 #x11-libs/pixma			abi_x86_32
 #x11-libs/cairo			abi_x86_32
-#x11-libs/libva			abi_x86_32
+x11-libs/libva			abi_x86_32
 x11-libs/libSM			abi_x86_32
-#x11-libs/libXv			abi_x86_32
+x11-libs/libXv			abi_x86_32
 #x11-libs/pango			abi_x86_32
 x11-libs/libXi			abi_x86_32
 #x11-libs/libXt			abi_x86_32
@@ -507,26 +499,26 @@ x11-libs/libXi			abi_x86_32
 x11-libs/libICE			abi_x86_32
 #x11-libs/pixman			abi_x86_32
 #x11-libs/libXft			abi_x86_32
-#x11-libs/libdrm			abi_x86_32
+x11-libs/libdrm			abi_x86_32
 x11-libs/libX11			abi_x86_32
 x11-libs/libXau			abi_x86_32
 x11-libs/libxcb			abi_x86_32
 x11-libs/libXtst		abi_x86_32
-#x11-libs/libXvMC		abi_x86_32
+x11-libs/libXvMC		abi_x86_32
 x11-libs/libXext		abi_x86_32
-#x11-libs/libXdmcp		abi_x86_32
-#x11-libs/libvdpau		abi_x86_32
+x11-libs/libXdmcp		abi_x86_32
+x11-libs/libvdpau		abi_x86_32
 x11-libs/libXrandr		abi_x86_32
 x11-libs/libXfixes		abi_x86_32
 x11-libs/libXdamage		abi_x86_32
 x11-libs/libXcursor		abi_x86_32
 #x11-libs/gdk-pixbuf		abi_x86_32
-#x11-libs/libXxf86vm		abi_x86_32
+x11-libs/libXxf86vm		abi_x86_32
 x11-libs/libXrender		abi_x86_32
 x11-libs/libXinerama		abi_x86_32
-#x11-libs/libpciaccess		abi_x86_32
-#x11-libs/libxshmfence		abi_x86_32
+x11-libs/libpciaccess		abi_x86_32
+x11-libs/libxshmfence		abi_x86_32
 #x11-libs/libxkbcommon		abi_x86_32
 x11-libs/libXcomposite		abi_x86_32
-#x11-libs/libva-vdpau-driver	abi_x86_32
+x11-libs/libva-vdpau-driver	abi_x86_32
 #x11-libs/libva-intel-driver	abi_x86_32

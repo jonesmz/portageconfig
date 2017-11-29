@@ -1,0 +1,14 @@
+dev-cpp/gtest
+sys-devel/clang
+dev-util/indent
+net-libs/zeromq
+app-doc/doxygen
+dev-libs/protobuf
+#dev-util/valgrind
+app-text/sloccount
+dev-util/debhelper
+dev-util/uncrustify
+sys-fs/squashfs-tools
+
+#dev-util/cccc
+#app-text/q-text-as-data

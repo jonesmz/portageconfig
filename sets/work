@@ -1,0 +1,10 @@
+dev-db/mysql
+dev-ruby/bundler
+dev-ruby/libxml
+dev-ruby/rubyzip
+dev-vcs/perforce-cli
+dev-vcs/perforce-gui
+app-text/dos2unix
+net-libs/nodejs
+net-im/coturn
+dev-ruby/yard

@@ -1,0 +1,24 @@
+games-action/minetest_game
+games-strategy/liquidwar6
+#games-strategy/warzone2100 --disabled because of qt4 dep
+games-action/openclonk
+games-action/supertuxkart
+games-puzzle/pingus
+#games-rpg/sumwars
+games-strategy/megaglest
+games-strategy/openra
+games-strategy/wesnoth
+games-strategy/boswars
+#games-engines/openmw
+#games-action/accelerator3d
+media-libs/libtxc_dxtn
+
+
+
+#games-action/powermanga (0.91 -> 0.93): An arcade 2D shoot-em-up game
+#games-action/spacearyarya-kxl (~1.0.2-r1 -> 1.0.2-r1): A 2D/3D shooting game
+#[>]   == games-puzzle/enigma (1.01 -> 1.21): puzzle game similar to Oxyd
+#[*>]  == games-rpg/openglad (~0.98 -> 0.98): An SDL clone of Gladiator, a classic RPG game
+#[>]   == games-rpg/pcgen (6.00.0 -> 6.04.01): D&D character generator
+#[>]   == games-strategy/triplea (1.7.0.3^t -> 1.8.0.5^t): An open source clone of the popular Axis and Allies boardgame
+

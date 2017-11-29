@@ -1,0 +1,6 @@
+@base-system
+
+sys-power/cpupower
+app-admin/systemrescuecd-x86
+#sys-boot/systemrescuecd-x86-grub
+

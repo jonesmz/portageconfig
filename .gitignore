@@ -1,9 +1,7 @@
 make.conf.catalyst
-make.profile
 postsync.d
 savedconfig
 bin
-sets
 make.local
 package.accept_keywords
 repo.postsync.d

@@ -1,0 +1,16 @@
+@amd64-base-system
+
+sys-fs/ntfs3g
+sys-boot/grub
+net-misc/iperf
+net-misc/zsync
+sys-apps/dcfldd
+sys-block/mbuffer
+sys-auth/nss-mdns
+app-backup/snapper
+dev-util/debugedit
+sys-fs/btrfs-progs
+sys-boot/os-prober
+sys-apps/lm_sensors
+sys-boot/efibootmgr
+sys-kernel/gentoo-sources
