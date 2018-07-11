@@ -73,7 +73,7 @@ dev-libs/libgudev -static-libs
 # Need "classic" for intel drivers
 # All the other stuff is to just provide the various APIs for generic use by various machines.
 ##
-media-libs/mesa classic gbm gles1 gles2 llvm opencl openvg vaapi vdpau wayland xa xvmc openmax vaapi
+media-libs/mesa classic gbm gles1 gles2 llvm openvg vaapi vdpau wayland xa xvmc openmax vaapi
 x11-libs/libva vdpau wayland X opengl
 
 ##
