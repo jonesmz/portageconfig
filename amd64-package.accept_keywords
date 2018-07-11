@@ -11,7 +11,6 @@ app-backup/snapper
 ##
 # GAMES: specifically TES3: Morrowind and dwarffortress
 ##
-sci-physics/bullet
 games-engines/openmw
 games-roguelike/dwarf-fortress
 
@@ -44,12 +43,9 @@ app-backup/urbackup-server
 # Dvd re-encoding to server to chromecasts from plex
 ##
 <=media-video/handbrake-1
-media-libs/libbluray
 
 ##
 # Cephfs cluster filesystem
 ##
 sys-cluster/ceph **
-sys-apps/keyutils
 sys-auth/oath-toolkit
-dev-util/google-perftools
