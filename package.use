@@ -26,14 +26,16 @@ x11-libs/libxcb		xkb
 dev-libs/libpcre	pcre16
 dev-libs/libpcre2	pcre16
 
-#####################################
-# Useflags for Qt5 itself
-#####################################
 ##
 # Printsupport Needed by texmaker's qt5 version.
 ##
 dev-qt/qtwebkit:5 printsupport -opengl
 dev-qt/qtmultimedia:5 widgets
+
+##
+# Faster QML based apps
+##
+dev-qt/qtdeclarative jit
 
 ##
 # Nifty options for the qt-creator ide.
