@@ -239,11 +239,6 @@ x11-base/xorg-server		wayland
 media-plugins/gst-plugins-vaapi	wayland
 
 ##
-# Need glamor for radeon cards.
-##
-x11-base/xorg-server glamor
-
-##
 # Todo: What needs this?
 ##
 dev-libs/botan		-bindist
@@ -252,12 +247,9 @@ dev-libs/openssl	-bindist
 ##
 # Purging gstreamer 0.10
 # Disable gstreamer in wine, to get rid of version 0.10 dependency
-# Disabling model-viewer, and editor, removes the wxGTK package
-# which hard depends on 0.10
 ##
-dev-qt/qtwebkit    -gstreamer
-app-emulation/wine-vanilla -gstreamer
-games-strategy/megaglest -model-viewer -editor
+dev-qt/qtwebkit			-gstreamer
+app-emulation/wine-vanilla	-gstreamer
 
 ##
 # I disable introspection globally, but a handful of packages need it anyway...
@@ -364,6 +356,7 @@ media-libs/gexiv2 -python
 ##
 net-misc/freerdp server
 
+##
 # Needed to run the clang compiler from work
 ##
 sys-libs/ncurses tinfo

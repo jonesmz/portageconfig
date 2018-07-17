@@ -47,5 +47,5 @@ app-backup/urbackup-server
 ##
 # Cephfs cluster filesystem
 ##
-sys-cluster/ceph **
+sys-cluster/ceph
 sys-auth/oath-toolkit
