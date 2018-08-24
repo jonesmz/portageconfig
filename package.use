@@ -31,6 +31,7 @@ dev-libs/libpcre2	pcre16
 ##
 dev-qt/qtwebkit:5 printsupport -opengl
 dev-qt/qtmultimedia:5 widgets
+dev-qt/qtdeclarative:5 jit
 
 ##
 # Faster QML based apps
@@ -110,7 +111,7 @@ sys-libs/libseccomp		static-libs
 media-libs/libjpeg-turbo	static-libs
 
 net-misc/spice-gtk usbredir
-app-emulation/qemu static-user usbredir numa spice lzo -bzip2 -sdl -alsa -gtk -pulseaudio -opengl -curl -snappy -vnc -jpeg -png -nls -xattr -ncurses
+app-emulation/qemu static-user usbredir numa spice lzo -bzip2 -sdl -alsa -gtk -pulseaudio -opengl -curl -snappy -vnc -jpeg -png -nls -xattr -ncurses -pin-upstream-blobs
 
 ##
 # Turning off the GUI of lshw, it's useless.
