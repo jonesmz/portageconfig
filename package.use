@@ -27,6 +27,11 @@ dev-libs/libpcre	pcre16
 dev-libs/libpcre2	pcre16
 
 ##
+# Flags for Krita
+##
+dev-python/PyQt5 gui widgets
+
+##
 # Printsupport Needed by texmaker's qt5 version.
 ##
 dev-qt/qtwebkit:5 printsupport -opengl
@@ -169,7 +174,7 @@ dev-libs/libdbusmenu-qt    -qt4  qt5
 dev-games/openscenegraph   -qt4  qt5
 
 ##
-# Don't actually remember what this one is for...
+# Just reducing the stuff not being used.
 ##
 net-analyzer/wireshark -netlink -gtk3 -gtk
 
