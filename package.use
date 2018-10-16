@@ -88,6 +88,11 @@ x11-libs/libva vdpau wayland X opengl
 app-text/ghostscript-gpl -cups -X -gtk
 
 ##
+# Gold linker for llvm
+##
+sys-devel/llvm gold
+
+##
 # QEMU arm emulation support, and more.
 ##
 sys-apps/dtc			static-libs

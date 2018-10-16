@@ -4,11 +4,6 @@
 dev-java/icedtea:8
 
 ##
-# Btrfs snapshot management
-##
-app-backup/snapper
-
-##
 # GAMES: specifically TES3: Morrowind and dwarffortress
 ##
 games-engines/openmw
@@ -42,7 +37,8 @@ app-backup/urbackup-server
 ##
 # Dvd re-encoding to server to chromecasts from plex
 ##
-<=media-video/handbrake-1
+media-video/ffmpeg
+media-video/handbrake
 
 ##
 # Cephfs cluster filesystem
