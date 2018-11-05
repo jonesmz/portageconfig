@@ -285,6 +285,11 @@ app-emulation/libvirt-glib	introspection
 www-client/chromium jumbo-build system-ffmpeg system-icu system-libvpx
 
 ##
+# Chromium needs nodejs? Wtf?
+##
+net-libs/nodejs inspector
+
+##
 # Hrmm... trying to remove speech-dispatcher from the system.
 ##
 media-libs/libvpx svc
@@ -414,6 +419,7 @@ dev-util/pkgconfig		abi_x86_32
 #gnome-base/librsvg		abi_x86_32
 sys-apps/util-linux		abi_x86_32
 net-libs/libasyncns		abi_x86_32
+sys-apps/lm_sensors		abi_x86_32
 #media-gfx/graphite2		abi_x86_32
 #media-libs/sdl-image		abi_x86_32
 sys-apps/tcp-wrappers		abi_x86_32
@@ -452,8 +458,8 @@ dev-libs/libpthread-stubs	abi_x86_32
 media-libs/mesa			abi_x86_32
 media-libs/tiff			abi_x86_32
 media-libs/flac			abi_x86_32
-#media-libs/glew			abi_x86_32
 media-libs/lcms			abi_x86_32
+#media-libs/glew			abi_x86_32
 media-libs/libv4l		abi_x86_32
 media-libs/libpng		abi_x86_32
 media-libs/libogg		abi_x86_32
