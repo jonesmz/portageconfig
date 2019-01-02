@@ -373,6 +373,11 @@ net-misc/freerdp server
 sys-libs/ncurses tinfo
 
 ##
+# Freeradius talking to samba4
+##
+net-dialup/freeradius ldap kerberos
+
+##
 # 32 bit libraries needed by steam
 ##
 virtual/pam			abi_x86_32
