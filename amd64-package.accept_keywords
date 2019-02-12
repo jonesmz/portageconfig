@@ -46,4 +46,5 @@ media-video/handbrake
 sys-cluster/ceph
 sys-auth/oath-toolkit
 
+<=sys-apps/systemd-240-r4
 sys-kernel/gentoo-sources

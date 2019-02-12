@@ -13,7 +13,7 @@ mail-client/nail
 app-editors/nano
 sys-devel/distcc
 sys-process/htop
-#sys-apps/systemd
+sys-apps/systemd
 sys-kernel/dracut
 net-analyzer/nmap
 sys-fs/dosfstools
@@ -21,6 +21,7 @@ sys-apps/usbutils
 sys-apps/pciutils
 sys-apps/gptfdisk
 sys-kernel/dracut
+sys-power/cpupower
 net-dns/bind-tools
 app-admin/superadduser
 sys-apps/smartmontools

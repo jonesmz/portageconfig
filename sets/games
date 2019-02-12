@@ -1,6 +1,6 @@
 games-action/minetest_game
 games-strategy/liquidwar6
-#games-strategy/warzone2100 --disabled because of qt4 dep
+games-strategy/warzone2100
 games-action/openclonk
 games-action/supertuxkart
 games-puzzle/pingus

@@ -1,7 +1,6 @@
-@amd64-base-system
+@base-system
 
 sys-fs/ntfs3g
-sys-boot/grub
 net-misc/iperf
 net-misc/zsync
 sys-apps/dcfldd
