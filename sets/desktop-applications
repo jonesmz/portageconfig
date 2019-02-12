@@ -9,6 +9,7 @@ sys-block/gparted
 #x11-misc/redshift
 www-client/firefox
 app-office/texmaker
+www-client/chromium
 app-arch/file-roller
 x11-base/xorg-server
 x11-terms/terminology
@@ -19,3 +20,4 @@ media-sound/pavucontrol
 gnome-extra/gnome-calculator
 dev-texlive/texlive-latexextra
 x11-drivers/xf86-input-libinput
+www-plugins/chrome-binary-plugins
