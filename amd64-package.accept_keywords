@@ -37,7 +37,7 @@ app-backup/urbackup-server
 ##
 # Dvd re-encoding to server to chromecasts from plex
 ##
-media-video/ffmpeg
+<media-video/ffmpeg-4
 media-video/handbrake
 
 ##
@@ -45,3 +45,5 @@ media-video/handbrake
 ##
 sys-cluster/ceph
 sys-auth/oath-toolkit
+
+sys-kernel/gentoo-sources
