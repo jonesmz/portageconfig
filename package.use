@@ -390,6 +390,11 @@ sys-libs/ncurses tinfo
 net-dialup/freeradius ldap kerberos
 
 ##
+# No more rdoc for ruby, it has constant problems.
+##
+dev-lang/ruby -rdoc
+
+##
 # 32 bit libraries needed by steam
 ##
 virtual/pam			abi_x86_32
