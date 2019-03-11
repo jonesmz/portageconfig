@@ -30,8 +30,9 @@ games-util/steam-games-meta
 games-util/steam-client-meta
 
 ##
-# Backup windows machines
+# Backup machines to fileserver
 ##
+app-backup/urbackup-client
 app-backup/urbackup-server
 
 ##
@@ -46,5 +47,7 @@ media-video/handbrake
 sys-cluster/ceph
 sys-auth/oath-toolkit
 
+##
+# 239 has a bug with macvlan/macvtap
+##
 <=sys-apps/systemd-240-r4
-sys-kernel/gentoo-sources
