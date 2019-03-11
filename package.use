@@ -383,6 +383,11 @@ sys-libs/ncurses tinfo
 net-dialup/freeradius ldap kerberos
 
 ##
+# Urbackup client, without x server code
+##
+app-backup/urbackup-client -X
+
+##
 # 32 bit libraries needed by steam
 ##
 virtual/pam			abi_x86_32
