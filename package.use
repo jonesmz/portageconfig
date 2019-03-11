@@ -168,6 +168,8 @@ games-strategy/warzone2100	videos
 ##
 net-dns/avahi            -autoipd -python -gdbm -gtk -gtk3 -introspection -mdnsresponder-compat -nls
 net-misc/networkmanager  -zeroconf -ncurses
+# Workaround bug https://bugs.gentoo.org/679006
+net-misc/networkmanager  introspection
 
 ##
 # Custom flags for vlc
