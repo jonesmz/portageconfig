@@ -20,6 +20,13 @@ sys-apps/systemd elfutils gcrypt lzma gnuefi
 sys-boot/grub mount -sdl -truetype -themes
 
 ##
+# Settings for xorg
+# xvfb for rdesktop, I think.
+# suid for running without KMS via "startx" or similar.
+##
+x11-base/xorg-server		xvfb suid
+
+##
 # Useflags needed by qt5.
 ##
 x11-libs/libxcb		xkb
@@ -153,7 +160,6 @@ dev-libs/xmlsec	nss
 ##
 dev-games/mygui			-ogre opengl
 media-libs/sdl-mixer		midi timidity mad
-x11-base/xorg-server		xvfb
 games-strategy/openra		tools
 games-strategy/warzone2100	videos
 
@@ -162,6 +168,8 @@ games-strategy/warzone2100	videos
 ##
 net-dns/avahi            -autoipd -python -gdbm -gtk -gtk3 -introspection -mdnsresponder-compat -nls
 net-misc/networkmanager  -zeroconf -ncurses
+# Workaround bug https://bugs.gentoo.org/679006
+net-misc/networkmanager  introspection
 
 ##
 # Custom flags for vlc
@@ -283,6 +291,7 @@ app-emulation/libvirt-glib	introspection
 # Prefer gtk3 over gtk2, prefer system libs over bundled when possible.
 ##
 www-client/chromium jumbo-build system-ffmpeg system-icu system-libvpx
+net-libs/nodejs	inspector
 
 ##
 # Chromium needs nodejs? Wtf?
@@ -383,6 +392,11 @@ sys-libs/ncurses tinfo
 net-dialup/freeradius ldap kerberos
 
 ##
+# No more rdoc for ruby, it has constant problems.
+##
+dev-lang/ruby -rdoc
+
+##
 # Urbackup client, without x server code
 ##
 app-backup/urbackup-client -X
@@ -427,6 +441,7 @@ media-sound/mpg123		abi_x86_32
 #media-libs/sdl-ttf		abi_x86_32
 dev-util/pkgconfig		abi_x86_32
 #gnome-base/librsvg		abi_x86_32
+sys-apps/lm_sensors		abi_x86_32
 sys-apps/util-linux		abi_x86_32
 net-libs/libasyncns		abi_x86_32
 sys-apps/lm_sensors		abi_x86_32
