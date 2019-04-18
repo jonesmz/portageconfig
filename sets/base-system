@@ -9,7 +9,7 @@ net-misc/iperf
 app-misc/screen
 sys-apps/hdparm
 app-misc/fdupes
-mail-client/nail
+#mail-client/nail
 app-editors/nano
 sys-devel/distcc
 sys-process/htop

@@ -1,5 +1,5 @@
 ##
-# No Java6 or 7 crap for us.
+# Only Java8 is available.
 ##
 dev-java/icedtea:8
 
@@ -38,7 +38,7 @@ app-backup/urbackup-server
 ##
 # Dvd re-encoding to server to chromecasts from plex
 ##
-<media-video/ffmpeg-4
+media-video/ffmpeg
 media-video/handbrake
 
 ##
@@ -46,8 +46,3 @@ media-video/handbrake
 ##
 sys-cluster/ceph
 sys-auth/oath-toolkit
-
-##
-# 239 has a bug with macvlan/macvtap
-##
-<=sys-apps/systemd-240-r4
