@@ -4,6 +4,12 @@
 sys-devel/gcc cxx graphite pch pgo pie sanatize ssp vtv
 
 ##
+# gnuradio
+##
+sys-devel/gcc fortran
+dev-python/numpy lapack
+
+##
 # Systemd doesn't need extra cruft...
 ##
 sys-apps/systemd -ssl -lz4
@@ -111,6 +117,7 @@ sys-libs/zlib			static-libs
 sys-apps/attr			static-libs
 net-misc/curl			static-libs
 app-arch/bzip2			static-libs
+dev-libs/boost			static-libs
 dev-libs/libaio			static-libs
 media-libs/celt			static-libs
 media-libs/opus			static-libs
