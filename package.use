@@ -8,6 +8,7 @@ sys-devel/gcc cxx graphite pch pgo pie sanatize ssp vtv
 ##
 sys-devel/gcc fortran
 dev-python/numpy lapack
+net-wireless/gnuradio wxwidgets grc
 
 ##
 # Systemd doesn't need extra cruft...
@@ -30,7 +31,7 @@ sys-boot/grub mount -sdl -truetype -themes
 # xvfb for rdesktop, I think.
 # suid for running without KMS via "startx" or similar.
 ##
-x11-base/xorg-server		xvfb suid
+x11-base/xorg-server	xvfb suid
 
 ##
 # Useflags needed by qt5.
@@ -293,6 +294,12 @@ net-misc/spice-gtk		introspection
 x11-libs/gdk-pixbuf		introspection
 x11-libs/gtksourceview		introspection
 app-emulation/libvirt-glib	introspection
+
+##
+# Vala is required for gnome-calculator now
+##
+x11-libs/gtksourceview vala
+
 
 ##
 # Prefer gtk3 over gtk2, prefer system libs over bundled when possible.
