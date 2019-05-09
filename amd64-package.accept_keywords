@@ -40,17 +40,13 @@ app-backup/urbackup-server
 ##
 media-video/ffmpeg
 media-video/handbrake
+media-plugins/gst-plugins-libav
 
 ##
 # Cephfs cluster filesystem
 ##
 sys-cluster/ceph
 sys-auth/oath-toolkit
-
-##
-# 239 has a bug with macvlan/macvtap
-##
-<=sys-apps/systemd-240-r4
 
 ##
 # Allow gnuradio

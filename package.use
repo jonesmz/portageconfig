@@ -416,6 +416,11 @@ dev-lang/ruby -rdoc
 app-backup/urbackup-client -X
 
 ##
+# Allow eBPF programs to be loaded into the network stack
+##
+sys-apps/iproute2 elf
+
+##
 # 32 bit libraries needed by steam
 ##
 virtual/pam			abi_x86_32
