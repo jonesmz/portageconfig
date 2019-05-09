@@ -56,3 +56,8 @@ sys-auth/oath-toolkit
 # Allow gnuradio
 ##
 net-wireless/gnuradio
+
+##
+# Jenkins continuous integration
+##
+dev-util/jenkins-bin

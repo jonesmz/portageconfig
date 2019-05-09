@@ -99,7 +99,7 @@ x11-libs/libva vdpau wayland X opengl
 ##
 # Still haven't figured out how to get rid of cups...
 ##
-app-text/ghostscript-gpl -cups -X -gtk
+app-text/ghostscript-gpl cups -X -gtk
 
 ##
 # Gold linker for llvm
