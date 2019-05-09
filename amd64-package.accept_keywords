@@ -56,4 +56,4 @@ net-wireless/gnuradio
 ##
 # Jenkins continuous integration
 ##
-dev-util/jenkins-bin
+dev-util/jenkins-bin:lts
