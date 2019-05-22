@@ -57,3 +57,8 @@ net-wireless/gnuradio
 # Jenkins continuous integration
 ##
 dev-util/jenkins-bin:lts
+
+##
+# Kubernates
+##
+sys-cluster/kubectl
