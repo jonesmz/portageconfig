@@ -124,6 +124,7 @@ media-libs/celt			static-libs
 media-libs/opus			static-libs
 x11-libs/pixman			static-libs
 app-arch/snappy			static-libs
+dev-libs/libbpf			static-libs
 sys-libs/ncurses		static-libs
 dev-libs/openssl		static-libs
 dev-libs/libpcre		static-libs

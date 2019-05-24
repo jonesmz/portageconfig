@@ -62,3 +62,8 @@ dev-util/jenkins-bin:lts
 # Kubernates
 ##
 sys-cluster/kubectl
+
+##
+# SUpport for compiling bpf programs
+##
+dev-libs/libbpf
