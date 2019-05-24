@@ -67,3 +67,12 @@ sys-cluster/kubectl
 # SUpport for compiling bpf programs
 ##
 dev-libs/libbpf
+
+##
+# Newer samba, to fix issue with accessing file shares.
+##
+<net-fs/samba-4.11
+<sys-libs/tdb-1.5
+<sys-libs/talloc-2.3
+<sys-libs/ldb-1.6
+<sys-libs/tevent-0.11

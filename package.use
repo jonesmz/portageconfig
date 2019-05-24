@@ -204,7 +204,7 @@ net-analyzer/wireshark -netlink -gtk3 -gtk
 ##
 # Samba 4 use flags
 ##
-net-fs/samba client smbclient aio fam addc addns winbind ads gnutls ldap -avahi -system-mitkrb5 ceph
+net-fs/samba ads addc client json fam addns gnutls winbind -system-mitkrb5 ceph ldap
 
 app-crypt/heimdal -ssl
 net-dns/bind-tools gssapi
