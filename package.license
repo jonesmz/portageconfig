@@ -7,3 +7,29 @@ www-plugins/chrome-binary-plugins google-chrome
 # Used for handbreak
 ##
 media-libs/fdk-aac FraunhoferFDK
+
+##
+# Media playbacl
+##
+media-libs/faac MPEG-4
+
+##
+# Games
+##
+games-util/steam-launcher ValveSteamLicense
+games-roguelike/dwarf-fortress free-noncomm
+
+##
+# RAR archive file format support
+##
+app-arch/unrar unRAR
+
+##
+# lha archive file format support
+##
+app-arch/lha lha
+
+##
+# Linux binary firmware for things like graphics cards, network cards, so on.
+##
+sys-kernel/linux-firmware linux-fw-redistributable no-source-code
