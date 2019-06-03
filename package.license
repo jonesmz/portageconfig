@@ -33,3 +33,8 @@ app-arch/lha lha
 # Linux binary firmware for things like graphics cards, network cards, so on.
 ##
 sys-kernel/linux-firmware linux-fw-redistributable no-source-code
+
+##
+# Plex Media Server
+##
+media-tv/plex-media-server Plex
