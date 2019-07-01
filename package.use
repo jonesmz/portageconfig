@@ -48,9 +48,11 @@ dev-python/PyQt5 gui widgets
 ##
 # Printsupport Needed by texmaker's qt5 version.
 ##
-dev-qt/qtwebkit:5 printsupport -opengl
-dev-qt/qtmultimedia:5 widgets
-dev-qt/qtdeclarative:5 jit
+dev-qt/qtwebkit printsupport -opengl
+dev-qt/qtmultimedia widgets
+dev-qt/qtdeclarative jit
+dev-qt/qtwebengine widgets
+dev-qt/qtwebchannel qml
 
 ##
 # Faster QML based apps
