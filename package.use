@@ -238,7 +238,7 @@ net-wireless/wpa_supplicant -qt5 -qt4 -hs2-0
 #
 # Revisit this, and find a way to disable radosgw
 ##
-sys-cluster/ceph cephfs fuse system-boost
+sys-cluster/ceph cephfs fuse system-boost grafana
 
 ##
 # Support for CephFS
