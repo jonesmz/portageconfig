@@ -463,10 +463,9 @@ media-sound/mpg123		abi_x86_32
 #media-libs/sdl-ttf		abi_x86_32
 dev-util/pkgconfig		abi_x86_32
 #gnome-base/librsvg		abi_x86_32
-sys-apps/lm_sensors		abi_x86_32
 sys-apps/util-linux		abi_x86_32
 net-libs/libasyncns		abi_x86_32
-sys-apps/lm_sensors		abi_x86_32
+sys-apps/lm-sensors		abi_x86_32
 #media-gfx/graphite2		abi_x86_32
 #media-libs/sdl-image		abi_x86_32
 sys-apps/tcp-wrappers		abi_x86_32
@@ -580,4 +579,4 @@ x11-libs/libxshmfence		abi_x86_32
 #x11-libs/libxkbcommon		abi_x86_32
 x11-libs/libXcomposite		abi_x86_32
 x11-libs/libva-vdpau-driver	abi_x86_32
-#x11-libs/libva-intel-driver	abi_x86_32
+x11-libs/libva-intel-driver	abi_x86_32

@@ -10,6 +10,6 @@ app-backup/snapper
 dev-util/debugedit
 sys-fs/btrfs-progs
 sys-boot/os-prober
-sys-apps/lm_sensors
+sys-apps/lm-sensors
 sys-boot/efibootmgr
 sys-kernel/gentoo-sources

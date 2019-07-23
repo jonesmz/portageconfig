@@ -76,3 +76,9 @@ dev-libs/libbpf
 <sys-libs/talloc-2.3
 <sys-libs/ldb-1.6
 <sys-libs/tevent-0.11
+
+##
+# New boost for work
+##
+<dev-libs/boost-1.71
+<dev-util/boost-build-1.71
