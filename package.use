@@ -130,6 +130,7 @@ dev-libs/libbpf			static-libs
 sys-libs/ncurses		static-libs
 dev-libs/openssl		static-libs
 dev-libs/libpcre		static-libs
+dev-db/postgresql		static-libs
 media-libs/libpng		static-libs
 sys-apps/usbredir		static-libs
 sys-libs/libcap-ng		static-libs
@@ -580,3 +581,6 @@ x11-libs/libxshmfence		abi_x86_32
 x11-libs/libXcomposite		abi_x86_32
 x11-libs/libva-vdpau-driver	abi_x86_32
 x11-libs/libva-intel-driver	abi_x86_32
+
+
+#dev-util/gdbus-codegen python_single_target_python2_7 -python_single_target_python3_6

@@ -82,3 +82,8 @@ dev-libs/libbpf
 ##
 <dev-libs/boost-1.71
 <dev-util/boost-build-1.71
+
+##
+# Newer qt-creator
+##
+dev-qt/qt-creator
