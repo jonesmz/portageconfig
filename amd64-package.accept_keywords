@@ -46,7 +46,6 @@ media-plugins/gst-plugins-libav
 # Cephfs cluster filesystem
 ##
 sys-cluster/ceph
-sys-auth/oath-toolkit
 
 ##
 # Allow gnuradio
@@ -87,3 +86,8 @@ dev-libs/libbpf
 # Newer qt-creator
 ##
 dev-qt/qt-creator
+
+##
+# Urbackup
+##
+app-arch/zstd
