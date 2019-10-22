@@ -72,7 +72,7 @@ dev-libs/libbpf
 ##
 <net-fs/samba-4.11
 <sys-libs/tdb-1.5
-<sys-libs/talloc-2.3
+<sys-libs/talloc-2.4
 <sys-libs/ldb-1.6
 <sys-libs/tevent-0.11
 
