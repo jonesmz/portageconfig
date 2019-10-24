@@ -91,3 +91,9 @@ dev-qt/qt-creator
 # Urbackup
 ##
 app-arch/zstd
+
+##
+# Support new virtual/mailx and s-nail for smartmontools
+##
+virtual/mailx
+mail-client/s-nail
