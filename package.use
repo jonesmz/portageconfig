@@ -21,6 +21,11 @@ sys-apps/systemd -ssl -lz4
 sys-apps/systemd elfutils gcrypt lzma gnuefi
 
 ##
+# For libvirt
+##
+sys-apps/systemd cgroup-hybrid
+
+##
 # Mount needed by os-prober
 # Others are just to reduce bloat.
 ##
