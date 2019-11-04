@@ -77,12 +77,6 @@ dev-libs/libbpf
 <sys-libs/tevent-0.11
 
 ##
-# New boost for work
-##
-<dev-libs/boost-1.71
-<dev-util/boost-build-1.71
-
-##
 # Newer qt-creator
 ##
 dev-qt/qt-creator
