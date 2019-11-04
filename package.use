@@ -68,7 +68,7 @@ dev-qt/qtdeclarative jit
 # Nifty options for the qt-creator ide.
 ##
 dev-util/cmake    server
-dev-qt/qt-creator cmake clang clangcodemodel clangstaticanalyzer -webengine
+dev-qt/qt-creator cmake clang clangcodemodel clangstaticanalyzer -webengine -designer -qmldesigner
 
 ##
 # No sense in having firefox build its own copies of libraries...
@@ -90,10 +90,10 @@ dev-java/icedtea-web -*
 ##
 # Systemd doesn't have the static-libs useflag. Need to put this here to avoid conflicts
 ##
-virtual/udev      -static-libs
-virtual/libudev   -static-libs
-virtual/libgudev  -static-libs
-dev-libs/libgudev -static-libs
+#virtual/udev      -static-libs
+#virtual/libudev   -static-libs
+#virtual/libgudev  -static-libs
+#dev-libs/libgudev -static-libs
 
 ##
 # Need gbm for radion graphics card support
@@ -132,6 +132,7 @@ media-libs/opus			static-libs
 x11-libs/pixman			static-libs
 app-arch/snappy			static-libs
 dev-libs/libbpf			static-libs
+sys-apps/systemd		static-libs
 sys-libs/ncurses		static-libs
 dev-libs/openssl		static-libs
 dev-libs/libpcre		static-libs
@@ -162,14 +163,14 @@ sys-devel/distcc -gtk
 # No need for the nmap gui, zenmap...
 #
 # The ncat flag adds ipv6 capable netcat implementation
-#	Why that's part of nmap is anyones guess...
+# Why that's part of nmap is anyones guess...
 ##
 net-analyzer/nmap -gtk -lua ncat
 
 ##
 # Libreoffice doesn't need to be quite so heavy weight.
 ##
-app-office/libreoffice -dbus -gnome -gstreamer -opengl -postgres -vba -webdav -gtk
+app-office/libreoffice -dbus -gnome -gstreamer -opengl -postgres -vba -webdav -gtk -mariadb
 dev-libs/xmlsec	nss
 
 ##
@@ -191,23 +192,16 @@ net-misc/networkmanager  introspection
 ##
 # Custom flags for vlc
 ##
-media-video/vlc -* X a52 avcodec avformat cdda dbus dts dvbpsi dvd ffmpeg flac gcrypt gnome jpeg -libnotify libsamplerate mp3 mpeg ncurses ogg opengl png pulseaudio qt5 samba sdl svg swscale theora udev vaapi vdpau vorbis x264 xcb xml xv zeroconf opus cpu_flags_x86_mmx cpu_flags_x86_sse upnp gnutls microdns chromecast encode
+media-video/vlc -* X a52 avcodec avformat cdda dbus dts dvbpsi dvd ffmpeg flac gcrypt gnome jpeg -libnotify libsamplerate mp3 mpeg ncurses ogg opengl png pulseaudio samba sdl svg swscale theora udev vaapi vdpau vorbis x264 xcb xml xv zeroconf opus cpu_flags_x86_mmx cpu_flags_x86_sse upnp gnutls microdns chromecast encode
 
 ##
-# We need to explicitly state which version of qt to use for some apps.
-# Avahi only works with jonesmz-overlay for now.
+# Various packages that need some nudging for their GUI choices.
 ##
-net-dns/avahi              -qt4 -qt5
-dev-util/cmake             -qt4 -qt5
-media-video/vlc            -qt4  qt5
-app-text/poppler           -qt4  qt5
-dev-libs/libdbusmenu-qt    -qt4  qt5
-dev-games/openscenegraph   -qt4  qt5
+net-dns/avahi    -qt5
+dev-util/cmake   -qt5
 
-##
-# Just reducing the stuff not being used.
-##
-net-analyzer/wireshark -netlink -gtk3 -gtk
+media-video/vlc  qt5
+app-text/poppler qt5
 
 ##
 # Samba 4 use flags
@@ -225,18 +219,17 @@ sys-devel/gettext -openmp
 ##
 # Need for lxqt
 ##
-x11-misc/sddm -upower
 lxqt-base/lxqt-meta -policykit -about sddm lximage
 
 ##
 # Don't actually like using the desktop switcher, so I'm disabling it.
 ##
-lxqt-base/lxqt-panel -desktopswitch
+lxqt-base/lxqt-panel -desktopswitch -kbindicator
 
 ##
 # No need for the WPA_Supplicant gui, nor 802.11u
 ##
-net-wireless/wpa_supplicant -qt5 -qt4 -hs2-0
+net-wireless/wpa_supplicant -qt5 -hs2-0
 
 ##
 # Want support for the cephfs network filesystem
@@ -314,7 +307,6 @@ x11-libs/gtksourceview vala
 # Prefer gtk3 over gtk2, prefer system libs over bundled when possible.
 ##
 www-client/chromium jumbo-build system-ffmpeg system-icu system-libvpx
-net-libs/nodejs	inspector
 
 ##
 # Chromium needs nodejs? Wtf?
@@ -354,17 +346,6 @@ app-emulation/libguestfs ocaml
 sys-apps/busybox -static
 
 ##
-# Remove python support from pluma so that we can drop the gtk2 dependency
-##
-app-editors/pluma -python
-
-##
-# Why have a mail sending program that can't send mail...
-# Used on servers to send automated alerts.
-##
-mail-client/nail net
-
-##
 # Trying to purge gtk2
 ##
 app-crypt/pinentry	-gtk
@@ -388,16 +369,15 @@ www-misc/shellinabox -pam
 app-backup/urbackup-server -hardened
 
 ##
+# Urbackup client, without x server code
+##
+app-backup/urbackup-client -X
+
+##
 # fdk is needed to support handbrake.
 # unclear what vdpau is needed for.
 ##
 media-video/ffmpeg vdpau fdk
-
-##
-# Changes needed for shotwell
-##
-net-libs/webkit-gtk -geolocation
-media-libs/gexiv2 -python
 
 ##
 # Support for rdp server
@@ -405,24 +385,9 @@ media-libs/gexiv2 -python
 net-misc/freerdp server
 
 ##
-# Needed to run the clang compiler from work
-##
-sys-libs/ncurses tinfo
-
-##
 # Freeradius talking to samba4
 ##
 net-dialup/freeradius ldap kerberos
-
-##
-# No more rdoc for ruby, it has constant problems.
-##
-dev-lang/ruby -rdoc
-
-##
-# Urbackup client, without x server code
-##
-app-backup/urbackup-client -X
 
 ##
 # Allow eBPF programs to be loaded into the network stack
@@ -586,6 +551,3 @@ x11-libs/libxshmfence		abi_x86_32
 x11-libs/libXcomposite		abi_x86_32
 x11-libs/libva-vdpau-driver	abi_x86_32
 x11-libs/libva-intel-driver	abi_x86_32
-
-
-#dev-util/gdbus-codegen python_single_target_python2_7 -python_single_target_python3_6

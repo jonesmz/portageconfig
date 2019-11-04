@@ -32,6 +32,7 @@ games-util/steam-client-meta
 ##
 # Backup machines to fileserver
 ##
+app-arch/zstd
 app-backup/urbackup-client
 app-backup/urbackup-server
 
@@ -40,7 +41,6 @@ app-backup/urbackup-server
 ##
 media-video/ffmpeg
 media-video/handbrake
-media-plugins/gst-plugins-libav
 
 ##
 # Cephfs cluster filesystem
@@ -80,11 +80,6 @@ dev-libs/libbpf
 # Newer qt-creator
 ##
 dev-qt/qt-creator
-
-##
-# Urbackup
-##
-app-arch/zstd
 
 ##
 # Support new virtual/mailx and s-nail for smartmontools
