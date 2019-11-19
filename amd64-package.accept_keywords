@@ -40,27 +40,17 @@ app-backup/urbackup-server
 # Dvd re-encoding to server to chromecasts from plex
 ##
 media-video/ffmpeg
-media-video/handbrake
+<media-video/handbrake-1.3
 
 ##
 # Cephfs cluster filesystem
 ##
-sys-cluster/ceph
-
-##
-# Allow gnuradio
-##
-net-wireless/gnuradio
+<sys-cluster/ceph-15
 
 ##
 # Jenkins continuous integration
 ##
 dev-util/jenkins-bin:lts
-
-##
-# Kubernates
-##
-sys-cluster/kubectl
 
 ##
 # SUpport for compiling bpf programs
@@ -86,3 +76,8 @@ dev-qt/qt-creator
 ##
 virtual/mailx
 mail-client/s-nail
+
+##
+# Chrome binary plugins for widevine (netflix)
+##
+www-plugins/chrome-binary-plugins:stable
