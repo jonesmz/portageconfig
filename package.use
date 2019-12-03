@@ -1,7 +1,7 @@
 ##
 # Spice things up with a bit of optimization
 ##
-sys-devel/gcc cxx graphite pch pgo pie sanatize ssp vtv
+sys-devel/gcc graphite pgo lto pie sanatize vtv
 
 ##
 # gnuradio
