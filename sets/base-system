@@ -9,7 +9,6 @@ net-misc/iperf
 app-misc/screen
 sys-apps/hdparm
 app-misc/fdupes
-#mail-client/nail
 app-editors/nano
 sys-devel/distcc
 sys-process/htop
@@ -23,6 +22,7 @@ sys-apps/gptfdisk
 sys-kernel/dracut
 sys-power/cpupower
 net-dns/bind-tools
+mail-client/s-nail
 app-admin/superadduser
 sys-apps/smartmontools
 sys-fs/btrfsmaintenance

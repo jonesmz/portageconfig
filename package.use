@@ -395,6 +395,11 @@ net-dialup/freeradius ldap kerberos
 sys-apps/iproute2 elf
 
 ##
+# Support direct SMTP connections instead of needing another program to send the emails.
+##
+mail-client/s-nail net
+
+##
 # 32 bit libraries needed by steam
 ##
 virtual/pam			abi_x86_32
