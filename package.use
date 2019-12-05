@@ -107,6 +107,7 @@ x11-libs/libva vdpau wayland X opengl
 # Still haven't figured out how to get rid of cups...
 ##
 app-text/ghostscript-gpl cups -X -gtk
+net-print/cups-filters -*
 
 ##
 # Gold linker for llvm
@@ -244,11 +245,6 @@ sys-cluster/ceph cephfs fuse system-boost dashboard
 ##
 dev-lang/python sqlite
 dev-libs/boost context
-
-##
-# Widevine for netflix
-##
-www-plugins/chrome-binary-plugins widevine
 
 ##
 # Tweaking efl, for use with terminology
