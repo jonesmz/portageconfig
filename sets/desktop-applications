@@ -5,6 +5,7 @@ media-video/vlc
 app-text/evince
 app-cdr/brasero
 sys-apps/baobab
+app-cdr/cdrtools
 net-misc/freerdp
 app-editors/pluma
 sys-block/gparted
