@@ -284,8 +284,9 @@ dev-libs/atk			introspection
 x11-libs/gtk+			introspection
 x11-libs/pango			introspection
 sys-auth/polkit			introspection
-net-libs/gtk-vnc		introspection
 virtual/libgudev		introspection
+net-libs/gtk-vnc		introspection
+net-libs/libsoup		introspection
 dev-libs/libgudev		introspection
 sys-libs/libosinfo		introspection
 net-misc/spice-gtk		introspection
@@ -296,6 +297,7 @@ app-emulation/libvirt-glib	introspection
 ##
 # Vala is required for gnome-calculator now
 ##
+net-libs/libsoup vala
 x11-libs/gtksourceview vala
 
 
