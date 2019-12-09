@@ -1,3 +1,5 @@
+@pc-base-system
+
 x11-misc/arandr
 media-video/vlc
 app-text/evince

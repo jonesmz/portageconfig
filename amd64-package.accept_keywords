@@ -81,3 +81,8 @@ mail-client/s-nail
 # Chrome binary plugins for widevine (netflix)
 ##
 www-plugins/chrome-binary-plugins:stable
+
+##
+# iwyu provides analysis of header files for C++ programs, and offers suggestions for improvements.
+##
+<dev-util/include-what-you-use-9
