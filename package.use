@@ -249,7 +249,7 @@ dev-libs/boost context
 ##
 # Tweaking efl, for use with terminology
 ##
-dev-libs/efl -sdl X egl gles2
+dev-libs/efl -sdl X egl gles2 fontconfig
 
 ##
 # Settings for experimenting with wayland
@@ -402,6 +402,7 @@ mail-client/s-nail net
 ##
 virtual/pam			abi_x86_32
 virtual/glu			abi_x86_32
+virtual/fam			abi_x86_32
 virtual/jpeg:0			abi_x86_32
 virtual/libffi			abi_x86_32
 virtual/libelf			abi_x86_32
@@ -425,6 +426,7 @@ net-libs/gnutls			abi_x86_32
 #dev-libs/json-c			abi_x86_32
 sys-devel/clang			abi_x86_32
 net-dns/libidn2			abi_x86_32
+app-admin/gamin			abi_x86_32
 dev-libs/libxslt		abi_x86_32
 sys-apps/systemd		abi_x86_32
 app-arch/xz-utils		abi_x86_32
@@ -465,6 +467,7 @@ dev-libs/expat			abi_x86_32
 dev-libs/nettle			abi_x86_32
 dev-libs/libffi			abi_x86_32
 dev-libs/libxml2		abi_x86_32
+dev-libs/libgamin		abi_x86_32
 #dev-libs/openssl		abi_x86_32
 dev-libs/libpcre		abi_x86_32
 dev-libs/wayland		abi_x86_32
@@ -554,3 +557,4 @@ x11-libs/libxshmfence		abi_x86_32
 x11-libs/libXcomposite		abi_x86_32
 x11-libs/libva-vdpau-driver	abi_x86_32
 x11-libs/libva-intel-driver	abi_x86_32
+
