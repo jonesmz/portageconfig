@@ -60,10 +60,10 @@ dev-libs/libbpf
 ##
 # Newer samba, to fix issue with accessing file shares.
 ##
-<net-fs/samba-4.11
+<net-fs/samba-4.12
 <sys-libs/tdb-1.5
 <sys-libs/talloc-2.4
-<sys-libs/ldb-1.6
+<sys-libs/ldb-2.0.9
 <sys-libs/tevent-0.11
 
 ##
