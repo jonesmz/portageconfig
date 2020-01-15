@@ -380,7 +380,7 @@ media-video/ffmpeg vdpau fdk
 ##
 # Support for rdp server
 ##
-net-misc/freerdp server
+net-misc/freerdp server openh264
 
 ##
 # Freeradius talking to samba4
