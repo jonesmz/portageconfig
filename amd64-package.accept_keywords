@@ -66,4 +66,4 @@ mail-client/s-nail
 ##
 # iwyu provides analysis of header files for C++ programs, and offers suggestions for improvements.
 ##
-<dev-util/include-what-you-use-9
+<dev-util/include-what-you-use-10
