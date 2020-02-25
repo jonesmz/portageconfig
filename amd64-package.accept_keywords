@@ -43,11 +43,6 @@ media-video/ffmpeg
 <media-video/handbrake-1.3
 
 ##
-# Cephfs cluster filesystem
-##
-<sys-cluster/ceph-15
-
-##
 # Jenkins continuous integration
 ##
 dev-util/jenkins-bin:lts
@@ -56,15 +51,6 @@ dev-util/jenkins-bin:lts
 # SUpport for compiling bpf programs
 ##
 dev-libs/libbpf
-
-##
-# Newer samba, to fix issue with accessing file shares.
-##
-<net-fs/samba-4.12
-<sys-libs/tdb-1.5
-<sys-libs/talloc-2.4
-<sys-libs/ldb-2.0.9
-<sys-libs/tevent-0.11
 
 ##
 # Newer qt-creator
@@ -76,11 +62,6 @@ dev-qt/qt-creator
 ##
 virtual/mailx
 mail-client/s-nail
-
-##
-# Chrome binary plugins for widevine (netflix)
-##
-www-plugins/chrome-binary-plugins:stable
 
 ##
 # iwyu provides analysis of header files for C++ programs, and offers suggestions for improvements.
