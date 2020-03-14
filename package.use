@@ -4,13 +4,6 @@
 sys-devel/gcc graphite pgo lto pie sanatize vtv
 
 ##
-# gnuradio
-##
-sys-devel/gcc fortran
-dev-python/numpy lapack
-net-wireless/gnuradio wxwidgets grc
-
-##
 # Systemd doesn't need extra cruft...
 ##
 sys-apps/systemd -ssl -lz4
@@ -46,9 +39,9 @@ dev-libs/libpcre	pcre16
 dev-libs/libpcre2	pcre16
 
 ##
-# Flags for Krita
+# Minimum Flags needed for Krita
 ##
-dev-python/PyQt5 gui widgets
+dev-python/PyQt5 gui widgets -multimedia -network -printsupport
 
 ##
 # Printsupport Needed by texmaker's qt5 version.
@@ -100,7 +93,7 @@ dev-java/icedtea-web -*
 # Need "classic" for intel drivers
 # All the other stuff is to just provide the various APIs for generic use by various machines.
 ##
-media-libs/mesa classic gbm gles1 gles2 llvm openvg vaapi vdpau wayland openmax vaapi
+media-libs/mesa classic gbm gles1 gles2 llvm openvg vaapi vdpau wayland openmax vaapi lm-sensors
 x11-libs/libva vdpau wayland X opengl
 
 ##
@@ -207,7 +200,7 @@ app-text/poppler qt5
 ##
 # Samba 4 use flags
 ##
-net-fs/samba ads addc client json fam addns gnutls winbind -system-mitkrb5 ceph ldap
+net-fs/samba ads addc client json fam addns gnutls winbind ceph ldap python -system-mitkrb5
 
 app-crypt/heimdal -ssl
 net-dns/bind-tools gssapi
@@ -304,7 +297,8 @@ x11-libs/gtksourceview vala
 ##
 # Prefer gtk3 over gtk2, prefer system libs over bundled when possible.
 ##
-www-client/chromium jumbo-build system-ffmpeg system-icu system-libvpx
+www-client/chromium jumbo-build system-ffmpeg system-icu system-libvpx widevine
+sys-libs/zlib minizip
 
 ##
 # Chromium needs nodejs? Wtf?

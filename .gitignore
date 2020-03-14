@@ -5,3 +5,4 @@ bin
 make.local
 package.accept_keywords
 repo.postsync.d
+make.profile
