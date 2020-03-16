@@ -284,6 +284,7 @@ dev-libs/libgudev		introspection
 sys-libs/libosinfo		introspection
 net-misc/spice-gtk		introspection
 x11-libs/gdk-pixbuf		introspection
+media-libs/gstreamer		introspection
 x11-libs/gtksourceview		introspection
 app-emulation/libvirt-glib	introspection
 
@@ -292,7 +293,6 @@ app-emulation/libvirt-glib	introspection
 ##
 net-libs/libsoup vala
 x11-libs/gtksourceview vala
-
 
 ##
 # Prefer gtk3 over gtk2, prefer system libs over bundled when possible.
