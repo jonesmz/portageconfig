@@ -363,11 +363,6 @@ sys-apps/iproute2 elf
 mail-client/s-nail net
 
 ##
-# pinentry has a circular dependency with gnome-keyring
-##
-app-crypt/pinentry gnome-keyring
-
-##
 # 32 bit libraries needed by steam
 ##
 virtual/pam			abi_x86_32
