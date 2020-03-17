@@ -295,7 +295,7 @@ net-libs/libsoup vala
 x11-libs/gtksourceview vala
 
 ##
-# Prefer gtk3 over gtk2, prefer system libs over bundled when possible.
+# Prefer prefer system libs over bundled when possible.
 ##
 www-client/chromium jumbo-build system-ffmpeg system-icu system-libvpx widevine
 sys-libs/zlib minizip
@@ -336,12 +336,6 @@ app-emulation/libguestfs ocaml
 # Busybox apparently doesn't want to build with "pam static" use flags.
 ##
 sys-apps/busybox -static
-
-##
-# Trying to purge gtk2
-##
-app-crypt/pinentry	-gtk
-media-libs/libcanberra	-gtk
 
 ##
 # Preventing the need for the berkdb useflag from gdbm.
@@ -390,6 +384,11 @@ sys-apps/iproute2 elf
 # Support direct SMTP connections instead of needing another program to send the emails.
 ##
 mail-client/s-nail net
+
+##
+# pinentry has a circular dependency with gnome-keyring
+##
+app-crypt/pinentry gnome-keyring
 
 ##
 # 32 bit libraries needed by steam
