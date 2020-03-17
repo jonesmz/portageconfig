@@ -4,6 +4,11 @@
 sys-devel/gcc graphite pgo lto pie sanatize vtv
 
 ##
+# Options for llvm
+##
+sys-devel/llvm gold z3
+
+##
 # Systemd doesn't need extra cruft...
 ##
 sys-apps/systemd -ssl -lz4
@@ -44,15 +49,6 @@ dev-libs/libpcre2	pcre16
 dev-python/PyQt5 gui widgets -multimedia -network -printsupport
 
 ##
-# Printsupport Needed by texmaker's qt5 version.
-##
-dev-qt/qtwebkit printsupport -opengl
-dev-qt/qtmultimedia widgets
-dev-qt/qtdeclarative jit
-dev-qt/qtwebengine widgets
-dev-qt/qtwebchannel qml
-
-##
 # Faster QML based apps
 ##
 dev-qt/qtdeclarative jit
@@ -68,7 +64,7 @@ dev-qt/qt-creator cmake clang clangcodemodel clangstaticanalyzer -webengine -des
 ##
 dev-db/sqlite secure-delete
 media-libs/libvpx postproc
-www-client/firefox gmp-autoupdate hardened hwaccel jemalloc3 pulseaudio system-cairo system-harfbuzz system-icu system-jpeg system-libevent system-libvpx system-sqlite
+www-client/firefox lto pgo hwaccel pulseaudio
 www-client/firefox -dbus -wifi -screenshot -startup-notification
 
 ##
@@ -101,11 +97,6 @@ x11-libs/libva vdpau wayland X opengl
 ##
 app-text/ghostscript-gpl cups -X -gtk
 net-print/cups-filters -*
-
-##
-# Gold linker for llvm
-##
-sys-devel/llvm gold
 
 ##
 # QEMU arm emulation support, and more.
@@ -200,7 +191,7 @@ app-text/poppler qt5
 ##
 # Samba 4 use flags
 ##
-net-fs/samba ads addc client json fam addns gnutls winbind ceph ldap python -system-mitkrb5
+net-fs/samba addc addns ads ceph client json ldap winbind python -system-mitkrb5
 
 app-crypt/heimdal -ssl
 net-dns/bind-tools gssapi
@@ -213,7 +204,7 @@ sys-devel/gettext -openmp
 ##
 # Need for lxqt
 ##
-lxqt-base/lxqt-meta -policykit -about sddm lximage
+lxqt-base/lxqt-meta -about sddm lximage
 
 ##
 # Don't actually like using the desktop switcher, so I'm disabling it.
@@ -263,13 +254,6 @@ dev-libs/botan		-bindist
 dev-libs/openssl	-bindist
 
 ##
-# Purging gstreamer 0.10
-# Disable gstreamer in wine, to get rid of version 0.10 dependency
-##
-dev-qt/qtwebkit			-gstreamer
-app-emulation/wine-vanilla	-gstreamer
-
-##
 # I disable introspection globally, but a handful of packages need it anyway...
 ##
 x11-libs/vte			introspection
@@ -297,7 +281,7 @@ x11-libs/gtksourceview vala
 ##
 # Prefer prefer system libs over bundled when possible.
 ##
-www-client/chromium jumbo-build system-ffmpeg system-icu system-libvpx widevine
+www-client/chromium system-ffmpeg system-icu widevine kerberos gnome-keyring
 sys-libs/zlib minizip
 
 ##
@@ -306,20 +290,13 @@ sys-libs/zlib minizip
 net-libs/nodejs inspector icu
 
 ##
-# Hrmm... trying to remove speech-dispatcher from the system.
-##
-media-libs/libvpx svc
-
-##
-# Very much not clear on why this needs to be specified. Further investigation needed.
-##
-sys-apps/dbus systemd
-
-##
 # Adds support for the None cipher. Literally this cipher performs absolutely no encryption, and as such is as insecure as can possibly be,
 # but it's also very cpu friendly and therefore useful when doing security insensitive things like file transfers on local networks
+#
+# X509 is to support certificate authorities
+# Kerberos is adctive directory
 ##
-net-misc/openssh hpn
+net-misc/openssh hpn X509 kerberos
 
 ##
 # VPN Support
@@ -368,7 +345,7 @@ media-video/ffmpeg vdpau fdk
 ##
 # Support for rdp server
 ##
-net-misc/freerdp server openh264
+net-misc/freerdp server openh264 ffmpeg
 
 ##
 # Freeradius talking to samba4
@@ -406,10 +383,7 @@ virtual/libiconv		abi_x86_32
 virtual/libcrypt		abi_x86_32
 virtual/pkgconfig		abi_x86_32
 
-#sys-fs/udev			abi_x86_32
-#dev-db/sqlite			abi_x86_32
 sys-apps/dbus			abi_x86_32
-#net-misc/curl			abi_x86_32
 sys-apps/attr			abi_x86_32
 sys-libs/pam			abi_x86_32
 sys-devel/flex			abi_x86_32
@@ -417,7 +391,6 @@ media-libs/glu			abi_x86_32
 sys-devel/llvm			abi_x86_32
 app-arch/bzip2			abi_x86_32
 net-libs/gnutls			abi_x86_32
-#dev-libs/json-c			abi_x86_32
 sys-devel/clang			abi_x86_32
 net-dns/libidn2			abi_x86_32
 app-admin/gamin			abi_x86_32
@@ -427,17 +400,12 @@ app-arch/xz-utils		abi_x86_32
 sys-devel/gettext		abi_x86_32
 dev-libs/libtasn1		abi_x86_32
 sys-libs/cracklib		abi_x86_32
-#media-libs/libsdl		abi_x86_32
+sci-mathematics/z3		abi_x86_32
 media-sound/mpg123		abi_x86_32
-#media-libs/libsdl2		abi_x86_32
-#media-libs/sdl-ttf		abi_x86_32
 dev-util/pkgconfig		abi_x86_32
-#gnome-base/librsvg		abi_x86_32
 sys-apps/util-linux		abi_x86_32
 net-libs/libasyncns		abi_x86_32
 sys-apps/lm-sensors		abi_x86_32
-#media-gfx/graphite2		abi_x86_32
-#media-libs/sdl-image		abi_x86_32
 sys-apps/tcp-wrappers		abi_x86_32
 media-sound/pulseaudio		abi_x86_32
 app-emulation/wine-gecko	abi_x86_32
@@ -447,25 +415,17 @@ sys-libs/gpm			abi_x86_32
 sys-libs/zlib			abi_x86_32
 sys-libs/libcap			abi_x86_32
 sys-libs/ncurses		abi_x86_32
-#sys-libs/readline		abi_x86_32
-#sys-libs/binutils-libs		abi_x86_32
 
 dev-libs/gmp			abi_x86_32
-#dev-libs/nss			abi_x86_32
 dev-libs/icu			abi_x86_32
-#dev-libs/atk			abi_x86_32
-#dev-libs/nspr			abi_x86_32
-#dev-libs/lzo			abi_x86_32
 dev-libs/glib			abi_x86_32
 dev-libs/expat			abi_x86_32
 dev-libs/nettle			abi_x86_32
 dev-libs/libffi			abi_x86_32
 dev-libs/libxml2		abi_x86_32
 dev-libs/libgamin		abi_x86_32
-#dev-libs/openssl		abi_x86_32
 dev-libs/libpcre		abi_x86_32
 dev-libs/wayland		abi_x86_32
-#dev-libs/libcroco		abi_x86_32
 dev-libs/elfutils		abi_x86_32
 dev-libs/libgcrypt		abi_x86_32
 dev-libs/libgpg-error		abi_x86_32
@@ -476,20 +436,15 @@ media-libs/mesa			abi_x86_32
 media-libs/tiff			abi_x86_32
 media-libs/flac			abi_x86_32
 media-libs/lcms			abi_x86_32
-#media-libs/glew			abi_x86_32
 media-libs/libv4l		abi_x86_32
 media-libs/libpng		abi_x86_32
 media-libs/libogg		abi_x86_32
-#media-libs/openal		abi_x86_32
 media-libs/freetype		abi_x86_32
 media-libs/libglvnd		abi_x86_32
-#media-libs/harfbuzz		abi_x86_32
 media-libs/alsa-lib		abi_x86_32
 media-libs/libvorbis		abi_x86_32
-#media-libs/audiofile		abi_x86_32
 media-libs/libsndfile		abi_x86_32
 media-libs/fontconfig		abi_x86_32
-#media-libs/libtxc_dxtn		abi_x86_32
 media-libs/libjpeg-turbo	abi_x86_32
 media-libs/libomxil-bellagio	abi_x86_32
 
@@ -516,19 +471,11 @@ x11-proto/compositeproto	abi_x86_32
 x11-proto/xf86bigfontproto	abi_x86_32
 x11-proto/xf86vidmodeproto	abi_x86_32
 
-#x11-libs/gtk+:2			abi_x86_32
-#x11-libs/pixma			abi_x86_32
-#x11-libs/cairo			abi_x86_32
 x11-libs/libva			abi_x86_32
 x11-libs/libSM			abi_x86_32
 x11-libs/libXv			abi_x86_32
-#x11-libs/pango			abi_x86_32
 x11-libs/libXi			abi_x86_32
-#x11-libs/libXt			abi_x86_32
-#x11-libs/libXmu			abi_x86_32
 x11-libs/libICE			abi_x86_32
-#x11-libs/pixman			abi_x86_32
-#x11-libs/libXft			abi_x86_32
 x11-libs/libdrm			abi_x86_32
 x11-libs/libX11			abi_x86_32
 x11-libs/libXau			abi_x86_32
@@ -542,13 +489,11 @@ x11-libs/libXrandr		abi_x86_32
 x11-libs/libXfixes		abi_x86_32
 x11-libs/libXdamage		abi_x86_32
 x11-libs/libXcursor		abi_x86_32
-#x11-libs/gdk-pixbuf		abi_x86_32
 x11-libs/libXxf86vm		abi_x86_32
 x11-libs/libXrender		abi_x86_32
 x11-libs/libXinerama		abi_x86_32
 x11-libs/libpciaccess		abi_x86_32
 x11-libs/libxshmfence		abi_x86_32
-#x11-libs/libxkbcommon		abi_x86_32
 x11-libs/libXcomposite		abi_x86_32
 x11-libs/libva-vdpau-driver	abi_x86_32
 x11-libs/libva-intel-driver	abi_x86_32
