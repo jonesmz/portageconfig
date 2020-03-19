@@ -54,6 +54,13 @@ dev-python/PyQt5 gui widgets -multimedia -network -printsupport
 dev-qt/qtdeclarative jit
 
 ##
+# texmaker dependencies
+##
+dev-qt/qtwebengine widgets
+dev-qt/qtwebchannel qml
+
+
+##
 # Nifty options for the qt-creator ide.
 ##
 dev-util/cmake    server
