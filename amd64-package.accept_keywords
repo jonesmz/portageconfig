@@ -1,4 +1,11 @@
 ##
+# For LTO Builds
+##
+sys-config/ltoize
+app-shells/runtitle
+app-portage/portage-bashrc-mv
+
+##
 # Only Java8 is available.
 ##
 dev-java/icedtea:8
