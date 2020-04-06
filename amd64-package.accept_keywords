@@ -75,3 +75,8 @@ mail-client/s-nail
 ##
 <dev-util/include-what-you-use-10
 net-misc/freerdp **
+
+##
+# kubectl used for work
+##
+sys-cluster/kubectl
