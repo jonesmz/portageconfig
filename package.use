@@ -202,6 +202,9 @@ net-fs/samba addc addns ads ceph client json ldap winbind python -system-mitkrb5
 
 app-crypt/heimdal -ssl
 net-dns/bind-tools gssapi
+sys-libs/ldb ldap python
+sys-libs/tdb python
+sys-libs/tevent python
 
 ##
 # When emulating ARM via Qemu, Qemu barfs on the messagemerge command. This useflag change makes it much less of a problem, at the cost of slightly reduced speed.
