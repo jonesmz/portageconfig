@@ -78,4 +78,4 @@ mail-client/s-nail
 ##
 # kubectl used for work
 ##
-sys-cluster/kubectl
+sys-cluster/kubernetes

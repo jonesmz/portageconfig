@@ -373,6 +373,12 @@ sys-apps/iproute2 elf
 mail-client/s-nail net
 
 ##
+# kubectl used for work
+##
+sys-cluster/kubernetes -* kubectl
+
+
+##
 # 32 bit libraries needed by steam
 ##
 virtual/pam			abi_x86_32
