@@ -253,7 +253,7 @@ kde-base/kwin			wayland
 kde-plasma/kwin			wayland
 media-libs/cogl			gles2
 dev-libs/weston			wayland-compositor xwayland fbdev
-media-libs/libsdl2		gles
+media-libs/libsdl2		gles2
 x11-base/xorg-server		wayland
 media-plugins/gst-plugins-vaapi	wayland
 
