@@ -79,3 +79,9 @@ mail-client/s-nail
 # kubectl used for work
 ##
 sys-cluster/kubernetes
+
+##
+# Size profiler for C++ binaries
+##
+dev-util/bloaty
+dev-libs/capstone
