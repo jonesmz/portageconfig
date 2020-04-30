@@ -238,7 +238,7 @@ sys-cluster/ceph cephfs fuse system-boost dashboard
 # Support for CephFS
 ##
 dev-lang/python sqlite
-dev-libs/boost context
+dev-libs/boost context python
 
 ##
 # Tweaking efl, for use with terminology
@@ -447,6 +447,7 @@ media-libs/mesa			abi_x86_32
 media-libs/tiff			abi_x86_32
 media-libs/flac			abi_x86_32
 media-libs/lcms			abi_x86_32
+media-libs/opus			abi_x86_32
 media-libs/libv4l		abi_x86_32
 media-libs/libpng		abi_x86_32
 media-libs/libogg		abi_x86_32
