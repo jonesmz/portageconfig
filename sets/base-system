@@ -13,6 +13,7 @@ app-editors/nano
 sys-devel/distcc
 sys-process/htop
 sys-apps/systemd
+sys-config/ltoize
 sys-kernel/dracut
 net-analyzer/nmap
 sys-fs/dosfstools
