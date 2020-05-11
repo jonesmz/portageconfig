@@ -11,10 +11,11 @@ app-portage/portage-bashrc-mv
 dev-java/icedtea:8
 
 ##
-# GAMES: specifically TES3: Morrowind and dwarffortress
+# GAMES: specifically TES3: Morrowind, dwarffortress, minetest
 ##
 games-engines/openmw
 games-roguelike/dwarf-fortress
+games-action/minetest
 
 ##
 # Gives virtual machine disk image management features
