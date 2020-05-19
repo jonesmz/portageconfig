@@ -14,8 +14,8 @@ dev-java/icedtea:8
 # GAMES: specifically TES3: Morrowind, dwarffortress, minetest
 ##
 games-engines/openmw
-games-roguelike/dwarf-fortress
 games-action/minetest
+games-roguelike/dwarf-fortress
 
 ##
 # Gives virtual machine disk image management features
@@ -40,15 +40,13 @@ games-util/steam-client-meta
 ##
 # Backup machines to fileserver
 ##
-app-arch/zstd
 app-backup/urbackup-client
 app-backup/urbackup-server
 
 ##
 # Dvd re-encoding to server to chromecasts from plex
 ##
-media-video/ffmpeg
-<media-video/handbrake-1.3
+media-video/handbrake
 
 ##
 # Jenkins continuous integration
