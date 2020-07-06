@@ -62,6 +62,7 @@ dev-libs/libbpf
 # Newer qt-creator
 ##
 dev-qt/qt-creator
+dev-libs/libclangformat-ide
 
 ##
 # Support new virtual/mailx and s-nail for smartmontools
@@ -72,7 +73,7 @@ mail-client/s-nail
 ##
 # iwyu provides analysis of header files for C++ programs, and offers suggestions for improvements.
 ##
-<dev-util/include-what-you-use-10
+dev-util/include-what-you-use
 
 ##
 # kubectl used for work
