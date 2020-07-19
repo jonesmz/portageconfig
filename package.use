@@ -251,7 +251,7 @@ dev-libs/boost context python
 ##
 # Tweaking efl, for use with terminology
 ##
-dev-libs/efl -sdl X egl gles2 fontconfig
+dev-libs/efl -sdl X egl gles2-only fontconfig
 
 ##
 # Settings for experimenting with wayland
@@ -299,7 +299,7 @@ x11-libs/gtksourceview vala
 ##
 # Prefer prefer system libs over bundled when possible.
 ##
-www-client/chromium system-ffmpeg system-icu widevine kerberos gnome-keyring
+www-client/chromium system-ffmpeg system-icu widevine kerberos gnome-keyring ozone
 sys-libs/zlib minizip
 
 ##
