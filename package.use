@@ -182,6 +182,14 @@ net-misc/networkmanager  -zeroconf -ncurses
 net-misc/networkmanager  introspection
 
 ##
+# VPN support
+##
+net-misc/networkmanager ppp
+net-dialup/ppp eap-tls
+net-vpn/networkmanager-l2tp gnome
+net-vpn/strongswan -caps -non-root
+
+##
 # Custom flags for vlc
 ##
 media-video/vlc -* X a52 avcodec avformat cdda dbus dts dvbpsi dvd ffmpeg flac gcrypt gnome jpeg -libnotify libsamplerate mp3 mpeg ncurses ogg opengl png pulseaudio samba sdl svg swscale theora udev vaapi vdpau vorbis x264 xcb xml xv zeroconf opus cpu_flags_x86_mmx cpu_flags_x86_sse upnp gnutls microdns chromecast encode
