@@ -385,6 +385,10 @@ mail-client/s-nail net
 ##
 sys-cluster/kubernetes -* kubectl
 
+##
+# lto settings
+##
+sys-config/ltoize keep-nocommon
 
 ##
 # 32 bit libraries needed by steam
