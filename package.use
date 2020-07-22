@@ -391,6 +391,11 @@ sys-cluster/kubernetes -* kubectl
 sys-config/ltoize keep-nocommon
 
 ##
+# Remove unneeded zero conf functionality
+##
+net-misc/ntp -zeroconf
+
+##
 # 32 bit libraries needed by steam
 ##
 virtual/pam			abi_x86_32
