@@ -206,7 +206,7 @@ app-text/poppler qt5
 ##
 # Samba 4 use flags
 ##
-net-fs/samba addc addns ads ceph client json ldap winbind python -system-mitkrb5
+net-fs/samba addc addns ads ceph client json ldap winbind python snapper -system-mitkrb5
 
 app-crypt/heimdal -ssl
 net-dns/bind-tools gssapi
