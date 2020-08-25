@@ -91,4 +91,3 @@ dev-libs/capstone
 # VPN
 ##
 net-vpn/networkmanager-l2tp
-net-vpn/strongswan
