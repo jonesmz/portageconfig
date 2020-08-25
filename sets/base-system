@@ -2,6 +2,7 @@ sys-apps/pv
 sys-libs/gpm
 net-fs/samba
 net-fs/sshfs
+net-misc/wsdd
 sys-apps/lshw
 app-admin/sudo
 net-misc/whois
