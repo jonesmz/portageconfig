@@ -91,7 +91,6 @@ dev-libs/capstone
 # VPN
 ##
 net-vpn/networkmanager-l2tp
-net-vpn/strongswan
 
 ##
 # Support for network browsing in windows 10

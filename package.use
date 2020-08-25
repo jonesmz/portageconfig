@@ -162,7 +162,7 @@ net-analyzer/nmap -gtk -lua ncat
 ##
 # Libreoffice doesn't need to be quite so heavy weight.
 ##
-app-office/libreoffice -dbus -gnome -gstreamer -opengl -postgres -vba -webdav -gtk -mariadb
+app-office/libreoffice -gnome -gstreamer -opengl -postgres -vba -webdav -gtk -mariadb
 dev-libs/xmlsec	nss
 
 ##
