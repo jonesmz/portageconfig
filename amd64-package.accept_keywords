@@ -14,6 +14,9 @@ dev-java/icedtea:8
 # GAMES: specifically TES3: Morrowind, dwarffortress, minetest
 ##
 games-engines/openmw
+dev-games/recastnavigation
+dev-games/openscenegraph-openmw
+
 games-action/minetest
 games-roguelike/dwarf-fortress
 
@@ -48,16 +51,6 @@ app-backup/urbackup-server
 ##
 media-libs/libvpx
 media-video/handbrake
-
-##
-# Jenkins continuous integration
-##
-dev-util/jenkins-bin:lts
-
-##
-# SUpport for compiling bpf programs
-##
-dev-libs/libbpf
 
 ##
 # Newer qt-creator

@@ -1,4 +1,4 @@
-##
+\##
 # Spice things up with a bit of optimization
 ##
 sys-devel/gcc graphite pgo lto pie sanatize vtv
@@ -394,6 +394,11 @@ sys-config/ltoize keep-nocommon
 # Remove unneeded zero conf functionality
 ##
 net-misc/ntp -zeroconf
+
+##
+# OpenMW
+##
+dev-games/openscenegraph-openmw ffmpeg
 
 ##
 # 32 bit libraries needed by steam
