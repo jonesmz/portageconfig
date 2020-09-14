@@ -299,7 +299,7 @@ x11-libs/gtksourceview vala
 ##
 # Prefer prefer system libs over bundled when possible.
 ##
-www-client/chromium system-ffmpeg system-icu widevine kerberos gnome-keyring ozone
+www-client/chromium -kerberos -suid system-ffmpeg system-icu widevine gnome-keyring ozone
 sys-libs/zlib minizip
 
 ##
