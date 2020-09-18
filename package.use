@@ -1,7 +1,12 @@
 \##
 # Spice things up with a bit of optimization
 ##
-sys-devel/gcc graphite pgo lto pie sanatize vtv
+sys-devel/gcc graphite pgo lto
+
+##
+# Hardening
+##
+sys-devel/gcc sanatize vtv
 
 ##
 # Options for llvm
@@ -240,7 +245,13 @@ net-wireless/wpa_supplicant -qt5 -hs2-0
 #
 # Revisit this, and find a way to disable radosgw
 ##
-sys-cluster/ceph cephfs fuse system-boost dashboard
+sys-cluster/ceph cephfs fuse system-boost grafana diskprediction
+dev-python/numpy lapack
+
+##
+# Needed for the mgr plugin to ceph.
+##
+sys-devel/gcc fortran
 
 ##
 # Support for CephFS
