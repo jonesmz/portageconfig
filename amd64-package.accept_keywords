@@ -19,6 +19,7 @@ dev-games/openscenegraph-openmw
 
 games-action/minetest
 games-roguelike/dwarf-fortress
+games-strategy/freeorion
 
 ##
 # Gives virtual machine disk image management features
@@ -94,3 +95,8 @@ net-misc/wsdd
 # Cephfs update
 ##
 sys-cluster/ceph
+
+##
+# Newer opencv for sake of avoiding infinity compile
+##
+media-libs/opencv

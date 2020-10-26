@@ -11,6 +11,7 @@ sys-block/gparted
 #x11-misc/redshift
 www-client/firefox
 app-office/texmaker
+media-sound/paprefs
 www-client/chromium
 app-arch/file-roller
 x11-base/xorg-server
@@ -18,7 +19,7 @@ x11-terms/terminology
 dev-qt/qtimageformats
 app-office/libreoffice
 media-sound/alsa-utils
-media-sound/pavucontrol
+media-sound/pavucontrol-qt
 gnome-extra/gnome-calculator
 dev-texlive/texlive-latexextra
 x11-drivers/xf86-input-libinput
