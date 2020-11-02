@@ -370,6 +370,7 @@ app-backup/urbackup-client -X
 # unclear what vdpau is needed for.
 ##
 media-video/ffmpeg vdpau fdk
+media-video/handbrake x265
 
 ##
 # Support for rdp server
@@ -392,11 +393,6 @@ sys-apps/iproute2 elf
 mail-client/s-nail net
 
 ##
-# kubectl used for work
-##
-sys-cluster/kubernetes -* kubectl
-
-##
 # lto settings
 ##
 sys-config/ltoize keep-nocommon
@@ -405,6 +401,11 @@ sys-config/ltoize keep-nocommon
 # Remove unneeded zero conf functionality
 ##
 net-misc/ntp -zeroconf
+
+##
+# Needed for virt-manager suff
+##
+net-dns/dnsmasq script
 
 ##
 # OpenMW
