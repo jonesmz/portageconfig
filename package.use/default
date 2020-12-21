@@ -63,7 +63,7 @@ dev-qt/qtdeclarative jit
 ##
 dev-qt/qtwebengine widgets
 dev-qt/qtwebchannel qml
-
+app-text/texlive-core xetex
 
 ##
 # Nifty options for the qt-creator ide.
@@ -245,7 +245,7 @@ net-wireless/wpa_supplicant -qt5 -hs2-0
 #
 # Revisit this, and find a way to disable radosgw
 ##
-sys-cluster/ceph cephfs fuse system-boost grafana diskprediction
+sys-cluster/ceph cephfs fuse system-boost grafana
 dev-python/numpy lapack
 
 ##

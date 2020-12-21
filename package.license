@@ -38,3 +38,8 @@ sys-kernel/linux-firmware linux-fw-redistributable no-source-code
 # Plex Media Server
 ##
 media-tv/plex-media-server Plex
+
+##
+# NMap network discovery tool
+##
+net-analyzer/nmap NPSL

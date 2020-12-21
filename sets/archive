@@ -1,8 +1,5 @@
-app-arch/lha
-app-arch/arj
 app-arch/rpm
 app-arch/zip
-app-arch/zoo
 app-arch/cpio
 app-arch/dpkg
 app-arch/lzop
