@@ -245,7 +245,7 @@ net-wireless/wpa_supplicant -qt5 -hs2-0
 #
 # Revisit this, and find a way to disable radosgw
 ##
-sys-cluster/ceph cephfs fuse system-boost grafana
+sys-cluster/ceph cephfs fuse system-boost grafana -diskprediction
 dev-python/numpy lapack
 
 ##
@@ -369,6 +369,7 @@ app-backup/urbackup-client -X
 # fdk is needed to support handbrake.
 # unclear what vdpau is needed for.
 ##
+media-libs/freetype png
 media-video/ffmpeg vdpau fdk
 media-video/handbrake x265
 
