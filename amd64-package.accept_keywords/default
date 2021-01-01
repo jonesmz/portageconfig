@@ -95,6 +95,7 @@ net-misc/wsdd
 # Cephfs update
 ##
 sys-cluster/ceph
+dev-libs/rocksdb
 
 ##
 # Newer opencv for sake of avoiding infinity compile
