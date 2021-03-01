@@ -1,0 +1,31 @@
+##
+# QEMU arm emulation support, and more.
+##
+sys-apps/dtc			static-libs
+dev-libs/lzo			static-libs
+virtual/jpeg			static-libs
+dev-lang/orc			static-libs
+dev-libs/glib			static-libs
+sys-libs/zlib			static-libs
+sys-apps/attr			static-libs
+net-misc/curl			static-libs
+app-arch/bzip2			static-libs
+dev-libs/boost			static-libs
+dev-libs/libaio			static-libs
+media-libs/celt			static-libs
+media-libs/opus			static-libs
+x11-libs/pixman			static-libs
+app-arch/snappy			static-libs
+dev-libs/libbpf			static-libs
+sys-apps/systemd		static-libs
+sys-libs/ncurses		static-libs
+dev-libs/openssl		static-libs
+dev-libs/libpcre		static-libs
+dev-db/postgresql		static-libs
+media-libs/libpng		static-libs
+sys-apps/usbredir		static-libs
+sys-libs/libcap-ng		static-libs
+sys-apps/util-linux		static-libs
+app-emulation/spice		static-libs
+sys-libs/libseccomp		static-libs
+media-libs/libjpeg-turbo	static-libs

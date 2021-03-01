@@ -1,0 +1,22 @@
+##
+# Want support for the cephfs network filesystem
+# but would rather use the native connector, over FUSE.
+#
+# Revisit this, and find a way to disable radosgw
+##
+sys-cluster/ceph cephfs fuse system-boost grafana -diskprediction
+dev-python/numpy lapack
+net-fs/samba ceph
+
+sys-cluster/ceph -python_targets_python3_9
+
+##
+# Needed for the mgr plugin to ceph.
+##
+sys-devel/gcc fortran
+
+##
+# Support for CephFS
+##
+dev-lang/python sqlite
+dev-libs/boost context python

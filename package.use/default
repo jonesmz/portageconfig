@@ -29,6 +29,7 @@ sys-apps/systemd elfutils gcrypt lzma gnuefi
 sys-apps/systemd cgroup-hybrid
 
 ##
+# For C6100 servers
 # Mount needed by os-prober
 # Others are just to reduce bloat.
 ##
@@ -47,6 +48,11 @@ x11-base/xorg-server	xvfb suid
 x11-libs/libxcb		xkb
 dev-libs/libpcre	pcre16
 dev-libs/libpcre2	pcre16
+
+##
+# Needed by fdupes
+##
+dev-libs/libpcre2 pcre32
 
 ##
 # Minimum Flags needed for Krita
@@ -89,12 +95,10 @@ dev-java/icedtea-bin -alsa -cups -gtk headless-awt jbootstrap pch -pulseaudio -s
 dev-java/icedtea-web -*
 
 ##
-# Systemd doesn't have the static-libs useflag. Need to put this here to avoid conflicts
+# Still haven't figured out how to get rid of cups...
 ##
-#virtual/udev      -static-libs
-#virtual/libudev   -static-libs
-#virtual/libgudev  -static-libs
-#dev-libs/libgudev -static-libs
+app-text/ghostscript-gpl cups -X -gtk
+net-print/cups-filters -*
 
 ##
 # Need gbm for radion graphics card support
@@ -105,43 +109,8 @@ media-libs/mesa classic gbm gles1 gles2 llvm openvg vaapi vdpau wayland openmax 
 x11-libs/libva vdpau wayland X opengl
 
 ##
-# Still haven't figured out how to get rid of cups...
-##
-app-text/ghostscript-gpl cups -X -gtk
-net-print/cups-filters -*
-
-##
 # QEMU arm emulation support, and more.
 ##
-sys-apps/dtc			static-libs
-dev-libs/lzo			static-libs
-virtual/jpeg			static-libs
-dev-lang/orc			static-libs
-dev-libs/glib			static-libs
-sys-libs/zlib			static-libs
-sys-apps/attr			static-libs
-net-misc/curl			static-libs
-app-arch/bzip2			static-libs
-dev-libs/boost			static-libs
-dev-libs/libaio			static-libs
-media-libs/celt			static-libs
-media-libs/opus			static-libs
-x11-libs/pixman			static-libs
-app-arch/snappy			static-libs
-dev-libs/libbpf			static-libs
-sys-apps/systemd		static-libs
-sys-libs/ncurses		static-libs
-dev-libs/openssl		static-libs
-dev-libs/libpcre		static-libs
-dev-db/postgresql		static-libs
-media-libs/libpng		static-libs
-sys-apps/usbredir		static-libs
-sys-libs/libcap-ng		static-libs
-sys-apps/util-linux		static-libs
-app-emulation/spice		static-libs
-sys-libs/libseccomp		static-libs
-media-libs/libjpeg-turbo	static-libs
-
 net-misc/spice-gtk usbredir
 app-emulation/qemu static-user usbredir numa spice lzo -bzip2 -sdl -alsa -gtk -pulseaudio -opengl -curl -snappy -vnc -jpeg -png -nls -xattr -ncurses -pin-upstream-blobs xattr
 
@@ -211,7 +180,7 @@ app-text/poppler qt5
 ##
 # Samba 4 use flags
 ##
-net-fs/samba addc addns ads ceph client json ldap winbind python snapper -system-mitkrb5
+net-fs/samba addc addns ads client json ldap winbind python snapper -system-mitkrb5
 
 app-crypt/heimdal -ssl
 net-dns/bind-tools gssapi
@@ -238,26 +207,6 @@ lxqt-base/lxqt-panel -desktopswitch -kbindicator
 # No need for the WPA_Supplicant gui, nor 802.11u
 ##
 net-wireless/wpa_supplicant -qt5 -hs2-0
-
-##
-# Want support for the cephfs network filesystem
-# but would rather use the native connector, over FUSE.
-#
-# Revisit this, and find a way to disable radosgw
-##
-sys-cluster/ceph cephfs fuse system-boost grafana -diskprediction
-dev-python/numpy lapack
-
-##
-# Needed for the mgr plugin to ceph.
-##
-sys-devel/gcc fortran
-
-##
-# Support for CephFS
-##
-dev-lang/python sqlite
-dev-libs/boost context python
 
 ##
 # Tweaking efl, for use with terminology
@@ -370,7 +319,7 @@ app-backup/urbackup-client -X
 # unclear what vdpau is needed for.
 ##
 media-libs/freetype png
-media-video/ffmpeg vdpau fdk
+media-video/ffmpeg vdpau fdk -samba
 media-video/handbrake x265
 
 ##
@@ -382,11 +331,6 @@ net-misc/freerdp server openh264 ffmpeg
 # Freeradius talking to samba4
 ##
 net-dialup/freeradius ldap kerberos
-
-##
-# Allow eBPF programs to be loaded into the network stack
-##
-sys-apps/iproute2 elf
 
 ##
 # Support direct SMTP connections instead of needing another program to send the emails.
@@ -412,137 +356,3 @@ net-dns/dnsmasq script
 # OpenMW
 ##
 dev-games/openscenegraph-openmw ffmpeg
-
-##
-# 32 bit libraries needed by steam
-##
-virtual/pam			abi_x86_32
-virtual/glu			abi_x86_32
-virtual/fam			abi_x86_32
-virtual/jpeg:0			abi_x86_32
-virtual/libffi			abi_x86_32
-virtual/libelf			abi_x86_32
-virtual/opengl			abi_x86_32
-virtual/libintl			abi_x86_32
-virtual/libudev			abi_x86_32
-virtual/libiconv		abi_x86_32
-virtual/libcrypt		abi_x86_32
-virtual/pkgconfig		abi_x86_32
-
-sys-apps/dbus			abi_x86_32
-sys-apps/attr			abi_x86_32
-sys-libs/pam			abi_x86_32
-app-arch/zstd			abi_x86_32
-sys-devel/flex			abi_x86_32
-media-libs/glu			abi_x86_32
-sys-devel/llvm			abi_x86_32
-app-arch/bzip2			abi_x86_32
-net-libs/gnutls			abi_x86_32
-sys-devel/clang			abi_x86_32
-net-dns/libidn2			abi_x86_32
-app-admin/gamin			abi_x86_32
-dev-libs/libxslt		abi_x86_32
-sys-apps/systemd		abi_x86_32
-app-arch/xz-utils		abi_x86_32
-sys-devel/gettext		abi_x86_32
-dev-libs/libtasn1		abi_x86_32
-sys-libs/cracklib		abi_x86_32
-sci-mathematics/z3		abi_x86_32
-media-sound/mpg123		abi_x86_32
-dev-util/pkgconfig		abi_x86_32
-sys-apps/util-linux		abi_x86_32
-net-libs/libasyncns		abi_x86_32
-sys-apps/lm-sensors		abi_x86_32
-sys-apps/tcp-wrappers		abi_x86_32
-media-sound/pulseaudio		abi_x86_32
-app-emulation/wine-gecko	abi_x86_32
-media-plugins/alsa-plugins	abi_x86_32
-
-sys-libs/gpm			abi_x86_32
-sys-libs/zlib			abi_x86_32
-sys-libs/libcap			abi_x86_32
-sys-libs/ncurses		abi_x86_32
-
-dev-libs/gmp			abi_x86_32
-dev-libs/icu			abi_x86_32
-dev-libs/glib			abi_x86_32
-dev-libs/expat			abi_x86_32
-dev-libs/nettle			abi_x86_32
-dev-libs/libffi			abi_x86_32
-dev-libs/libxml2		abi_x86_32
-dev-libs/libgamin		abi_x86_32
-dev-libs/libpcre		abi_x86_32
-dev-libs/wayland		abi_x86_32
-dev-libs/elfutils		abi_x86_32
-dev-libs/libgcrypt		abi_x86_32
-dev-libs/libgpg-error		abi_x86_32
-dev-libs/libunistring		abi_x86_32
-dev-libs/libpthread-stubs	abi_x86_32
-
-media-libs/mesa			abi_x86_32
-media-libs/tiff			abi_x86_32
-media-libs/flac			abi_x86_32
-media-libs/lcms			abi_x86_32
-media-libs/opus			abi_x86_32
-media-libs/libv4l		abi_x86_32
-media-libs/libpng		abi_x86_32
-media-libs/libogg		abi_x86_32
-media-libs/freetype		abi_x86_32
-media-libs/libglvnd		abi_x86_32
-media-libs/alsa-lib		abi_x86_32
-media-libs/libvorbis		abi_x86_32
-media-libs/libsndfile		abi_x86_32
-media-libs/fontconfig		abi_x86_32
-media-libs/libjpeg-turbo	abi_x86_32
-media-libs/libomxil-bellagio	abi_x86_32
-
-x11-base/xcb-proto		abi_x86_32
-
-x11-proto/xproto		abi_x86_32
-x11-proto/glproto		abi_x86_32
-x11-proto/kbproto		abi_x86_32
-x11-base/xcb-proto		abi_x86_32
-x11-proto/xextproto		abi_x86_32
-x11-proto/dri2proto		abi_x86_32
-x11-proto/dri3proto		abi_x86_32
-x11-proto/randrproto		abi_x86_32
-x11-proto/fixesproto		abi_x86_32
-x11-proto/inputproto		abi_x86_32
-x11-proto/videoproto		abi_x86_32
-x11-proto/recordproto		abi_x86_32
-x11-proto/renderproto		abi_x86_32
-x11-proto/damageproto		abi_x86_32
-x11-proto/xf86driproto		abi_x86_32
-x11-proto/presentproto		abi_x86_32
-x11-proto/xineramaproto		abi_x86_32
-x11-proto/compositeproto	abi_x86_32
-x11-proto/xf86bigfontproto	abi_x86_32
-x11-proto/xf86vidmodeproto	abi_x86_32
-
-x11-libs/libva			abi_x86_32
-x11-libs/libSM			abi_x86_32
-x11-libs/libXv			abi_x86_32
-x11-libs/libXi			abi_x86_32
-x11-libs/libICE			abi_x86_32
-x11-libs/libdrm			abi_x86_32
-x11-libs/libX11			abi_x86_32
-x11-libs/libXau			abi_x86_32
-x11-libs/libxcb			abi_x86_32
-x11-libs/libXtst		abi_x86_32
-x11-libs/libXvMC		abi_x86_32
-x11-libs/libXext		abi_x86_32
-x11-libs/libXdmcp		abi_x86_32
-x11-libs/libvdpau		abi_x86_32
-x11-libs/libXrandr		abi_x86_32
-x11-libs/libXfixes		abi_x86_32
-x11-libs/libXdamage		abi_x86_32
-x11-libs/libXcursor		abi_x86_32
-x11-libs/libXxf86vm		abi_x86_32
-x11-libs/libXrender		abi_x86_32
-x11-libs/libXinerama		abi_x86_32
-x11-libs/libpciaccess		abi_x86_32
-x11-libs/libxshmfence		abi_x86_32
-x11-libs/libXcomposite		abi_x86_32
-x11-libs/libva-vdpau-driver	abi_x86_32
-x11-libs/libva-intel-driver	abi_x86_32
-
