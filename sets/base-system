@@ -22,7 +22,6 @@ sys-fs/dosfstools
 sys-apps/usbutils
 sys-apps/pciutils
 sys-apps/gptfdisk
-sys-kernel/dracut
 sys-power/cpupower
 net-dns/bind-tools
 mail-client/s-nail

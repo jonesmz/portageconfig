@@ -1,0 +1,19 @@
+##
+# GAMES: specifically TES3: Morrowind, dwarffortress, minetest
+##
+games-engines/openmw
+dev-games/recastnavigation
+dev-games/openscenegraph-openmw
+
+games-action/minetest
+games-roguelike/dwarf-fortress
+
+##
+# Steam
+##
+games-util/esteam
+games-util/steam-meta
+games-util/steam-launcher
+games-util/steam-games-meta
+games-util/steam-client-meta
+games-util/game-device-udev-rules

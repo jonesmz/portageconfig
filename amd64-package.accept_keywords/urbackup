@@ -1,0 +1,5 @@
+##
+# Backup machines to fileserver
+##
+app-backup/urbackup-client
+app-backup/urbackup-server
