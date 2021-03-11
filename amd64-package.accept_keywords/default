@@ -30,13 +30,3 @@ net-vpn/networkmanager-l2tp
 # Support for network browsing in windows 10
 ##
 net-misc/wsdd
-
-##
-# Newer opencv for sake of avoiding infinity compile
-##
-media-libs/opencv
-
-##
-# Can't wait for newer gcc any longer
-##
-sys-devel/gcc
