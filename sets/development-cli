@@ -1,4 +1,3 @@
-dev-vcs/git
 dev-cpp/gtest
 sys-devel/clang
 dev-util/indent

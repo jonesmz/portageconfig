@@ -1,4 +1,5 @@
 sys-apps/pv
+dev-vcs/git
 sys-libs/gpm
 net-fs/samba
 net-fs/sshfs
