@@ -17,7 +17,7 @@ app-arch/file-roller
 x11-base/xorg-server
 x11-terms/terminology
 dev-qt/qtimageformats
-app-office/libreoffice
+#app-office/libreoffice
 media-sound/alsa-utils
 media-sound/pavucontrol-qt
 gnome-extra/gnome-calculator
