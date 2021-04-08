@@ -1,0 +1,10 @@
+##
+# Samba 4 use flags
+##
+net-fs/samba addc addns ads client json ldap winbind python snapper -system-mitkrb5
+
+app-crypt/heimdal -ssl
+net-dns/bind-tools gssapi
+sys-libs/ldb ldap python
+sys-libs/tdb python
+sys-libs/tevent python

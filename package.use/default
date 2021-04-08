@@ -29,20 +29,6 @@ sys-apps/systemd elfutils gcrypt lzma gnuefi
 sys-apps/systemd cgroup-hybrid
 
 ##
-# For C6100 servers
-# Mount needed by os-prober
-# Others are just to reduce bloat.
-##
-sys-boot/grub mount -sdl -truetype -themes
-
-##
-# Settings for xorg
-# xvfb for rdesktop, I think.
-# suid for running without KMS via "startx" or similar.
-##
-x11-base/xorg-server	xvfb suid
-
-##
 # Useflags needed by qt5.
 ##
 x11-libs/libxcb		xkb
@@ -67,22 +53,23 @@ dev-qt/qtdeclarative jit
 ##
 # texmaker dependencies
 ##
-dev-qt/qtwebengine widgets
-dev-qt/qtwebchannel qml
-app-text/texlive-core xetex
+sys-libs/zlib		minizip
+dev-qt/qtwebengine	widgets
+dev-qt/qtwebchannel	qml
+app-text/texlive-core	xetex
 
 ##
 # Nifty options for the qt-creator ide.
 ##
-dev-util/cmake    server
-dev-qt/qt-creator cmake clang clangcodemodel clangstaticanalyzer -webengine -designer -qmldesigner
+dev-qt/qt-creator beautifier cmake ctfvisualizer lsp -webengine -designer -qmldesigner -help
 
 ##
 # No sense in having firefox build its own copies of libraries...
 ##
 dev-db/sqlite secure-delete
+x11-base/xorg-server xvfb
 media-libs/libvpx postproc
-www-client/firefox lto pgo hwaccel pulseaudio
+www-client/firefox lto pgo hwaccel pulseaudio screencast
 www-client/firefox -dbus -wifi -screenshot -startup-notification
 
 ##
@@ -90,14 +77,14 @@ www-client/firefox -dbus -wifi -screenshot -startup-notification
 # But despite telling it to disable X, it still wants it >_<
 ##
 x11-libs/cairo X
-dev-java/icedtea     -alsa -cups -gtk headless-awt jbootstrap pch -pulseaudio -source -sunec -webstart
-dev-java/icedtea-bin -alsa -cups -gtk headless-awt jbootstrap pch -pulseaudio -source -sunec -webstart
+dev-java/icedtea     -* headless-awt
+dev-java/icedtea-bin -* headless-awt
 dev-java/icedtea-web -*
 
 ##
 # Still haven't figured out how to get rid of cups...
 ##
-app-text/ghostscript-gpl cups -X -gtk
+app-text/ghostscript-gpl -cups -X -gtk
 net-print/cups-filters -*
 
 ##
@@ -105,20 +92,24 @@ net-print/cups-filters -*
 # Need "classic" for intel drivers
 # All the other stuff is to just provide the various APIs for generic use by various machines.
 ##
-media-libs/mesa classic gbm gles1 gles2 llvm openvg vaapi vdpau wayland openmax vaapi lm-sensors
+media-libs/mesa gbm gles1 gles2 llvm lm-sensors opencl vaapi vdpau wayland vulkan xa xvmc
 x11-libs/libva vdpau wayland X opengl
 
 ##
 # QEMU arm emulation support, and more.
 ##
-net-misc/spice-gtk usbredir
-app-emulation/qemu static-user usbredir numa spice lzo -bzip2 -sdl -alsa -gtk -pulseaudio -opengl -curl -snappy -vnc -jpeg -png -nls -xattr -ncurses -pin-upstream-blobs xattr
+app-emulation/qemu static-user numa spice zstd io-uring -bzip2 -sdl -alsa -gtk -pulseaudio -opengl -curl -snappy -vnc -jpeg -png -nls -xattr -ncurses -pin-upstream-blobs
+
+##
+# Needed for running arm chroots.
+##
+app-emulation/qemu xattr
 
 ##
 # Turning off the GUI of lshw, it's useless.
 # Also don't need sqlite support
 ##
-sys-apps/lshw -gtk -sqlite
+sys-apps/lshw -gtk -static
 
 ##
 # Don't need no stinkin distcc monitor gui...
@@ -140,28 +131,12 @@ app-office/libreoffice -gnome -gstreamer -opengl -postgres -vba -webdav -gtk -ma
 dev-libs/xmlsec	nss
 
 ##
-# Some useflag changes to enable games
-##
-dev-games/mygui			-ogre opengl
-media-libs/sdl-mixer		midi timidity mad
-games-strategy/openra		tools
-games-strategy/warzone2100	videos
-
-##
 # No need for some features
 ##
 net-dns/avahi            -autoipd -python -gdbm -gtk -gtk3 -introspection -mdnsresponder-compat -nls
 net-misc/networkmanager  -zeroconf -ncurses
 # Workaround bug https://bugs.gentoo.org/679006
-net-misc/networkmanager  introspection
-
-##
-# VPN support
-##
-net-misc/networkmanager ppp
-net-dialup/ppp eap-tls
-net-vpn/networkmanager-l2tp gnome
-net-vpn/strongswan -caps -non-root
+#net-misc/networkmanager  introspection
 
 ##
 # Custom flags for vlc
@@ -171,27 +146,11 @@ media-video/vlc -* X a52 avcodec avformat cdda dbus dts dvbpsi dvd ffmpeg flac g
 ##
 # Various packages that need some nudging for their GUI choices.
 ##
-net-dns/avahi    -qt5
-dev-util/cmake   -qt5
+net-dns/avahi    -qt5 -python
+dev-util/cmake   -qt5 -ncurses
 
 media-video/vlc  qt5
 app-text/poppler qt5
-
-##
-# Samba 4 use flags
-##
-net-fs/samba addc addns ads client json ldap winbind python snapper -system-mitkrb5
-
-app-crypt/heimdal -ssl
-net-dns/bind-tools gssapi
-sys-libs/ldb ldap python
-sys-libs/tdb python
-sys-libs/tevent python
-
-##
-# When emulating ARM via Qemu, Qemu barfs on the messagemerge command. This useflag change makes it much less of a problem, at the cost of slightly reduced speed.
-##
-sys-devel/gettext -openmp
 
 ##
 # Need for lxqt
@@ -206,7 +165,7 @@ lxqt-base/lxqt-panel -desktopswitch -kbindicator
 ##
 # No need for the WPA_Supplicant gui, nor 802.11u
 ##
-net-wireless/wpa_supplicant -qt5 -hs2-0
+net-wireless/wpa_supplicant -qt5 -hs2-0 -mesh
 
 ##
 # Tweaking efl, for use with terminology
@@ -228,8 +187,8 @@ media-plugins/gst-plugins-vaapi	wayland
 ##
 # Todo: What needs this?
 ##
-dev-libs/botan		-bindist
-dev-libs/openssl	-bindist
+#dev-libs/botan		-bindist
+#dev-libs/openssl	-bindist
 
 ##
 # I disable introspection globally, but a handful of packages need it anyway...
@@ -255,17 +214,6 @@ app-emulation/libvirt-glib	introspection
 ##
 net-libs/libsoup vala
 x11-libs/gtksourceview vala
-
-##
-# Prefer prefer system libs over bundled when possible.
-##
-www-client/chromium -kerberos -suid system-ffmpeg system-icu widevine gnome-keyring ozone
-sys-libs/zlib minizip
-
-##
-# Chromium needs nodejs? Wtf?
-##
-net-libs/nodejs inspector icu
 
 ##
 # Adds support for the None cipher. Literally this cipher performs absolutely no encryption, and as such is as insecure as can possibly be,
@@ -305,27 +253,11 @@ dev-lang/python -gdbm
 www-misc/shellinabox -pam
 
 ##
-# Hardened useflag seems to cause trouble.
-##
-app-backup/urbackup-server -hardened
-
-##
-# Urbackup client, without x server code
-##
-app-backup/urbackup-client -X
-
-##
 # fdk is needed to support handbrake.
 # unclear what vdpau is needed for.
 ##
 media-libs/freetype png
 media-video/ffmpeg vdpau fdk -samba
-media-video/handbrake x265
-
-##
-# Support for rdp server
-##
-net-misc/freerdp server openh264 ffmpeg
 
 ##
 # Freeradius talking to samba4
@@ -338,11 +270,6 @@ net-dialup/freeradius ldap kerberos
 mail-client/s-nail net
 
 ##
-# lto settings
-##
-sys-config/ltoize keep-nocommon
-
-##
 # Remove unneeded zero conf functionality
 ##
 net-misc/ntp -zeroconf
@@ -351,8 +278,3 @@ net-misc/ntp -zeroconf
 # Needed for virt-manager suff
 ##
 net-dns/dnsmasq script
-
-##
-# OpenMW
-##
-dev-games/openscenegraph-openmw ffmpeg

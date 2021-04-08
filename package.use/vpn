@@ -1,0 +1,8 @@
+##
+# VPN support
+##
+dev-libs/nss			utils
+net-dialup/ppp			eap-tls
+net-vpn/strongswan		-caps -non-root
+net-misc/networkmanager		ppp
+net-vpn/networkmanager-l2tp	gnome

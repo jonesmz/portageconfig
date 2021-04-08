@@ -8,11 +8,13 @@ virtual/jpeg:0			abi_x86_32
 virtual/libffi			abi_x86_32
 virtual/libelf			abi_x86_32
 virtual/opengl			abi_x86_32
+virtual/opencl			abi_x86_32
 virtual/libintl			abi_x86_32
 virtual/libudev			abi_x86_32
 virtual/libiconv		abi_x86_32
 virtual/libcrypt		abi_x86_32
 virtual/pkgconfig		abi_x86_32
+
 
 sys-apps/dbus			abi_x86_32
 sys-apps/attr			abi_x86_32
@@ -56,9 +58,10 @@ dev-libs/expat			abi_x86_32
 dev-libs/nettle			abi_x86_32
 dev-libs/libffi			abi_x86_32
 dev-libs/libxml2		abi_x86_32
-dev-libs/libgamin		abi_x86_32
+dev-libs/ocl-icd		abi_x86_32
 dev-libs/libpcre		abi_x86_32
 dev-libs/wayland		abi_x86_32
+dev-libs/libgamin		abi_x86_32
 dev-libs/elfutils		abi_x86_32
 dev-libs/libgcrypt		abi_x86_32
 dev-libs/libgpg-error		abi_x86_32

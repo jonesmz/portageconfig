@@ -1,0 +1,12 @@
+##
+# OpenMW
+##
+dev-games/openscenegraph-openmw ffmpeg
+
+##
+# Some useflag changes to enable games
+##
+dev-games/mygui                 -ogre opengl
+media-libs/sdl-mixer            midi timidity mad
+games-strategy/openra           tools
+games-strategy/warzone2100      videos

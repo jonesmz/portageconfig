@@ -1,0 +1,9 @@
+##
+# Hardened useflag seems to cause trouble.
+##
+app-backup/urbackup-server -hardened
+
+##
+# Urbackup client, without x server code
+##
+app-backup/urbackup-client -X
