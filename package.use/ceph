@@ -4,11 +4,24 @@
 #
 # Revisit this, and find a way to disable radosgw
 ##
-sys-cluster/ceph cephfs fuse system-boost grafana -diskprediction
-dev-python/numpy lapack
-net-fs/samba ceph
+sys-cluster/ceph numa cephfs fuse system-boost grafana uring
 
+##
+# Doesn't work...?
+##
+sys-cluster/ceph -diskprediction
+
+##
+# Don't need.
+##
+sys-cluster/ceph -radosgw
+
+##
+# sci-libs/scikit-learn doesn't support python3_9 yet.
+##
 sys-cluster/ceph -python_targets_python3_9
+
+dev-python/numpy lapack
 
 ##
 # Needed for the mgr plugin to ceph.
