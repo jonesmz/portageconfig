@@ -12,7 +12,6 @@ sys-block/gparted
 www-client/firefox
 app-office/texmaker
 media-sound/paprefs
-www-client/chromium
 app-arch/file-roller
 x11-base/xorg-server
 x11-terms/terminology
