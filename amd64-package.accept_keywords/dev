@@ -2,7 +2,6 @@
 # Newer qt-creator
 ##
 dev-qt/qt-creator
-dev-libs/libclangformat-ide
 
 ##
 # iwyu provides analysis of header files for C++ programs, and offers suggestions for improvements.
@@ -14,8 +13,3 @@ dev-util/include-what-you-use
 ##
 dev-util/bloaty
 dev-libs/capstone
-
-##
-# Newer opencv for sake of avoiding infinity compile
-##
-media-libs/opencv

@@ -1,0 +1,4 @@
+##
+# Support for network browsing in windows 10
+##
+net-misc/wsdd

@@ -1,0 +1,4 @@
+##
+# Support new virtual/mailx and s-nail for smartmontools
+##
+mail-client/s-nail
