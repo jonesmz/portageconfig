@@ -8,3 +8,4 @@ net-dns/bind-tools gssapi
 sys-libs/ldb ldap python
 sys-libs/tdb python
 sys-libs/tevent python
+net-misc/wsdd samba

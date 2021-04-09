@@ -1,19 +1,4 @@
 ##
-# Spice things up with a bit of optimization
-##
-sys-devel/gcc graphite pgo lto
-
-##
-# Hardening
-##
-sys-devel/gcc sanatize vtv
-
-##
-# Options for llvm
-##
-sys-devel/llvm gold z3
-
-##
 # Systemd doesn't need extra cruft...
 ##
 sys-apps/systemd -ssl -lz4
@@ -69,8 +54,9 @@ dev-qt/qt-creator beautifier cmake ctfvisualizer lsp -webengine -designer -qmlde
 dev-db/sqlite secure-delete
 x11-base/xorg-server xvfb
 media-libs/libvpx postproc
-www-client/firefox lto pgo hwaccel pulseaudio screencast
+www-client/firefox pgo hwaccel pulseaudio screencast
 www-client/firefox -dbus -wifi -screenshot -startup-notification
+dev-lang/spidermonkey jit
 
 ##
 # Sadly, Java wants a lot of bullshit. Here I remove unnecessary cruft.
@@ -183,12 +169,6 @@ dev-libs/weston			wayland-compositor xwayland fbdev
 media-libs/libsdl2		gles2
 x11-base/xorg-server		wayland
 media-plugins/gst-plugins-vaapi	wayland
-
-##
-# Todo: What needs this?
-##
-#dev-libs/botan		-bindist
-#dev-libs/openssl	-bindist
 
 ##
 # I disable introspection globally, but a handful of packages need it anyway...

@@ -1,0 +1,2 @@
+app-arch/p7zip -wxwidgets
+dev-games/openscenegraph-openmw -wxwidgets

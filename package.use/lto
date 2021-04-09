@@ -1,0 +1,10 @@
+##
+# Deploy configs allowing clang to be used as the system compiler
+##
+sys-config/ltoize clang
+
+##
+# Need to explicitly enable for the browser
+##
+www-client/firefox	lto
+dev-lang/spidermonkey	lto
