@@ -73,7 +73,7 @@ net-print/cups-filters -*
 # Need "classic" for intel drivers
 # All the other stuff is to just provide the various APIs for generic use by various machines.
 ##
-media-libs/mesa gbm gles1 gles2 llvm lm-sensors opencl vaapi vdpau wayland vulkan xa xvmc
+media-libs/mesa gbm gles1 gles2 llvm lm-sensors vaapi vdpau wayland vulkan xa xvmc
 x11-libs/libva vdpau wayland X opengl
 
 ##
