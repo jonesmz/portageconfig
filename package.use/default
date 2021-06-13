@@ -44,11 +44,6 @@ dev-qt/qtwebchannel	qml
 app-text/texlive-core	xetex
 
 ##
-# Nifty options for the qt-creator ide.
-##
-dev-qt/qt-creator beautifier cmake ctfvisualizer lsp -webengine -designer -qmldesigner -help
-
-##
 # No sense in having firefox build its own copies of libraries...
 ##
 dev-db/sqlite secure-delete
@@ -169,31 +164,6 @@ dev-libs/weston			wayland-compositor xwayland fbdev
 media-libs/libsdl2		gles2
 x11-base/xorg-server		wayland
 media-plugins/gst-plugins-vaapi	wayland
-
-##
-# I disable introspection globally, but a handful of packages need it anyway...
-##
-x11-libs/vte			introspection
-dev-libs/atk			introspection
-x11-libs/gtk+			introspection
-x11-libs/pango			introspection
-sys-auth/polkit			introspection
-virtual/libgudev		introspection
-net-libs/gtk-vnc		introspection
-net-libs/libsoup		introspection
-dev-libs/libgudev		introspection
-sys-libs/libosinfo		introspection
-net-misc/spice-gtk		introspection
-x11-libs/gdk-pixbuf		introspection
-media-libs/gstreamer		introspection
-x11-libs/gtksourceview		introspection
-app-emulation/libvirt-glib	introspection
-
-##
-# Vala is required for gnome-calculator now
-##
-net-libs/libsoup vala
-x11-libs/gtksourceview vala
 
 ##
 # Adds support for the None cipher. Literally this cipher performs absolutely no encryption, and as such is as insecure as can possibly be,

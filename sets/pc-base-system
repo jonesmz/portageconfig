@@ -9,7 +9,6 @@ sys-auth/nss-mdns
 app-backup/snapper
 dev-util/debugedit
 sys-fs/btrfs-progs
-sys-boot/os-prober
 sys-apps/lm-sensors
 sys-boot/efibootmgr
 sys-kernel/gentoo-sources

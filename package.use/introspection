@@ -1,0 +1,27 @@
+##
+# I disable introspection globally, but a handful of packages need it anyway...
+##
+x11-libs/vte			introspection
+dev-libs/atk			introspection
+x11-libs/gtk+			introspection
+x11-libs/pango			introspection
+sys-auth/polkit			introspection
+virtual/libgudev		introspection
+net-libs/gtk-vnc		introspection
+net-libs/libsoup		introspection
+dev-libs/libgudev		introspection
+gui-libs/libhandy		introspection
+sys-libs/libosinfo		introspection
+net-misc/spice-gtk		introspection
+x11-libs/gdk-pixbuf		introspection
+media-libs/harfbuzz		introspection
+media-libs/gstreamer		introspection
+x11-libs/gtksourceview		introspection
+app-emulation/libvirt-glib	introspection
+
+##
+# Vala is required for gnome-calculator now
+##
+net-libs/libsoup	vala
+gui-libs/libhandy	vala
+x11-libs/gtksourceview	vala

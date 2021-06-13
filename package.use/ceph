@@ -1,8 +1,6 @@
 ##
 # Want support for the cephfs network filesystem
 # but would rather use the native connector, over FUSE.
-#
-# Revisit this, and find a way to disable radosgw
 ##
 sys-cluster/ceph numa cephfs fuse system-boost grafana uring
 
@@ -17,10 +15,8 @@ sys-cluster/ceph -diskprediction
 sys-cluster/ceph -radosgw
 
 ##
-# sci-libs/scikit-learn doesn't support python3_9 yet.
+# TODO: What needs this?
 ##
-sys-cluster/ceph -python_targets_python3_9
-
 dev-python/numpy lapack
 
 ##

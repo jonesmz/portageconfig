@@ -1,0 +1,5 @@
+##
+# Nifty options for the qt-creator ide.
+##
+dev-qt/qt-creator beautifier cmake ctfvisualizer lsp remotelinux -webengine -designer -qmldesigner -help
+

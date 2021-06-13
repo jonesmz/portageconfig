@@ -22,4 +22,4 @@ media-sound/pavucontrol-qt
 gnome-extra/gnome-calculator
 dev-texlive/texlive-latexextra
 x11-drivers/xf86-input-libinput
-www-plugins/chrome-binary-plugins
+#www-plugins/chrome-binary-plugins

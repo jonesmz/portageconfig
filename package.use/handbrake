@@ -1,0 +1,6 @@
+##
+# fdk is needed to support handbrake.
+# unclear what vdpau is needed for.
+##
+media-libs/freetype png
+media-video/ffmpeg vdpau fdk -samba
