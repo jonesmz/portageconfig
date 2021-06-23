@@ -29,3 +29,8 @@ sys-devel/gcc fortran
 ##
 dev-lang/python sqlite
 dev-libs/boost context python
+
+##
+# Ceph doesn't support py3.9
+##
+sys-cluster/ceph -python_targets_python3_9
