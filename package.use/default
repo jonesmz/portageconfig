@@ -228,3 +228,8 @@ net-misc/ntp -zeroconf
 # Needed for virt-manager suff
 ##
 net-dns/dnsmasq script
+
+##
+# Pango apparently requires freetype to have harfbuzz
+##
+media-libs/freetype harfbuzz
