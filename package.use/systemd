@@ -1,0 +1,19 @@
+##
+# Systemd doesn't need extra cruft...
+##
+sys-apps/systemd -ssl -lz4
+
+##
+# Some nice to haves
+##
+sys-apps/systemd elfutils gcrypt lzma gnuefi tpm
+
+##
+# For libvirt
+##
+sys-apps/systemd cgroup-hybrid
+
+##
+# systemd-auto-gpt-generator
+##
+sys-apps/systemd cryptsetup

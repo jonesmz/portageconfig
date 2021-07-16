@@ -1,0 +1,4 @@
+##
+# LXQT systray support for nm-applet
+##
+lxqt-base/lxqt-panel tray

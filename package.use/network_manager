@@ -1,0 +1,6 @@
+##
+# Direct dependency for plasma-nm
+##
+#kde-frameworks/kitemmodels qml
+#gnome-extra/nm-applet appindicator
+#dev-libs/libdbusmenu gtk3

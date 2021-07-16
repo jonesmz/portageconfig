@@ -1,19 +1,4 @@
 ##
-# Systemd doesn't need extra cruft...
-##
-sys-apps/systemd -ssl -lz4
-
-##
-# Some nice to haves
-##
-sys-apps/systemd elfutils gcrypt lzma gnuefi
-
-##
-# For libvirt
-##
-sys-apps/systemd cgroup-hybrid
-
-##
 # Useflags needed by qt5.
 ##
 x11-libs/libxcb		xkb
@@ -164,6 +149,12 @@ dev-libs/weston			wayland-compositor xwayland fbdev
 media-libs/libsdl2		gles2
 x11-base/xorg-server		wayland
 media-plugins/gst-plugins-vaapi	wayland
+
+##
+# Disable w3m browser
+##
+#app-text/xmlto		-text
+x11-base/xorg-server	-doc
 
 ##
 # Adds support for the None cipher. Literally this cipher performs absolutely no encryption, and as such is as insecure as can possibly be,

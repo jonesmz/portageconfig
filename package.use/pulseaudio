@@ -1,0 +1,20 @@
+##
+# Add pulseaudio support to graphical apps
+##
+www-client/firefox pulseaudio
+media-video/vlc pulseaudio
+
+##
+# Don't need pulse support for virtual machines.
+##
+app-emulation/qemu -pulseaudio
+
+##
+# Add various features to pulseaudio
+##
+media-sound/pulseaudio bluetooth native-headset ofono-headset
+
+media-sound/bluez-alsa ofono aptx
+
+#net-wireless/bluez user-session
+
