@@ -1,6 +1,9 @@
 ##
-# OpenMW
+# OpenMW.
+# Devtools for the bsatool program.
+# ffmpeg for the intro movies
 ##
+games-engines/openmw		devtools
 dev-games/openscenegraph-openmw ffmpeg
 
 ##

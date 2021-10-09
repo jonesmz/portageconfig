@@ -43,3 +43,8 @@ media-tv/plex-media-server Plex
 # NMap network discovery tool
 ##
 net-analyzer/nmap NPSL
+
+##
+# Scientific computing platform that also contains the Cling interpreter
+##
+sci-physics/root freedist MSttfEULA

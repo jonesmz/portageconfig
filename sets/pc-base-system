@@ -5,7 +5,6 @@ net-misc/iperf
 net-misc/zsync
 sys-apps/dcfldd
 sys-block/mbuffer
-sys-auth/nss-mdns
 app-backup/snapper
 dev-util/debugedit
 sys-fs/btrfs-progs

@@ -12,9 +12,9 @@ app-emulation/qemu -pulseaudio
 ##
 # Add various features to pulseaudio
 ##
-media-sound/pulseaudio bluetooth native-headset ofono-headset
+#media-sound/pulseaudio bluetooth native-headset ofono-headset
 
-media-sound/bluez-alsa ofono aptx
+#media-sound/bluez-alsa ofono aptx
 
 #net-wireless/bluez user-session
 
