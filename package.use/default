@@ -13,7 +13,7 @@ dev-libs/libpcre2 pcre32
 ##
 # Minimum Flags needed for Krita
 ##
-dev-python/PyQt5 gui widgets -multimedia -network -printsupport
+dev-python/PyQt5 declarative gui widgets network -multimedia -printsupport
 
 ##
 # Faster QML based apps

@@ -1,13 +1,15 @@
 ##
 # OpenMW.
-# Devtools for the bsatool program.
+# Devtools for the bsatool program
 # ffmpeg for the intro movies
+# double-precision and collada because openmw requires it now
 ##
 games-engines/openmw		devtools
-dev-games/openscenegraph-openmw ffmpeg
+dev-games/openscenegraph-openmw ffmpeg collada
+sci-physics/bullet		double-precision
 
 ##
-# Some useflag changes to enable games
+# Some useflag changes to enable games in general
 ##
 dev-games/mygui                 -ogre opengl
 sci-physics/bullet		threads

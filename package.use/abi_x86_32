@@ -76,6 +76,7 @@ media-libs/opus			abi_x86_32
 media-libs/libv4l		abi_x86_32
 media-libs/libpng		abi_x86_32
 media-libs/libogg		abi_x86_32
+media-libs/speexdsp		abi_x86_32
 media-libs/harfbuzz		abi_x86_32
 media-libs/freetype		abi_x86_32
 media-libs/libglvnd		abi_x86_32
@@ -85,6 +86,7 @@ media-libs/libsndfile		abi_x86_32
 media-libs/fontconfig		abi_x86_32
 media-libs/libjpeg-turbo	abi_x86_32
 media-libs/libomxil-bellagio	abi_x86_32
+
 
 x11-base/xcb-proto		abi_x86_32
 

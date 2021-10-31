@@ -2,6 +2,7 @@
 # GAMES: specifically TES3: Morrowind, dwarffortress, minetest
 ##
 games-engines/openmw
+dev-libs/collada-dom
 dev-games/recastnavigation
 dev-games/openscenegraph-openmw
 
