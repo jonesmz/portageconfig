@@ -50,6 +50,7 @@ sys-libs/gpm			abi_x86_32
 sys-libs/zlib			abi_x86_32
 sys-libs/libcap			abi_x86_32
 sys-libs/ncurses		abi_x86_32
+sys-libs/libxcrypt		abi_x86_32
 
 dev-libs/gmp			abi_x86_32
 dev-libs/icu			abi_x86_32
@@ -86,7 +87,6 @@ media-libs/libsndfile		abi_x86_32
 media-libs/fontconfig		abi_x86_32
 media-libs/libjpeg-turbo	abi_x86_32
 media-libs/libomxil-bellagio	abi_x86_32
-
 
 x11-base/xcb-proto		abi_x86_32
 
