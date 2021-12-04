@@ -34,7 +34,9 @@ app-text/texlive-core	xetex
 dev-db/sqlite secure-delete
 x11-base/xorg-server xvfb
 media-libs/libvpx postproc
-www-client/firefox pgo hwaccel pulseaudio screencast
+www-client/firefox hwaccel pulseaudio screencast
+# apparently pgo breaks the ebuild recently
+www-client/firefox -pgo
 www-client/firefox -dbus -wifi -screenshot -startup-notification
 dev-lang/spidermonkey jit
 
