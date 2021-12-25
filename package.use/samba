@@ -3,9 +3,10 @@
 ##
 net-fs/samba addc addns ads client json ldap winbind python snapper -system-mitkrb5
 
-app-crypt/heimdal -ssl
-net-dns/bind-tools gssapi
-sys-libs/ldb ldap python
-sys-libs/tdb python
-sys-libs/tevent python
-net-misc/wsdd samba
+app-crypt/heimdal	-ssl
+net-dns/bind-tools	gssapi
+sys-libs/ldb	python ldap
+sys-libs/tdb	python
+sys-libs/tevent	python
+net-misc/wsdd	samba
+net-misc/ntp	samba

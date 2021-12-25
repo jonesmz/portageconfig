@@ -3,6 +3,7 @@ dev-vcs/git
 sys-libs/gpm
 net-fs/samba
 net-fs/sshfs
+net-misc/ntp
 net-misc/wsdd
 sys-apps/lshw
 app-admin/sudo
@@ -24,11 +25,14 @@ sys-apps/usbutils
 sys-apps/pciutils
 sys-apps/gptfdisk
 sys-power/cpupower
+sys-apps/rng-tools
 net-dns/bind-tools
 mail-client/s-nail
 app-admin/superadduser
 sys-apps/smartmontools
 sys-fs/btrfsmaintenance
+sys-kernel/gentoo-sources
+sys-kernel/linux-firmware
 app-shells/bash-completion
 
 #sys-apps/cv Coreutils Viewer: show progress for cp, rm, dd, and so forth
