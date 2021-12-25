@@ -2,6 +2,7 @@
 # Newer qt-creator
 ##
 dev-qt/qt-creator
+dev-qt/qtquicktimeline
 
 ##
 # iwyu provides analysis of header files for C++ programs, and offers suggestions for improvements.
