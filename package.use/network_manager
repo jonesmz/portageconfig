@@ -4,3 +4,6 @@
 #kde-frameworks/kitemmodels qml
 #gnome-extra/nm-applet appindicator
 #dev-libs/libdbusmenu gtk3
+
+net-misc/networkmanager lto iwd introspection
+net-misc/networkmanager -wext -modemmanager -bluetooth

@@ -225,3 +225,8 @@ net-dns/dnsmasq script
 # Pango apparently requires freetype to have harfbuzz
 ##
 media-libs/freetype harfbuzz
+
+##
+# Try to get slightly better display perf
+##
+net-misc/freerdp openh264 server
