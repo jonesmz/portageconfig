@@ -202,11 +202,6 @@ media-libs/freetype png
 media-video/ffmpeg vdpau fdk -samba
 
 ##
-# Freeradius talking to samba4
-##
-net-dialup/freeradius ldap kerberos
-
-##
 # Support direct SMTP connections instead of needing another program to send the emails.
 ##
 mail-client/s-nail net

@@ -1,12 +1,25 @@
 ##
 # Samba 4 use flags
 ##
-net-fs/samba addc addns ads client json ldap winbind python snapper -system-mitkrb5
+net-fs/samba addc addns ads client json ldap winbind python snapper
+
+net-fs/samba system-heimdal -system-mitkrb5
+
+##
+# Samba deps
+##
+sys-libs/ldb		python ldap
+sys-libs/tdb		python
+sys-libs/tevent		python
 
 app-crypt/heimdal	-ssl
+
+net-misc/wsdd		samba
+net-misc/ntp		samba
 net-dns/bind-tools	gssapi
-sys-libs/ldb	python ldap
-sys-libs/tdb	python
-sys-libs/tevent	python
-net-misc/wsdd	samba
-net-misc/ntp	samba
+
+##
+# Freeradius talking to samba4 via winbind
+##
+#net-dialup/freeradius ldap kerberos
+net-dialup/freeradius samba
