@@ -17,3 +17,8 @@ sys-apps/systemd cgroup-hybrid
 # systemd-auto-gpt-generator
 ##
 sys-apps/systemd cryptsetup
+
+##
+# Allow systemd-networkd to set hostname based on dhcp responses
+##
+sys-apps/systemd policykit
