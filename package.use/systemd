@@ -22,3 +22,8 @@ sys-apps/systemd cryptsetup
 # Allow systemd-networkd to set hostname based on dhcp responses
 ##
 sys-apps/systemd policykit
+
+##
+# install the repart component for dev investigation
+##
+sys-apps/systemd repart

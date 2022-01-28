@@ -138,7 +138,7 @@ net-wireless/wpa_supplicant -qt5 -hs2-0 -mesh
 ##
 # Tweaking efl, for use with terminology
 ##
-dev-libs/efl -sdl X egl gles2-only fontconfig
+dev-libs/efl -sdl X gles2-only fontconfig glib
 
 ##
 # Settings for experimenting with wayland
@@ -153,19 +153,18 @@ x11-base/xorg-server		wayland
 media-plugins/gst-plugins-vaapi	wayland
 
 ##
-# Disable w3m browser
-##
-#app-text/xmlto		-text
-x11-base/xorg-server	-doc
-
-##
 # Adds support for the None cipher. Literally this cipher performs absolutely no encryption, and as such is as insecure as can possibly be,
 # but it's also very cpu friendly and therefore useful when doing security insensitive things like file transfers on local networks
 #
 # X509 is to support certificate authorities
 # Kerberos is adctive directory
 ##
-net-misc/openssh hpn X509 kerberos
+net-misc/openssh hpn X509
+
+##
+# Don't break when samba updates...
+##
+net-misc/openssh -kerberos
 
 ##
 # VPN Support
