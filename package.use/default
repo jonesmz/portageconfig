@@ -225,3 +225,8 @@ media-libs/freetype harfbuzz
 # Try to get slightly better display perf
 ##
 net-misc/freerdp openh264 server
+
+##
+# Read CPU temp info
+##
+sys-process/htop lm-sensors
