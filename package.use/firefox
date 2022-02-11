@@ -1,0 +1,25 @@
+##
+# No sense in having firefox build its own copies of libraries...
+##
+www-client/firefox pgo hwaccel pulseaudio system-png
+www-client/firefox -dbus -wifi
+
+##
+# Explicit dependency of firefox
+##
+x11-base/xorg-server xvfb
+
+##
+# Explicit dependency of firefox
+##
+media-libs/libvpx postproc
+
+##
+# Without jit, spidermonkey will be noticably slow...
+##
+dev-lang/spidermonkey jit
+
+##
+# Add support for animated png, needed by firefox to use the system lib.
+##
+media-libs/libpng apng

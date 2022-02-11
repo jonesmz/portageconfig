@@ -1,2 +1,5 @@
+##
+# All my machines use statically compiled kernels without modules. So no need for kmod support.
+##
 sys-apps/systemd -kmod
 sys-apps/pciutils -kmod

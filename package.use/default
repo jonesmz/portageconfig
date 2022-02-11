@@ -29,27 +29,6 @@ dev-qt/qtwebchannel	qml
 app-text/texlive-core	xetex
 
 ##
-# No sense in having firefox build its own copies of libraries...
-##
-dev-db/sqlite secure-delete
-x11-base/xorg-server xvfb
-media-libs/libvpx postproc
-www-client/firefox hwaccel pulseaudio screencast
-# apparently pgo breaks the ebuild recently
-www-client/firefox -pgo
-www-client/firefox -dbus -wifi -screenshot -startup-notification
-dev-lang/spidermonkey jit
-
-##
-# Sadly, Java wants a lot of bullshit. Here I remove unnecessary cruft.
-# But despite telling it to disable X, it still wants it >_<
-##
-x11-libs/cairo X
-dev-java/icedtea     -* headless-awt
-dev-java/icedtea-bin -* headless-awt
-dev-java/icedtea-web -*
-
-##
 # Still haven't figured out how to get rid of cups...
 ##
 app-text/ghostscript-gpl -cups -X -gtk
@@ -103,8 +82,6 @@ dev-libs/xmlsec	nss
 ##
 net-dns/avahi            -autoipd -python -gdbm -gtk -gtk3 -introspection -mdnsresponder-compat -nls
 net-misc/networkmanager  -zeroconf -ncurses
-# Workaround bug https://bugs.gentoo.org/679006
-#net-misc/networkmanager  introspection
 
 ##
 # Custom flags for vlc
@@ -129,11 +106,6 @@ lxqt-base/lxqt-meta -about sddm lximage
 # Don't actually like using the desktop switcher, so I'm disabling it.
 ##
 lxqt-base/lxqt-panel -desktopswitch -kbindicator
-
-##
-# No need for the WPA_Supplicant gui, nor 802.11u
-##
-net-wireless/wpa_supplicant -qt5 -hs2-0 -mesh
 
 ##
 # Tweaking efl, for use with terminology

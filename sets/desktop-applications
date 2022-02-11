@@ -9,7 +9,7 @@ net-misc/freerdp
 app-editors/pluma
 sys-block/gparted
 #x11-misc/redshift
-www-client/firefox
+www-client/firefox:esr
 app-office/texmaker
 media-sound/paprefs
 app-arch/file-roller
