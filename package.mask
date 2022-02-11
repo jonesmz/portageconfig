@@ -1,1 +1,4 @@
+##
+# Force use of heimdal instead of mit-krb5, to match what samba brings with it internally.
+##
 app-crypt/mit-krb5
