@@ -4,7 +4,19 @@
 sys-config/ltoize clang
 
 ##
-# Need to explicitly enable for the browser
+# LTO
 ##
+sys-devel/gcc		lto
+dev-lang/python		lto
 www-client/firefox	lto
 dev-lang/spidermonkey	lto
+net-misc/networkmanager	lto
+
+##
+# PGO
+##
+sys-devel/gcc		pgo
+dev-lang/python		pgo
+sys-devel/binutils	pgo
+www-client/firefox	pgo
+mail-client/thunderbird	pgo

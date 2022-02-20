@@ -1,7 +1,7 @@
 ##
 # No sense in having firefox build its own copies of libraries...
 ##
-www-client/firefox pgo hwaccel pulseaudio system-png
+www-client/firefox hwaccel pulseaudio system-png
 www-client/firefox -dbus -wifi
 
 ##

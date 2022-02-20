@@ -23,6 +23,7 @@ sys-devel/flex			abi_x86_32
 media-libs/glu			abi_x86_32
 sys-devel/llvm			abi_x86_32
 app-arch/bzip2			abi_x86_32
+app-crypt/libmd			abi_x86_32
 net-libs/gnutls			abi_x86_32
 sys-devel/clang			abi_x86_32
 net-dns/libidn2			abi_x86_32
@@ -57,6 +58,7 @@ dev-libs/icu			abi_x86_32
 dev-libs/glib			abi_x86_32
 dev-libs/expat			abi_x86_32
 dev-libs/nettle			abi_x86_32
+dev-libs/libbsd			abi_x86_32
 dev-libs/libffi			abi_x86_32
 dev-libs/libxml2		abi_x86_32
 dev-libs/ocl-icd		abi_x86_32
