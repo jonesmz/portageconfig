@@ -6,7 +6,6 @@ net-misc/zsync
 sys-apps/dcfldd
 sys-block/mbuffer
 app-backup/snapper
-dev-util/debugedit
 sys-fs/btrfs-progs
 sys-apps/lm-sensors
 sys-boot/efibootmgr

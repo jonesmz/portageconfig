@@ -1,3 +1,5 @@
+dev-vcs/git
 app-portage/eix
+sys-config/ltoize
 dev-util/debugedit
 app-portage/gentoolkit

@@ -1,10 +1,17 @@
 dev-cpp/gtest
+sys-devel/lld
+dev-util/strace
 sys-devel/clang
 dev-util/indent
 app-doc/doxygen
+dev-util/ccache
+app-editors/nano
+sys-devel/distcc
+sys-process/htop
 app-text/sloccount
 dev-util/uncrustify
 sys-fs/squashfs-tools
+app-shells/bash-completion
 dev-util/include-what-you-use
 
 #dev-util/cccc
