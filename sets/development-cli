@@ -3,7 +3,6 @@ sys-devel/lld
 dev-util/strace
 sys-devel/clang
 dev-util/indent
-app-doc/doxygen
 dev-util/ccache
 app-editors/nano
 sys-devel/distcc
