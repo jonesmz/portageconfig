@@ -9,7 +9,6 @@ sys-devel/distcc
 sys-process/htop
 app-text/sloccount
 dev-util/uncrustify
-sys-fs/squashfs-tools
 app-shells/bash-completion
 dev-util/include-what-you-use
 
