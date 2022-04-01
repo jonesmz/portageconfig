@@ -52,6 +52,8 @@ app-emulation/qemu static-user numa spice zstd io-uring -bzip2 -sdl -alsa -gtk -
 ##
 app-emulation/qemu xattr
 
+net-misc/spice-gtk usbredir
+
 ##
 # Turning off the GUI of lshw, it's useless.
 # Also don't need sqlite support

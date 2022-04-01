@@ -4,3 +4,5 @@
 ##
 media-libs/freetype png
 media-video/ffmpeg vdpau fdk -samba
+
+media-video/handbrake x265

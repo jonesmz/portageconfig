@@ -30,6 +30,7 @@ net-dns/libidn2			abi_x86_32
 app-admin/gamin			abi_x86_32
 dev-libs/libxslt		abi_x86_32
 sys-apps/systemd		abi_x86_32
+media-sound/lame		abi_x86_32
 app-arch/xz-utils		abi_x86_32
 sys-devel/gettext		abi_x86_32
 dev-libs/libtasn1		abi_x86_32

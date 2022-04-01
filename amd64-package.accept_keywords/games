@@ -1,6 +1,7 @@
 ##
 # GAMES: specifically TES3: Morrowind, dwarffortress, minetest
 ##
+dev-games/mygui
 games-engines/openmw
 dev-libs/collada-dom
 dev-games/recastnavigation
