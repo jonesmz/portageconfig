@@ -3,6 +3,7 @@
 ##
 x11-libs/vte			introspection
 dev-libs/atk			introspection
+gui-libs/gtk			introspection
 x11-libs/gtk+			introspection
 x11-libs/pango			introspection
 sys-auth/polkit			introspection
@@ -14,9 +15,12 @@ gui-libs/libhandy		introspection
 sys-libs/libosinfo		introspection
 net-misc/spice-gtk		introspection
 x11-libs/gdk-pixbuf		introspection
+gui-libs/libadwaita		introspection
 media-libs/harfbuzz		introspection
+media-libs/graphene		introspection
 media-libs/gstreamer		introspection
 x11-libs/gtksourceview		introspection
+gui-libs/gtksourceview		introspection
 app-emulation/libvirt-glib	introspection
 
 ##
@@ -24,4 +28,6 @@ app-emulation/libvirt-glib	introspection
 ##
 net-libs/libsoup	vala
 gui-libs/libhandy	vala
+gui-libs/libadwaita	vala
 x11-libs/gtksourceview	vala
+gui-libs/gtksourceview	vala

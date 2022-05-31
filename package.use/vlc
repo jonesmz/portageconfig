@@ -1,0 +1,5 @@
+
+##
+# Custom flags for vlc
+##
+media-video/vlc blueray chromecast david samba zeroconf vpx x265

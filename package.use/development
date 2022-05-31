@@ -1,5 +1,5 @@
 ##
 # Nifty options for the qt-creator ide.
 ##
-dev-qt/qt-creator beautifier cmake ctfvisualizer lsp remotelinux -webengine -designer -qmldesigner -help
+dev-qt/qt-creator beautifier cmake cppcheck ctfvisualizer lsp remotelinux -webengine -designer -help -qml -git
 

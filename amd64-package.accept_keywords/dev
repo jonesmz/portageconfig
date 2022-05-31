@@ -7,7 +7,7 @@ dev-qt/qtquicktimeline
 ##
 # iwyu provides analysis of header files for C++ programs, and offers suggestions for improvements.
 ##
-dev-util/include-what-you-use
+#dev-util/include-what-you-use
 
 ##
 # Size profiler for C++ binaries
