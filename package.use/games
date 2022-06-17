@@ -1,4 +1,9 @@
 ##
+# Allow the directx 9 driver for wine to use.
+##
+media-libs/mesa d3d9
+
+##
 # OpenMW.
 # Devtools for the bsatool program
 # ffmpeg for the intro movies

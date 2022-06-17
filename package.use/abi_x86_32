@@ -40,6 +40,7 @@ media-sound/mpg123		abi_x86_32
 dev-util/pkgconfig		abi_x86_32
 sys-apps/util-linux		abi_x86_32
 net-libs/libasyncns		abi_x86_32
+media-libs/libpulse		abi_x86_32
 sys-apps/lm-sensors		abi_x86_32
 media-gfx/graphite2		abi_x86_32
 sys-apps/tcp-wrappers		abi_x86_32

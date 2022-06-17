@@ -3,3 +3,7 @@
 ##
 dev-qt/qt-creator beautifier cmake cppcheck ctfvisualizer lsp remotelinux -webengine -designer -help -qml -git
 
+##
+# Don't need qt specific code checking support
+##
+dev-util/cppcheck -qt5
