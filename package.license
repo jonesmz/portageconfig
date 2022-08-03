@@ -48,3 +48,5 @@ net-analyzer/nmap NPSL
 # Scientific computing platform that also contains the Cling interpreter
 ##
 sci-physics/root freedist MSttfEULA
+
+www-client/google-chrome google-chrome

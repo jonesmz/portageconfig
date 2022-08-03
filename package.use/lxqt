@@ -2,3 +2,13 @@
 # LXQT systray support for nm-applet
 ##
 lxqt-base/lxqt-panel tray
+
+##
+# LXQT defaults to supporting flatpack. Disable that.
+##
+lxqt-base/lxqt-meta -desktop-portal
+
+##
+# LXQT supports translations, but that's not needed
+##
+lxqt-base/lxqt-meta -nls

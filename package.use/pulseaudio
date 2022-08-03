@@ -3,11 +3,22 @@
 ##
 www-client/firefox pulseaudio
 media-video/vlc pulseaudio
+media-plugins/alsa-plugins pulseaudio
 
 ##
 # Don't need pulse support for virtual machines.
 ##
 app-emulation/qemu -pulseaudio
+
+##
+# Pulseaudio doesn't need to support AirPort streaming
+##
+media-sound/pulseaudio-daemon -ssl
+
+##
+# Don't need rtp streaming either
+##
+media-sound/pulseaudio-daemon -gstreamer
 
 ##
 # Add various features to pulseaudio
