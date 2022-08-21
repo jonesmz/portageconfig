@@ -12,6 +12,7 @@ media-libs/mesa d3d9
 games-engines/openmw		devtools
 dev-games/openscenegraph-openmw ffmpeg collada
 sci-physics/bullet		double-precision
+dev-libs/boost			zlib
 
 ##
 # Some useflag changes to enable games in general

@@ -1,0 +1,4 @@
+##
+# Take less time to compile by using already-installed compiler...
+##
+dev-lang/rust system-llvm

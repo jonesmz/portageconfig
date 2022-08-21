@@ -1,4 +1,11 @@
 ##
+# Use pulseaudio as the sound server
+#
+# Possibly to be replaced with pipewire in the future
+##
+media-sound/pulseaudio daemon
+
+##
 # Add pulseaudio support to graphical apps
 ##
 www-client/firefox pulseaudio

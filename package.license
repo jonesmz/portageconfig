@@ -16,6 +16,7 @@ media-libs/faac MPEG-4
 ##
 # Games
 ##
+games-server/steamcmd Steam
 games-util/steam-launcher ValveSteamLicense
 games-roguelike/dwarf-fortress free-noncomm
 

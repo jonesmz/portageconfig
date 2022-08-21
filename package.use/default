@@ -39,7 +39,7 @@ net-print/cups-filters -*
 # Need "classic" for intel drivers
 # All the other stuff is to just provide the various APIs for generic use by various machines.
 ##
-media-libs/mesa gbm gles1 gles2 llvm lm-sensors vaapi vulkan xa xvmc
+media-libs/mesa gbm gles1 gles2 llvm lm-sensors vaapi vulkan
 x11-libs/libva X opengl
 
 ##
@@ -197,3 +197,13 @@ sys-process/htop lm-sensors
 # No compatibility with old 32bit binaries needed
 ##
 sys-libs/glibc -stack-realign
+
+##
+# Disable some unneeded things from boost
+##
+dev-libs/boost -bzip2 -icu -nls
+
+##
+# zstd compression is all the rage
+##
+dev-libs/boost zstd

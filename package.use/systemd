@@ -1,17 +1,23 @@
 ##
 # Systemd doesn't need extra cruft...
 ##
-sys-apps/systemd -ssl -lz4
+sys-apps/systemd -ssl -openssl -lz4
+
+##
+# Ehhhhhh....?
+##
+sys-apps/systemd -dns-over-tls
 
 ##
 # Some nice to haves
 ##
-sys-apps/systemd elfutils gcrypt lzma gnuefi tpm
+sys-apps/systemd elfutils gcrypt gnuefi tpm zstd
 
 ##
 # For libvirt
+# TODO: Still needed?
 ##
-sys-apps/systemd cgroup-hybrid
+#sys-apps/systemd cgroup-hybrid
 
 ##
 # systemd-auto-gpt-generator
