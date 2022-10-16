@@ -40,7 +40,7 @@ net-print/cups-filters -*
 # All the other stuff is to just provide the various APIs for generic use by various machines.
 ##
 media-libs/mesa gbm gles1 gles2 llvm lm-sensors vaapi vulkan
-x11-libs/libva X opengl
+media-libs/libva X opengl
 
 ##
 # QEMU arm emulation support, and more.

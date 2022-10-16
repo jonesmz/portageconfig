@@ -1,5 +1,5 @@
 #media-libs/mesa					wayland
-#x11-libs/libva					wayland
+#media-libs/libva					wayland
 #kde-plasma/kwin					wayland
 #dev-libs/weston					wayland-compositor xwayland fbdev
 #x11-base/xorg-server			wayland

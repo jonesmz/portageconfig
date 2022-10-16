@@ -78,6 +78,7 @@ media-libs/tiff			abi_x86_32
 media-libs/flac			abi_x86_32
 media-libs/lcms			abi_x86_32
 media-libs/opus			abi_x86_32
+media-libs/libva		abi_x86_32
 media-libs/libv4l		abi_x86_32
 media-libs/libpng		abi_x86_32
 media-libs/libogg		abi_x86_32
@@ -115,7 +116,6 @@ x11-proto/compositeproto	abi_x86_32
 x11-proto/xf86bigfontproto	abi_x86_32
 x11-proto/xf86vidmodeproto	abi_x86_32
 
-x11-libs/libva			abi_x86_32
 x11-libs/libSM			abi_x86_32
 x11-libs/libXv			abi_x86_32
 x11-libs/libXi			abi_x86_32
@@ -139,5 +139,3 @@ x11-libs/libXinerama		abi_x86_32
 x11-libs/libpciaccess		abi_x86_32
 x11-libs/libxshmfence		abi_x86_32
 x11-libs/libXcomposite		abi_x86_32
-x11-libs/libva-vdpau-driver	abi_x86_32
-x11-libs/libva-intel-driver	abi_x86_32
