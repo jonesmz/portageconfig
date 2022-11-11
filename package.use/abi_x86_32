@@ -82,6 +82,7 @@ media-libs/libva		abi_x86_32
 media-libs/libv4l		abi_x86_32
 media-libs/libpng		abi_x86_32
 media-libs/libogg		abi_x86_32
+dev-libs/libpcre2		abi_x86_32
 media-libs/speexdsp		abi_x86_32
 media-libs/harfbuzz		abi_x86_32
 media-libs/freetype		abi_x86_32

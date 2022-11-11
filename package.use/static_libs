@@ -21,6 +21,7 @@ sys-apps/systemd		static-libs
 sys-libs/ncurses		static-libs
 dev-libs/openssl		static-libs
 dev-libs/libpcre		static-libs
+dev-libs/libpcre2		static-libs
 dev-libs/crypto++		static-libs
 dev-db/postgresql		static-libs
 media-libs/libpng		static-libs
