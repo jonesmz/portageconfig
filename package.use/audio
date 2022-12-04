@@ -1,9 +1,9 @@
 ##
-# Use pulseaudio as the sound server
-#
-# Possibly to be replaced with pipewire in the future
+# Don't use pulseaudio as the sound server
+# Use pipewire
 ##
-media-sound/pulseaudio daemon
+media-sound/pulseaudio	-daemon
+media-video/pipewire	sound-server
 
 ##
 # Add pulseaudio support to graphical apps
@@ -28,11 +28,11 @@ media-sound/pulseaudio-daemon -ssl
 media-sound/pulseaudio-daemon -gstreamer
 
 ##
-# Add various features to pulseaudio
+# echo cancelation for local microphone
 ##
-#media-sound/pulseaudio bluetooth native-headset ofono-headset
+media-video/pipewire echo-cancel
 
-#media-sound/bluez-alsa ofono aptx
-
-#net-wireless/bluez user-session
-
+##
+# Interpose pipewire where programs currently use alsa.
+##
+media-video/pipewire pipewire-alsa
