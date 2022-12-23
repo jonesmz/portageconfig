@@ -34,5 +34,6 @@ sys-fs/btrfsmaintenance
 sys-kernel/gentoo-sources
 sys-kernel/linux-firmware
 app-shells/bash-completion
+app-eselect/eselect-python
 
 #sys-apps/cv Coreutils Viewer: show progress for cp, rm, dd, and so forth
