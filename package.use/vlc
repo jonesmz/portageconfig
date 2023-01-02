@@ -2,5 +2,5 @@
 ##
 # Custom flags for vlc
 ##
-media-video/vlc bluray chromecast david vpx x265
+media-video/vlc bluray chromecast dav1d vpx x265
 media-video/vlc -ncurses -zeroconf
