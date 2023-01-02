@@ -91,7 +91,6 @@ net-misc/networkmanager  -zeroconf -ncurses
 net-dns/avahi    -qt5 -python
 dev-util/cmake   -qt5 -ncurses
 
-media-video/vlc  qt5
 app-text/poppler qt5
 
 ##
@@ -118,7 +117,6 @@ media-libs/libsdl2		gles2
 # but it's also very cpu friendly and therefore useful when doing security insensitive things like file transfers on local networks
 #
 # X509 is to support certificate authorities
-# Kerberos is adctive directory
 ##
 net-misc/openssh hpn X509
 

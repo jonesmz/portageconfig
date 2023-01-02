@@ -28,7 +28,7 @@ sys-devel/gcc fortran
 # Support for CephFS
 ##
 dev-lang/python sqlite
-#dev-libs/boost context python
+dev-libs/boost context python
 
 ##
 # Ceph doesn't support py3.9

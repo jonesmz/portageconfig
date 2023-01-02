@@ -9,17 +9,19 @@ net-misc/freerdp
 app-editors/pluma
 sys-block/gparted
 #x11-misc/redshift
-www-client/firefox:esr
 app-office/texmaker
-media-sound/paprefs
 app-arch/file-roller
 x11-base/xorg-server
 x11-terms/terminology
 dev-qt/qtimageformats
 #app-office/libreoffice
 media-sound/alsa-utils
+www-client/firefox:esr
 media-sound/pavucontrol-qt
 gnome-extra/gnome-calculator
 dev-texlive/texlive-latexextra
 x11-drivers/xf86-input-libinput
 #www-plugins/chrome-binary-plugins
+
+# Deprecated by switch to pipewire
+#media-sound/paprefs
