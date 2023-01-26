@@ -2,5 +2,9 @@
 ##
 # Custom flags for vlc
 ##
-media-video/vlc bluray chromecast dav1d vpx x265
+media-video/vlc bluray dav1d vpx x265
+
+# Doesn't work without avahi/zeroconf, can't handle systemd-resolved
+media-video/vlc -chromecast -encode -ssl
+
 media-video/vlc -ncurses -zeroconf

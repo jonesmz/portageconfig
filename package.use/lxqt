@@ -1,12 +1,13 @@
 ##
 # LXQT systray support for nm-applet
+# Don't need alsa support if pulse support is on.
 ##
-lxqt-base/lxqt-panel tray
+lxqt-base/lxqt-panel tray -alsa
 
 ##
-# LXQT defaults to supporting flatpack. Disable that.
+# Expose pipewire via the xdg-desktop-portal system
 ##
-lxqt-base/lxqt-meta -desktop-portal
+sys-apps/xdg-desktop-portal screencast
 
 ##
 # LXQT supports translations, but that's not needed

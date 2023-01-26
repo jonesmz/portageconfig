@@ -5,7 +5,7 @@ sys-devel/clang
 dev-util/indent
 dev-util/ccache
 app-editors/nano
-sys-devel/distcc
+#sys-devel/distcc
 sys-process/htop
 app-text/sloccount
 dev-util/uncrustify

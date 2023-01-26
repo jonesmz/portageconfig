@@ -9,12 +9,13 @@ sys-apps/lshw
 app-admin/sudo
 net-misc/whois
 net-misc/iperf
+#sys-auth/rtkit
 app-misc/screen
 sys-apps/hdparm
 app-misc/fdupes
 dev-util/strace
 app-editors/nano
-sys-devel/distcc
+#sys-devel/distcc
 sys-process/htop
 sys-apps/systemd
 sys-config/ltoize
