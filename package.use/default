@@ -205,3 +205,13 @@ dev-libs/boost -bzip2 -icu -nls
 # zstd compression is all the rage
 ##
 dev-libs/boost zstd
+
+##
+# for graphviz
+##
+media-libs/gd fontconfig
+
+##
+# Add demux support for DVD.
+#
+media-plugins/gst-plugins-meta vcd
