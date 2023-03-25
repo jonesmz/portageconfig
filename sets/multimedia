@@ -1,0 +1,4 @@
+media-video/handbrake
+media-plugins/gst-plugins-meta
+# Not included in gst-plugins-meta
+media-plugins/gst-plugins-mpeg2enc

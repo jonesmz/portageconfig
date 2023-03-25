@@ -1,0 +1,14 @@
+##
+# Already the default, but be explicit
+##
+app-backup/snapper -lvm
+sys-block/parted -device-mapper
+sys-fs/e2fsprogs -cron
+sys-fs/udisks -lvm
+sys-libs/libblockdev -device-mapper -dmraid -lvm
+
+##
+# Here's the default that pulls in cryptsetup, which pulls in lvm2
+# Can't turn this off as it's required by udisks2
+##
+#sys-libs/libblockdev -cryptsetup
