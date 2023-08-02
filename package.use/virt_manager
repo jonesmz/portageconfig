@@ -13,10 +13,15 @@ net-misc/spice-gtk usbredir
 # QEMU arm emulation support, and more.
 ##
 app-emulation/qemu static-user numa spice zstd io-uring opengl virgl usbredir vnc
-app-emulation/qemu -bzip2 -sdl -alsa -gtk -pulseaudio -curl -snappy -jpeg -png -nls -xattr -ncurses -pin-upstream-blobs
+app-emulation/qemu -bzip2 -sdl -alsa -gtk -pulseaudio -curl -snappy -jpeg -png -nls -ncurses -pin-upstream-blobs
 
 ##
 # Virtual Machine Disk Image Management needs this
 ##
 app-arch/unzip natspec
 app-emulation/libguestfs ocaml
+
+##
+# Needed for cross-compile chroots
+##
+app-emulation/qemu xattr
