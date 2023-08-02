@@ -23,3 +23,8 @@ net-dns/bind-tools	gssapi
 ##
 #net-dialup/freeradius ldap kerberos
 net-dialup/freeradius samba
+
+##
+# Don't break when samba updates...
+##
+net-misc/openssh -kerberos

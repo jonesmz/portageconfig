@@ -1,0 +1,22 @@
+##
+# Needed for virt-manager suff
+##
+net-dns/dnsmasq script
+
+##
+# Just dependencies
+##
+net-libs/gnutls pkcs11 tools
+net-misc/spice-gtk usbredir
+
+##
+# QEMU arm emulation support, and more.
+##
+app-emulation/qemu static-user numa spice zstd io-uring opengl virgl usbredir vnc
+app-emulation/qemu -bzip2 -sdl -alsa -gtk -pulseaudio -curl -snappy -jpeg -png -nls -xattr -ncurses -pin-upstream-blobs
+
+##
+# Virtual Machine Disk Image Management needs this
+##
+app-arch/unzip natspec
+app-emulation/libguestfs ocaml

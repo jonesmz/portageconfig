@@ -1,4 +1,9 @@
 ##
+# sys-kernel/gentoo-sources
+##
+sys-kernel/gentoo-sources experimental symlink
+
+##
 # Useflags needed by qt5.
 ##
 x11-libs/libxcb		xkb
@@ -36,23 +41,15 @@ net-print/cups-filters -*
 
 ##
 # Need gbm for radion graphics card support
-# Need "classic" for intel drivers
 # All the other stuff is to just provide the various APIs for generic use by various machines.
 ##
 media-libs/mesa gbm gles1 gles2 llvm lm-sensors vaapi vulkan
 media-libs/libva X opengl
 
 ##
-# QEMU arm emulation support, and more.
-##
-app-emulation/qemu static-user numa spice zstd io-uring -bzip2 -sdl -alsa -gtk -pulseaudio -opengl -curl -snappy -vnc -jpeg -png -nls -xattr -ncurses -pin-upstream-blobs
-
-##
 # Needed for running arm chroots.
 ##
 app-emulation/qemu xattr
-
-net-misc/spice-gtk usbredir
 
 ##
 # Turning off the GUI of lshw, it's useless.
@@ -94,97 +91,14 @@ dev-util/cmake   -qt5 -ncurses
 app-text/poppler qt5
 
 ##
-# Need for lxqt
-##
-lxqt-base/lxqt-meta -about sddm lximage
-
-##
-# Don't actually like using the desktop switcher, so I'm disabling it.
-##
-lxqt-base/lxqt-panel -desktopswitch -kbindicator
-
-##
-# Tweaking efl, for use with terminology
-##
-dev-libs/efl -sdl X gles2-only fontconfig glib
-
-dev-libs/efl			-opengl gles
-media-libs/cogl			gles2
-media-libs/libsdl2		gles2
-
-##
-# Adds support for the None cipher. Literally this cipher performs absolutely no encryption, and as such is as insecure as can possibly be,
-# but it's also very cpu friendly and therefore useful when doing security insensitive things like file transfers on local networks
-#
-# X509 is to support certificate authorities
-##
-net-misc/openssh hpn X509
-
-##
-# Don't break when samba updates...
-##
-net-misc/openssh -kerberos
-
-##
-# VPN Support
-##
-dev-libs/nss utils
-
-##
-# Virtual Machine Disk Image Management needs this
-##
-app-arch/unzip natspec
-app-emulation/libguestfs ocaml
-
-##
-# Busybox apparently doesn't want to build with "pam static" use flags.
-##
-sys-apps/busybox -static
-
-##
 # Preventing the need for the berkdb useflag from gdbm.
 ##
 dev-lang/python -gdbm
 
 ##
-# Running non built in shells fails if pam is enabled.
-# Probably need to hand craft some configuration files to make it work
-# Would rather simply not include the logic to begin with
-##
-www-misc/shellinabox -pam
-
-##
-# fdk is needed to support handbrake.
-# unclear what vdpau is needed for.
-##
-media-libs/freetype png
-media-video/ffmpeg vdpau fdk -samba
-
-##
 # Support direct SMTP connections instead of needing another program to send the emails.
 ##
 mail-client/s-nail net
-
-##
-# Remove unneeded zero conf functionality
-##
-net-misc/ntp -zeroconf
-
-##
-# Needed for virt-manager suff
-##
-net-dns/dnsmasq script
-
-##
-# Pango apparently requires freetype to have harfbuzz
-##
-media-libs/freetype harfbuzz
-
-##
-# Try to get slightly better display perf
-# TODO: The openh264 flag might be causing corruption
-##
-#net-misc/freerdp openh264 server
 
 ##
 # Read CPU temp info
@@ -211,7 +125,3 @@ dev-libs/boost zstd
 ##
 media-libs/gd fontconfig
 
-##
-# Add demux support for DVD.
-#
-media-plugins/gst-plugins-meta vcd

@@ -1,0 +1,8 @@
+##
+# Tweaking efl, for use with terminology
+##
+dev-libs/efl gles X gles2-only fontconfig glib
+
+dev-libs/efl			-opengl -sdl
+media-libs/cogl			gles2
+media-libs/libsdl2		gles2

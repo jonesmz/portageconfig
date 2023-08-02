@@ -11,4 +11,4 @@ sys-devel/gcc sanatize vtv
 ##
 # Options for llvm
 ##
-sys-devel/llvm gold z3
+sys-devel/llvm z3 zstd

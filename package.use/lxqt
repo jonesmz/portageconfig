@@ -1,15 +1,25 @@
 ##
+# LXQT supports translations, but that's not needed
+##
+lxqt-base/lxqt-meta -nls
+
+##
+# Need for lxqt
+##
+lxqt-base/lxqt-meta -about sddm lximage
+
+##
 # LXQT systray support for nm-applet
 # Don't need alsa support if pulse support is on.
 ##
 lxqt-base/lxqt-panel tray -alsa
 
 ##
+# Don't actually like using the desktop switcher, so I'm disabling it.
+##
+lxqt-base/lxqt-panel -desktopswitch -kbindicator
+
+##
 # Expose pipewire via the xdg-desktop-portal system
 ##
 sys-apps/xdg-desktop-portal screencast
-
-##
-# LXQT supports translations, but that's not needed
-##
-lxqt-base/lxqt-meta -nls

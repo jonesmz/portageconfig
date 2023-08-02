@@ -3,6 +3,3 @@
 ##
 app-emulation/libguestfs
 app-emulation/libguestfs-appliance
-
-dev-ml/ocaml-gettext
-dev-ml/ocaml-fileutils

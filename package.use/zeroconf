@@ -1,0 +1,4 @@
+##
+# Remove unneeded zero conf functionality
+##
+net-misc/ntp -zeroconf
