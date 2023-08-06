@@ -31,6 +31,7 @@ sys-libs/libcap-ng			static-libs
 sys-apps/util-linux			static-libs
 app-emulation/spice			static-libs
 sys-libs/libseccomp			static-libs
+media-libs/virglrenderer	static-libs
 media-libs/libjpeg-turbo	static-libs
 
 ##
