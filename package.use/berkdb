@@ -1,0 +1,12 @@
+##
+# Stop including sys-libs/db...
+##
+app-crypt/heimdal	-berkdb
+dev-lang/perl		-berkdb
+sys-apps/iproute2	-berkdb
+sys-libs/pam		-berkdb
+
+##
+# Preventing the need for the berkdb useflag from gdbm.
+##
+dev-lang/python -gdbm

@@ -40,10 +40,10 @@ app-text/ghostscript-gpl -cups -X -gtk
 net-print/cups-filters -*
 
 ##
-# Need gbm for radion graphics card support
+# Need gbm for radeon graphics card support
 # All the other stuff is to just provide the various APIs for generic use by various machines.
 ##
-media-libs/mesa gbm gles1 gles2 llvm lm-sensors vaapi vulkan
+media-libs/mesa gbm gles1 gles2 llvm lm-sensors vulkan
 media-libs/libva X opengl
 
 ##
