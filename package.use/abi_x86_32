@@ -55,6 +55,7 @@ sys-libs/zlib			abi_x86_32
 sys-libs/libcap			abi_x86_32
 sys-libs/ncurses		abi_x86_32
 sys-libs/libxcrypt		abi_x86_32
+sys-libs/libudev-compat	abi_x86_32
 
 dev-libs/gmp			abi_x86_32
 dev-libs/icu			abi_x86_32
