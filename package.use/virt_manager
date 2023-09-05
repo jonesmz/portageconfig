@@ -12,7 +12,7 @@ net-misc/spice-gtk usbredir
 ##
 # QEMU arm emulation support, and more.
 ##
-app-emulation/qemu static-user numa spice zstd io-uring opengl virgl usbredir vnc
+app-emulation/qemu static-user numa spice zstd io-uring opengl virgl usbredir vnc virtfs
 app-emulation/qemu -bzip2 -sdl -alsa -gtk -pulseaudio -curl -snappy -jpeg -png -nls -ncurses -pin-upstream-blobs
 
 ##
