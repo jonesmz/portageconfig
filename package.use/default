@@ -113,7 +113,7 @@ sys-libs/glibc -stack-realign
 ##
 # Disable some unneeded things from boost
 ##
-dev-libs/boost -bzip2 -icu -nls
+dev-libs/boost -bzip2 -icu
 
 ##
 # zstd compression is all the rage

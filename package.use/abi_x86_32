@@ -147,3 +147,38 @@ x11-libs/libXcomposite		abi_x86_32
 x11-libs/cairo		abi_x86_32
 x11-libs/pixman		abi_x86_32
 
+
+##
+# To support 32bit wine games
+##
+app-emulation/wine-vanilla		abi_x86_32
+media-libs/libsdl				abi_x86_32
+media-libs/libsdl2				abi_x86_32
+media-libs/vulkan-loader		abi_x86_32
+x11-libs/pango					abi_x86_32
+dev-libs/fribidi				abi_x86_32
+x11-libs/libXft					abi_x86_32
+media-libs/graphene				abi_x86_32
+sys-libs/libunwind				abi_x86_32
+dev-libs/libusb					abi_x86_32
+media-libs/gstreamer			abi_x86_32
+media-libs/gst-plugins-*		abi_x86_32
+media-plugins/gst-plugins-*		abi_x86_32
+media-libs/x264					abi_x86_32
+media-video/mjpegtools			abi_x86_32
+media-libs/libdvdnav			abi_x86_32
+media-libs/libdvdread			abi_x86_32
+media-libs/libdvdcss			abi_x86_32
+media-libs/libmpeg2				abi_x86_32
+media-libs/libdca				abi_x86_32
+media-libs/faad2				abi_x86_32
+media-libs/a52dec				abi_x86_32
+x11-libs/gtk+					abi_x86_32
+app-accessibility/at-spi2-core	abi_x86_32
+media-libs/libepoxy				abi_x86_32
+x11-libs/gdk-pixbuf				abi_x86_32
+gnome-base/librsvg				abi_x86_32
+dev-util/mingw64-toolchain		abi_x86_32
+media-sound/cdparanoia			abi_x86_32
+virtual/rust					abi_x86_32
+dev-lang/rust					abi_x86_32
