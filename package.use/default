@@ -86,7 +86,8 @@ net-misc/networkmanager  -zeroconf -ncurses
 # Various packages that need some nudging for their GUI choices.
 ##
 net-dns/avahi    -qt5 -python
-dev-util/cmake   -qt5 -ncurses
+# move dev-util/cmake dev-build/cmake
+dev-build/cmake   -qt5 -ncurses
 
 app-text/poppler qt5
 
