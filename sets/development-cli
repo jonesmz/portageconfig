@@ -1,9 +1,9 @@
 dev-cpp/gtest
 sys-devel/lld
-dev-util/strace
 sys-devel/clang
 dev-util/indent
 dev-util/ccache
+dev-debug/strace
 app-editors/nano
 #sys-devel/distcc
 sys-process/htop
