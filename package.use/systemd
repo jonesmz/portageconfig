@@ -38,3 +38,8 @@ sys-apps/systemd policykit
 # install the repart component for dev investigation
 ##
 sys-apps/systemd repart
+
+##
+# Load hardware modules
+##
+sys-apps/systemd kmod
