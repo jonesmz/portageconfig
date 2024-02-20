@@ -1,4 +1,9 @@
 ##
+# Use gcc, which is the systemd wide compiler, not clang.
+##
+www-client/firefox -clang
+
+##
 # No sense in having firefox build its own copies of libraries...
 ##
 www-client/firefox hwaccel pulseaudio system-png

@@ -121,3 +121,7 @@ dev-libs/boost zstd
 ##
 media-libs/gd fontconfig
 
+##
+# Don't need to support alternate protocols, or cookies
+##
+net-misc/curl -psl -ftp -tftp -snmp -pop3
