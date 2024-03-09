@@ -1,5 +1,0 @@
-gentoo:default/linux/amd64/17.1
-gentoo:features/merged-usr
-gentoo:features/hardened/amd64
-gentoo:targets/systemd
-gentoo:targets/desktop
