@@ -1,0 +1,2 @@
+app-accessibility/at-spi2-core -systemd
+media-libs/libpulse -asyncns
