@@ -2,6 +2,7 @@
 # 32 bit libraries needed by steam
 ##
 virtual/rust				abi_x86_32
+virtual/libelf				abi_x86_32
 virtual/libusb				abi_x86_32
 virtual/opengl				abi_x86_32
 virtual/libintl				abi_x86_32
@@ -29,6 +30,7 @@ dev-libs/libusb				abi_x86_32
 dev-libs/openssl			abi_x86_32
 dev-libs/fribidi			abi_x86_32
 dev-libs/libxml2			abi_x86_32
+dev-libs/elfutils			abi_x86_32
 dev-libs/libpcre2			abi_x86_32
 dev-libs/libgcrypt			abi_x86_32
 dev-libs/dbus-glib			abi_x86_32
