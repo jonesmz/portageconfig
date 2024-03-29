@@ -1,1 +1,2 @@
-www-apps/jellyfin
+# move www-apps/jellyfin www-apps/jellyfin-bin
+www-apps/jellyfin-bin
