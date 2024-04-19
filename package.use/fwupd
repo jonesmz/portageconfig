@@ -1,2 +1,2 @@
-sys-apps/fwupd amt spi nvme logitech flashrom tpm
+sys-apps/fwupd amt spi nvme logitech flashrom tpm lzma
 
