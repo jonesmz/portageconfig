@@ -130,3 +130,8 @@ net-misc/curl -psl -ftp -tftp -snmp -pop3
 #
 ##
 media-libs/freetype harfbuzz
+
+##
+# Avoid the need to pull in dev-python/sphinx
+##
+sys-fs/btrfs-progs -man
