@@ -1,9 +1,9 @@
 ##
 # Nifty options for the qt-creator ide.
 ##
-dev-qt/qt-creator beautifier cmake cppcheck ctfvisualizer lsp remotelinux webassembly -webengine -designer -help -qml -git -qmake
+dev-qt/qt-creator webengine -designer -help
 
 ##
 # Don't need qt specific code checking support
 ##
-dev-util/cppcheck -qt5
+dev-util/cppcheck -qt5 -qt6

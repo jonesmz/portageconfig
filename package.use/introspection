@@ -23,7 +23,7 @@ media-libs/gstreamer		introspection
 x11-libs/gtksourceview		introspection
 gui-libs/gtksourceview		introspection
 app-emulation/libvirt-glib	introspection
-app-accessibility/at-spi2-core introspection
+app-accessibility/at-spi2-core	introspection
 
 ##
 # Vala is required for gnome-calculator now
