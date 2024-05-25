@@ -4,9 +4,23 @@
 www-client/firefox -clang
 
 ##
-# No sense in having firefox build its own copies of libraries...
+# No sense in having firefox build (or download...) its own copies of libraries...
 ##
-www-client/firefox hwaccel pulseaudio system-png
+www-client/firefox system-png openh264
+
+##
+# Force hardware accelerated rendering
+##
+www-client/firefox hwaccel
+
+##
+# Use pipewire (via pulseaudio emulation mode)
+##
+www-client/firefox pulseaudio
+
+##
+# Firefox doesn't need to know anything about wifi, or dbus
+##
 www-client/firefox -dbus -wifi
 
 ##

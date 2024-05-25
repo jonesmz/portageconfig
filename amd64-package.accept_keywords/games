@@ -6,17 +6,15 @@ games-engines/openmw
 dev-games/recastnavigation
 dev-games/openscenegraph-openmw
 
-games-action/minetest
+games-engines/minetest
 dev-games/irrlicht-mt
 dev-games/irrlicht-mt-headers
-games-roguelike/dwarf-fortress
 
 ##
 # Steam
 ##
 games-util/esteam
-games-util/steam-meta
 games-util/steam-launcher
-games-util/steam-games-meta
 games-util/steam-client-meta
 games-util/game-device-udev-rules
+sys-libs/libudev-compat
