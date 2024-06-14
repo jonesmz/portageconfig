@@ -1,8 +1,8 @@
 ##
 # Tweaking efl, for use with terminology
 ##
-dev-libs/efl gles X gles2-only fontconfig glib
+x11-terms/terminology -nls
 
-dev-libs/efl			-opengl -sdl -gstreamer -sound -pdf -pulseaudio
-media-libs/cogl			gles2
-media-libs/libsdl2		gles2
+dev-libs/efl X fontconfig glib
+dev-libs/efl -eet -gif -svg -tiff
+dev-libs/efl -opengl -nls -sdl -gstreamer -sound -pdf -pulseaudio
