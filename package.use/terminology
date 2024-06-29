@@ -4,5 +4,4 @@
 x11-terms/terminology -nls
 
 dev-libs/efl X fontconfig glib
-dev-libs/efl -eet -gif -svg -tiff
-dev-libs/efl -opengl -nls -sdl -gstreamer -sound -pdf -pulseaudio
+dev-libs/efl -gif -svg -tiff -opengl -nls -sdl -gstreamer -sound -pdf -pulseaudio
