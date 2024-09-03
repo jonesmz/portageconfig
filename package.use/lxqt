@@ -23,3 +23,11 @@ lxqt-base/lxqt-panel -desktopswitch -kbindicator
 # Expose pipewire via the xdg-desktop-portal system
 ##
 sys-apps/xdg-desktop-portal screencast
+
+##
+# Needed for a post qt5 world
+##
+dev-qt/qt5compat qml
+kde-frameworks/kconfig qml
+dev-qt/qtmultimedia qml
+x11-base/xwayland libei
