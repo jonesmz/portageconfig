@@ -30,6 +30,7 @@ dev-libs/libusb				abi_x86_32
 dev-libs/openssl			abi_x86_32
 dev-libs/fribidi			abi_x86_32
 dev-libs/libxml2			abi_x86_32
+dev-libs/wayland			abi_x86_32
 dev-libs/elfutils			abi_x86_32
 dev-libs/libpcre2			abi_x86_32
 dev-libs/libgcrypt			abi_x86_32
@@ -82,6 +83,7 @@ x11-libs/libXdamage			abi_x86_32
 x11-libs/libXxf86vm			abi_x86_32
 x11-libs/libXinerama		abi_x86_32
 x11-libs/libxshmfence		abi_x86_32
+x11-libs/libxkbcommon		abi_x86_32
 x11-libs/libpciaccess		abi_x86_32
 x11-libs/libXcomposite		abi_x86_32
 x11-libs/libXScrnSaver		abi_x86_32

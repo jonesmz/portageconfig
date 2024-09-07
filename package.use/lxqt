@@ -6,7 +6,7 @@ lxqt-base/lxqt-meta -nls
 ##
 # Need for lxqt
 ##
-lxqt-base/lxqt-meta -about sddm lximage
+lxqt-base/lxqt-meta -about sddm lximage -processviewer -terminal -sudo
 
 ##
 # LXQT systray support for nm-applet
