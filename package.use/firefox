@@ -19,9 +19,9 @@ www-client/firefox hwaccel
 www-client/firefox pulseaudio
 
 ##
-# Firefox doesn't need to know anything about wifi, or dbus
+# Firefox doesn't need to know anything about wifi
 ##
-www-client/firefox -dbus -wifi
+www-client/firefox -wifi
 
 ##
 # Explicit dependency of firefox
