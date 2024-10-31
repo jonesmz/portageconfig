@@ -16,6 +16,7 @@ app-crypt/heimdal	-ssl
 
 net-misc/wsdd		samba
 net-misc/ntp		samba
+net-dns/bind		gssapi
 net-dns/bind-tools	gssapi
 
 ##
