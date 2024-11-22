@@ -2,7 +2,6 @@
 
 sys-fs/ntfs3g
 net-misc/iperf
-net-misc/zsync
 sys-apps/dcfldd
 sys-block/mbuffer
 app-backup/snapper
