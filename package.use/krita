@@ -1,0 +1,4 @@
+##
+# Minimum Flags needed for Krita
+##
+dev-python/pyqt5 declarative gui widgets network -multimedia -printsupport
