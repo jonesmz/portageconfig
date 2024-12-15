@@ -1,6 +1,6 @@
 dev-cpp/gtest
-sys-devel/lld
-sys-devel/clang
+llvm-core/lld
+llvm-core/clang
 dev-util/indent
 dev-util/ccache
 dev-debug/strace
