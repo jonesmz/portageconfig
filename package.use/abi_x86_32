@@ -105,7 +105,7 @@ app-arch/zstd				abi_x86_32
 gnome-base/librsvg			abi_x86_32
 app-arch/xz-utils			abi_x86_32
 sys-apps/lm-sensors			abi_x86_32
-sys-devel/llvm				abi_x86_32
+llvm-core/llvm				abi_x86_32
 sci-mathematics/z3			abi_x86_32
 media-gfx/graphite2			abi_x86_32
 sys-apps/dbus				abi_x86_32
