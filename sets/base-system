@@ -12,7 +12,7 @@ net-misc/iperf
 #sys-auth/rtkit
 app-misc/screen
 sys-apps/hdparm
-app-misc/fdupes
+app-misc/jdupes
 dev-debug/strace
 app-editors/nano
 #sys-devel/distcc
