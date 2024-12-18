@@ -6,6 +6,7 @@ net-fs/sshfs
 net-misc/ntp
 net-misc/wsdd
 sys-apps/lshw
+sys-apps/fwupd
 app-admin/sudo
 net-misc/whois
 net-misc/iperf

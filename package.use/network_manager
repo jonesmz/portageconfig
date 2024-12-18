@@ -5,5 +5,5 @@
 #gnome-extra/nm-applet appindicator
 #dev-libs/libdbusmenu gtk3
 
-net-misc/networkmanager iwd introspection modemmanager
+net-misc/networkmanager iwd wifi introspection modemmanager
 net-misc/networkmanager -wext -bluetooth
