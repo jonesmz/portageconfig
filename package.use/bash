@@ -1,0 +1,10 @@
+##
+# Disable the ability to directly connect to a remote ipaddress via a pipe owned by the bash executable.
+# Seems like a security risk...
+##
+app-shells/bash -net
+
+##
+# Why not use profile guided optimization?
+##
+app-shells/bash pgo
