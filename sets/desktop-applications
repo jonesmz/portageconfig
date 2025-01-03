@@ -16,7 +16,7 @@ x11-terms/terminology
 dev-qt/qtimageformats
 #app-office/libreoffice
 media-sound/alsa-utils
-www-client/firefox:esr
+www-client/firefox
 media-sound/pavucontrol-qt
 gnome-extra/gnome-calculator
 dev-texlive/texlive-latexextra
