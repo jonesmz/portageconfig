@@ -102,6 +102,7 @@ dev-db/sqlite				abi_x86_32
 net-libs/libndp				abi_x86_32
 sys-apps/util-linux			abi_x86_32
 app-arch/zstd				abi_x86_32
+dev-util/spirv-tools		abi_x86_32
 gnome-base/librsvg			abi_x86_32
 app-arch/xz-utils			abi_x86_32
 sys-apps/lm-sensors			abi_x86_32
