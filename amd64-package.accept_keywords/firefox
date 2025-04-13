@@ -1,8 +1,9 @@
 ##
 # An attempt to get better tab syncing.
-# Don't want to risk downgrading screwing something up, so only allow updates until the version in question.
+# Don't want to risk downgrading screwing something up, so only allow updates until the next firefox ESR release
+# https://whattrainisitnow.com/release/?version=esr
 # After that, we revert back to the ESR slot.
 ##
 
-<www-client/firefox-134:rapid
-<dev-libs/nss-3.108
+<www-client/firefox-140:rapid
+<=dev-libs/nss-3.109
