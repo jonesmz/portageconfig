@@ -5,7 +5,7 @@
 media-libs/freetype png
 #media-video/ffmpeg vdpau fdk -samba
 
-media-video/handbrake x265
+media-video/handbrake x265 qsv
 
 ##
 # Add demux support for DVD.
