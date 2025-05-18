@@ -7,3 +7,8 @@ dev-qt/qt-creator webengine -designer -help
 # Don't need qt specific code checking support
 ##
 dev-util/cppcheck -qt5 -qt6
+
+##
+# As far as I know, don't need python bindings for boost
+##
+dev-libs/boost -python
