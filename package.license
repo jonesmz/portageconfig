@@ -38,7 +38,7 @@ sys-kernel/linux-firmware linux-fw-redistributable no-source-code
 ##
 # Plex Media Server
 ##
-media-tv/plex-media-server Plex
+media-tv/plex-media-server all-rights-reserved
 
 ##
 # NMap network discovery tool
