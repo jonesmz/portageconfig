@@ -23,20 +23,24 @@ sys-libs/libudev-compat		abi_x86_32
 dev-libs/lzo				abi_x86_32
 dev-libs/icu				abi_x86_32
 dev-libs/nss				abi_x86_32
+dev-libs/gmp				abi_x86_32
 dev-libs/nspr				abi_x86_32
 dev-libs/glib				abi_x86_32
 dev-libs/expat				abi_x86_32
 dev-libs/libffi				abi_x86_32
 dev-libs/libusb				abi_x86_32
+dev-libs/nettle				abi_x86_32
 dev-libs/openssl			abi_x86_32
 dev-libs/fribidi			abi_x86_32
 dev-libs/libxml2			abi_x86_32
 dev-libs/wayland			abi_x86_32
+dev-libs/libtasn1			abi_x86_32
 dev-libs/elfutils			abi_x86_32
 dev-libs/libpcre2			abi_x86_32
 dev-libs/libgcrypt			abi_x86_32
 dev-libs/dbus-glib			abi_x86_32
 dev-libs/libgpg-error		abi_x86_32
+dev-libs/libunistring		abi_x86_32
 dev-libs/libappindicator	abi_x86_32
 
 media-libs/tiff				abi_x86_32
@@ -96,6 +100,7 @@ media-video/pipewire		abi_x86_32
 net-misc/curl				abi_x86_32
 net-misc/networkmanager		abi_x86_32
 net-print/cups				abi_x86_32
+net-libs/gnutls				abi_x86_32
 net-dns/c-ares				abi_x86_32
 net-libs/nghttp2			abi_x86_32
 net-libs/nghttp3			abi_x86_32
@@ -115,5 +120,7 @@ media-sound/lame			abi_x86_32
 media-sound/mpg123-base		abi_x86_32
 sys-apps/systemd			abi_x86_32
 dev-lang/rust				abi_x86_32
+app-crypt/p11-kit			abi_x86_32
+net-dns/libidn2				abi_x86_32
 
 app-accessibility/at-spi2-core	abi_x86_32
