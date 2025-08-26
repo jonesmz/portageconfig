@@ -3,6 +3,11 @@
 ##
 media-video/vlc bluray dav1d vpx x265
 
+##
+# Common audio format from youtube-dl / yt-dlp
+##
+media-video/vlc opus
+
 # Doesn't work without avahi/zeroconf, can't handle systemd-resolved
 media-video/vlc -chromecast -encode -ssl
 
