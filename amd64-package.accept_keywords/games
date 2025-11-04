@@ -1,6 +1,7 @@
 ##
 # GAMES: specifically TES3: Morrowind, dwarffortress, minetest
 ##
+dev-cpp/sol2
 dev-games/mygui
 games-engines/openmw
 dev-games/recastnavigation
