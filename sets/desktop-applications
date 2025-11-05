@@ -3,8 +3,6 @@
 x11-misc/arandr
 media-video/vlc
 app-text/evince
-app-cdr/brasero
-app-cdr/cdrtools
 net-misc/freerdp
 app-editors/pluma
 sys-block/gparted

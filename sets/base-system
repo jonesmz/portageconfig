@@ -4,7 +4,6 @@ sys-libs/gpm
 net-fs/samba
 net-fs/sshfs
 net-misc/ntp
-net-misc/wsdd
 sys-apps/lshw
 sys-apps/fwupd
 app-admin/sudo
