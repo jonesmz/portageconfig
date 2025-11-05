@@ -4,6 +4,7 @@
 sys-apps/dtc				static-libs
 dev-libs/lzo				static-libs
 virtual/jpeg				static-libs
+virtual/zlib				static-libs
 dev-lang/orc				static-libs
 dev-libs/glib				static-libs
 sys-libs/zlib				static-libs
