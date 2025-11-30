@@ -8,6 +8,7 @@ net-dns/dnsmasq script
 ##
 net-libs/gnutls pkcs11 tools
 net-misc/spice-gtk usbredir
+dev-libs/libxml2 python
 
 ##
 # QEMU arm emulation support, and more.
