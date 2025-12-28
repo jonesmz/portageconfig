@@ -6,7 +6,7 @@ www-client/firefox -clang
 ##
 # No sense in having firefox build (or download...) its own copies of libraries...
 ##
-www-client/firefox system-png openh264
+www-client/firefox system-png openh264 system-pipewire
 
 ##
 # Force hardware accelerated rendering
