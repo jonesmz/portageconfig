@@ -1,9 +1,4 @@
 ##
-# Don't bother supporting x11 anymore
-##
-kde-plasma/kwin -X
-
-##
 # Add support for screencast via pipewire
 ##
 kde-plasma/kwin screencast
