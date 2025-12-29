@@ -1,7 +1,7 @@
 ##
 # Samba 4 use flags
 ##
-net-fs/samba addc addns ads client json ldap winbind python snapper
+net-fs/samba addc addns ads client json ldap winbind python
 
 net-fs/samba system-heimdal -system-mitkrb5
 
