@@ -1,11 +1,4 @@
 ##
-# Useflags needed by qt5.
-##
-#x11-libs/libxcb		xkb
-#dev-libs/libpcre	pcre16
-#dev-libs/libpcre2	pcre16
-
-##
 # Faster QML based apps
 ##
 dev-qt/qtdeclarative jit
