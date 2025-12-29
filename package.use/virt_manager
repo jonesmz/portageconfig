@@ -13,8 +13,13 @@ dev-libs/libxml2 python
 ##
 # QEMU arm emulation support, and more.
 ##
-app-emulation/qemu static-user numa spice zstd io-uring opengl virgl usbredir vnc virtfs bpf
-app-emulation/qemu -bzip2 -sdl -alsa -gtk -pulseaudio -curl -snappy -jpeg -png -nls -ncurses -pin-upstream-blobs
+app-emulation/qemu static-user numa spice zstd io-uring opengl virgl virtfs bpf
+app-emulation/qemu -bzip2 -sdl -alsa -gtk -pulseaudio -curl -snappy -jpeg -png -nls -ncurses -pin-upstream-blobs -slirp -oss -wayland
+
+##
+# Needed for cross-compile chroots
+##
+app-emulation/qemu xattr
 
 ##
 # Virtual Machine Disk Image Management needs this
@@ -22,7 +27,3 @@ app-emulation/qemu -bzip2 -sdl -alsa -gtk -pulseaudio -curl -snappy -jpeg -png -
 app-arch/unzip natspec
 app-emulation/libguestfs ocaml
 
-##
-# Needed for cross-compile chroots
-##
-app-emulation/qemu xattr
