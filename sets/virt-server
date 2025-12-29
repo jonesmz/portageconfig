@@ -1,2 +1,5 @@
 app-emulation/libvirt
+app-emulation/virtiofsd
+app-emulation/virtio-win
+
 sys-firmware/edk2

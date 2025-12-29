@@ -30,12 +30,14 @@ sys-apps/gptfdisk
 sys-power/cpupower
 sys-apps/rng-tools
 net-dns/bind-tools
-mail-client/s-nail
+#mail-client/s-nail
 sys-fs/btrfs-progs
 sys-apps/lm-sensors
 sys-boot/efibootmgr
+sys-block/zram-init
 app-admin/superadduser
 sys-apps/smartmontools
+app-admin/eclean-kernel
 sys-fs/btrfsmaintenance
 sys-kernel/gentoo-kernel
 sys-kernel/linux-firmware

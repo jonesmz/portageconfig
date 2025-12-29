@@ -13,6 +13,7 @@ app-arch/file-roller
 x11-terms/terminology
 dev-qt/qtimageformats
 media-sound/alsa-utils
+mail-client/thunderbird
 media-sound/pavucontrol-qt
 gnome-extra/gnome-calculator
 dev-texlive/texlive-latexextra
