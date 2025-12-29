@@ -2,8 +2,3 @@
 # Take less time to compile by using already-installed compiler...
 ##
 dev-lang/rust system-llvm
-
-##
-# Take less time to compile by using system-wide rust compiler instead of unpacked generic rustc
-##
-dev-lang/rust system-bootstrap

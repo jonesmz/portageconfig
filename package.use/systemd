@@ -1,7 +1,7 @@
 ##
 # Systemd doesn't need extra cruft...
 ##
-sys-apps/systemd -ssl -openssl -lz4
+sys-apps/systemd -openssl -lz4
 
 ##
 # Ehhhhhh....?
@@ -11,18 +11,12 @@ sys-apps/systemd -dns-over-tls
 ##
 # Some nice to haves
 ##
-sys-apps/systemd elfutils gcrypt gnuefi tpm zstd
+sys-apps/systemd elfutils gcrypt tpm zstd bpf
 
 ##
 # Support automagic unified-kernel-image installation
 ##
 sys-apps/systemd boot kernel-install
-
-##
-# For libvirt
-# TODO: Still needed?
-##
-#sys-apps/systemd cgroup-hybrid
 
 ##
 # systemd-auto-gpt-generator
@@ -33,11 +27,6 @@ sys-apps/systemd cryptsetup
 # Allow systemd-networkd to set hostname based on dhcp responses
 ##
 sys-apps/systemd policykit
-
-##
-# install the repart component for dev investigation
-##
-sys-apps/systemd repart
 
 ##
 # Load hardware modules

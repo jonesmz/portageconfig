@@ -3,8 +3,6 @@
 # unclear what vdpau is needed for.
 ##
 media-libs/freetype png
-#media-video/ffmpeg vdpau fdk -samba
-
 media-video/handbrake x265 qsv
 
 ##

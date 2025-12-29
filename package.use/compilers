@@ -1,7 +1,12 @@
 ##
 # Spice things up with a bit of optimization
 ##
-sys-devel/gcc graphite zstd
+sys-devel/gcc graphite
+
+##
+# Support zstd compression for symbols
+##
+sys-devel/gcc zstd
 
 ##
 # Hardening
@@ -11,4 +16,4 @@ sys-devel/gcc sanatize vtv
 ##
 # Options for llvm
 ##
-llvm-core/llvm z3 zstd
+llvm-core/llvm z3 zstd -xml

@@ -1,2 +1,34 @@
-sys-apps/fwupd amt spi nvme logitech flashrom tpm lzma
+##
+# Build and install AMD dGPU (Navi3x and above) plugin
+##
+sys-apps/fwupd amdgpu
 
+##
+# Enable flashrom plugin via sys-apps/flashrom
+##
+sys-apps/fwupd flashrom
+
+##
+#  Build and install NVMe plugin
+##
+sys-apps/fwupd nvme
+
+##
+# Install Intel-SPI plugin
+##
+sys-apps/fwupd spi
+
+##
+# Install Trusted Platform Module plugin
+##
+sys-apps/fwupd tpm
+
+##
+# Support for LZMA compression algorithm
+##
+sys-apps/fwupd lzma
+
+##
+# Enable UEFI support
+##
+sys-apps/fwupd gnutls uefi

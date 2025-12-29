@@ -16,6 +16,5 @@ dev-games/irrlicht-mt-headers
 ##
 games-util/esteam
 games-util/steam-launcher
-games-util/steam-client-meta
 games-util/game-device-udev-rules
 sys-libs/libudev-compat

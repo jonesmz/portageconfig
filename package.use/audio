@@ -2,7 +2,6 @@
 # Don't use pulseaudio as the sound server
 # Use pipewire
 ##
-media-sound/pulseaudio	-daemon
 media-video/pipewire	sound-server
 
 ##
@@ -16,11 +15,6 @@ media-plugins/alsa-plugins pulseaudio
 # Don't need pulse support for virtual machines.
 ##
 app-emulation/qemu -pulseaudio
-
-##
-# Pulseaudio doesn't need to support AirPort streaming
-##
-media-sound/pulseaudio-daemon -ssl
 
 ##
 # Don't need rtp streaming either

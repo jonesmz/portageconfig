@@ -8,6 +8,7 @@ sys-config/ltoize clang
 ##
 sys-devel/gcc		lto
 dev-lang/python		lto
+dev-lang/rust		lto
 www-client/firefox	lto
 dev-lang/spidermonkey	lto
 net-misc/networkmanager	lto

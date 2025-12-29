@@ -1,7 +1,7 @@
 ##
-# Nifty options for the qt-creator ide.
+# Remove unnecessary features from the IDE to make compiling it faster.
 ##
-dev-qt/qt-creator webengine -designer -help
+dev-qt/qt-creator -webengine -designer -help
 
 ##
 # Don't need qt specific code checking support
