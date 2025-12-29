@@ -1,0 +1,4 @@
+##
+# Remove x11 support from sddm, no longer used.
+##
+x11-misc/sddm -X

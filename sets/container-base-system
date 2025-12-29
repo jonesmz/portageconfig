@@ -1,8 +1,0 @@
-@base-system
-
-sys-fs/ntfs3g
-net-misc/iperf
-sys-apps/dcfldd
-sys-block/mbuffer
-dev-util/debugedit
-sys-fs/btrfs-progs

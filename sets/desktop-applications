@@ -1,20 +1,18 @@
-@pc-base-system
+@base-system
 
 x11-misc/arandr
 media-video/vlc
+media-gfx/krita
 app-text/evince
 net-misc/freerdp
 app-editors/pluma
 sys-block/gparted
-#x11-misc/redshift
+www-client/firefox
 app-office/texmaker
 app-arch/file-roller
-x11-base/xorg-server
 x11-terms/terminology
 dev-qt/qtimageformats
-#app-office/libreoffice
 media-sound/alsa-utils
-www-client/firefox
 media-sound/pavucontrol-qt
 gnome-extra/gnome-calculator
 dev-texlive/texlive-latexextra

@@ -1,7 +1,7 @@
 ##
 # Use gcc, which is the systemd wide compiler, not clang.
 ##
-www-client/firefox -clang
+www-client/firefox -clang -X
 
 ##
 # No sense in having firefox build (or download...) its own copies of libraries...
