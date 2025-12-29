@@ -1,2 +1,6 @@
+##
+# Libreoffice doesn't need to be quite so heavy weight.
+##
+app-office/libreoffice -gstreamer -mariadb
 app-office/libreoffice pdfimport
-dev-libs/boost nls
+#dev-libs/boost nls

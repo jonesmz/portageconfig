@@ -1,19 +1,9 @@
 ##
-# sys-kernel/gentoo-sources
-##
-sys-kernel/gentoo-sources experimental symlink
-
-##
 # Useflags needed by qt5.
 ##
-x11-libs/libxcb		xkb
-dev-libs/libpcre	pcre16
-dev-libs/libpcre2	pcre16
-
-##
-# Needed by fdupes
-##
-dev-libs/libpcre2 pcre32
+#x11-libs/libxcb		xkb
+#dev-libs/libpcre	pcre16
+#dev-libs/libpcre2	pcre16
 
 ##
 # Faster QML based apps
@@ -21,70 +11,31 @@ dev-libs/libpcre2 pcre32
 dev-qt/qtdeclarative jit
 
 ##
-# texmaker dependencies
+# TODO: What's actually pulling this in?
 ##
-sys-libs/zlib		minizip
-dev-qt/qtwebengine	widgets
-dev-qt/qtwebchannel	qml
-app-text/texlive-core	xetex
+sys-libs/zlib minizip
 
 ##
 # Still haven't figured out how to get rid of cups...
 ##
 app-text/ghostscript-gpl -cups -X -gtk
-net-print/cups-filters -*
 
 ##
-# Need gbm for radeon graphics card support
-# All the other stuff is to just provide the various APIs for generic use by various machines.
+# TODO: What's adding lm-sensors support actually accomplish?
 ##
-media-libs/mesa gbm gles1 gles2 llvm lm-sensors vulkan
-media-libs/libva X opengl
+media-libs/mesa lm-sensors
 
 ##
-# Turning off the GUI of lshw, it's useless.
-# Also don't need sqlite support
-##
-sys-apps/lshw -gtk -static
-
-##
-# Don't need no stinkin distcc monitor gui...
-##
-sys-devel/distcc -gtk
-
-##
-# No need for the nmap gui, zenmap...
-#
 # The ncat flag adds ipv6 capable netcat implementation
 # Why that's part of nmap is anyones guess...
 ##
-net-analyzer/nmap -gtk -lua ncat
-
-##
-# Libreoffice doesn't need to be quite so heavy weight.
-##
-app-office/libreoffice -gnome -gstreamer -opengl -postgres -vba -webdav -gtk -mariadb
-dev-libs/xmlsec	nss
+net-analyzer/nmap ncat
 
 ##
 # No need for some features
 ##
-net-dns/avahi            -autoipd -python -gdbm -gtk -gtk3 -introspection -mdnsresponder-compat -nls
+net-dns/avahi            -python -gdbm -mdnsresponder-compat -nls
 net-misc/networkmanager  -zeroconf -ncurses
-
-##
-# Various packages that need some nudging for their GUI choices.
-##
-net-dns/avahi    -qt5 -python
-# move dev-util/cmake dev-build/cmake
-dev-build/cmake   -qt5 -ncurses
-
-app-text/poppler qt5
-
-##
-# Preventing the need for the berkdb useflag from gdbm.
-##
-dev-lang/python -gdbm
 
 ##
 # Support direct SMTP connections instead of needing another program to send the emails.
@@ -119,7 +70,7 @@ media-libs/gd fontconfig
 ##
 # Don't need to support alternate protocols, or cookies
 ##
-net-misc/curl -psl -ftp -tftp -snmp -pop3
+net-misc/curl -psl -ftp -tftp -pop3
 
 ##
 #
@@ -132,6 +83,6 @@ media-libs/freetype harfbuzz
 sys-fs/btrfs-progs -man
 
 ##
-# Appears to be the only package that actually uses the gnome keyring?
+# TODO: Remove this, but then adjust /etc/pam.d/system-auth accordingly
 ##
 sys-auth/pambase -gnome-keyring

@@ -1,0 +1,25 @@
+##
+# Turning off the GUI of lshw, it's useless.
+##
+sys-apps/lshw -gtk
+
+##
+# Don't need no stinkin distcc monitor gui...
+##
+sys-devel/distcc -gtk
+
+##
+#
+##
+dev-build/cmake -ncurses
+
+##
+# No need for the nmap gui, zenmap...
+##
+net-analyzer/nmap -gtk -lua
+
+##
+# No need for the mdns browser. Is just noise.
+##
+net-dns/avahi -gtk -introspection
+
