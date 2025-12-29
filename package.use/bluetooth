@@ -1,0 +1,4 @@
+##
+# Even on laptop, don't need bluetooth in python.
+##
+dev-lang/python -bluetooth
