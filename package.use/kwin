@@ -1,9 +1,0 @@
-##
-# Add support for screencast via pipewire
-##
-kde-plasma/kwin screencast
-
-##
-# Enable screen locking via kde-plasma/kscreenlocker
-##
-kde-plasma/kwin lock

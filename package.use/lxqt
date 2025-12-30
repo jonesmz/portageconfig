@@ -20,9 +20,9 @@ lxqt-base/lxqt-panel tray -alsa
 lxqt-base/lxqt-panel -desktopswitch -kbindicator -directorymenu
 
 ##
-# Expose pipewire via the xdg-desktop-portal system
+# Enable screen locking via kde-plasma/kscreenlocker
 ##
-sys-apps/xdg-desktop-portal screencast
+kde-plasma/kwin lock
 
 ##
 # Only need kde-plasma/plasma-workspace for one library, don't need any additional functionality
