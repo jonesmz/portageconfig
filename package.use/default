@@ -48,12 +48,7 @@ sys-libs/glibc -stack-realign
 ##
 # Disable some unneeded things from boost
 ##
-dev-libs/boost -bzip2 -icu
-
-##
-# zstd compression is all the rage
-##
-dev-libs/boost zstd
+dev-libs/boost -bzip2 -icu -context
 
 ##
 # for graphviz
@@ -64,11 +59,6 @@ media-libs/gd fontconfig
 # Don't need to support alternate protocols, or cookies
 ##
 net-misc/curl -psl -ftp -tftp -pop3
-
-##
-#
-##
-media-libs/freetype harfbuzz
 
 ##
 # Avoid the need to pull in dev-python/sphinx
