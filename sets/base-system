@@ -40,6 +40,7 @@ sys-apps/smartmontools
 app-admin/eclean-kernel
 sys-fs/btrfsmaintenance
 sys-kernel/gentoo-kernel
+sys-kernel/installkernel
 sys-kernel/linux-firmware
 app-shells/bash-completion
 app-eselect/eselect-python

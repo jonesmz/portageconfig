@@ -17,7 +17,7 @@ lxqt-base/lxqt-panel tray -alsa
 ##
 # Don't actually like using the desktop switcher, so I'm disabling it.
 ##
-lxqt-base/lxqt-panel -desktopswitch -kbindicator
+lxqt-base/lxqt-panel -desktopswitch -kbindicator -directorymenu
 
 ##
 # Expose pipewire via the xdg-desktop-portal system
@@ -31,3 +31,8 @@ dev-qt/qt5compat qml
 kde-frameworks/kconfig qml
 dev-qt/qtmultimedia qml
 x11-base/xwayland libei
+
+##
+# Only need kde-plasma/plasma-workspace for one library, don't need any additional functionality
+##
+kde-plasma/plasma-workspace -fontconfig -handbook -ksysguard -semantic-desktop -wallpaper-metadata

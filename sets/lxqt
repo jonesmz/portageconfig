@@ -1,3 +1,34 @@
+##
+# Desktop environment
+##
 lxqt-base/lxqt-meta
+
+##
+# Icon theme
+##
 kde-frameworks/oxygen-icons
 
+##
+# Compositor
+##
+kde-plasma/kwin
+
+##
+# Screen locker
+##
+kde-plasma/kscreenlocker
+
+##
+# Needed by kde-plasma/kscreenlocker
+##
+kde-plasma/plasma-workspace
+
+##
+# terminology crashes under kwin
+##
+x11-terms/qterminal
+
+##
+# Needed by kde-plasma/systemsettings
+##
+dev-libs/kirigami-addons
