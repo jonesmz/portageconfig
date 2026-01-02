@@ -1,0 +1,4 @@
+##
+# Support libx265 for, among other purposes, yt-dlp converting to h265 video
+##
+media-video/ffmpeg x265
