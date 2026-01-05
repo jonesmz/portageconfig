@@ -4,9 +4,19 @@
 lxqt-base/lxqt-meta -nls
 
 ##
-# Need for lxqt
+# Not needed for lxqt
 ##
-lxqt-base/lxqt-meta -about sddm lximage -processviewer terminal -sudo
+lxqt-base/lxqt-meta -about -processviewer -sudo
+
+##
+# Convienience dependencies.
+##
+lxqt-base/lxqt-meta sddm lximage terminal
+
+##
+# Support sleep on idle
+##
+lxqt-base/lxqt-meta powermanagement
 
 ##
 # LXQT systray support for nm-applet
