@@ -27,8 +27,3 @@ kde-plasma/plasma-workspace
 # terminology crashes under kwin
 ##
 x11-terms/qterminal
-
-##
-# Needed by kde-plasma/systemsettings
-##
-dev-libs/kirigami-addons
