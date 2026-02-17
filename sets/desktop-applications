@@ -2,7 +2,7 @@
 
 x11-misc/arandr
 media-video/vlc
-media-gfx/krita
+#media-gfx/krita
 app-text/evince
 net-misc/freerdp
 app-editors/pluma

@@ -64,6 +64,7 @@ media-libs/libsndfile		abi_x86_32
 media-libs/fontconfig		abi_x86_32
 media-libs/libpng-compat	abi_x86_32
 media-libs/libjpeg-turbo	abi_x86_32
+media-libs/libdisplay-info	abi_x86_32
 
 x11-libs/gtk+				abi_x86_32
 x11-libs/libSM				abi_x86_32
