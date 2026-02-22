@@ -31,6 +31,7 @@ dev-libs/expat				abi_x86_32
 dev-libs/libffi				abi_x86_32
 dev-libs/libusb				abi_x86_32
 dev-libs/nettle				abi_x86_32
+dev-libs/json-c				abi_x86_32
 dev-libs/openssl			abi_x86_32
 dev-libs/fribidi			abi_x86_32
 dev-libs/libxml2			abi_x86_32
