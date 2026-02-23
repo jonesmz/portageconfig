@@ -50,7 +50,6 @@ media-libs/flac				abi_x86_32
 media-libs/opus				abi_x86_32
 media-libs/mesa				abi_x86_32
 media-libs/libva			abi_x86_32
-media-libs/openal			abi_x86_32
 media-libs/libpng			abi_x86_32
 media-libs/libogg			abi_x86_32
 media-libs/libwebp			abi_x86_32
@@ -63,6 +62,7 @@ media-libs/freetype			abi_x86_32
 media-libs/libvorbis		abi_x86_32
 media-libs/libsndfile		abi_x86_32
 media-libs/fontconfig		abi_x86_32
+media-libs/vulkan-loader	abi_x86_32
 media-libs/libpng-compat	abi_x86_32
 media-libs/libjpeg-turbo	abi_x86_32
 media-libs/libdisplay-info	abi_x86_32
