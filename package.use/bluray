@@ -1,0 +1,5 @@
+##
+# Utilities to make it easier to rip bluray disks
+##
+media-libs/libbluray aacs bdplus utils
+media-video/ffmpeg   bluray
