@@ -18,6 +18,7 @@ net-misc/wsdd		samba
 net-misc/ntp		samba
 net-dns/bind		gssapi
 net-dns/bind-tools	gssapi
+net-libs/ngtcp2		gnutls
 
 ##
 # Freeradius talking to samba4 via winbind
