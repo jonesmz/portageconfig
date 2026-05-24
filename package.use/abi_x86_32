@@ -41,9 +41,11 @@ dev-libs/elfutils			abi_x86_32
 dev-libs/libpcre2			abi_x86_32
 dev-libs/libgcrypt			abi_x86_32
 dev-libs/dbus-glib			abi_x86_32
+dev-libs/leancrypto			abi_x86_32
 dev-libs/libgpg-error		abi_x86_32
 dev-libs/libunistring		abi_x86_32
 dev-libs/libappindicator	abi_x86_32
+dev-libs/leancrypto			abi_x86_32
 
 media-libs/tiff				abi_x86_32
 media-libs/flac				abi_x86_32
