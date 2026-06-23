@@ -131,3 +131,9 @@ app-crypt/p11-kit			abi_x86_32
 net-dns/libidn2				abi_x86_32
 
 app-accessibility/at-spi2-core	abi_x86_32
+
+##
+# Specifically for wine
+##
+#app-emulation/wine-gecko	abi_x86_32
+#dev-util/mingw64-toolchain	abi_x86_32
