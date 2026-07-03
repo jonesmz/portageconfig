@@ -1,0 +1,6 @@
+##
+# Check to see if newer gstreamer fixes dvd re-muxing bug
+##
+#media-libs/gstreamer
+#media-libs/gst-plugins-*
+#media-plugins/gst-plugins-*
