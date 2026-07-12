@@ -7,3 +7,8 @@ app-crypt/mit-krb5
 # Don't use pre-compiled rust.
 ##
 dev-lang/rust-bin
+
+##
+# Don't use pre-compiled dotnet-sdk
+##
+dev-dotnet/dotnet-sdk-bin

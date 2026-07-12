@@ -51,3 +51,8 @@ net-analyzer/nmap NPSL
 sci-physics/root freedist MSttfEULA
 
 www-client/google-chrome google-chrome
+
+##
+# Game image license
+##
+games-strategy/endless-sky Unsplash

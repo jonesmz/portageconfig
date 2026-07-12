@@ -22,3 +22,13 @@ sci-physics/bullet		threads
 media-libs/sdl-mixer            midi timidity mad
 games-strategy/openra           tools
 games-strategy/warzone2100      videos
+
+##
+# No need for multiplayer support
+##
+games-strategy/0ad -lobby
+
+##
+# Disable features that I don't think are needed to play
+##
+games-strategy/megaglest -editor -model-viewer -tools
