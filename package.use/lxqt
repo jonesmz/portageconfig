@@ -9,6 +9,11 @@ lxqt-base/lxqt-meta -nls
 lxqt-base/lxqt-meta -about -processviewer -sudo
 
 ##
+# Doesn't work on wayland
+##
+lxqt-base/lxqt-meta -screenshot
+
+##
 # Convienience dependencies.
 ##
 lxqt-base/lxqt-meta sddm lximage terminal

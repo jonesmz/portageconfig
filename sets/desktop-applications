@@ -10,6 +10,7 @@ sys-block/gparted
 www-client/firefox
 app-office/texmaker
 app-arch/file-roller
+kde-plasma/spectacle
 x11-terms/terminology
 dev-qt/qtimageformats
 media-sound/alsa-utils
