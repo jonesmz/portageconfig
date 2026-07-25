@@ -1,0 +1,19 @@
+##
+# Force hardware accelerated rendering
+##
+mail-client/thunderbird hwaccel
+
+##
+# Thunderbird doesn't need to know anything about wifi
+##
+mail-client/thunderbird -wifi
+
+##
+# Use gcc, which is the systemd wide compiler, not clang.
+##
+mail-client/thunderbird -clang
+
+##
+# We're 100% on wayland now
+##
+mail-client/thunderbird -X

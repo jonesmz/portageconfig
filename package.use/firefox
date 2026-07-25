@@ -1,14 +1,4 @@
 ##
-# Use gcc, which is the systemd wide compiler, not clang.
-##
-www-client/firefox -clang -X
-
-##
-# No sense in having firefox build (or download...) its own copies of libraries...
-##
-www-client/firefox system-png openh264 system-pipewire
-
-##
 # Force hardware accelerated rendering
 ##
 www-client/firefox hwaccel
@@ -19,14 +9,24 @@ www-client/firefox hwaccel
 www-client/firefox pulseaudio
 
 ##
+# Mmmmm slightly more security
+##
+www-client/firefox wasm-sandbox
+
+##
+# Use gcc, which is the systemd wide compiler, not clang.
+##
+www-client/firefox -clang
+
+##
+# We're 100% on wayland now
+##
+www-client/firefox -X
+
+##
 # Firefox doesn't need to know anything about wifi
 ##
 www-client/firefox -wifi
-
-##
-# Explicit dependency of firefox
-##
-x11-base/xorg-server xvfb
 
 ##
 # Explicit dependency of firefox

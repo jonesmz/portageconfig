@@ -4,6 +4,7 @@ sys-libs/gpm
 net-fs/samba
 net-fs/sshfs
 net-misc/ntp
+net-dns/bind
 sys-devel/dwz
 sys-apps/lshw
 sys-apps/fwupd
@@ -30,7 +31,6 @@ sys-apps/pciutils
 sys-apps/gptfdisk
 sys-power/cpupower
 sys-apps/rng-tools
-net-dns/bind-tools
 #mail-client/s-nail
 sys-fs/btrfs-progs
 sys-apps/lm-sensors

@@ -17,3 +17,8 @@ media-video/vlc -ncurses -zeroconf
 # Supplanted by pipewire
 ##
 media-video/vlc -alsa
+
+##
+# Done with X, wayland only
+##
+media-video/vlc

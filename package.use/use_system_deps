@@ -1,0 +1,7 @@
+##
+# No sense in having multiple versions of the same libraries installed by different packages
+##
+net-libs/nodejs system-icu
+net-misc/rsync system-zlib
+www-client/firefox system-png openh264 system-pipewire
+mail-client/thunderbird system-png system-pipewire
