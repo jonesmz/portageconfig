@@ -1,0 +1,165 @@
+Authorship: This patch was authored with the assistance of an AI system,
+reviewed and submitted by the human contributor filing it.
+
+License: This patch is dual-licensed. You may use it under the terms of the
+MIT License, or, at your option, treat it as released into the Public Domain
+(e.g. under CC0 1.0). You may pick whichever of the two suits inclusion in the
+project.
+
+(The text above this line is a note for reviewers and is not part of the diff;
+"git apply" and "patch -p1" ignore everything before the first "diff --git".)
+
+diff --git a/gst/videoparsers/gstmpegvideoparse.c b/gst/videoparsers/gstmpegvideoparse.c
+index a6107773dc..5a65c8e286 100644
+--- a/gst/videoparsers/gstmpegvideoparse.c
++++ b/gst/videoparsers/gstmpegvideoparse.c
+@@ -220,6 +220,8 @@ gst_mpegv_parse_reset (GstMpegvParse * mpvparse)
+   mpvparse->seqdispext_updated = FALSE;
+   mpvparse->picext_updated = FALSE;
+   mpvparse->quantmatrext_updated = FALSE;
++
++  mpvparse->pts_recon_gop_base = GST_CLOCK_TIME_NONE;
+ }
+ 
+ static gboolean
+@@ -1052,6 +1054,118 @@ gst_mpegv_parse_pre_push_frame (GstBaseParse * parse, GstBaseParseFrame * frame)
+     if (pic_ext->top_field_first)
+       GST_BUFFER_FLAG_SET (parse_buffer, GST_VIDEO_BUFFER_FLAG_TFF);
+   }
++
++  /* Reconstruct a per-frame presentation timestamp (PTS) for streams that
++   * arrive with only a sparse PTS.
++   *
++   * Why this is needed:
++   *   In an MPEG program stream (as read from a DVD via dvdreadsrc !
++   *   mpegpsdemux) the PES layer is only required to carry a PTS/DTS
++   *   occasionally (roughly once per GOP / a few times per second); it is spec
++   *   compliant for the majority of pictures to have neither. As a result the
++   *   buffers this parser receives from upstream have a valid DTS on (nearly)
++   *   every frame but a valid PTS on only a small fraction of them, so most of
++   *   our output buffers would leave here with PTS == GST_CLOCK_TIME_NONE.
++   *
++   *   That is fine for a decoder, but muxers such as matroskamux timestamp
++   *   their blocks using the buffer PTS and drop any buffer whose PTS is
++   *   invalid ("Invalid buffer timestamp; dropping buffer"). Feeding this
++   *   parser's output straight into matroskamux therefore yields a "slideshow"
++   *   in which all but the few PTS-bearing frames are discarded.
++   *
++   *   One way to avoid the slideshow is to route the elementary stream through
++   *   "mpegtsmux ! tsdemux ! mpegvideoparse" so the MPEG-TS layer regenerates
++   *   dense timestamps. That stops the buffers being dropped, but it does not
++   *   fully fix the underlying issue: the TS round-trip collapses B-frame PTS
++   *   onto DTS and thereby corrupts the presentation timing (visible as
++   *   motion/scene-change artefacts). Filling the PTS correctly here addresses
++   *   the root cause without that round-trip.
++   *
++   * How the reconstruction works:
++   *   MPEG-2 encodes each picture's *display* position within its GOP in the
++   *   picture header's temporal_reference field. GStreamer's MPEG video parser
++   *   exposes it as mpvparse->pichdr.tsn. Within a GOP, the presentation time
++   *   of a picture is therefore:
++   *
++   *       PTS = gop_base + temporal_reference * frame_duration
++   *
++   *   where gop_base is the presentation time of the temporal_reference == 0
++   *   picture of that GOP and frame_duration = fps_den / fps_num seconds.
++   *
++   *   We do NOT try to derive gop_base from first principles (that would
++   *   require assuming the decoder reorder delay). Instead we re-anchor it from
++   *   any real upstream PTS we do receive: given a genuine PTS on a picture
++   *   with a known temporal_reference,
++   *
++   *       gop_base = upstream_PTS - temporal_reference * frame_duration
++   *
++   *   In the streams observed here (DVD MPEG-PS) at least the first picture of
++   *   each GOP carries a PTS, so this re-anchors continuously and stayed
++   *   correct across GOP boundaries, open GOPs, and 3:2-pulldown duration
++   *   changes in testing. Its behaviour by design:
++   *     - When upstream provides a PTS, we use it verbatim as the anchor and
++   *       never overwrite it (so streams that already carry per-frame PTS pass
++   *       through unchanged).
++   *     - When upstream does not, we synthesise the PTS from the current
++   *       anchor.
++   *   The result reorders as expected: B-frames (presented immediately) get
++   *   PTS == DTS, while I/P anchor frames (held back by the reorder delay) get
++   *   PTS > DTS.
++   *
++   *   Worked example (NTSC 29.97, GOP starting with a stamped I-frame whose
++   *   PTS = 0.2806s, temporal_reference 0; frame_duration = 1001/30000 s):
++   *       anchor:            gop_base = 0.2806 - 0 = 0.2806
++   *       next P, tref 2:    PTS = 0.2806 + 2*0.03337 = 0.3474  (> its DTS)
++   *       next B, tref 1:    PTS = 0.2806 + 1*0.03337 = 0.3140  (== its DTS)
++   *
++   * Gating and safety:
++   *   - Requires a known frame rate (fps_num/fps_den) to convert
++   *     temporal_reference into time; if unknown we leave timestamps untouched.
++   *   - Only *fills* a missing PTS; a valid upstream PTS is always preserved.
++   *   - Clamps PTS >= DTS, since a frame can never be presented before it is
++   *     decoded (guards against rounding at anchor points).
++   *   - pts_recon_gop_base is reset in gst_mpegv_parse_reset(), so no state
++   *     leaks across flushes/discontinuities. */
++  if (mpvparse->fps_num > 0 && mpvparse->fps_den > 0) {
++    GstClockTime pts = GST_BUFFER_PTS (parse_buffer);
++    /* frame_duration is informational (debug log); the offset below is what
++     * actually positions the picture. */
++    GstClockTime frame_dur =
++        gst_util_uint64_scale_int (GST_SECOND, mpvparse->fps_den,
++        mpvparse->fps_num);
++    /* temporal_reference expressed as a time offset from gop_base. Compute it
++     * as tsn * fps_den / fps_num in one scaled multiply to avoid accumulating
++     * rounding from a per-frame duration. */
++    GstClockTime tref_offset =
++        gst_util_uint64_scale_int (GST_SECOND,
++        (guint64) mpvparse->pichdr.tsn * mpvparse->fps_den, mpvparse->fps_num);
++
++    if (GST_CLOCK_TIME_IS_VALID (pts)) {
++      /* Real upstream PTS: trust it and (re-)anchor the GOP base from it. The
++       * clamp avoids an underflow if a stray PTS is smaller than its own
++       * temporal_reference offset. */
++      if (pts >= tref_offset)
++        mpvparse->pts_recon_gop_base = pts - tref_offset;
++      else
++        mpvparse->pts_recon_gop_base = 0;
++    } else if (GST_CLOCK_TIME_IS_VALID (mpvparse->pts_recon_gop_base)) {
++      /* No upstream PTS: synthesise one from the current anchor. */
++      GstClockTime dts = GST_BUFFER_DTS (parse_buffer);
++      GstClockTime new_pts = mpvparse->pts_recon_gop_base + tref_offset;
++
++      /* A frame can never be presented before it is decoded. */
++      if (GST_CLOCK_TIME_IS_VALID (dts) && new_pts < dts)
++        new_pts = dts;
++
++      GST_BUFFER_PTS (parse_buffer) = new_pts;
++      GST_LOG_OBJECT (mpvparse,
++          "reconstructed PTS %" GST_TIME_FORMAT " (tsn=%u, dur=%"
++          GST_TIME_FORMAT ") for frame with DTS %" GST_TIME_FORMAT,
++          GST_TIME_ARGS (new_pts), mpvparse->pichdr.tsn,
++          GST_TIME_ARGS (frame_dur), GST_TIME_ARGS (dts));
++    }
++  }
++
+   gst_video_push_user_data ((GstElement *) mpvparse, &mpvparse->user_data,
+       parse_buffer);
+ 
+diff --git a/gst/videoparsers/gstmpegvideoparse.h b/gst/videoparsers/gstmpegvideoparse.h
+index 4052bebb21..9e182aa378 100644
+--- a/gst/videoparsers/gstmpegvideoparse.h
++++ b/gst/videoparsers/gstmpegvideoparse.h
+@@ -96,6 +96,17 @@ struct _GstMpegvParse {
+   int fps_num;
+   int fps_den;
+   int frame_repeat_count;
++
++  /* Anchor for per-frame PTS reconstruction on streams that carry only a
++   * sparse PTS (e.g. MPEG-PS/DVD, where the PES layer stamps a PTS on only a
++   * few pictures per second). Holds the presentation time of the current GOP's
++   * temporal_reference == 0 picture, so that any picture's PTS can be recovered
++   * as gop_base + temporal_reference * frame_duration.
++   *
++   * It is (re-)anchored from any real upstream PTS and reset per stream in
++   * gst_mpegv_parse_reset(); GST_CLOCK_TIME_NONE means "no anchor seen yet".
++   * See the detailed rationale in gst_mpegv_parse_pre_push_frame(). */
++  GstClockTime pts_recon_gop_base;
+ };
+ 
+ struct _GstMpegvParseClass {

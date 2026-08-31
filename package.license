@@ -56,3 +56,8 @@ www-client/google-chrome google-chrome
 # Game image license
 ##
 games-strategy/endless-sky Unsplash
+
+##
+# Accept Kiro IDE license
+##
+dev-util/kiro-ide-bin all-rights-reserved

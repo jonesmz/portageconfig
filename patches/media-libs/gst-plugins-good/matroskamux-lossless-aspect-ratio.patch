@@ -1,0 +1,119 @@
+Authorship: This patch was authored with the assistance of an AI system,
+reviewed and submitted by the human contributor filing it.
+
+License: This patch is dual-licensed. You may use it under the terms of the
+MIT License, or, at your option, treat it as released into the Public Domain
+(e.g. under CC0 1.0). You may pick whichever of the two suits inclusion in the
+project.
+
+(The text above this line is a note for reviewers and is not part of the diff;
+"git apply" and "patch -p1" ignore everything before the first "diff --git".)
+
+diff --git a/gst/matroska/matroska-mux.c b/gst/matroska/matroska-mux.c
+index 5b32d5c937..a25f77fbda 100644
+--- a/gst/matroska/matroska-mux.c
++++ b/gst/matroska/matroska-mux.c
+@@ -1156,18 +1156,93 @@ gst_matroska_mux_video_pad_setcaps (GstMatroskaMux * mux,
+   } else {
+     context->default_duration = 0;
+   }
++  /* Compute the Matroska DisplayWidth/DisplayHeight from the pixel aspect
++   * ratio.
++   *
++   * Terminology note: despite their names, the pixel_width / pixel_height
++   * locals here hold the pixel-aspect-ratio (PAR) numerator and denominator
++   * that were read from the "pixel-aspect-ratio" caps field just below. They
++   * are NOT the coded frame dimensions; those are 'width' and 'height'.
++   *
++   * How Matroska stores aspect ratio:
++   *   Matroska has no PAR element. Aspect ratio is expressed through
++   *   DisplayWidth / DisplayHeight together with DisplayUnit. matroskamux
++   *   never writes a DisplayUnit, so it defaults to 0 ("pixels"). In that mode
++   *   the display dimensions describe the frame as it should be presented, and
++   *   consumers recover the pixel aspect ratio from the ratio between the
++   *   display size and the coded (Pixel*) size. matroskademux does exactly
++   *   this, reconstructing:
++   *       PAR = (DisplayWidth  * PixelHeight)
++   *           : (DisplayHeight * PixelWidth)
++   *   (see gst_matroska_demux_add_stream() in matroska-demux.c). Note that only
++   *   the *ratio* of the display dimensions matters to this reconstruction, not
++   *   their absolute magnitude.
++   *
++   * The problem with the previous computation:
++   *   The previous code held one axis at the coded size and stretched the
++   *   other:
++   *       if (par_n > par_d) display = (width * par_n / par_d, height);
++   *       else               display = (width, height * par_d / par_n);
++   *   That integer division rounds whenever the PAR does not divide the coded
++   *   size evenly, which is the common case for anamorphic DVD content. For
++   *   NTSC 16:9 (720x480, PAR 32:27):
++   *       DisplayWidth = 720 * 32 / 27 = 853.33... -> 853  (truncated)
++   *   which reconstructs as PAR 853:720 (~1.1847) instead of the intended
++   *   32:27 (~1.1852) -> DAR 853:480 instead of a clean 16:9. The error is
++   *   ~0.04% (sub-pixel) but is a lossy, non-reversible representation of the
++   *   source aspect ratio.
++   *
++   * The fix:
++   *   Store the exact aspect ratio as a reduced integer fraction instead of a
++   *   rounded pixel count:
++   *       DisplayWidth : DisplayHeight
++   *           = (width * par_n) : (height * par_d)   reduced by their GCD
++   *   Because only the ratio matters (DisplayUnit = pixels), this reconstructs
++   *   the original PAR losslessly. Worked example, NTSC 16:9:
++   *       720*32 : 480*27 = 23040 : 12960  -> /1440 -> 16 : 9
++   *       demux: (16 * 480) : (9 * 720) = 7680 : 6480 -> 32 : 27  (exact)
++   *
++   *   Previous vs new display size, and the PAR each reconstructs to via
++   *   matroskademux, for a range of inputs (checked locally):
++   *
++   *     input (coded, PAR)         previous disp / PAR      new disp / PAR
++   *     720x480  32:27 (NTSC 16:9) 853x480  / 853:720 (bad) 16x9   / 32:27
++   *     720x480   8:9  (NTSC 4:3)  720x540  / 8:9           4x3    / 8:9
++   *     704x480  40:33 (NTSC 16:9) 853x480  / 853:704 (bad) 16x9   / 40:33
++   *     352x480  80:33 (Half-D1)   853x480  / 853:352 (bad) 16x9   / 80:33
++   *     720x576  16:11 (PAL 16:9)  1047x576 / 349:240 (bad) 20x11  / 16:11
++   *     720x576  12:11 (PAL 4:3)   785x576  / 157:144 (bad) 15x11  / 12:11
++   *     480x640   3:4  (portrait)  480x853  / 640:853 (bad) 9x16   / 3:4
++   *     any       1:1  (square)    0x0 (none)               0x0 (none)
++   *
++   * Tradeoff / rationale:
++   *   The reduced form can yield small display dimensions (e.g. 16x9) rather
++   *   than dimensions close to the coded size (e.g. 853x480). Since DisplayUnit
++   *   is pixels, the numbers define the presentation ratio, and matroskademux
++   *   reconstructs from the ratio regardless of magnitude. Preserving the exact
++   *   ratio is preferred here over keeping large pixel counts so that the
++   *   source aspect ratio is not silently altered.
++   *
++   * Square pixels (PAR 1:1) are treated as "no display size" (0/0), matching
++   * the original behaviour; matroskamux additionally strips 1:1 PAR from caps
++   * upstream, so this branch is normally not even reached for square pixels. */
+   if (gst_structure_get_fraction (structure, "pixel-aspect-ratio",
+-          &pixel_width, &pixel_height)) {
+-    if (pixel_width > pixel_height) {
+-      videocontext->display_width = width * pixel_width / pixel_height;
+-      videocontext->display_height = height;
+-    } else if (pixel_width < pixel_height) {
+-      videocontext->display_width = width;
+-      videocontext->display_height = height * pixel_height / pixel_width;
+-    } else {
+-      videocontext->display_width = 0;
+-      videocontext->display_height = 0;
++          &pixel_width, &pixel_height)
++      && pixel_width != pixel_height) {
++    /* display_dimension = coded_dimension * par_component; the pair is then
++     * reduced to lowest terms so we store the exact aspect ratio. Both
++     * intermediate products already existed in the original code path, so this
++     * introduces no new overflow exposure. */
++    gint dw = width * pixel_width;
++    gint dh = height * pixel_height;
++    gint div = gst_util_greatest_common_divisor (dw, dh);
++
++    if (div > 0) {
++      dw /= div;
++      dh /= div;
+     }
++    videocontext->display_width = dw;
++    videocontext->display_height = dh;
+   } else {
+     videocontext->display_width = 0;
+     videocontext->display_height = 0;
