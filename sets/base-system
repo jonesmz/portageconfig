@@ -36,6 +36,7 @@ sys-fs/btrfs-progs
 sys-apps/lm-sensors
 sys-boot/efibootmgr
 sys-block/zram-init
+net-analyzer/tcpdump
 app-admin/superadduser
 sys-apps/smartmontools
 app-admin/eclean-kernel
