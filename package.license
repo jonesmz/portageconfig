@@ -61,3 +61,8 @@ games-strategy/endless-sky Unsplash
 # Accept Kiro IDE license
 ##
 dev-util/kiro-ide-bin all-rights-reserved
+
+##
+# Microcode update for ancient processors
+##
+sys-firmware/intel-microcode intel-ucode
