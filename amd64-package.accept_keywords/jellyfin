@@ -1,2 +1,5 @@
 # move www-apps/jellyfin www-apps/jellyfin-bin
 www-apps/jellyfin-bin
+www-apps/jellyfin
+www-apps/jellyfin-server
+media-video/jellyfin-web
