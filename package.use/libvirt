@@ -1,0 +1,9 @@
+##
+# We use macvlan, no setup from libvirt needed
+##
+app-emulation/libvirt -virt-network
+
+##
+# Ensure that libvirtiofsd is pulled in for host<->client FS access
+##
+app-emulation/libvirt virtiofsd
