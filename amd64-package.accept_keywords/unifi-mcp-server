@@ -1,0 +1,32 @@
+##
+# unifi-mcp-server + deps from unifi-mcp-server-overlay
+##
+dev-python/unifi-mcp-server
+
+##
+# Whole-cloth dep
+##
+dev-python/agnost
+
+##
+# Copied from ::guru
+##
+dev-python/fastmcp
+dev-python/mcp
+dev-python/cyclopts
+dev-python/griffelib
+dev-python/openapi-pydantic
+dev-python/py-key-value-aio
+dev-python/uncalled-for
+dev-python/httpx-sse
+dev-python/sse-starlette
+dev-python/aiofile
+dev-python/caio
+dev-python/rich-rst
+
+##
+# ::gentoo transitive deps with no stable amd64 keyword
+##
+dev-python/authlib
+dev-python/docstring-parser
+dev-python/jsonref

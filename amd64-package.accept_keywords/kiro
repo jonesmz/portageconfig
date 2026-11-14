@@ -1,0 +1,5 @@
+##
+# Kiro ide from overlay
+##
+dev-util/kiro-cli-bin
+dev-util/kiro-ide-bin
